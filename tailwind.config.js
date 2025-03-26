@@ -6,9 +6,7 @@ export default {
   ],
   theme: {
     extend: {
-      fontSize: {
-        thin: '17px',
-      },
+      
       fontWeight: {
         thin: 200,
       },

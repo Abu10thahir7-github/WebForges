@@ -33,7 +33,13 @@ function Home() {
     <div class="home">
       <div class="hero flex h-[50vh]">
 
-      <h1 className='logo-title uppercase'>WEBFORGES <br/> <span>Expert</span> <br/> Developers </h1>
+      <h1 className="text-2xl logo-title uppercase sm:text-3xl md:text-4xl lg:text-5xl font-bold uppercase leading-tight">
+  WEBFORGES <br />
+  <span className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-[Macondo, cursive] ">
+    Expert
+  </span> <br />
+  Developers
+</h1>
 
       <div
       className="rotating-text-container">
@@ -88,56 +94,56 @@ function Home() {
 <path d="M1.69976 25.7232C1.68984 25.733 1.61398 26.0357 1.53125 26.3957C1.44851 26.7557 1.39346 27.0541 1.40883 27.0589C1.42424 27.0637 1.67411 27.1009 1.96412 27.1416C2.5465 27.2235 3.22647 27.4216 3.65173 27.6333C4.97706 28.2931 5.85462 29.4769 6.08271 30.9128L6.1408 31.2784L6.72627 31.2784L7.31179 31.2784L7.36739 30.947C7.73165 28.7758 9.35507 27.3603 11.7845 27.0955C11.9432 27.0782 12.0729 27.0576 12.0729 27.0496C12.0729 26.9764 11.7805 25.7631 11.7573 25.7401C11.7406 25.7235 11.5919 25.7359 11.4269 25.7676C9.60023 26.1187 8.11381 27.124 7.4923 28.4286L7.34321 28.7415L7.33153 22.3064L7.32412 0.533202L6.13922 0.533203L6.1318 22.3169L6.12008 28.7368L5.91991 28.3417C5.40066 27.3168 4.38209 26.5054 3.0149 26.0275C2.6254 25.8913 1.73741 25.6859 1.69976 25.7232Z" fill="currentColor"></path>
 </svg>
 </div>
-    <div class=" mt-72 flex ">
-<div className="flex w-3/6">
-      <h1 className="text-lg flex items-center gap-3"><svg width="11" height="13" viewBox="0 0 11 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <div class="mt-72 flex flex-col sm:flex-col md:flex-col lg:flex-row ">
+    <div class="  sm:w-full">
+      <h1 className="text-lg sm:w-full md:w-full flex items-center gap-3"><svg width="11" height="13" viewBox="0 0 11 13" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M11 6.5L0.499999 12.5622L0.5 0.437822L11 6.5Z" fill="currentColor"></path>
 </svg>OUR SOLUTIONS</h1>
 </div>
-<div className="w-3/6">
+<div class="  sm:w-full">
   <p className="uppercase text-thin font-thin text-gray-400">Whether you're designing your first MVP from the ground up or looking to revamp your product to improve key business metrics, we’ve got you covered</p>
 </div>
     </div>
-    <div class=" mt-32 flex ">
-<div className="flex w-3/6">
+    <div class=" mt-32 flex flex-col sm:flex-col md:flex-col lg:flex-row ">
+<div className="flex sm:w-full">
       <p className="  flex items-center text-thin font-thin uppercase text-gray-400">Our expert designers  <br/>
 
 craft solutions tailored <br/>
 
 to your needs </p>
 </div>
-<div className="w-3/6">
-  <h1 className="text-4xl">we accelerate development with no-code tools, delivering faster,
+<div className=" sm:w-full">
+  <h1 className=" text-lg sm:text-2xl md:text-3xl lg:text-4xl">we accelerate development with no-code tools, delivering faster,
   more efficient results.</h1>
 </div>
     </div>
             </div>
   <div className="Experts  mt-16">
 
-    <div class=" mt-32 flex  w-4/5 m-auto">
-<div className="  w-3/6">
-<h1 className="text-lg flex items-center w-auto  gap-3 uppercase"><svg width="11" height="13" viewBox="0 0 11 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <div class=" mt-32 flex flex-col lg:flex-row w-4/5 m-auto">
+<div className="  w-full md:w-1/2 lg:w-1/2 ">
+<h1 className="text-lg sm:w-full sm:text-sm md:text-lg md:w-full flex items-center gap-3 uppercase"><svg width="11" height="13" viewBox="0 0 11 13" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M11 6.5L0.499999 12.5622L0.5 0.437822L11 6.5Z" fill="currentColor"></path>
 </svg>Industry Experience</h1>
-<p className="uppercase mt-4 text-thin w-[23rem] font-thin text-gray-300">Our designers deliver personalized solutions that bring business value across various niches</p>
+<p className="uppercase mt-4 sm:w-full md:w-1/2  text-thin   font-thin text-base sm:text-sm md:text-lg lg:text-lg xl:text-lg text-gray-300">Our designers deliver personalized solutions that bring business value across various niches</p>
 </div>
-<div className="w-3/6">
-  <h1 className="text-4xl mb-3">E-Commerce Development</h1>
-  <h1 className="text-4xl mb-3">Portfolio & Personal Websites</h1>
-  <h1 className="text-4xl mb-3">Education & E-Learning</h1>
+<div className="   mt-4 sm:w-full md:w-1/2  sm:mt-8 md:mt-0 lg:mt-0 xl:mt-0">
+  <h1 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-4xl  mb-3">E-Commerce Development</h1>
+  <h1 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-4xl mb-3">Portfolio & Personal Websites</h1>
+  <h1 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-4xl mb-3">Education & E-Learning</h1>
 </div>
     </div>
   </div>
             <Animation/>
-            <div class=" w-4/5 m-auto  flex ">
-<div className="flex w-3/6">
+            <div class=" w-4/5 m-auto flex flex-col md:flex-row">
+<div className="flex sm:w-full md:w-1/2 ">
       <h1 className="text-lg flex items-center gap-3"><svg width="11" height="13" viewBox="0 0 11 13" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M11 6.5L0.499999 12.5622L0.5 0.437822L11 6.5Z" fill="currentColor"></path>
 </svg>OUR PROJECT</h1>
 </div>
-<div className="w-3/6">
-  <p className="uppercase macondo-regular font-semibold text-3xl text-white">Our unique strategy ensures successful project outcomes</p>
-  <button className="bg-[#f6bc17] rounded-full px-4 py-2 text-black  text-base uppercase flex items-center gap-3 mt-3">see all work <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<div className="sm:w-full md:w-1/2 sm">
+  <p className="uppercase macondo-regular font-semibold text-base sm:text-lg md:text-xl lg:text-2xl xl:text-4xl text-white">Our unique strategy ensures successful project outcomes</p>
+  <button className="bg-[#f6bc17]  rounded-full px-4 py-2 text-black  text-base uppercase flex items-center gap-3 mt-3">see all work <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M2.85711 10.8929L13.7232 10.8929L8.73211 15.8839L9.99997 17.1429L17.1428 10L9.99997 2.85714L8.74104 4.11607L13.7232 9.10714L2.85711 9.10714L2.85711 10.8929Z" fill="currentColor"></path>
 </svg></button>
 </div>

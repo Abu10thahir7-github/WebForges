@@ -78,6 +78,7 @@ nav {
 .home {
   width: 80%;
   margin: auto;
+  margin-top: 15%;
 
   .logo-title {
     font-style: italic;
@@ -166,7 +167,10 @@ nav {
 }
 
 .navbar-container {
-  position: relative;
+  position: absolute;
+  margin: auto;
+  width: 100%;
+  top: 0;
 }
 
 .toggle-button {
@@ -237,5 +241,12 @@ nav {
 
   .sidebar ul li a {
     color: #333;
+  }
+}
+
+.project-container{
+  img{
+    width: 1000px;
+    height: auto;
   }
 }

@@ -3,7 +3,10 @@ import skyImage from '../../assets/skyImg.webp';
 
 import NavBarSidebar from './NavBarSidebar';
 import Animation from './animation';
- 
+import Projects from '../Pages/Projects';
+import { motion } from 'framer-motion';
+ import { fadeIn } from '../../variants';
+import Services from '../Pages/Services';
 
 const sentences = [
   'Impact, Lasting changes',
@@ -203,8 +206,15 @@ function Home() {
             ></path>
           </svg>
         </div>
-        <div class="mt-72 flex flex-col sm:flex-col md:flex-col lg:flex-row ">
-          <div class="  sm:w-full">
+        <motion.div
+        variants={fadeIn('up', 0.2)}
+        initial="hidden"
+        whileInView={"show"}
+        viewport={{ once: true }}
+         class="mt-72 flex flex-col sm:flex-col md:flex-col lg:flex-row ">
+          <div
+
+          class="  sm:w-full">
             <h1 className="text-lg sm:w-full md:w-full flex items-center gap-3">
               <svg
                 width="11"
@@ -224,8 +234,13 @@ function Home() {
               product to improve key business metrics, we’ve got you covered
             </p>
           </div>
-        </div>
-        <div class=" mt-32 flex flex-col sm:flex-col md:flex-col lg:flex-row ">
+        </motion.div>
+        <motion.div
+        variants={fadeIn('up', 0.2)}
+        initial="hidden"
+        whileInView={"show"}
+        viewport={{ once: true }}
+         class=" mt-32 flex flex-col sm:flex-col md:flex-col lg:flex-row ">
           <div className="flex sm:w-full">
             <p className="  flex items-center text-thin font-thin uppercase text-gray-400">
               Our expert designers <br />
@@ -239,11 +254,16 @@ function Home() {
               results.
             </h1>
           </div>
-        </div>
+        </motion.div>
       </div>
       <div className="Experts  mt-16">
         <div class=" mt-32 flex flex-col lg:flex-row w-4/5 m-auto">
-          <div className="  w-full md:w-1/2 lg:w-1/2 ">
+          <motion.div
+          variants={fadeIn('right', 0.2)}
+          initial="hidden"
+          whileInView={"show"}
+          viewport={{ once: true }}
+           className="  w-full md:w-1/2 lg:w-1/2 ">
             <h1 className="text-lg sm:w-full sm:text-sm md:text-lg md:w-full flex items-center gap-3 uppercase">
               <svg
                 width="11"
@@ -260,8 +280,13 @@ function Home() {
               Our designers deliver personalized solutions that bring business value across various
               niches
             </p>
-          </div>
-          <div className="   mt-4 sm:w-full md:w-1/2  sm:mt-8 md:mt-0 lg:mt-0 xl:mt-0">
+          </motion.div>
+          <motion.div
+            variants={fadeIn('left', 0.2)}
+            initial="hidden"
+            whileInView={"show"}
+            viewport={{ once: true }}
+          className="   mt-4 sm:w-full md:w-1/2  sm:mt-8 md:mt-0 lg:mt-0 xl:mt-0">
             <h1 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-4xl  mb-3">
               E-Commerce Development
             </h1>
@@ -271,13 +296,22 @@ function Home() {
             <h1 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-4xl mb-3">
               Education & E-Learning
             </h1>
-          </div>
+          </motion.div>
         </div>
       </div>
       <Animation />
       <div class=" w-4/5 h-full m-auto flex flex-col md:flex-row">
-        <div class="background"></div>
-        <div className="flex sm:w-full md:w-1/2 ">
+        <motion.div
+        variants={fadeIn('up', 2)}
+        initial="hidden"
+        whileInView={"show"}
+        viewport={{ once: true }} class="background"></motion.div>
+        <motion.div
+        variants={fadeIn('up', 0.2)}
+        initial="hidden"
+        whileInView={"show"}
+        viewport={{ once: true }}
+         className="flex sm:w-full md:w-1/2 ">
           <h1 className="text-lg flex items-center gap-3">
             <svg
               width="11"
@@ -290,8 +324,12 @@ function Home() {
             </svg>
             OUR PROJECT
           </h1>
-        </div>
-        <div className="sm:w-full md:w-1/2 sm">
+        </motion.div>
+        <motion.div
+        variants={fadeIn('left', 0.2)}
+        initial="hidden"
+        whileInView={"show"}
+        viewport={{ once: true }} className="sm:w-full md:w-1/2 sm">
           <p className="uppercase macondo-regular font-semibold text-base sm:text-lg md:text-xl lg:text-2xl xl:text-4xl text-white">
             Our unique strategy ensures successful project outcomes
           </p>
@@ -310,8 +348,11 @@ function Home() {
               ></path>
             </svg>
           </button>
-        </div>
+
+        </motion.div>
       </div>
+        <Projects />
+        <Services />
     </div>
   );
 }

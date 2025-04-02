@@ -13,6 +13,7 @@
     "@material-tailwind/react": "^2.1.10",
     "@studio-freight/lenis": "^1.0.42",
     "@tailwindcss/vite": "^4.0.15",
+    "framer-motion": "^12.6.3",
     "gsap": "^3.12.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

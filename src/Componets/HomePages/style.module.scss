@@ -50,13 +50,12 @@
   .sidebar.open {
     left: 0;
   }
-
 }
 @media (min-width: 768px) {
   .toggle-button {
     display: none;
   }
-  .navbar-container{
+  .navbar-container {
     height: 150px;
   }
   .sidebar {

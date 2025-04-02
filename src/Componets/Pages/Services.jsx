@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { fadeIn } from '../../variants'
-import DiscoverTextAnimation from '../Animations/discoverTextAnimation'
+import DiscoverTextAnimation from '../Animations/DiscoverTextAnimation.jsx'
 import TabsComponent from '../Animations/Tabs'
 
 function Services() {

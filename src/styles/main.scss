@@ -1,6 +1,7 @@
 /* src/styles/main.scss */
 $primary-color: #000000;
 $black: black;
+$yellow: #f6bc16;
 * {
   margin: 0px;
   padding: 0px;
@@ -250,3 +251,8 @@ nav {
     height: auto;
   }
 }
+
+
+ .service-card:hover{
+background-color: $yellow;
+ }

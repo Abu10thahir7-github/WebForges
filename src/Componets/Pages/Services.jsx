@@ -2,6 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { fadeIn } from '../../variants'
 import DiscoverTextAnimation from '../Animations/discoverTextAnimation'
+import TabsComponent from '../Animations/Tabs'
 
 function Services() {
   return (
@@ -142,7 +143,9 @@ function Services() {
 </linearGradient>
 </defs>
 </svg>
-        <div className='w-4/5 m-auto'>   </div>
+        <div className='w-4/5 m-auto'>
+        <TabsComponent/>
+        </div>
     </div>
   )
 }

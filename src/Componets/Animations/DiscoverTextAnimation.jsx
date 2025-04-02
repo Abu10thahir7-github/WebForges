@@ -37,7 +37,7 @@ export default function DiscoverTextAnimation() {
 
 
       </div>
-      <div className='h-[35vh]' />
+      <div className='h-[20vh]' />
     </main>
   );
 }

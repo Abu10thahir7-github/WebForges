@@ -256,3 +256,14 @@ nav {
  .service-card:hover{
 background-color: $yellow;
  }
+ .contact{
+  background-image: url(/src/assets/moon.webp);
+  background-size: cover;
+  background-position: center;
+  height: 70vh;
+  width: 100%;
+  display: flex
+;
+  justify-content: center;
+  align-items: center;
+ }

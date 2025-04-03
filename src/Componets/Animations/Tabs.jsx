@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
+import { fadeIn } from '../../variants'
 export default function TabsComponent() {
   const [activeTab, setActiveTab] = useState(1);
 
@@ -9,7 +10,7 @@ export default function TabsComponent() {
 
     return (
       <motion.a
-        className="relative service-card flex items-center justify-between p-4 border-b border-gray-700 transition-colors duration-300 bg-transparent"
+        className="relative  service-card flex flex-col sm:flex-row items-center justify-between p-4 border-b border-gray-700 transition-colors duration-300 bg-transparent"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         initial={{ paddingLeft: "20px", paddingRight: "20px", color: "white" }}
@@ -72,8 +73,12 @@ export default function TabsComponent() {
   ];
 
   return (
-    <div className="bg-black min-h-screen text-white flex flex-col items-center p-10">
-      <div className="flex space-x-8 pb-2">
+    <motion.div
+    variants={fadeIn('up', 0.5)}
+            initial="hidden"
+            whileInView={"show"}
+            viewport={{ once: true }} className="    text-white flex flex-col items-center mb-56 ">
+      <div className="w-full  overflow-scroll md:overflow-hidden sm:w-auto flex space-x-8 pb-2  ">
         {tabs.map((tab) => (
           <button
             key={tab.id}
@@ -87,6 +92,7 @@ export default function TabsComponent() {
         ))}
       </div>
       <div className="mt-6 w-full text-center">{tabs.find((tab) => tab.id === activeTab)?.content}</div>
-    </div>
+    </motion.div>
+
   );
 }

@@ -7,6 +7,7 @@ import Projects from '../Pages/Projects';
 import { motion } from 'framer-motion';
  import { fadeIn } from '../../variants';
 import Services from '../Pages/Services';
+import Contact from '../Pages/Contact';
 
 const sentences = [
   'Impact, Lasting changes',
@@ -326,14 +327,15 @@ function Home() {
           </h1>
         </motion.div>
         <motion.div
-        variants={fadeIn('left', 0.2)}
-        initial="hidden"
-        whileInView={"show"}
-        viewport={{ once: true }} className="sm:w-full md:w-1/2 sm">
+         className="sm:w-full md:w-1/2 sm">
           <p className="uppercase macondo-regular font-semibold text-base sm:text-lg md:text-xl lg:text-2xl xl:text-4xl text-white">
             Our unique strategy ensures successful project outcomes
           </p>
-          <button className="bg-[#f6bc17]  rounded-full px-4 py-2 text-black  text-base uppercase flex items-center gap-3 mt-3">
+          <motion.button
+           variants={fadeIn('left', 0.2)}
+           initial="hidden"
+           whileInView={"show"}
+           viewport={{ once: true }}  className="bg-[#f6bc17]  rounded-full px-4 py-2 text-black  text-base uppercase flex items-center gap-3 mt-3">
             see all work{' '}
             <svg
               width="20"
@@ -347,12 +349,13 @@ function Home() {
                 fill="currentColor"
               ></path>
             </svg>
-          </button>
+          </motion.button>
 
         </motion.div>
       </div>
         <Projects />
         <Services />
+        <Contact/>
     </div>
   );
 }

@@ -7,7 +7,7 @@ import TabsComponent from '../Animations/Tabs'
 function Services() {
   return (
     <div className='services relative my-16'>
-      <svg className='absolute'
+      <svg className='absolute hidden md:block'
   width="665"
   height="618"
   viewBox="0 0 665 618"
@@ -108,7 +108,7 @@ function Services() {
         </div>
         <DiscoverTextAnimation/>
 
-        <svg className='absolute right-0' width="324" height="578" viewBox="0 0 324 578" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg className='absolute hidden md:block right-0' width="324" height="578" viewBox="0 0 324 578" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g opacity="0.9" filter="url(#filter0_df_372_321)">
 <ellipse cx="297.292" cy="306.047" rx="181.052" ry="79.8299" transform="rotate(0.345807 297.292 306.047)" fill="url(#paint0_linear_372_321)"></ellipse>
 </g>

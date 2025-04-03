@@ -17,7 +17,15 @@ body {
   font-weight: 400;
   font-style: normal;
 }
+.active {
+  background: #f6bc17;
+  color: #000000;
+  border-radius: 50px;
+}
+.navbar-container{
 
+
+}
 nav {
   width: fit-content;
 
@@ -31,7 +39,7 @@ nav {
   border: 1px solid #ffffff26;
   border-radius: 100px;
   padding: 0.75rem;
-  padding: 10px;
+  padding: 20px;
   margin-block: 50px;
   animation: bottomToTop 2s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
 
@@ -62,6 +70,12 @@ nav {
 }
 @media screen and (max-width: 569px) {
   nav {
+    width: 80%;
+    border-radius: 38px;
+    ul{
+      flex-direction: column;
+      width: 100%;
+    }
   }
 }
 .background {
@@ -167,12 +181,7 @@ nav {
   }
 }
 
-.navbar-container {
-  position: absolute;
-  margin: auto;
-  width: 100%;
-  top: 0;
-}
+
 
 .toggle-button {
   font-size: 24px;
@@ -267,3 +276,6 @@ background-color: $yellow;
   justify-content: center;
   align-items: center;
  }
+ /* Vector 3 */
+
+

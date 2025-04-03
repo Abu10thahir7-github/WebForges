@@ -3,6 +3,7 @@ import trendzio_mockup from './../../assets/projects/trendzio mockup.png';
 import velonto_mockup from './../../assets/projects/velonto design.jpg';
 import { motion } from 'framer-motion';
 import { fadeIn } from '../../variants';
+import Footer from './Footer';
 function Projects() {
   return (
     <div className="project-container sm:w-full md:w-full lg:w-4/5 m-auto flex   justify-end  ">
@@ -58,6 +59,7 @@ function Projects() {
           </div>
         </motion.div>
       </div>
+       
     </div>
   );
 }

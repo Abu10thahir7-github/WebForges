@@ -8,6 +8,7 @@ import { motion } from 'framer-motion';
  import { fadeIn } from '../../variants';
 import Services from '../Pages/Services';
 import Contact from '../Pages/Contact';
+import Footer from '../Pages/Footer';
 
 const sentences = [
   'Impact, Lasting changes',
@@ -31,7 +32,6 @@ function Home() {
 
   return (
     <div>
-      <NavBarSidebar />
 
       <div class="home">
         <div class="hero flex h-[50vh]">
@@ -260,7 +260,7 @@ function Home() {
       <div className="Experts  mt-16">
         <div class=" mt-32 flex flex-col lg:flex-row w-4/5 m-auto">
           <motion.div
-          variants={fadeIn('right', 0.2)}
+          variants={fadeIn('up', 0.2)}
           initial="hidden"
           whileInView={"show"}
           viewport={{ once: true }}
@@ -283,7 +283,7 @@ function Home() {
             </p>
           </motion.div>
           <motion.div
-            variants={fadeIn('left', 0.2)}
+            variants={fadeIn('up', 0.2)}
             initial="hidden"
             whileInView={"show"}
             viewport={{ once: true }}
@@ -356,6 +356,7 @@ function Home() {
         <Projects />
         <Services />
         <Contact/>
+        <Footer/>
     </div>
   );
 }

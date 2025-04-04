@@ -9,10 +9,11 @@ function Projects() {
     <div className="project-container sm:w-full md:w-full lg:w-4/5 m-auto flex   justify-end  ">
       <div className="w-[300px]  mx-auto block sm:mx-0 sm:w-4/5 md:w-4/6 lg:w-4/6 mt-16 flex flex-col gap-10">
         <motion.div
+        onClick={() => window.open('https://www.trendzio.shop/', '_blank')}
         variants={fadeIn('up', 0.2)}
         initial="hidden"
         whileInView={"show"}
-        viewport={{ once: true }} className="project-card">
+        viewport={{ once: true }} className="project-card cursor-pointer">
           <img className='' src={trendzio_mockup} alt="trendzio_mockup" />
           <div className="project-card-text flex justify-between border-t-[1px] border-t-[#363636] my-5 py-5">
             <div>
@@ -34,10 +35,11 @@ function Projects() {
           </div>
         </motion.div>
         <motion.div
+        onClick={() => window.open('https://velonto.vercel.app/', '_blank')}
         variants={fadeIn('up', 0.2)}
         initial="hidden"
         whileInView={"show"}
-        viewport={{ once: true }} className="project-card">
+        viewport={{ once: true }} className="project-card cursor-pointer">
           <img className='' src={velonto_mockup} alt="trendzio_mockup" />
           <div className="project-card-text flex justify-between border-t-[1px] border-t-[#363636] my-5 py-5">
             <div>
@@ -59,7 +61,7 @@ function Projects() {
           </div>
         </motion.div>
       </div>
-       
+
     </div>
   );
 }

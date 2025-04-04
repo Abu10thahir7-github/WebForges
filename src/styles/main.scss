@@ -17,29 +17,41 @@ body {
   font-weight: 400;
   font-style: normal;
 }
+.text-style-italic {
+  font-family: Satoshi,sans-serif;
+  font-style: italic;
+  font-weight: 400;
+}
+.heading-style-h3 {
+  letter-spacing: -1px;
+  margin-top: 0;
+  margin-bottom: 0;
+ 
+
+  line-height: 1.2;
+}
 .active {
   background: #f6bc17;
   color: #000000;
   border-radius: 50px;
 }
-.navbar-container{
-
+.navbar-container {
   width: fit-content;
   margin: auto;
   top: 60px;
   position: relative;
   border: solid 1px #323232;
   border-radius: 50px;
- 
+
   backdrop-filter: blur(2px);
 }
 
 @media screen and (max-width: 569px) {
-.navbar-container{
-  width: 100%;
-  border: none;
-  top: 10px;
-}
+  .navbar-container {
+    width: 100%;
+    border: none;
+    top: 10px;
+  }
 }
 .background {
   background-image: url('../assets/futuristic-moon-background.jpg');
@@ -72,16 +84,13 @@ body {
     }
   }
   .rotating-text-container {
-
     font-weight: bold;
     color: #757575;
     text-align: center;
     padding: 20px;
-    position: absolute; /* Positioning relative to the viewport */
-    left: 50%; /* Center horizontally */
-    top: 70%; /* Center vertically */
-    transform: translate(-50%, -50%);
-    width: 50%;
+    display: flex;
+    justify-content: center;
+    width: 100%;
   }
 
   @keyframes waveUp {
@@ -89,11 +98,8 @@ body {
       transform: translateY(30px);
       opacity: 0;
     }
-    40% {
-      transform: translateY(-5px);
-      opacity: 1;
-    }
-    60% {
+
+    50% {
       transform: translateY(0);
       opacity: 1;
     }
@@ -105,9 +111,10 @@ body {
 
   .rotating-text {
     position: absolute;
-    width: 100%;
+
     opacity: 0;
-    animation: waveUp 5s ease-in-out forwards;
+
+    animation: waveUp 3s ease-in-out forwards;
   }
 
   .rotate-svg {
@@ -144,8 +151,6 @@ body {
   }
 }
 
-
-
 @media screen and (max-width: 768px) {
   .navbar-container {
     height: 150px;
@@ -158,33 +163,29 @@ body {
   }
 }
 @media (min-width: 768px) {
-
 }
 
-.project-container{
-  img{
+.project-container {
+  img {
     width: 1000px;
     height: auto;
   }
 }
 
-
- .service-card:hover{
-background-color: $yellow;
- }
- .contact{
+.service-card:hover {
+  background-color: $yellow;
+}
+.contact {
   background-image: url(/src/assets/moon.webp);
   background-size: cover;
   background-position: center;
   height: 70vh;
   width: 100%;
-  display: flex
-;
+  display: flex;
   justify-content: center;
   align-items: center;
- }
- /* Vector 3 */
+}
+/* Vector 3 */
 
-
- @media screen and (max-width: 320px) {
- }
+@media screen and (max-width: 320px) {
+}

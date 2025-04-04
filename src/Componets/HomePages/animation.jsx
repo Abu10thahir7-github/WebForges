@@ -59,7 +59,7 @@ const Phrase = ({src}) => {
 
   return (
     <div className={'px-5 flex gap-5 items-center'}>
-      <p className='text-[7.5vw]'> High-performing</p>
+      <p className='text-[7.5vw]'> H<span class="text-style-italic">i</span>gh-perf<span class="text-style-italic">o</span>rm<span class="text-style-italic">i</span>ng</p>
 
       <svg width="94" height="52" viewBox="0 0 64 32" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M32 14H7.66L18.84 2.82L16 0L0 16L16 32L18.82 29.18L7.66 18H32V14Z" fill="#F6BC17"></path>

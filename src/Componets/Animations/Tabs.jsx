@@ -78,7 +78,7 @@ export default function TabsComponent() {
             initial="hidden"
             whileInView={"show"}
             viewport={{ once: true }} className="    text-white flex flex-col items-center mb-56 ">
-      <div className="w-full  overflow-scroll md:overflow-hidden sm:w-auto flex space-x-8 pb-2  ">
+      <div className="w-full  overflow-scroll md:overflow-hidden sm:w-auto  flex space-x-8 pb-2  ">
         {tabs.map((tab) => (
           <button
             key={tab.id}

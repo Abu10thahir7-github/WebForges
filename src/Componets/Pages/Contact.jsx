@@ -29,9 +29,9 @@ function Contact() {
           </h1>
         </motion.div>
         <div className='mt-20  flex flex-col justify-between gap-10 sm:flex-row sm:gap-0 sm:items-center '>
-        <p className="uppercase macondo-regular font-semibold text-base sm:text-lg md:text-xl lg:text-2xl xl:text-4xl text-white">
-        Feeling inspired? <br/>
-        We'd love to work with you
+        <p className="    heading-style-h3 text-base sm:text-lg md:text-xl lg:text-3xl xl:text-5xl text-white">
+        Feel<span class="text-style-italic">i</span>ng <span class="text-style-italic">i</span>nsp<span class="text-style-italic">i</span>red? <br/>
+        W<span class="text-style-italic">e</span>'d l<span class="text-style-italic">o</span>ve t<span class="text-style-italic">o</span> w<span class="text-style-italic">o</span>rk w<span class="text-style-italic">i</span>th y<span class="text-style-italic">o</span>u
           </p>
           <motion.button
            variants={fadeIn('up', 0.2)}

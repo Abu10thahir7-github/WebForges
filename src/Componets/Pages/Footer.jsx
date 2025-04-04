@@ -33,9 +33,9 @@ function Footer() {
             viewport={{ once: true }}
             className="flex flex-col gap-10"
           >
-            <h1 className="text-4xl">
-              Let's work <br />
-              together
+            <h1 className="text-base sm:text-lg md:text-xl lg:text-3xl xl:text-5xl ">
+              L<span class="text-style-italic">e</span>t's w<span class="text-style-italic">o</span>rk <br />
+              t<span class="text-style-italic">o</span>gether
             </h1>
             <p className="text-sm font-extralight">
               Reach out anytime to discuss a <br />
@@ -179,7 +179,7 @@ function Footer() {
         initial="hidden"
         whileInView={'show'}
         viewport={{ once: true }}
-        className="text-center mb-20"
+        className="text-center  font-thin mb-20"
       >
         © CAPI PRODUCT 2024 All rights reserved
       </motion.h1>

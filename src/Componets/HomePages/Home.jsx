@@ -25,7 +25,7 @@ function Home() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSentenceIndex(prevIndex => (prevIndex + 1) % sentences.length);
-    }, 5000); // Change sentence every 5 seconds
+    }, 3000); // Change sentence every 5 seconds
 
     return () => clearInterval(interval);
   }, []);
@@ -35,14 +35,15 @@ function Home() {
 
       <div class="home">
         <div class="hero flex h-[50vh]">
-          <h1 className="text-2xl logo-title uppercase sm:text-3xl md:text-4xl lg:text-5xl font-bold   leading-tight">
+
+          {/* <h1 className="text-2xl logo-title uppercase sm:text-3xl md:text-4xl lg:text-5xl font-bold   leading-tight">
             Elevate Your <br />
             <span className="text-lg trac sm:text-xl md:text-2xl lg:text-3xl font-[Macondo, cursive] ">
               Business with
             </span>{' '}
             <br />
             Modern Web Solutions
-          </h1>
+          </h1> */}
 
           <div className="rotating-text-container text-sm sm:text-base md:text-lg lg:text-xl">
             {/* Add key prop here to reset animation on every change */}
@@ -50,6 +51,7 @@ function Home() {
               {sentences[currentSentenceIndex]}
             </span>
           </div>
+
         </div>
         <div class="scrollDown mb-7">
           <svg
@@ -226,6 +228,7 @@ function Home() {
               >
                 <path d="M11 6.5L0.499999 12.5622L0.5 0.437822L11 6.5Z" fill="currentColor"></path>
               </svg>
+
               OUR SOLUTIONS
             </h1>
           </div>
@@ -251,7 +254,7 @@ function Home() {
           </div>
           <div className=" sm:w-full">
             <h1 className=" text-lg sm:text-2xl md:text-3xl lg:text-4xl">
-              we accelerate development with no-code tools, delivering faster, more efficient
+              we accelerate devel<span class="text-style-italic">o</span>pment  w<span class="text-style-italic">i</span>th n<span class="text-style-italic">o</span>-c<span class="text-style-italic">o</span>de t<span class="text-style-italic">oo</span>ls, del<span class="text-style-italic">i</span>ver<span class="text-style-italic">i</span>ng faster, m<span class="text-style-italic">o</span>re eff<span class="text-style-italic">i</span>c<span class="text-style-italic">i</span>ent
               results.
             </h1>
           </div>
@@ -328,9 +331,11 @@ function Home() {
         </motion.div>
         <motion.div
          className="sm:w-full md:w-1/2 sm">
-          <p className="uppercase macondo-regular font-semibold text-base sm:text-lg md:text-xl lg:text-2xl xl:text-4xl text-white">
-            Our unique strategy ensures successful project outcomes
+          <p className="   heading-style-h3   text-base sm:text-lg md:text-xl lg:text-3xl xl:text-5xl  text-white">
+          <span class="text-style-italic">O</span>ur un<span class="text-style-italic ">i</span>que str<span class="text-style-italic">a</span>t<span class="text-style-italic">e</span>gy <span class="text-style-italic">e</span>nsur<span class="text-style-italic">e</span>s s<span class="text-style-italic">u</span>ccessf<span class="text-style-italic">u</span>l pr<span class="text-style-italic">o</span>ject <span class="text-style-italic">o</span>utc<span class="text-style-italic">o</span>mes
           </p>
+
+
           <motion.button
            variants={fadeIn('left', 0.2)}
            initial="hidden"

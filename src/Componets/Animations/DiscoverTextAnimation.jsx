@@ -58,7 +58,7 @@ const Phrase = ({src}) => {
 
   return (
     <div className={'px-5 flex gap-5 items-center'}>
-      <p className='text-[9.5vw]'> Discovery Our Services</p>
+      <p className='text-[9.5vw]'> D<span class="text-style-italic">i</span>sc<span class="text-style-italic">o</span>very <span class="text-style-italic">o</span>ur s<span class="text-style-italic">e</span>rv<span class="text-style-italic">i</span>ces</p>
 
     </div>
   )

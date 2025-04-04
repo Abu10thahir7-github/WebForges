@@ -8,6 +8,8 @@ const navigation = [
   { name: 'Home', href: '/', current: false },
   { name: 'Services', href: '/services', current: false },
   { name: 'Projects', href: '/projects', current: false },
+  { name: 'Blog', href: '/projects', current: false },
+  { name: 'About Us', href: '/projects', current: false },
   { name: 'Contact', href: '/contact', current: false },
 ]
 
@@ -31,7 +33,7 @@ export default function NavBarSidebar() {
         <div className="relative flex h-16 items-center justify-between">
           <div className="absolute inset-y-0 right-0 flex items-center sm:hidden">
             {/* Mobile menu button*/}
-            <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray hover:text-white focus:ring-2 focus:ring-white focus:outline-hidden focus:ring-inset">
+            <DisclosureButton className="group relative inline-flex items-center justify-center rounded-full p-2 text-gray-400 hover:bg-gray hover:text-white focus:ring-2 focus:bg-yellow-500 focus:outline-hidden focus:ring-inset">
               <span className="absolute -inset-0.5" />
               <span className="sr-only">Open main menu</span>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -53,7 +55,7 @@ export default function NavBarSidebar() {
                     aria-current={item.current ? 'page' : undefined}
                     className={classNames(
                       isActive ? 'bg-yellow-500 text-black' : 'text-gray-300 hover:bg-yellow-500 hover:text-black',
-                      'rounded-full px-3 py-2 text-sm font-medium',
+                      'rounded-full uppercase px-3 py-2 text-sm  font-normal lg:text-lg ',
                     )}
                   >
                     {item.name}
@@ -79,8 +81,8 @@ export default function NavBarSidebar() {
             href={item.href}
             aria-current={isActive ? "page" : undefined}
             className={classNames(
-              isActive ? "bg-gray-900 text-white" : "text-gray-300 hover:bg-gray-700 hover:text-white",
-              "block rounded-full px-3 py-2 text-base font-medium"
+              isActive ? "bg-yellow-500  text-black" : "text-gray-300 hover:bg-yellow-500  hover:text-white",
+              "block uppercase rounded-full px-3 py-2 text-base font-medium"
             )}
           >
             {item.name}

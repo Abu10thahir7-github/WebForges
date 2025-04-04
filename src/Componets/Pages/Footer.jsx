@@ -1,20 +1,22 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { useLocation, useNavigate } from "react-router-dom";;
+import { useLocation, useNavigate } from 'react-router-dom';
 import { fadeIn } from '../../variants';
 function Footer() {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const getActiveLink = (path) => {
-    return location.pathname === path ? "text-yellow-300  " : "text-slate-200 hover:text-yellow-300";
+  const getActiveLink = path => {
+    return location.pathname === path
+      ? 'text-yellow-300  '
+      : 'text-slate-200 hover:text-yellow-300';
   };
 
   const menuItems = [
-    { name: "Home", path: "/" },
-    { name: "Services", path: "/services" },
-    { name: "Projects", path: "/projects" },
-    { name: "Contact", path: "/contact" },
+    { name: 'Home', path: '/' },
+    { name: 'Services', path: '/services' },
+    { name: 'Projects', path: '/projects' },
+    { name: 'Contact', path: '/contact' },
   ];
 
   return (
@@ -25,10 +27,12 @@ function Footer() {
       <div className="w-full flex flex-row flex-wrap justify-between pb-20 mb-10 border-gray-600 border-b   ">
         <div className="">
           <motion.div
-         variants={fadeIn('up', 0.2)}
-         initial="hidden"
-         whileInView={'show'}
-         viewport={{ once: true }} className="flex flex-col gap-10">
+            variants={fadeIn('up', 0.2)}
+            initial="hidden"
+            whileInView={'show'}
+            viewport={{ once: true }}
+            className="flex flex-col gap-10"
+          >
             <h1 className="text-4xl">
               Let's work <br />
               together
@@ -60,12 +64,14 @@ function Footer() {
             </motion.button>
           </motion.div>
         </div>
-        <div className="flex">
+        <div className="flex flex-col mt-8 md:flex-row lg:mt-0" >
           <motion.div
-          variants={fadeIn('up', 0.2)}
-          initial="hidden"
-          whileInView={'show'}
-          viewport={{ once: true }} className="flex flex-col mx-10">
+            variants={fadeIn('up', 0.2)}
+            initial="hidden"
+            whileInView={'show'}
+            viewport={{ once: true }}
+            className="flex flex-col   sm:mx-0 lg:mx-10"
+          >
             <p className="text-thin text-slate-200 mb-4">Our address</p>
             <ul className="flex flex-col gap-4 ">
               <li>contact@webforges.com</li>
@@ -77,11 +83,13 @@ function Footer() {
             </ul>
           </motion.div>
           <motion.div
-          variants={fadeIn('up', 0.2)}
-              initial="hidden"
-              whileInView={'show'}
-              viewport={{ once: true }} className="flex flex-col mx-10">
-            <p className="text-thin text-slate-200 mb-4">Follow us</p>
+            variants={fadeIn('up', 0.2)}
+            initial="hidden"
+            whileInView={'show'}
+            viewport={{ once: true }}
+            className="flex flex-col    sm:mx-0 lg:mx-10"
+          >
+            <p className="text-thin mt-8  lg:mt-0  text-slate-200 mb-4">Follow us</p>
             <ul className="flex gap-4 ">
               <li>
                 <svg
@@ -133,31 +141,36 @@ function Footer() {
             </ul>
           </motion.div>
           <motion.div
-          variants={fadeIn('up', 0.2)}
-          initial="hidden"
-          whileInView={'show'}
-          viewport={{ once: true }} className="flex flex-col mx-10">
+            variants={fadeIn('up', 0.2)}
+            initial="hidden"
+            whileInView={'show'}
+            viewport={{ once: true }}
+            className="flex flex-col mt-8  lg:mt-0    "
+          >
             <p className="text-thin text-slate-200 mb-4">Navigation</p>
             <ul className="flex flex-col gap-4 text-lg">
-      {menuItems.map((item) => (
-        <li
-          key={item.path}
-          className={`flex items-center gap-5 cursor-pointer ${getActiveLink(item.path)}`}
-          onClick={() => navigate(item.path)}
-        >
-          <svg
-            width="11"
-            height="14"
-            viewBox="0 0 11 14"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M10.6667 7L0.166747 13.0622L0.166748 0.937822L10.6667 7Z" fill="currentColor"></path>
-          </svg>
-          {item.name}
-        </li>
-      ))}
-    </ul>
+              {menuItems.map(item => (
+                <li
+                  key={item.path}
+                  className={`flex items-center gap-5 cursor-pointer ${getActiveLink(item.path)}`}
+                  onClick={() => navigate(item.path)}
+                >
+                  <svg
+                    width="11"
+                    height="14"
+                    viewBox="0 0 11 14"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10.6667 7L0.166747 13.0622L0.166748 0.937822L10.6667 7Z"
+                      fill="currentColor"
+                    ></path>
+                  </svg>
+                  {item.name}
+                </li>
+              ))}
+            </ul>
           </motion.div>
         </div>
       </div>

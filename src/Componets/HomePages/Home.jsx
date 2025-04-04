@@ -35,7 +35,7 @@ function Home() {
 
       <div class="home">
         <div class="hero flex h-[50vh]">
-          <h1 className="text-2xl logo-title uppercase sm:text-3xl md:text-4xl lg:text-5xl font-bold uppercase leading-tight">
+          <h1 className="text-2xl logo-title uppercase sm:text-3xl md:text-4xl lg:text-5xl font-bold   leading-tight">
             Elevate Your <br />
             <span className="text-lg trac sm:text-xl md:text-2xl lg:text-3xl font-[Macondo, cursive] ">
               Business with
@@ -44,7 +44,7 @@ function Home() {
             Modern Web Solutions
           </h1>
 
-          <div className="rotating-text-container">
+          <div className="rotating-text-container text-sm sm:text-base md:text-lg lg:text-xl">
             {/* Add key prop here to reset animation on every change */}
             <span key={currentSentenceIndex} className="rotating-text">
               {sentences[currentSentenceIndex]}

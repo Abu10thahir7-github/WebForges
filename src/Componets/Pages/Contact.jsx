@@ -25,7 +25,7 @@ function Contact() {
             >
               <path d="M11 6.5L0.499999 12.5622L0.5 0.437822L11 6.5Z" fill="currentColor"></path>
             </svg>
-            OUR SERVICES
+            CONTACT US
           </h1>
         </motion.div>
         <div className='mt-20  flex flex-col justify-between gap-10 sm:flex-row sm:gap-0 sm:items-center '>

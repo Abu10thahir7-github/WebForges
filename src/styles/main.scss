@@ -24,59 +24,22 @@ body {
 }
 .navbar-container{
 
-
-}
-nav {
   width: fit-content;
-
   margin: auto;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  backdrop-filter: blur(8px);
-  color: var(--white);
-  background-color: #0006;
-  border: 1px solid #ffffff26;
-  border-radius: 100px;
-  padding: 0.75rem;
-  padding: 20px;
-  margin-block: 50px;
-  animation: bottomToTop 2s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
-
-  ul {
-    list-style: none;
-    grid-column-gap: 1.5rem;
-    grid-row-gap: 1.5rem;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    position: static;
-
-    li {
-      a {
-        text-decoration: none;
-        color: rgba(255, 255, 255, 0.608);
-        padding: 12px;
-        font-size: 1.125rem;
-        transition: all 0.2s ease-in-out;
-      }
-      a:hover {
-        background: #f6bc17;
-        border-radius: 50px;
-        color: $black;
-      }
-    }
-  }
+  top: 60px;
+  position: relative;
+  border: solid 1px #323232;
+  border-radius: 50px;
+ 
+  backdrop-filter: blur(2px);
 }
+
 @media screen and (max-width: 569px) {
-  nav {
-    width: 80%;
-    border-radius: 38px;
-    ul{
-      flex-direction: column;
-      width: 100%;
-    }
-  }
+.navbar-container{
+  width: 100%;
+  border: none;
+  top: 10px;
+}
 }
 .background {
   background-image: url('../assets/futuristic-moon-background.jpg');
@@ -183,43 +146,6 @@ nav {
 
 
 
-.toggle-button {
-  font-size: 24px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  z-index: 2;
-}
-
-.sidebar {
-  position: fixed;
-  top: 0;
-  left: -550px;
-  width: 250px;
-  height: 100%;
-  background-color: #333;
-  transition: left 0.3s ease;
-  z-index: 1;
-}
-
-.sidebar.open {
-  left: 0;
-}
-
-.sidebar ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-.sidebar ul li a {
-  color: white;
-  text-decoration: none;
-  display: block;
-}
 @media screen and (max-width: 768px) {
   .navbar-container {
     height: 150px;
@@ -232,26 +158,7 @@ nav {
   }
 }
 @media (min-width: 768px) {
-  .toggle-button {
-    display: none;
-  }
 
-  .sidebar {
-    left: 0;
-    position: relative;
-    width: fit-content;
-    height: auto;
-    background-color: transparent;
-  }
-
-  .sidebar ul {
-    display: flex;
-    justify-content: space-around;
-  }
-
-  .sidebar ul li a {
-    color: #333;
-  }
 }
 
 .project-container{

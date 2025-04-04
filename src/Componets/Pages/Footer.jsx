@@ -16,6 +16,8 @@ function Footer() {
     { name: 'Home', path: '/' },
     { name: 'Services', path: '/services' },
     { name: 'Projects', path: '/projects' },
+    { name: 'Blog', path: '/ ' },
+    { name: 'About Us', path: '/ ' },
     { name: 'Contact', path: '/contact' },
   ];
 
@@ -42,6 +44,7 @@ function Footer() {
               collaboration or just to connect <br /> with out team!
             </p>
             <motion.button
+              onClick={() => navigate('/contact')}
               variants={fadeIn('up', 0.2)}
               initial="hidden"
               whileInView={'show'}
@@ -76,10 +79,11 @@ function Footer() {
             <ul className="flex flex-col gap-4 ">
               <li>contact@webforges.com</li>
               <li>
-                +1 (123) 456-7890 <br />
+              +91 90374 35846 <br />
+              +91 8921966289 <br />
                 (Whatsapp/Telegram)
               </li>
-              <li>123 Main Street, City, Country</li>
+              <li>Palakkad, Kerala, India</li>
             </ul>
           </motion.div>
           <motion.div

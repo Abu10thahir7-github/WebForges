@@ -45,9 +45,11 @@ function Home() {
             Modern Web Solutions
           </h1> */}
 
-          <div className="rotating-text-container text-sm sm:text-base md:text-lg lg:text-xl">
+          <div
+          className="rotating-text-container text-sm sm:text-base md:text-lg lg:text-xl">
             {/* Add key prop here to reset animation on every change */}
-            <span key={currentSentenceIndex} className="rotating-text">
+            <span
+             key={currentSentenceIndex} className="rotating-text">
               {sentences[currentSentenceIndex]}
             </span>
           </div>

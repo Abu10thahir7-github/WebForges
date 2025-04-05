@@ -326,7 +326,7 @@ function Home() {
           </div>
           <div className=" sm:w-full">
             <h1 className=" text-lg sm:text-2xl md:text-3xl lg:text-4xl">
-              we accelerate devel<span class="text-style-italic">o</span>pment  w<span class="text-style-italic">i</span>th n<span class="text-style-italic">o</span>-c<span class="text-style-italic">o</span>de t<span class="text-style-italic">oo</span>ls, del<span class="text-style-italic">i</span>ver<span class="text-style-italic">i</span>ng faster, m<span class="text-style-italic">o</span>re eff<span class="text-style-italic">i</span>c<span class="text-style-italic">i</span>ent
+              w<span class="text-style-italic">e</span> acc<span class="text-style-italic">e</span>l<span class="text-style-italic">e</span>rat<span class="text-style-italic">e</span> d<span class="text-style-italic">e</span>vel<span class="text-style-italic">o</span>pment  w<span class="text-style-italic">i</span>th n<span class="text-style-italic">o</span>-c<span class="text-style-italic">o</span>de t<span class="text-style-italic">oo</span>ls, del<span class="text-style-italic">i</span>ver<span class="text-style-italic">i</span>ng faster, m<span class="text-style-italic">o</span>re eff<span class="text-style-italic">i</span>c<span class="text-style-italic">i</span>ent
               results.
             </h1>
           </div>
@@ -412,7 +412,9 @@ function Home() {
            variants={fadeIn('left', 0.2)}
            initial="hidden"
            whileInView={"show"}
-           viewport={{ once: true }}  className="bg-[#f6bc17]  rounded-full px-4 py-2 text-black  text-base uppercase flex items-center gap-3 mt-3">
+           viewport={{ once: true }}
+            
+           className="bg-[#f6bc17]  rounded-full px-4 py-2 text-black  text-base uppercase flex items-center gap-3 mt-3">
             see all work{' '}
             <svg
               width="20"

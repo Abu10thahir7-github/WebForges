@@ -38,7 +38,7 @@ function Home() {
   title="WebForges | Creative Web Solutions for Your Business"
   description="WebForges is your go-to for powerful web design, development, SEO, and digital growth strategies tailored to your goals."
   keywords="web design, web development, React, digital agency, SEO, creative websites"
-  url="https://yourdomain.com/"
+  url="https://webforges.vercel.app/"
   image="https://yourdomain.com/images/home-banner.jpg"
 />
 
@@ -446,6 +446,13 @@ function Home() {
         <FreeTools/>
         <Contact/>
         <Footer/>
+        <SEO
+  title="WebForges | Creative Web Solutions for Your Business"
+  description="WebForges is your go-to for powerful web design, development, SEO, and digital growth strategies tailored to your goals."
+  keywords="web design, web development, React, digital agency, SEO, creative websites"
+  url="https://webforges.vercel.app/"
+  image="https://yourdomain.com/images/home-banner.jpg"
+/>
     </div>
   );
 }

@@ -2,9 +2,17 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { fadeIn } from '../../variants'
  import moonImg from '../../assets/moon.webp'
+import SEO from '../SEO'
 function Contact() {
   return (
     <>
+<SEO
+  title="Contact Us | WebForges - Let's Build Something Great"
+  description="Ready to start a project? Contact WebForges today to discuss your ideas and turn them into a powerful online presence."
+  keywords="contact WebForges, get in touch, start a project, web design contact, hire developers"
+  url="https://web-forges.vercel.app/contact"
+  image="https://yourdomain.com/images/contact-banner.jpg"
+/>
 
       <div className='h-[50vh]'></div>
     <div className='contact   '>

@@ -1,15 +1,15 @@
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { motion } from 'framer-motion'
 import { fadeIn } from '../../variants'
-import { useLocation } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 
 const navigation = [
   { name: 'Home', href: '/', current: false },
   { name: 'Services', href: '/services', current: false },
   { name: 'Projects', href: '/projects', current: false },
-  { name: 'Blog', href: '/projects', current: false },
-  { name: 'About Us', href: '/projects', current: false },
+  { name: 'Blog', href: '/blog', current: false },
+  { name: 'About Us', href: '/about', current: false },
   { name: 'Contact', href: '/contact', current: false },
 ]
 
@@ -49,17 +49,18 @@ export default function NavBarSidebar() {
         const isActive = location.pathname === item.href;
 
         return (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    aria-current={item.current ? 'page' : undefined}
-                    className={classNames(
-                      isActive ? 'bg-yellow-500 text-black' : 'text-gray-300 hover:bg-yellow-500 hover:text-black',
-                      'rounded-full uppercase px-3 py-2 text-sm  font-normal lg:text-lg ',
-                    )}
-                  >
-                    {item.name}
-                  </a>
+          <Link
+          key={item.name}
+          to={item.href}
+          aria-current={isActive ? 'page' : undefined}
+          className={classNames(
+            isActive ? 'bg-yellow-500 text-black' : 'text-gray-300 hover:bg-yellow-500 hover:text-black',
+            'rounded-full uppercase px-3 py-2 text-sm font-normal lg:text-lg',
+          )}
+        >
+          {item.name}
+        </Link>
+
                 );
               })}
               </div>

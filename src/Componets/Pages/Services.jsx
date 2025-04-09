@@ -3,10 +3,18 @@ import { motion } from 'framer-motion'
 import { fadeIn } from '../../variants'
 import DiscoverTextAnimation from '../Animations/DiscoverTextAnimation.jsx'
 import TabsComponent from '../Animations/Tabs'
+import SEO from '../SEO.jsx'
 
 function Services() {
   return (
     <div className='services relative my-16'>
+        <SEO
+        title="Services | WebForges - Elevate Your Web Experience"
+        description="Explore our services at WebForges – specializing in custom web development, UI/UX design, SEO optimization, and more to grow your business online."
+        keywords="web development services, UI/UX design, SEO services, responsive websites, React, full stack development"
+        url="https://web-forges.vercel.app/services"
+        image="https://yourdomain.com/images/services-banner.jpg"
+      />
       <svg className='absolute hidden md:block'
   width="665"
   height="618"
@@ -108,7 +116,7 @@ function Services() {
         </div>
         <DiscoverTextAnimation/>
 
-        <svg className='absolute hidden md:block right-0' width="324" height="578" viewBox="0 0 324 578" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg className='absolute hidden  md:block right-0' width="324" height="578" viewBox="0 0 324 578" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g opacity="0.9" filter="url(#filter0_df_372_321)">
 <ellipse cx="297.292" cy="306.047" rx="181.052" ry="79.8299" transform="rotate(0.345807 297.292 306.047)" fill="url(#paint0_linear_372_321)"></ellipse>
 </g>

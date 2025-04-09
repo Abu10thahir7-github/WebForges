@@ -9,6 +9,8 @@ import { motion } from 'framer-motion';
 import Services from '../Pages/Services';
 import Contact from '../Pages/Contact';
 import Footer from '../Pages/Footer';
+import FreeTools from '../Pages/FreeTools';
+import SEO from '../SEO';
 
 const sentences = [
   'Impact, Lasting changes',
@@ -32,6 +34,13 @@ function Home() {
 
   return (
     <div>
+ <SEO
+  title="WebForges | Creative Web Solutions for Your Business"
+  description="WebForges is your go-to for powerful web design, development, SEO, and digital growth strategies tailored to your goals."
+  keywords="web design, web development, React, digital agency, SEO, creative websites"
+  url="https://yourdomain.com/"
+  image="https://yourdomain.com/images/home-banner.jpg"
+/>
 
       <div class="home">
       <svg className='absolute hidden md:block right-0' width="324" height="578" viewBox="0 0 324 578" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -413,7 +422,7 @@ function Home() {
            initial="hidden"
            whileInView={"show"}
            viewport={{ once: true }}
-            
+
            className="bg-[#f6bc17]  rounded-full px-4 py-2 text-black  text-base uppercase flex items-center gap-3 mt-3">
             see all work{' '}
             <svg
@@ -434,6 +443,7 @@ function Home() {
       </div>
         <Projects />
         <Services />
+        <FreeTools/>
         <Contact/>
         <Footer/>
     </div>

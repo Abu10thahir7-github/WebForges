@@ -9,18 +9,24 @@ import Scene1 from "./Componets/Animations/CursorAnimation/Scene1";
 import Cursor from "./Componets/Animations/CursorAnimation/Cursor";
 import { useState } from "react";
 import GradientCursor from "./Componets/Animations/CursorAnimation/GradientCursor";
+import Blog from "./Componets/Pages/Blog";
+import AboutUs from "./Componets/Pages/AboutUs";
+import FreeTools from "./Componets/Pages/FreeTools";
 const App = () => {
      const [isActive, setIsActive] = useState(false);
   return (
     <>
 <Cursor isActive={isActive}/>
 {/* <GradientCursor isActive={isActive}/> */}
- 
+
       <NavBarSidebar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/services" element={<Services />} />
         <Route path="/projects" element={<Projects />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/about" element={<AboutUs />} />
+        <Route path="/freetools" element={<FreeTools />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
     </>

@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { fadeIn } from '../../variants';
 import SEO from '../SEO';
-import CircuitBoardTechnology from '../../assets/Circuit Board_Technology.mp4';
+
 import serviceImg from '../../assets/service-1.png';
 import grid from '../../assets/grid.png';
 import gradient from '../../assets/gradient.png';

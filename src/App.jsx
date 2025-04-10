@@ -22,7 +22,15 @@ const App = () => {
       {/* <GradientCursor isActive={isActive} /> */}
       <NavBarSidebar />
 
-      <Suspense fallback={<div className="loading">Loading...</div>}>
+      <Suspense
+  fallback={
+    <div className="flex justify-center items-center h-screen space-x-2">
+      <div className="w-4 h-4 bg-blue-500 rounded-full animate-bounce"></div>
+      <div className="w-4 h-4 bg-blue-500 rounded-full animate-bounce [animation-delay:.2s]"></div>
+      <div className="w-4 h-4 bg-blue-500 rounded-full animate-bounce [animation-delay:.4s]"></div>
+    </div>
+  }
+>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />

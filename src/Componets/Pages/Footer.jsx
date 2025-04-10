@@ -185,7 +185,17 @@ function Footer() {
         viewport={{ once: true }}
         className="text-center  font-thin mb-20"
       >
-        © CAPI PRODUCT 2024 All rights reserved
+          <p>
+    © {new Date().getFullYear()} All rights reserved | Created by{" "}
+    <a
+      href="https://abu-thahir.vercel.app/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="  underline hover:text-blue-600 transition"
+    >
+      Abu Thahir
+    </a>
+  </p>
       </motion.h1>
     </div>
   );

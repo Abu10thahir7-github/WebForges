@@ -92,6 +92,9 @@ body {
     justify-content: center;
     width: 100%;
   }
+  .icon{
+    fill: #B59AFF !important;
+  }
 
   @keyframes waveUp {
     0% {
@@ -109,6 +112,7 @@ body {
     50% {
       transform: translateY(0);
       opacity: 1;
+      letter-spacing: 1px;
     }
     80%{
       filter: contrast(900%) blur(1px);
@@ -202,4 +206,18 @@ body {
 /* Vector 3 */
 
 @media screen and (max-width: 320px) {
+}
+
+.grediant-img{
+  filter: contrast(2.5) blur(100px);
+
+  left: -24%;
+  top: -3%;
+
+
+}
+.robot-container{
+
+  border: solid 1px;
+  border-color: hsla(0, 0%, 100%, .1);
 }

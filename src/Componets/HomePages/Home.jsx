@@ -43,6 +43,7 @@ function Home() {
       />
 
       <div class="home">
+
         <svg
           className="absolute hidden md:block right-0"
           width="324"
@@ -457,6 +458,7 @@ function Home() {
           <div class="  sm:w-full">
             <h1 className="text-lg sm:w-full md:w-full flex items-center gap-3">
               <svg
+              className='icon'
                 width="11"
                 height="13"
                 viewBox="0 0 11 13"
@@ -551,6 +553,7 @@ function Home() {
         </div>
       </div>
       <Animation />
+      <FreeTools />
       <div class=" w-4/5 h-full m-auto flex flex-col md:flex-row">
         <motion.div
           variants={fadeIn('up', 2)}
@@ -613,9 +616,10 @@ function Home() {
         </motion.div>
       </div>
       <Projects />
+
       <Services />
-      <FreeTools />
       <Contact />
+      
       <Footer />
       <SEO
         title="WebForges | Creative Web Solutions for Your Business"

@@ -5,7 +5,7 @@ import NavBarSidebar from './NavBarSidebar';
 import Animation from './animation';
 import Projects from '../Pages/Projects';
 import { motion } from 'framer-motion';
- import { fadeIn } from '../../variants';
+import { fadeIn } from '../../variants';
 import Services from '../Pages/Services';
 import Contact from '../Pages/Contact';
 import Footer from '../Pages/Footer';
@@ -34,105 +34,262 @@ function Home() {
 
   return (
     <div>
- <SEO
-  title="WebForges | Creative Web Solutions for Your Business"
-  description="WebForges is your go-to for powerful web design, development, SEO, and digital growth strategies tailored to your goals."
-  keywords="web design, web development, React, digital agency, SEO, creative websites"
-  url="https://webforges.vercel.app/"
-  image="https://yourdomain.com/images/home-banner.jpg"
-/>
+      <SEO
+        title="WebForges | Creative Web Solutions for Your Business"
+        description="WebForges is your go-to for powerful web design, development, SEO, and digital growth strategies tailored to your goals."
+        keywords="web design, web development, React, digital agency, SEO, creative websites"
+        url="https://webforges.vercel.app/"
+        image="https://yourdomain.com/images/home-banner.jpg"
+      />
 
       <div class="home">
-      <svg className='absolute hidden md:block right-0' width="324" height="578" viewBox="0 0 324 578" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g opacity="0.9" filter="url(#filter0_df_372_321)">
-<ellipse cx="297.292" cy="306.047" rx="181.052" ry="79.8299" transform="rotate(0.345807 297.292 306.047)" fill="url(#paint0_linear_372_321)"></ellipse>
-</g>
-<g opacity="0.7" filter="url(#filter1_f_372_321)">
-<ellipse cx="151.758" cy="136.071" rx="151.758" ry="136.071" transform="matrix(0.984077 0.177744 0.231287 0.972886 186.63 75.2319)" fill="url(#paint1_linear_372_321)"></ellipse>
-</g>
-<defs>
-<filter id="filter0_df_372_321" x="46.0524" y="156.021" width="502.48" height="300.053" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
-<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix>
-<feMorphology radius="17.5476" operator="dilate" in="SourceAlpha" result="effect1_dropShadow_372_321"></feMorphology>
-<feOffset dx="7.01902" dy="7.01902"></feOffset>
-<feGaussianBlur stdDeviation="14.038"></feGaussianBlur>
-<feComposite in2="hardAlpha" operator="out"></feComposite>
-<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"></feColorMatrix>
-<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_372_321"></feBlend>
-<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_372_321" result="shape"></feBlend>
-<feGaussianBlur stdDeviation="35.0951" result="effect2_foregroundBlur_372_321"></feGaussianBlur>
-</filter>
-<filter id="filter1_f_372_321" x="144.6" y="29.2692" width="445.686" height="410.637" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
-<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"></feBlend>
-<feGaussianBlur stdDeviation="35.0951" result="effect1_foregroundBlur_372_321"></feGaussianBlur>
-</filter>
-<linearGradient id="paint0_linear_372_321" x1="116.24" y1="306.047" x2="478.344" y2="306.047" gradientUnits="userSpaceOnUse">
-<stop stop-color="#77540F"></stop>
-<stop offset="1" stop-color="#FFECE1"></stop>
-</linearGradient>
-<linearGradient id="paint1_linear_372_321" x1="0" y1="136.071" x2="303.517" y2="136.071" gradientUnits="userSpaceOnUse">
-<stop stop-color="#1D6937"></stop>
-<stop offset="1" stop-color="#111111" stop-opacity="0.0666667"></stop>
-</linearGradient>
-</defs>
-</svg>
-<svg className='absolute hidden md:block rotate-180 left-0' width="324" height="578" viewBox="0 0 324 578" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g opacity="0.9" filter="url(#filter0_df_372_321)">
-<ellipse cx="297.292" cy="306.047" rx="181.052" ry="79.8299" transform="rotate(0.345807 297.292 306.047)" fill="url(#paint0_linear_372_321)"></ellipse>
-</g>
-<g opacity="0.7" filter="url(#filter1_f_372_321)">
-<ellipse cx="151.758" cy="136.071" rx="151.758" ry="136.071" transform="matrix(0.984077 0.177744 0.231287 0.972886 186.63 75.2319)" fill="url(#paint1_linear_372_321)"></ellipse>
-</g>
-<defs>
-<filter id="filter0_df_372_321" x="46.0524" y="156.021" width="502.48" height="300.053" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
-<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix>
-<feMorphology radius="17.5476" operator="dilate" in="SourceAlpha" result="effect1_dropShadow_372_321"></feMorphology>
-<feOffset dx="7.01902" dy="7.01902"></feOffset>
-<feGaussianBlur stdDeviation="14.038"></feGaussianBlur>
-<feComposite in2="hardAlpha" operator="out"></feComposite>
-<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"></feColorMatrix>
-<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_372_321"></feBlend>
-<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_372_321" result="shape"></feBlend>
-<feGaussianBlur stdDeviation="35.0951" result="effect2_foregroundBlur_372_321"></feGaussianBlur>
-</filter>
-<filter id="filter1_f_372_321" x="144.6" y="29.2692" width="445.686" height="410.637" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
-<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"></feBlend>
-<feGaussianBlur stdDeviation="35.0951" result="effect1_foregroundBlur_372_321"></feGaussianBlur>
-</filter>
-<linearGradient id="paint0_linear_372_321" x1="116.24" y1="306.047" x2="478.344" y2="306.047" gradientUnits="userSpaceOnUse">
-<stop stop-color="#77540F"></stop>
-<stop offset="1" stop-color="#FFECE1"></stop>
-</linearGradient>
-<linearGradient id="paint1_linear_372_321" x1="0" y1="136.071" x2="303.517" y2="136.071" gradientUnits="userSpaceOnUse">
-<stop stop-color="#1D6937"></stop>
-<stop offset="1" stop-color="#111111" stop-opacity="0.0666667"></stop>
-</linearGradient>
-</defs>
-</svg>
+        <svg
+          className="absolute hidden md:block right-0"
+          width="324"
+          height="578"
+          viewBox="0 0 324 578"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g opacity="0.9" filter="url(#filter0_df_372_321)">
+            <ellipse
+              cx="297.292"
+              cy="306.047"
+              rx="181.052"
+              ry="79.8299"
+              transform="rotate(0.345807 297.292 306.047)"
+              fill="url(#paint0_linear_372_321)"
+            ></ellipse>
+          </g>
+          <g opacity="0.7" filter="url(#filter1_f_372_321)">
+            <ellipse
+              cx="151.758"
+              cy="136.071"
+              rx="151.758"
+              ry="136.071"
+              transform="matrix(0.984077 0.177744 0.231287 0.972886 186.63 75.2319)"
+              fill="url(#paint1_linear_372_321)"
+            ></ellipse>
+          </g>
+          <defs>
+            <filter
+              id="filter0_df_372_321"
+              x="46.0524"
+              y="156.021"
+              width="502.48"
+              height="300.053"
+              filterUnits="userSpaceOnUse"
+              color-interpolation-filters="sRGB"
+            >
+              <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+              <feColorMatrix
+                in="SourceAlpha"
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                result="hardAlpha"
+              ></feColorMatrix>
+              <feMorphology
+                radius="17.5476"
+                operator="dilate"
+                in="SourceAlpha"
+                result="effect1_dropShadow_372_321"
+              ></feMorphology>
+              <feOffset dx="7.01902" dy="7.01902"></feOffset>
+              <feGaussianBlur stdDeviation="14.038"></feGaussianBlur>
+              <feComposite in2="hardAlpha" operator="out"></feComposite>
+              <feColorMatrix
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
+              ></feColorMatrix>
+              <feBlend
+                mode="normal"
+                in2="BackgroundImageFix"
+                result="effect1_dropShadow_372_321"
+              ></feBlend>
+              <feBlend
+                mode="normal"
+                in="SourceGraphic"
+                in2="effect1_dropShadow_372_321"
+                result="shape"
+              ></feBlend>
+              <feGaussianBlur
+                stdDeviation="35.0951"
+                result="effect2_foregroundBlur_372_321"
+              ></feGaussianBlur>
+            </filter>
+            <filter
+              id="filter1_f_372_321"
+              x="144.6"
+              y="29.2692"
+              width="445.686"
+              height="410.637"
+              filterUnits="userSpaceOnUse"
+              color-interpolation-filters="sRGB"
+            >
+              <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+              <feBlend
+                mode="normal"
+                in="SourceGraphic"
+                in2="BackgroundImageFix"
+                result="shape"
+              ></feBlend>
+              <feGaussianBlur
+                stdDeviation="35.0951"
+                result="effect1_foregroundBlur_372_321"
+              ></feGaussianBlur>
+            </filter>
+            <linearGradient
+              id="paint0_linear_372_321"
+              x1="116.24"
+              y1="306.047"
+              x2="478.344"
+              y2="306.047"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="#77540F"></stop>
+              <stop offset="1" stop-color="#FFECE1"></stop>
+            </linearGradient>
+            <linearGradient
+              id="paint1_linear_372_321"
+              x1="0"
+              y1="136.071"
+              x2="303.517"
+              y2="136.071"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="#1D6937"></stop>
+              <stop offset="1" stop-color="#111111" stop-opacity="0.0666667"></stop>
+            </linearGradient>
+          </defs>
+        </svg>
+        <svg
+          className="absolute hidden md:block rotate-180 left-0"
+          width="324"
+          height="578"
+          viewBox="0 0 324 578"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g opacity="0.9" filter="url(#filter0_df_372_321)">
+            <ellipse
+              cx="297.292"
+              cy="306.047"
+              rx="181.052"
+              ry="79.8299"
+              transform="rotate(0.345807 297.292 306.047)"
+              fill="url(#paint0_linear_372_321)"
+            ></ellipse>
+          </g>
+          <g opacity="0.7" filter="url(#filter1_f_372_321)">
+            <ellipse
+              cx="151.758"
+              cy="136.071"
+              rx="151.758"
+              ry="136.071"
+              transform="matrix(0.984077 0.177744 0.231287 0.972886 186.63 75.2319)"
+              fill="url(#paint1_linear_372_321)"
+            ></ellipse>
+          </g>
+          <defs>
+            <filter
+              id="filter0_df_372_321"
+              x="46.0524"
+              y="156.021"
+              width="502.48"
+              height="300.053"
+              filterUnits="userSpaceOnUse"
+              color-interpolation-filters="sRGB"
+            >
+              <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+              <feColorMatrix
+                in="SourceAlpha"
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                result="hardAlpha"
+              ></feColorMatrix>
+              <feMorphology
+                radius="17.5476"
+                operator="dilate"
+                in="SourceAlpha"
+                result="effect1_dropShadow_372_321"
+              ></feMorphology>
+              <feOffset dx="7.01902" dy="7.01902"></feOffset>
+              <feGaussianBlur stdDeviation="14.038"></feGaussianBlur>
+              <feComposite in2="hardAlpha" operator="out"></feComposite>
+              <feColorMatrix
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
+              ></feColorMatrix>
+              <feBlend
+                mode="normal"
+                in2="BackgroundImageFix"
+                result="effect1_dropShadow_372_321"
+              ></feBlend>
+              <feBlend
+                mode="normal"
+                in="SourceGraphic"
+                in2="effect1_dropShadow_372_321"
+                result="shape"
+              ></feBlend>
+              <feGaussianBlur
+                stdDeviation="35.0951"
+                result="effect2_foregroundBlur_372_321"
+              ></feGaussianBlur>
+            </filter>
+            <filter
+              id="filter1_f_372_321"
+              x="144.6"
+              y="29.2692"
+              width="445.686"
+              height="410.637"
+              filterUnits="userSpaceOnUse"
+              color-interpolation-filters="sRGB"
+            >
+              <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+              <feBlend
+                mode="normal"
+                in="SourceGraphic"
+                in2="BackgroundImageFix"
+                result="shape"
+              ></feBlend>
+              <feGaussianBlur
+                stdDeviation="35.0951"
+                result="effect1_foregroundBlur_372_321"
+              ></feGaussianBlur>
+            </filter>
+            <linearGradient
+              id="paint0_linear_372_321"
+              x1="116.24"
+              y1="306.047"
+              x2="478.344"
+              y2="306.047"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="#77540F"></stop>
+              <stop offset="1" stop-color="#FFECE1"></stop>
+            </linearGradient>
+            <linearGradient
+              id="paint1_linear_372_321"
+              x1="0"
+              y1="136.071"
+              x2="303.517"
+              y2="136.071"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="#1D6937"></stop>
+              <stop offset="1" stop-color="#111111" stop-opacity="0.0666667"></stop>
+            </linearGradient>
+          </defs>
+        </svg>
         <div class="hero flex h-[50vh]">
 
-          {/* <h1 className="text-2xl logo-title uppercase sm:text-3xl md:text-4xl lg:text-5xl font-bold   leading-tight">
-            Elevate Your <br />
-            <span className="text-lg trac sm:text-xl md:text-2xl lg:text-3xl font-[Macondo, cursive] ">
-              Business with
-            </span>{' '}
-            <br />
-            Modern Web Solutions
-          </h1> */}
 
-          <div
-          className="rotating-text-container text-sm sm:text-base md:text-lg lg:text-xl">
+          <div className="rotating-text-container text-sm sm:text-base md:text-lg lg:text-5xl">
             {/* Add key prop here to reset animation on every change */}
-            <span
-             key={currentSentenceIndex} className="rotating-text">
+            <span key={currentSentenceIndex} className="rotating-text">
               {sentences[currentSentenceIndex]}
             </span>
           </div>
-
         </div>
         <div class="scrollDown mb-7">
           <svg
@@ -291,14 +448,13 @@ function Home() {
           </svg>
         </div>
         <motion.div
-        variants={fadeIn('up', 0.2)}
-        initial="hidden"
-        whileInView={"show"}
-        viewport={{ once: true }}
-         class="mt-72 flex flex-col sm:flex-col md:flex-col lg:flex-row ">
-          <div
-
-          class="  sm:w-full">
+          variants={fadeIn('up', 0.2)}
+          initial="hidden"
+          whileInView={'show'}
+          viewport={{ once: true }}
+          class="mt-72 flex flex-col sm:flex-col md:flex-col lg:flex-row "
+        >
+          <div class="  sm:w-full">
             <h1 className="text-lg sm:w-full md:w-full flex items-center gap-3">
               <svg
                 width="11"
@@ -309,7 +465,6 @@ function Home() {
               >
                 <path d="M11 6.5L0.499999 12.5622L0.5 0.437822L11 6.5Z" fill="currentColor"></path>
               </svg>
-
               OUR SOLUTIONS
             </h1>
           </div>
@@ -321,11 +476,12 @@ function Home() {
           </div>
         </motion.div>
         <motion.div
-        variants={fadeIn('up', 0.2)}
-        initial="hidden"
-        whileInView={"show"}
-        viewport={{ once: true }}
-         class=" mt-32 flex flex-col sm:flex-col md:flex-col lg:flex-row ">
+          variants={fadeIn('up', 0.2)}
+          initial="hidden"
+          whileInView={'show'}
+          viewport={{ once: true }}
+          class=" mt-32 flex flex-col sm:flex-col md:flex-col lg:flex-row "
+        >
           <div className="flex sm:w-full">
             <p className="  flex items-center text-thin font-thin uppercase text-gray-400">
               Our expert designers <br />
@@ -335,7 +491,15 @@ function Home() {
           </div>
           <div className=" sm:w-full">
             <h1 className=" text-lg sm:text-2xl md:text-3xl lg:text-4xl">
-              w<span class="text-style-italic">e</span> acc<span class="text-style-italic">e</span>l<span class="text-style-italic">e</span>rat<span class="text-style-italic">e</span> d<span class="text-style-italic">e</span>vel<span class="text-style-italic">o</span>pment  w<span class="text-style-italic">i</span>th n<span class="text-style-italic">o</span>-c<span class="text-style-italic">o</span>de t<span class="text-style-italic">oo</span>ls, del<span class="text-style-italic">i</span>ver<span class="text-style-italic">i</span>ng faster, m<span class="text-style-italic">o</span>re eff<span class="text-style-italic">i</span>c<span class="text-style-italic">i</span>ent
+              w<span class="text-style-italic">e</span> acc<span class="text-style-italic">e</span>l
+              <span class="text-style-italic">e</span>rat<span class="text-style-italic">e</span> d
+              <span class="text-style-italic">e</span>vel<span class="text-style-italic">o</span>
+              pment w<span class="text-style-italic">i</span>th n
+              <span class="text-style-italic">o</span>-c<span class="text-style-italic">o</span>de t
+              <span class="text-style-italic">oo</span>ls, del
+              <span class="text-style-italic">i</span>ver<span class="text-style-italic">i</span>ng
+              faster, m<span class="text-style-italic">o</span>re eff
+              <span class="text-style-italic">i</span>c<span class="text-style-italic">i</span>ent
               results.
             </h1>
           </div>
@@ -344,11 +508,12 @@ function Home() {
       <div className="Experts  mt-16">
         <div class=" mt-32 flex flex-col lg:flex-row w-4/5 m-auto">
           <motion.div
-          variants={fadeIn('up', 0.2)}
-          initial="hidden"
-          whileInView={"show"}
-          viewport={{ once: true }}
-           className="  w-full md:w-1/2 lg:w-1/2 ">
+            variants={fadeIn('up', 0.2)}
+            initial="hidden"
+            whileInView={'show'}
+            viewport={{ once: true }}
+            className="  w-full md:w-1/2 lg:w-1/2 "
+          >
             <h1 className="text-lg sm:w-full sm:text-sm md:text-lg md:w-full flex items-center gap-3 uppercase">
               <svg
                 width="11"
@@ -369,9 +534,10 @@ function Home() {
           <motion.div
             variants={fadeIn('up', 0.2)}
             initial="hidden"
-            whileInView={"show"}
+            whileInView={'show'}
             viewport={{ once: true }}
-          className="   mt-4 sm:w-full md:w-1/2  sm:mt-8 md:mt-0 lg:mt-0 xl:mt-0">
+            className="   mt-4 sm:w-full md:w-1/2  sm:mt-8 md:mt-0 lg:mt-0 xl:mt-0"
+          >
             <h1 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-4xl  mb-3">
               E-Commerce Development
             </h1>
@@ -387,16 +553,19 @@ function Home() {
       <Animation />
       <div class=" w-4/5 h-full m-auto flex flex-col md:flex-row">
         <motion.div
-        variants={fadeIn('up', 2)}
-        initial="hidden"
-        whileInView={"show"}
-        viewport={{ once: true }} class="background"></motion.div>
+          variants={fadeIn('up', 2)}
+          initial="hidden"
+          whileInView={'show'}
+          viewport={{ once: true }}
+          class="background"
+        ></motion.div>
         <motion.div
-        variants={fadeIn('up', 0.2)}
-        initial="hidden"
-        whileInView={"show"}
-        viewport={{ once: true }}
-         className="flex sm:w-full md:w-1/2 ">
+          variants={fadeIn('up', 0.2)}
+          initial="hidden"
+          whileInView={'show'}
+          viewport={{ once: true }}
+          className="flex sm:w-full md:w-1/2 "
+        >
           <h1 className="text-lg flex items-center gap-3">
             <svg
               width="11"
@@ -410,20 +579,23 @@ function Home() {
             OUR PROJECT
           </h1>
         </motion.div>
-        <motion.div
-         className="sm:w-full md:w-1/2 sm">
+        <motion.div className="sm:w-full md:w-1/2 sm">
           <p className="   heading-style-h3   text-base sm:text-lg md:text-xl lg:text-3xl xl:text-5xl  text-white">
-          <span class="text-style-italic">O</span>ur un<span class="text-style-italic ">i</span>que str<span class="text-style-italic">a</span>t<span class="text-style-italic">e</span>gy <span class="text-style-italic">e</span>nsur<span class="text-style-italic">e</span>s s<span class="text-style-italic">u</span>ccessf<span class="text-style-italic">u</span>l pr<span class="text-style-italic">o</span>ject <span class="text-style-italic">o</span>utc<span class="text-style-italic">o</span>mes
+            <span class="text-style-italic">O</span>ur un<span class="text-style-italic ">i</span>
+            que str<span class="text-style-italic">a</span>t<span class="text-style-italic">e</span>
+            gy <span class="text-style-italic">e</span>nsur<span class="text-style-italic">e</span>s
+            s<span class="text-style-italic">u</span>ccessf<span class="text-style-italic">u</span>l
+            pr<span class="text-style-italic">o</span>ject <span class="text-style-italic">o</span>
+            utc<span class="text-style-italic">o</span>mes
           </p>
 
-
           <motion.button
-           variants={fadeIn('left', 0.2)}
-           initial="hidden"
-           whileInView={"show"}
-           viewport={{ once: true }}
-
-           className="bg-[#f6bc17]  rounded-full px-4 py-2 text-black  text-base uppercase flex items-center gap-3 mt-3">
+            variants={fadeIn('left', 0.2)}
+            initial="hidden"
+            whileInView={'show'}
+            viewport={{ once: true }}
+            className="bg-[#f6bc17]  rounded-full px-4 py-2 text-black  text-base uppercase flex items-center gap-3 mt-3"
+          >
             see all work{' '}
             <svg
               width="20"
@@ -438,21 +610,20 @@ function Home() {
               ></path>
             </svg>
           </motion.button>
-
         </motion.div>
       </div>
-        <Projects />
-        <Services />
-        <FreeTools/>
-        <Contact/>
-        <Footer/>
-        <SEO
-  title="WebForges | Creative Web Solutions for Your Business"
-  description="WebForges is your go-to for powerful web design, development, SEO, and digital growth strategies tailored to your goals."
-  keywords="web design, web development, React, digital agency, SEO, creative websites"
-  url="https://webforges.vercel.app/"
-  image="https://yourdomain.com/images/home-banner.jpg"
-/>
+      <Projects />
+      <Services />
+      <FreeTools />
+      <Contact />
+      <Footer />
+      <SEO
+        title="WebForges | Creative Web Solutions for Your Business"
+        description="WebForges is your go-to for powerful web design, development, SEO, and digital growth strategies tailored to your goals."
+        keywords="web design, web development, React, digital agency, SEO, creative websites"
+        url="https://webforges.vercel.app/"
+        image="https://yourdomain.com/images/home-banner.jpg"
+      />
     </div>
   );
 }

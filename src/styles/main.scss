@@ -85,7 +85,7 @@ body {
   }
   .rotating-text-container {
     font-weight: bold;
-    color: #757575;
+    color: #acacac;
     text-align: center;
     padding: 20px;
     display: flex;
@@ -97,15 +97,29 @@ body {
     0% {
       transform: translateY(30px);
       opacity: 0;
+      filter: contrast(100%) blur(1px);
+
+      color: #000;
+    }
+    40%{
+      filter: none;
+      color: white;
     }
 
     50% {
       transform: translateY(0);
       opacity: 1;
     }
+    80%{
+      filter: contrast(900%) blur(1px);
+      color: #acacac;
+
+    }
     100% {
       transform: translateY(-30px);
       opacity: 0;
+      filter: contrast(400%) blur(1px);
+
     }
   }
 

@@ -4,7 +4,7 @@ import { fadeIn } from '../../variants'
 import SEO from '../SEO'
 function FreeTools() {
   return (
-    <div className='w-4/5 m-auto h-screen '>
+    <div className=' free-tools '>
       <SEO
   title="Free Tools | WebForges - Boost Your Productivity Online"
   description="Discover WebForges' collection of free online tools to speed up your workflow — including web utilities, code formatters, SEO checkers, and more."
@@ -13,8 +13,8 @@ function FreeTools() {
   image="https://yourdomain.com/images/freetools-banner.jpg"
 />
 
-<div>
-  <div className='h-full m-auto flex flex-col md:flex-row'>
+<div className='w-4/5 m-auto h-screen'>
+  <div className=' h-full m-auto flex items-center flex-col md:flex-row'>
 
 
 <motion.div

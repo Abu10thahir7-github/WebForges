@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import { Suspense, lazy, useState } from "react";
+
 import NavBarSidebar from "./Componets/HomePages/NavBarSidebar";
 import Cursor from "./Componets/Animations/CursorAnimation/Cursor";
 // import GradientCursor from "./Componets/Animations/CursorAnimation/GradientCursor";

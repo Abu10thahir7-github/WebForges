@@ -4,17 +4,11 @@ import velonto_mockup from './../../assets/projects/velonto design.jpg';
 import { motion } from 'framer-motion';
 import { fadeIn } from '../../variants';
 import Footer from './Footer';
-import SEO from '../SEO';
+ 
 function Projects() {
   return (
     <div className="project-container sm:w-full md:w-full lg:w-4/5 m-auto flex   justify-end  ">
-        <SEO
-        title="Projects | WebForges - Elevate Your Web Experience"
-        description="Explore our projects at WebForges – specializing in custom web development, UI/UX design, SEO optimization, and more to grow your business online."
-        keywords="web development projects, UI/UX design, SEO projects, responsive websites, React, full stack development"
-        url="https://yourdomain.com/services"
-        image="https://yourdomain.com/images/services-banner.jpg"
-      />
+
       <div className="w-[300px]  mx-auto block sm:mx-0 sm:w-4/5 md:w-4/6 lg:w-4/6 mt-16   flex-col gap-10">
         <motion.div
         onClick={() => window.open('https://www.trendzio.shop/', '_blank')}

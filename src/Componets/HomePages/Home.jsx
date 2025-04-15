@@ -10,7 +10,6 @@ import Services from '../Pages/Services';
 import Contact from '../Pages/Contact';
 import Footer from '../Pages/Footer';
 import FreeTools from '../Pages/FreeTools';
-import SEO from '../SEO';
 
 const sentences = [
   'Impact, Lasting changes',
@@ -34,13 +33,6 @@ function Home() {
 
   return (
     <div>
-      <SEO
-        title="WebForges | Creative Web Solutions for Your Business"
-        description="WebForges is your go-to for powerful web design, development, SEO, and digital growth strategies tailored to your goals."
-        keywords="web design, web development, React, digital agency, SEO, creative websites"
-        url="https://webforges.vercel.app/"
-        image="https://yourdomain.com/images/home-banner.jpg"
-      />
 
       <div class="home">
 
@@ -619,15 +611,9 @@ function Home() {
 
       <Services />
       <Contact />
-      
+
       <Footer />
-      <SEO
-        title="WebForges | Creative Web Solutions for Your Business"
-        description="WebForges is your go-to for powerful web design, development, SEO, and digital growth strategies tailored to your goals."
-        keywords="web design, web development, React, digital agency, SEO, creative websites"
-        url="https://webforges.vercel.app/"
-        image="https://yourdomain.com/images/home-banner.jpg"
-      />
+     
     </div>
   );
 }

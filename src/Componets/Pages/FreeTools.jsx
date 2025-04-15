@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { fadeIn } from '../../variants';
-import SEO from '../SEO';
+ 
 
 import serviceImg from '../../assets/service-1.png';
 import grid from '../../assets/grid.png';
@@ -11,13 +11,7 @@ import check from '../../assets/check.svg';
 function FreeTools() {
   return (
     <div className=" free-tools ">
-      <SEO
-        title="Free Tools | WebForges - Boost Your Productivity Online"
-        description="Discover WebForges' collection of free online tools to speed up your workflow — including web utilities, code formatters, SEO checkers, and more."
-        keywords="free web tools, online tools, web utilities, productivity tools, SEO tools, code formatter, color picker"
-        url="https://web-forges.vercel.app/"
-        image="https://yourdomain.com/images/freetools-banner.jpg"
-      />
+
       <div className="h-[50vh]"></div>
       <div className="w-4/5 relative m-auto h-auto">
         <div className=" mb-32  flex items-center flex-col md:flex-row">

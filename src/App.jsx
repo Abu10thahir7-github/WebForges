@@ -19,9 +19,12 @@ const App = () => {
 
   return (
     <>
-      <Cursor isActive={isActive} />
+      <Cursor className='' isActive={isActive} />
       {/* <GradientCursor isActive={isActive} /> */}
+      <div  className="navbar-postion-setup">
+
       <NavBarSidebar />
+      </div>
 
       <Suspense
   fallback={

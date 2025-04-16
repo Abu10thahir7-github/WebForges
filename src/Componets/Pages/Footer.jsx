@@ -28,7 +28,7 @@ function Footer() {
       </div>
       <div className="w-full flex flex-row flex-wrap justify-between pb-20 mb-10 border-gray-600 border-b   ">
         <div className="">
-          <motion.div
+          <motion.di v
             variants={fadeIn('up', 0.2)}
             initial="hidden"
             whileInView={'show'}
@@ -65,7 +65,7 @@ function Footer() {
                 ></path>
               </svg>
             </motion.button>
-          </motion.div>
+          </motion.di>
         </div>
         <div className="flex flex-col mt-8 md:flex-row lg:mt-0" >
           <motion.div

@@ -2,6 +2,13 @@
 $primary-color: #000000;
 $black: black;
 $yellow: #f6bc16;
+:root {
+  --blue: #00f0ff;
+  --violet: #8f00ff;
+  --cyan: #00ffc3;
+  --black: #0f0f0f;
+}
+
 * {
   margin: 0px;
   padding: 0px;
@@ -18,7 +25,7 @@ body {
   font-style: normal;
 }
 .text-style-italic {
-  font-family: Satoshi,sans-serif;
+  font-family: Satoshi, sans-serif;
   font-style: italic;
   font-weight: 400;
 }
@@ -26,7 +33,6 @@ body {
   letter-spacing: -1px;
   margin-top: 0;
   margin-bottom: 0;
-
 
   line-height: 1.2;
 }
@@ -36,6 +42,7 @@ body {
   border-radius: 50px;
 }
 .navbar-container {
+  background: #00000038;
   width: fit-content;
   margin: auto;
   top: 60px;
@@ -45,7 +52,15 @@ body {
 
   backdrop-filter: blur(2px);
 }
-
+.navbar-postion-setup {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+  z-index: 99;
+  top: 0;
+}
 @media screen and (max-width: 569px) {
   .navbar-container {
     width: 100%;
@@ -64,6 +79,15 @@ body {
   filter: brightness(0.5);
   z-index: -1;
   rotate: 34deg;
+}
+.noise {
+  background-image: url('../assets/Noise.webp');
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
 }
 .home {
   width: 80%;
@@ -92,8 +116,8 @@ body {
     justify-content: center;
     width: 100%;
   }
-  .icon{
-    fill: #B59AFF !important;
+  .icon {
+    fill: #b59aff !important;
   }
 
   @keyframes waveUp {
@@ -104,7 +128,7 @@ body {
 
       color: #000;
     }
-    40%{
+    40% {
       filter: none;
       color: white;
     }
@@ -114,16 +138,14 @@ body {
       opacity: 1;
       letter-spacing: 1px;
     }
-    80%{
+    80% {
       filter: contrast(900%) blur(1px);
       color: #acacac;
-
     }
     100% {
       transform: translateY(-30px);
       opacity: 0;
       filter: contrast(400%) blur(1px);
-
     }
   }
 
@@ -208,16 +230,126 @@ body {
 @media screen and (max-width: 320px) {
 }
 
-.grediant-img{
+.grediant-img {
   filter: contrast(2.5) blur(100px);
 
   left: -24%;
   top: -3%;
+}
+.robot-container {
+  border: solid 1px;
+  border-color: hsla(0, 0%, 100%, 0.1);
+}
 
+.bg-animation {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, black 100%);
 
 }
-.robot-container{
 
-  border: solid 1px;
-  border-color: hsla(0, 0%, 100%, .1);
+.noise-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../assets/Noise.webp');
+  background-repeat: repeat;
+  opacity: 70%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.blob-cont {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -2;
+  pointer-events: none;
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.5;
+  mix-blend-mode: screen;
+  will-change: transform, filter;
+}
+
+.blue {
+  background-color: var(--blue);
+  width: 900px;
+  height: 900px;
+  animation: moveBlue 25s infinite alternate;
+}
+
+.violet {
+  background-color: var(--violet);
+  width: 1000px;
+  height: 1000px;
+  animation: moveViolet 30s infinite alternate;
+}
+
+.cyan {
+  background-color: var(--cyan);
+  width: 800px;
+  height: 800px;
+  animation: moveCyan 28s infinite alternate;
+}
+
+.black {
+  background-color: var(--black);
+  width: 1000px;
+  height: 1000px;
+  opacity: 0.25;
+  mix-blend-mode: normal; /* darker look */
+  animation: moveBlack 35s infinite alternate;
+}
+
+@keyframes moveBlue {
+  0% {
+    transform: translate(-30%, -20%) scale(1);
+  }
+  100% {
+    transform: translate(60vw, 50vh) scale(1.2) rotate(360deg);
+  }
+}
+
+@keyframes moveViolet {
+  0% {
+    transform: translate(50vw, 40vh) scale(1);
+  }
+  100% {
+    transform: translate(10vw, 10vh) scale(1.3) rotate(360deg);
+  }
+}
+
+@keyframes moveCyan {
+  0% {
+    transform: translate(20vw, 70vh) scale(1);
+  }
+  100% {
+    transform: translate(70vw, 20vh) scale(1.1) rotate(360deg);
+  }
+}
+
+@keyframes moveBlack {
+  0% {
+    transform: translate(60vw, 10vh) scale(1);
+  }
+  100% {
+    transform: translate(0vw, 70vh) scale(1.4) rotate(360deg);
+  }
+}
+.text-desgin {
+  display: flex;
+  flex-direction: column;
+  line-height: 0.6 !important;
+  position: relative;
 }

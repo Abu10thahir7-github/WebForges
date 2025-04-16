@@ -47,7 +47,7 @@ export default function BlurryCursor({isActive}) {
     }, [isActive])
 
     return (
-        <div className='relative '>
+        <div className='relative z-10 '>
             <div
                 style={{
                     backgroundColor: "#fff",

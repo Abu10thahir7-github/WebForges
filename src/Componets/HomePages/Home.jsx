@@ -34,8 +34,8 @@ function Home() {
   return (
     <div>
 
+   <div className='noise'></div>
       <div class="home">
-
         <svg
           className="absolute hidden md:block right-0"
           width="324"
@@ -274,17 +274,17 @@ function Home() {
             </linearGradient>
           </defs>
         </svg>
-        <div class="hero flex h-[50vh]">
+        <div class="hero items-center flex h-[70vh]">
 
 
-          <div className="rotating-text-container text-sm sm:text-base md:text-lg lg:text-5xl">
+          <div className="rotating-text-container z-10 text-sm sm:text-base md:text-lg lg:text-5xl">
             {/* Add key prop here to reset animation on every change */}
             <span key={currentSentenceIndex} className="rotating-text">
               {sentences[currentSentenceIndex]}
             </span>
           </div>
         </div>
-        <div class="scrollDown mb-7">
+        <div class="scrollDown w-fit m-auto mb-7">
           <svg
             className="rotate-svg"
             width="80px"
@@ -613,7 +613,7 @@ function Home() {
       <Contact />
 
       <Footer />
-     
+
     </div>
   );
 }

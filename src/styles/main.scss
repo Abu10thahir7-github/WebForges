@@ -22,6 +22,9 @@ body {
   background-color: $primary-color;
   color: white;
 }
+button{
+  transition: 0.3s;
+}
 .macondo-regular {
   font-family: 'Macondo', cursive;
   font-weight: 400;
@@ -249,7 +252,7 @@ body {
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.323) 0%, black 100%);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, black 100%);
 }
 
 .noise-bg {
@@ -260,7 +263,7 @@ body {
   height: 100%;
   background-image: url('../assets/Noise.webp');
   background-repeat: repeat;
-  opacity: 70%;
+  opacity: 90%;
   pointer-events: none;
   z-index: 0;
 }
@@ -370,7 +373,7 @@ $style-presets: (
     // Increased opacity to 0.75
   ),
   (
-    size: 2750px,
+    size: 1750px,
     animation: 25s,
     blend: normal,
     opacity: 0.8,
@@ -398,7 +401,7 @@ $style-presets: (
     // Increased opacity to 0.8
   ),
   (
-    size: 10120px,
+    size: 1220px,
     animation: 22s,
     blend: normal,
     opacity: 0.75,
@@ -440,9 +443,9 @@ $style-presets: (
 .blob {
   position: absolute;
   border-radius: 50%;
-  filter: blur(100px);
-  will-change: transform, filter;
-  transform: translate(-50%, -50%);
+  filter: blur(80px);
+
+  transform: translate(0%, 0%);
 }
 @function random-vw() {
   @return random(100) * 1vw;
@@ -503,4 +506,41 @@ $style-presets: (
   align-items: center;
   display: flex;
   flex-direction: column;
+}
+form input, textarea{
+  background: transparent;
+    border: none;
+    border-bottom: solid 1px #505050;
+    border-radius: 0;
+}
+form input, textarea:focus{
+  outline: none;
+  border-bottom: solid 1px #505050;
+}
+
+.contact-form-projectType button{
+ background-color:#333;
+ color: rgb(195, 194, 194);
+ border: none;
+ border-radius: 50px;
+ padding:10px;
+}
+.contact-form-projectType button:focus{
+  background-color: white;
+  color: #000;
+}
+.contact-form-Budget label{
+  background: #333;
+    padding: 10px;
+    color: #aeaeae;
+    border-radius: 50px;
+    position: relative;
+}
+
+.contact-form-Budget input{
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: -.3rem;
+  position: absolute;
+  inset: 0% auto 0% 0%;
 }

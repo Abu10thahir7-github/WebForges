@@ -9,7 +9,8 @@ function ProjectPage() {
         <div class="blob-cont">
           <div class="teal blob"></div>
           <div class="purple blob"></div>
-          <div class="mint blob"></div>
+          <div class="pink blob"></div>
+          <div class="black blob"></div>
           <div class="peach blob"></div>
         </div>
       </div>

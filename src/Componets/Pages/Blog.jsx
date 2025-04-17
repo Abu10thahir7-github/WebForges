@@ -13,14 +13,14 @@ function Blog() {
   <div class="peach"></div>
 
   <div class="yellow"></div>
-  <div class="indigo"></div>
+  <div class="red "></div>
   <div class="yellow"></div>
   <div class="orange"></div>
 </div>
 
       </div>
 
-      <div className="w-4/5 m-auto h-screen flex flex-col justify-center items-center gap-10">
+      <div className="w-4/5 m-auto h-[90vh] flex flex-col justify-end items-start gap-10">
         <div className="hero_text">
           <motion.p
             variants={fadeIn('up', 0.2)}

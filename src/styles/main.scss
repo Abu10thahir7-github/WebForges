@@ -1,4 +1,7 @@
 /* src/styles/main.scss */
+@use 'sass:list';
+@use 'sass:map';
+@use 'sass:math';
 $primary-color: #000000;
 $black: black;
 $yellow: #f6bc16;
@@ -246,8 +249,7 @@ body {
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, black 100%);
-
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.323) 0%, black 100%);
 }
 
 .noise-bg {
@@ -263,6 +265,168 @@ body {
   z-index: 0;
 }
 
+$colors: 'red', 'blue', 'darkBlue', 'green', 'yellow', 'violet', 'cyan', 'black', 'orange', 'pink',
+  'purple', 'brown', 'gray', 'teal', 'indigo', 'lime', 'navy', 'beige', 'mint', 'peach';
+
+$color-vars: (
+  'red': #ff4d4d,
+  'blue': #4d8bff,
+  'darkBlue': #3c158b,
+  'green': #00cc99,
+  'yellow': #ffcc00,
+  'violet': #a343dc,
+  'cyan': #00ffff,
+  'black': #000000,
+  'orange': #ff6600,
+  'pink': #ff66b2,
+  'purple': #800080,
+  'brown': #8b4513,
+  'gray': #808080,
+  'teal': #008080,
+  'indigo': #4b0082,
+  'lime': #00ff00,
+  'navy': #000080,
+  'beige': #f5f5dc,
+  'mint': #98ff98,
+  'peach': #ffcc99,
+);
+
+$style-presets: (
+  (
+    size: 1800px,
+    animation: 20s,
+    blend: screen,
+    opacity: 0.8,
+    // Increased opacity to 0.8
+  ),
+  (
+    size: 1900px,
+    animation: 22s,
+    blend: screen,
+    opacity: 0.9,
+    // Increased opacity to 0.9
+  ),
+  (
+    size: 1950px,
+    animation: 25s,
+    blend: screen,
+    opacity: 0.85,
+    // Increased opacity to 0.85
+  ),
+  (
+    size: 1000px,
+    animation: 28s,
+    blend: normal,
+    opacity: 0.9,
+    // Increased opacity to 0.9
+  ),
+  (
+    size: 1700px,
+    animation: 24s,
+    blend: screen,
+    opacity: 0.7,
+    // Increased opacity to 0.7
+  ),
+  (
+    size: 1950px,
+    animation: 33s,
+    blend: overlay,
+    opacity: 0.75,
+    // Increased opacity to 0.75
+  ),
+  (
+    size: 1850px,
+    animation: 26s,
+    blend: screen,
+    opacity: 0.8,
+    // Increased opacity to 0.8
+  ),
+  (
+    size: 1550px,
+    animation: 39s,
+    blend: normal,
+    opacity: 0.6,
+    // Increased opacity to 0.6
+  ),
+  (
+    size: 1760px,
+    animation: 27s,
+    blend: normal,
+    opacity: 0.65,
+    // Increased opacity to 0.65
+  ),
+  (
+    size: 1760px,
+    animation: 16s,
+    blend: normal,
+    opacity: 0.7,
+    // Increased opacity to 0.7
+  ),
+  (
+    size: 1060px,
+    animation: 38s,
+    blend: normal,
+    opacity: 0.75,
+    // Increased opacity to 0.75
+  ),
+  (
+    size: 2750px,
+    animation: 25s,
+    blend: normal,
+    opacity: 0.8,
+    // Increased opacity to 0.8
+  ),
+  (
+    size: 2850px,
+    animation: 14s,
+    blend: normal,
+    opacity: 0.85,
+    // Increased opacity to 0.85
+  ),
+  (
+    size: 1500px,
+    animation: 30s,
+    blend: normal,
+    opacity: 0.9,
+    // Increased opacity to 0.9
+  ),
+  (
+    size: 1087px,
+    animation: 13s,
+    blend: normal,
+    opacity: 0.8,
+    // Increased opacity to 0.8
+  ),
+  (
+    size: 10120px,
+    animation: 22s,
+    blend: normal,
+    opacity: 0.75,
+    // Increased opacity to 0.75
+  ),
+  (
+    size: 1250px,
+    animation: 36s,
+    blend: normal,
+    opacity: 0.7,
+    // Increased opacity to 0.7
+  ),
+  (
+    size: 1340px,
+    animation: 14s,
+    blend: normal,
+    opacity: 0.85,
+    // Increased opacity to 0.85
+  ),
+  (
+    size: 1100px,
+    animation: 21s,
+    blend: normal,
+    opacity: 0.9,
+    // Increased opacity to 0.9
+  )
+);
+
 .blob-cont {
   position: absolute;
   width: 100%;
@@ -277,79 +441,66 @@ body {
   position: absolute;
   border-radius: 50%;
   filter: blur(100px);
-  opacity: 0.5;
-  mix-blend-mode: screen;
   will-change: transform, filter;
+  transform: translate(-50%, -50%);
+}
+@function random-vw() {
+  @return random(100) * 1vw;
 }
 
-.blue {
-  background-color: var(--blue);
-  width: 900px;
-  height: 900px;
-  animation: moveBlue 25s infinite alternate;
+@function random-vh() {
+  @return random(100) * 1vh;
 }
+@for $i from 1 through min(list.length($colors), list.length($style-presets)) {
+  $color-name: list.nth($colors, $i);
+  $color-val: map.get($color-vars, $color-name);
+  $style: list.nth($style-presets, $i);
 
-.violet {
-  background-color: var(--violet);
-  width: 1000px;
-  height: 1000px;
-  animation: moveViolet 30s infinite alternate;
-}
-
-.cyan {
-  background-color: var(--cyan);
-  width: 800px;
-  height: 800px;
-  animation: moveCyan 28s infinite alternate;
-}
-
-.black {
-  background-color: var(--black);
-  width: 1000px;
-  height: 1000px;
-  opacity: 0.25;
-  mix-blend-mode: normal; /* darker look */
-  animation: moveBlack 35s infinite alternate;
-}
-
-@keyframes moveBlue {
-  0% {
-    transform: translate(-30%, -20%) scale(1);
+  .#{'' + $color-name} {
+    @extend .blob;
+    background-color: $color-val;
+    width: map.get($style, size);
+    height: map.get($style, size);
+    animation: moveBlob#{$i} map.get($style, animation) infinite alternate;
+    mix-blend-mode: map.get($style, blend);
+    opacity: map.get($style, opacity);
   }
-  100% {
-    transform: translate(60vw, 50vh) scale(1.2) rotate(360deg);
-  }
-}
 
-@keyframes moveViolet {
-  0% {
-    transform: translate(50vw, 40vh) scale(1);
-  }
-  100% {
-    transform: translate(10vw, 10vh) scale(1.3) rotate(360deg);
+  @keyframes moveBlob#{$i} {
+    0% {
+      transform: translate(#{math.random() * 100}vw, #{math.random() * 100}vh) scale(1) rotate(0deg);
+    }
+    25% {
+      transform: translate(#{math.random() * 100}vw, #{math.random() * 100}vh) scale(1.1)
+        rotate(90deg);
+    }
+    50% {
+      transform: translate(#{math.random() * 100}vw, #{math.random() * 100}vh) scale(1.1)
+        rotate(180deg);
+    }
+    75% {
+      transform: translate(#{math.random() * 100}vw, #{math.random() * 100}vh) scale(1.1)
+        rotate(270deg);
+    }
+    100% {
+      transform: translate(#{math.random() * 100}vw, #{math.random() * 100}vh) scale(1)
+        rotate(360deg);
+    }
   }
 }
 
-@keyframes moveCyan {
-  0% {
-    transform: translate(20vw, 70vh) scale(1);
-  }
-  100% {
-    transform: translate(70vw, 20vh) scale(1.1) rotate(360deg);
-  }
-}
-
-@keyframes moveBlack {
-  0% {
-    transform: translate(60vw, 10vh) scale(1);
-  }
-  100% {
-    transform: translate(0vw, 70vh) scale(1.4) rotate(360deg);
-  }
-}
 .text-desgin {
   display: flex;
   flex-direction: column;
   line-height: 0.6 !important;
   position: relative;
+}
+
+.contact-form-input {
+  grid-column-gap: 3.75rem;
+  grid-row-gap: 3.75rem;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 }

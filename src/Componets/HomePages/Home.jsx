@@ -3,13 +3,13 @@ import skyImage from '../../assets/skyImg.webp';
 
 import NavBarSidebar from './NavBarSidebar';
 import Animation from './animation';
-import Projects from '../Pages/Projects';
+import Projects from './Projects';
 import { motion } from 'framer-motion';
 import { fadeIn } from '../../variants';
-import Services from '../Pages/Services';
-import Contact from '../Pages/Contact';
-import Footer from '../Pages/Footer';
-import FreeTools from '../Pages/FreeTools';
+import Services from './Services';
+import Contact from './Contact';
+import Footer from './Footer';
+import FreeTools from './FreeTools';
 
 const sentences = [
   'Impact, Lasting changes',
@@ -33,8 +33,7 @@ function Home() {
 
   return (
     <div>
-
-   <div className='noise'></div>
+      <div className="noise"></div>
       <div class="home">
         <svg
           className="absolute hidden md:block right-0"
@@ -275,8 +274,6 @@ function Home() {
           </defs>
         </svg>
         <div class="hero items-center flex h-[70vh]">
-
-
           <div className="rotating-text-container z-10 text-sm sm:text-base md:text-lg lg:text-5xl">
             {/* Add key prop here to reset animation on every change */}
             <span key={currentSentenceIndex} className="rotating-text">
@@ -450,7 +447,7 @@ function Home() {
           <div class="  sm:w-full">
             <h1 className="text-lg sm:w-full md:w-full flex items-center gap-3">
               <svg
-              className='icon'
+                className="icon"
                 width="11"
                 height="13"
                 viewBox="0 0 11 13"
@@ -612,8 +609,7 @@ function Home() {
       <Services />
       <Contact />
 
-      <Footer />
-
+     
     </div>
   );
 }

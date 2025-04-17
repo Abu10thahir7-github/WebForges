@@ -4,23 +4,24 @@ import velonto_mockup from './../../assets/projects/velonto design.jpg';
 import { motion } from 'framer-motion';
 import { fadeIn } from '../../variants';
 import Footer from './Footer';
- 
+
 function Projects() {
   return (
     <div className="project-container sm:w-full md:w-full lg:w-4/5 m-auto flex   justify-end  ">
-
       <div className="w-[300px]  mx-auto block sm:mx-0 sm:w-4/5 md:w-4/6 lg:w-4/6 mt-16   flex-col gap-10">
         <motion.div
-        onClick={() => window.open('https://www.trendzio.shop/', '_blank')}
-        variants={fadeIn('up', 0.2)}
-        initial="hidden"
-        whileInView={"show"}
-        viewport={{ once: true }} className="project-card cursor-pointer">
-          <img className='' src={trendzio_mockup} alt="trendzio_mockup" />
+          onClick={() => window.open('https://www.trendzio.shop/', '_blank')}
+          variants={fadeIn('up', 0.2)}
+          initial="hidden"
+          whileInView={'show'}
+          viewport={{ once: true }}
+          className="project-card cursor-pointer"
+        >
+          <img className="" src={trendzio_mockup} alt="trendzio_mockup" />
           <div className="project-card-text flex justify-between border-t-[1px] border-t-[#363636] my-5 py-5">
             <div>
-              <h2 className='uppercase'>Trendzio</h2>
-              <p className='text-lg text-gray-500 font-light'>E-Commerce</p>
+              <h2 className="uppercase">Trendzio</h2>
+              <p className="text-lg text-gray-500 font-light">E-Commerce</p>
             </div>
             <svg
               width="28"
@@ -37,16 +38,18 @@ function Projects() {
           </div>
         </motion.div>
         <motion.div
-        onClick={() => window.open('https://velonto.vercel.app/', '_blank')}
-        variants={fadeIn('up', 0.2)}
-        initial="hidden"
-        whileInView={"show"}
-        viewport={{ once: true }} className="project-card cursor-pointer">
-          <img className='' src={velonto_mockup} alt="trendzio_mockup" />
+          onClick={() => window.open('https://velonto.vercel.app/', '_blank')}
+          variants={fadeIn('up', 0.2)}
+          initial="hidden"
+          whileInView={'show'}
+          viewport={{ once: true }}
+          className="project-card cursor-pointer"
+        >
+          <img className="" src={velonto_mockup} alt="trendzio_mockup" />
           <div className="project-card-text flex justify-between border-t-[1px] border-t-[#363636] my-5 py-5">
             <div>
-              <h2 className='uppercase'>velonto</h2>
-              <p className='text-lg text-gray-500 font-light'>Food Delivery</p>
+              <h2 className="uppercase">velonto</h2>
+              <p className="text-lg text-gray-500 font-light">Food Delivery</p>
             </div>
             <svg
               width="28"
@@ -63,7 +66,6 @@ function Projects() {
           </div>
         </motion.div>
       </div>
-
     </div>
   );
 }

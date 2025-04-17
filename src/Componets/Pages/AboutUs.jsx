@@ -11,7 +11,7 @@ const paragraph =
   'We are a talented team,tackling design challenges and delivering beyond expectations.';
 
 function AboutUs() {
-  const words = paragraph.split(' ');
+
   return (
     <div>
       <div class="bg-animation absolute">
@@ -20,7 +20,7 @@ function AboutUs() {
           <div class="blue blob"></div>
           <div class="violet blob"></div>
           <div class="cyan blob"></div>
-          <div class="black blob"></div>
+          <div class="indigo blob"></div>
         </div>
       </div>
 
@@ -90,7 +90,7 @@ function AboutUs() {
             Expectations &nbsp; &nbsp; &nbsp; &nbsp; ]
           </p>
 
-          <p className="w-[35%] font-thin">
+          <p className="w-[35%] font-thin text-gray-400">
             Our diverse expertise and innovative approach ensure that we not only meet but exceed
             your project's goals, creating impactful solutions that drive success.
           </p>

@@ -7,7 +7,7 @@ export default function BlurryCursor({isActive}) {
     const delayedMouse = useRef({x: 0, y: 0});
     const rafId = useRef(null);
     const circle = useRef();
-    const size = isActive ? 400 : 20;
+    const size = isActive ? 400 : 10;
 
     const lerp = (x, y, a) => x * (1 - a) + y * a;
 

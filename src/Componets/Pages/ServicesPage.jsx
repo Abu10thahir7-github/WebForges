@@ -1,6 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion';
 import { fadeIn } from '../../variants';
+import ZoomParallax from '../Animations/ZoomParallax/ZoomParallax';
 function ServicesPage() {
   return (
     <div>
@@ -40,7 +41,9 @@ function ServicesPage() {
           </motion.p>
         </div>
       </div>
+      <ZoomParallax/>
     </div>
+
   )
 }
 

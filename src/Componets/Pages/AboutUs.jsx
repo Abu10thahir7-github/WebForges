@@ -10,6 +10,9 @@ import Character from '../Animations/TextFillAnimation/Character';
 const paragraph =
   'We are a talented team,tackling design challenges and delivering beyond expectations.';
 
+  import officeImg from '../../assets/office.jpg'
+import PerspeTranstions from '../Animations/perspectiveSectionTransition/PerspeTranstions';
+import ZoomParallax from '../Animations/ZoomParallax/ZoomParallax';
 function AboutUs() {
 
   return (
@@ -66,13 +69,10 @@ function AboutUs() {
           >
             <path d="M11 6.5L0.499999 12.5622L0.5 0.437822L11 6.5Z" fill="currentColor"></path>
           </svg>
-          CONTACT US
+          WHO WE ARE
         </motion.h1>
         <motion.div
-          variants={fadeIn('up', 0.5)}
-          initial="hidden"
-          whileInView={'show'}
-          viewport={{ once: true }}
+
         >
           <Word paragraph={paragraph} />
         </motion.div>
@@ -95,6 +95,71 @@ function AboutUs() {
             your project's goals, creating impactful solutions that drive success.
           </p>
         </motion.div>
+        <div className='mt-52'>
+        <motion.h1
+          variants={fadeIn('up', 0.5)}
+          initial="hidden"
+          whileInView={'show'}
+          viewport={{ once: true }}
+          className="text-lg flex items-center mb-11 gap-3"
+        >
+          <svg
+            width="11"
+            height="13"
+            viewBox="0 0 11 13"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M11 6.5L0.499999 12.5622L0.5 0.437822L11 6.5Z" fill="currentColor"></path>
+          </svg>
+          2024
+        </motion.h1>
+        <div className='flex justify-between '>
+          <motion.p
+          variants={fadeIn('up', 0.5)}
+          initial="hidden"
+          whileInView={'show'}
+          viewport={{ once: true }} className='uppercase text-sm md:text-2xl lg:text-4xl'>F<span class="text-style-italic">o</span>UNDED IN K<span class="text-style-italic">E</span>RALA BY <br/>
+          SULAIMAN AND ABU THAHIR</motion.p>
+          <motion.img style={{mixBlendMode:'luminosity'}}
+          variants={fadeIn('up', 0.5)}
+          initial="hidden"
+          whileInView={'show'}
+          viewport={{ once: true }} width={'50%'} src={officeImg} alt=""/>
+        </div>
+        <motion.p
+        variants={fadeIn('up', 0.5)}
+        initial="hidden"
+        whileInView={'show'}
+        viewport={{ once: true }} className='text-base font-thin w-[30%] mt-10 text-gray-300'>Web Forges was established in 2018 with a vision to revolutionize UI/UX design. Recognizing that many digital interfaces lacked distinctiveness and user focus, our founders—passionate designers and tech enthusiasts—set out to change the landscape. With a team of innovative thinkers and design experts, Web Forges aims to infuse creativity and functionality into every project, transforming ordinary interfaces into exceptional user experiences.</motion.p>
+        </div>
+       <div className='mt-40'>
+       <motion.h1
+          variants={fadeIn('up', 0.5)}
+          initial="hidden"
+          whileInView={'show'}
+          viewport={{ once: true }}
+          className="text-lg flex items-center mb-11 gap-3"
+        >
+          <svg
+            width="11"
+            height="13"
+            viewBox="0 0 11 13"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M11 6.5L0.499999 12.5622L0.5 0.437822L11 6.5Z" fill="currentColor"></path>
+          </svg>
+          OUR TEAM OF EXPERTS
+        </motion.h1>
+        <motion.p
+          variants={fadeIn('up', 0.5)}
+          initial="hidden"
+          whileInView={'show'}
+          viewport={{ once: true }} className='uppercase text-sm md:text-2xl lg:text-4xl'>Meet <br/> <span class="text-style-italic">o</span>ur team leaders</motion.p>
+       </div>
+       <PerspeTranstions/>
+       <ZoomParallax/>
       </div>
     </div>
   );

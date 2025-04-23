@@ -10,6 +10,7 @@ import Services from './Services';
 import Contact from './Contact';
 import Footer from './Footer';
 import FreeTools from './FreeTools';
+import { Link } from 'react-router-dom';
 
 const sentences = [
   'Impact, Lasting changes',
@@ -581,13 +582,14 @@ function Home() {
             utc<span class="text-style-italic">o</span>mes
           </p>
 
+        <Link to={'/projects'} >
           <motion.button
             variants={fadeIn('left', 0.2)}
             initial="hidden"
             whileInView={'show'}
             viewport={{ once: true }}
             className="bg-[#f6bc17]  rounded-full px-4 py-2 text-black  text-base uppercase flex items-center gap-3 mt-3"
-          >
+            >
             see all work{' '}
             <svg
               width="20"
@@ -595,13 +597,14 @@ function Home() {
               viewBox="0 0 20 20"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-            >
+              >
               <path
                 d="M2.85711 10.8929L13.7232 10.8929L8.73211 15.8839L9.99997 17.1429L17.1428 10L9.99997 2.85714L8.74104 4.11607L13.7232 9.10714L2.85711 9.10714L2.85711 10.8929Z"
                 fill="currentColor"
-              ></path>
+                ></path>
             </svg>
           </motion.button>
+                </Link>
         </motion.div>
       </div>
       <Projects />
@@ -609,7 +612,7 @@ function Home() {
       <Services />
       <Contact />
 
-     
+
     </div>
   );
 }

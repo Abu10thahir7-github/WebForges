@@ -41,6 +41,7 @@ function ServicesPage() {
           </motion.p>
         </div>
       </div>
+      <div className='h-[30vh]'></div>
       <ZoomParallax/>
     </div>
 

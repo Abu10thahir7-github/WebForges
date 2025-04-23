@@ -13,6 +13,7 @@ const paragraph =
   import officeImg from '../../assets/office.jpg'
 import PerspeTranstions from '../Animations/perspectiveSectionTransition/PerspeTranstions';
 import ZoomParallax from '../Animations/ZoomParallax/ZoomParallax';
+import Contact from '../HomePages/Contact';
 function AboutUs() {
 
   return (
@@ -158,9 +159,55 @@ function AboutUs() {
           whileInView={'show'}
           viewport={{ once: true }} className='uppercase text-sm md:text-2xl lg:text-4xl'>Meet <br/> <span class="text-style-italic">o</span>ur team leaders</motion.p>
        </div>
-       <PerspeTranstions/>
-       <ZoomParallax/>
+
       </div>
+       <PerspeTranstions/>
+         <div className="Experts  mt-16">
+               <div class=" mt-32 flex flex-col lg:flex-row w-4/5 m-auto">
+                 <motion.div
+                   variants={fadeIn('up', 0.2)}
+                   initial="hidden"
+                   whileInView={'show'}
+                   viewport={{ once: true }}
+                   className="  w-full md:w-1/2 lg:w-1/2 "
+                 >
+                   <h1 className="text-lg sm:w-full sm:text-sm md:text-lg md:w-full flex items-center gap-3 uppercase">
+                     <svg
+                       width="11"
+                       height="13"
+                       viewBox="0 0 11 13"
+                       fill="none"
+                       xmlns="http://www.w3.org/2000/svg"
+                     >
+                       <path d="M11 6.5L0.499999 12.5622L0.5 0.437822L11 6.5Z" fill="currentColor"></path>
+                     </svg>
+                     Industry Experience
+                   </h1>
+                   <p className="uppercase mt-4 sm:w-full md:w-1/2  text-thin   font-thin text-base sm:text-sm md:text-lg lg:text-lg xl:text-lg text-gray-300">
+                     Our designers deliver personalized solutions that bring business value across various
+                     niches
+                   </p>
+                 </motion.div>
+                 <motion.div
+                   variants={fadeIn('up', 0.2)}
+                   initial="hidden"
+                   whileInView={'show'}
+                   viewport={{ once: true }}
+                   className="   mt-4 sm:w-full md:w-1/2  sm:mt-8 md:mt-0 lg:mt-0 xl:mt-0"
+                 >
+                   <h1 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-4xl  mb-3">
+                     E-Commerce Development
+                   </h1>
+                   <h1 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-4xl mb-3">
+                     Portfolio & Personal Websites
+                   </h1>
+                   <h1 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-4xl mb-3">
+                     Education & E-Learning
+                   </h1>
+                 </motion.div>
+               </div>
+             </div>
+             <Contact/>
     </div>
   );
 }

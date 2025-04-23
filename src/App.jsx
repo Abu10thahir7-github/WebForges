@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
-import { Suspense, lazy, useState } from 'react';
+import { Suspense, lazy, useEffect, useState } from 'react';
 
 import NavBarSidebar from './Componets/HomePages/NavBarSidebar';
 import Cursor from './Componets/Animations/CursorAnimation/Cursor';
@@ -20,6 +20,10 @@ const FreeTools = lazy(() => import('./Componets/HomePages/FreeTools'));
 
 const App = () => {
   const [isActive, setIsActive] = useState(false);
+
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scroll to the top of the page
+  }, []);
 
   return (
     <>

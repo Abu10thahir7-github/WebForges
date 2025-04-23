@@ -2,6 +2,7 @@
   height: 300vh;
   position: relative;
   .sticky{
+    text-align: center;
       position: sticky;
       overflow: hidden;
       top: 0;
@@ -15,7 +16,7 @@
           display: flex;
           align-items: center;
           justify-content: center;
-          .imageContainer{
+          .textContainer{
               position: relative;
               width: 25vw;
               height: 25vh;
@@ -24,7 +25,7 @@
               }
           }
           &:nth-of-type(2){
-              .imageContainer{
+              .textContainer{
                   top: -30vh;
                   left: 5vw;
                   width: 35vw;
@@ -32,44 +33,70 @@
               }
           }
           &:nth-of-type(3){
-              .imageContainer{
+              .textContainer{
                   top: -10vh;
-                  left: -25vw;
-                  width: 20vw;
+                  left: -29vw;
+                  width: 25vw;
                   height: 45vh;
               }
           }
           &:nth-of-type(4){
-              .imageContainer{
+              .textContainer{
                   left: 27.5vw;
                   width: 25vw;
                   height: 25vh;
               }
           }
           &:nth-of-type(5){
-              .imageContainer{
+              .textContainer{
                   top: 27.5vh;
                   left: 5vw;
-                  width: 20vw;
+                  width: 25vw;
                   height: 25vh;
               }
           }
           &:nth-of-type(6){
-              .imageContainer{
+              .textContainer{
                   top: 27.5vh;
-                  left: -22.5vw;
+                  left: -29.5vw;
                   width: 30vw;
                   height: 25vh;
               }
           }
           &:nth-of-type(7){
-              .imageContainer{
+              .textContainer{
                   top: 22.5vh;
-                  left: 25vw;
-                  width: 15vw;
+                  left: 30vw;
+                  width: 25vw;
+                  height: 15vh;
+              }
+          }
+          &:nth-of-type(8){
+              .textContainer{
+                  bottom: 29vh;
+                  left: 29vw;
+                  width: 19vw;
                   height: 15vh;
               }
           }
       }
   }
+}
+
+.textContainer {
+
+
+    background: url('/src/assets/neon-bg.jpg') no-repeat center center;
+    background-size: cover;
+    -webkit-background-clip: text;
+    color: transparent;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    background-size: 250% auto;
+
+}
+
+
+h2{
+    word-wrap: break-word;
 }

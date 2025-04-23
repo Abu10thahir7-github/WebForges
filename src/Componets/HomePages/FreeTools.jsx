@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { fadeIn } from '../../variants';
- 
+
 
 import serviceImg from '../../assets/service-1.png';
 import grid from '../../assets/grid.png';
@@ -48,7 +48,7 @@ function FreeTools() {
          initial="hidden"
          whileInView={'show'}
 
-         viewport={{ once: false }} className="absolute grediant-img -z-10    flex    " src={gradient} alt="" />
+         viewport={{ once: false }} className="absolute grediant-img -z-10    flex  infinite-rotate  " src={gradient} alt="" />
         <div className="relative flex flex-col lg:flex-row items-center robot-container h-auto lg:h-screen my-10 w-full rounded-xl overflow-hidden px-4">
           <div className="w-2/3">
             <img src={serviceImg} alt="" />

@@ -87,7 +87,7 @@ button{
   rotate: 34deg;
 }
 .noise {
-  background-image: url('../assets/Noise.webp');
+  background-image: url('../assets/newnoise.webp');
   background-size: cover;
   background-position: center;
   position: absolute;
@@ -261,9 +261,9 @@ button{
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('../assets/Noise.webp');
+  background-image: url('../assets/newnoise.webp');
   background-repeat: repeat;
-  opacity: 90%;
+  opacity: 100%;
   pointer-events: none;
   z-index: 0;
 }
@@ -543,4 +543,21 @@ form input, textarea:focus{
   margin-left: -.3rem;
   position: absolute;
   inset: 0% auto 0% 0%;
+}
+@keyframes infiniteRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.infinite-rotate {
+  animation: infiniteRotate 10s linear infinite;
+}
+
+.abu-profile{
+ 
+
 }

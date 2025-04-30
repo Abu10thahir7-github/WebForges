@@ -38,7 +38,7 @@ export default function Animation() {
 
 
       </div>
-      <div className='h-[50vh]' />
+      <div className='h-[10vh]' />
     </main>
   );
 }

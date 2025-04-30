@@ -162,7 +162,7 @@ function AboutUs() {
 
       </div>
        <PerspeTranstions/>
-         <div className="Experts  mt-16">
+         <div className="Experts  mt-0">
                <div class=" mt-32 flex flex-col lg:flex-row w-4/5 m-auto">
                  <motion.div
                    variants={fadeIn('up', 0.2)}

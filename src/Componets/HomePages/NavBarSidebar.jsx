@@ -32,13 +32,21 @@ export default function NavBarSidebar() {
       initial="hidden"
       whileInView={'show'}
       viewport={{ once: true }}
-    >
-      <Disclosure as="nav" className="navbar-container">
-        <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-          <div className="relative flex h-16 items-center justify-between">
-            <div className="absolute inset-y-0 right-0 flex items-center sm:hidden">
+ style={{ position: 'fixed', top: 0, zIndex: 50,display:'flex',justifyContent:'center'  }}   >
+      <Disclosure as="nav" className="navbar-container positon-sticky border-hidden bg-transparent  " style={{
+        position: 'fixed',
+        top: 0,
+        zIndex: 50
+      }}>
+        <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8  ">
+          
+          <div className="relative flex h-16 items-center justify-between  ">
+          <center className='sm:hidden text-2xl flex items-center'> <img src="https://res.cloudinary.com/dsxcm3fie/image/upload/v1739266951/logo_xoukk2.png" alt="webforges-logo" className='w-11 h-11' />WEBFORGES</center>
+
+            <div className="absolute inset-y-0 right-0 flex items-center sm:hidden  ">
+
               {/* Mobile menu button*/}
-              <DisclosureButton className="group relative inline-flex items-center justify-center rounded-full p-2 text-gray-400 hover:bg-gray hover:text-white focus:ring-2 focus:bg-yellow-500 focus:outline-hidden focus:ring-inset">
+              <DisclosureButton className="group relative inline-flex items-center justify-center rounded-full p-2 text-gray-400 hover:bg-gray hover:text-white focus:ring-2 focus:bg-yellow-500 focus:outline-hidden focus:ring-inset ">
                 <span className="absolute -inset-0.5" />
                 <span className="sr-only">Open main menu</span>
                 <svg

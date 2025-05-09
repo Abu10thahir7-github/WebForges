@@ -2,6 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { fadeIn } from '../../variants';
 function ProjectPage() {
+  scrollTo(0, 0);
+
   return (
     <div>
       <div class="bg-animation absolute">

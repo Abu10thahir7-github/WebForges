@@ -5,6 +5,8 @@ import DiscoverTextAnimation from '../Animations/DiscoverTextAnimation.jsx';
 import TabsComponent from '../Animations/Tabs.jsx';
 
 function Services() {
+  scrollTo(0, 0);
+
   return (
     <div className="services relative my-16">
       <svg

@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { fadeIn } from '../../variants';
 function ContactPage() {
   const [selected, setSelected] = useState(null);
+  scrollTo(0, 0);
 
   const services = [
     'Logo / branding',
@@ -210,7 +211,7 @@ function ContactPage() {
                 type="checkbox"
                 class="appearance-none w-3 h-3 bg-gray-300 rounded-[50px] checked:bg-yellow-400  transition"
               />
-              Less than $2K
+              Less than $5K
             </label>
             <label>
               {' '}
@@ -218,28 +219,28 @@ function ContactPage() {
                 type="checkbox"
                 class="appearance-none w-3 h-3 bg-gray-300 rounded-[50px] checked:bg-yellow-400  transition"
               />
-              $2K - $5K
+              $5K - $15K
             </label>
             <label>
               <input
                 type="checkbox"
                 class="appearance-none w-3 h-3 bg-gray-300 rounded-[50px] checked:bg-yellow-400  transition"
               />
-              $5K - $7.5K
+              $15K - $25K
             </label>
             <label>
               <input
                 type="checkbox"
                 class="appearance-none w-3 h-3 bg-gray-300 rounded-[50px] checked:bg-yellow-400  transition"
               />
-              $7.5K - $10K{' '}
+              $25K - $35K{' '}
             </label>
             <label>
               <input
                 type="checkbox"
                 class="appearance-none w-3 h-3 bg-gray-300 rounded-[50px] checked:bg-yellow-400  transition"
               />
-              $10K +
+              $35K +
             </label>
           </div>
           <div className="mt-6 flex items-center gap-2">

@@ -5,6 +5,8 @@ import moonImg from '../../assets/moon.webp';
 import { Link } from 'react-router-dom';
 
 function Contact() {
+  scrollTo(0, 0);
+
   return (
     <>
       <div className="h-[50vh]"></div>

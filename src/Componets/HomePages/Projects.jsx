@@ -5,7 +5,10 @@ import { motion } from 'framer-motion';
 import { fadeIn } from '../../variants';
 import Footer from './Footer';
 
+
 function Projects() {
+  scrollTo(0, 0);
+
   return (
     <div className="project-container sm:w-full md:w-full lg:w-4/5 m-auto flex   justify-end  ">
       <div className="w-[300px]  mx-auto block sm:mx-0 sm:w-4/5 md:w-4/6 lg:w-4/6 mt-16   flex-col gap-10">

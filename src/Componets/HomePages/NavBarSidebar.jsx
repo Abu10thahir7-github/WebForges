@@ -32,10 +32,10 @@ export default function NavBarSidebar() {
       initial="hidden"
       whileInView={'show'}
       viewport={{ once: true }}
- style={{ position: 'fixed', top: 0, zIndex: 50,display:'flex',justifyContent:'center'  }}   >
+ style={{ position: 'fixed', top: 20, zIndex: 50,display:'flex',justifyContent:'center'  }}   >
       <Disclosure as="nav" className="navbar-container positon-sticky border-hidden bg-transparent  " style={{
         position: 'fixed',
-        top: 0,
+        top: 30,
         zIndex: 50
       }}>
         <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8  ">

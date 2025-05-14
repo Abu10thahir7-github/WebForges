@@ -25,13 +25,13 @@ function Home() {
   const [currentSentenceIndex, setCurrentSentenceIndex] = useState(0);
   scrollTo(0, 0);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSentenceIndex(prevIndex => (prevIndex + 1) % sentences.length);
-    }, 3000); // Change sentence every 5 seconds
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setCurrentSentenceIndex(prevIndex => (prevIndex + 1) % sentences.length);
+  //   }, 3000); // Change sentence every 5 seconds
 
-    return () => clearInterval(interval);
-  }, []);
+  //   return () => clearInterval(interval);
+  // }, []);
 
   return (
     <div>

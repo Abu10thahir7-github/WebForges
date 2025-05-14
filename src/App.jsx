@@ -21,9 +21,7 @@ const FreeTools = lazy(() => import('./Componets/HomePages/FreeTools'));
 const App = () => {
   const [isActive, setIsActive] = useState(false);
 
-  useEffect(() => {
-    window.scrollTo(0, 0); // Scroll to the top of the page
-  }, []);
+
 
   return (
     <>

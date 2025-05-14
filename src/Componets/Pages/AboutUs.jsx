@@ -16,6 +16,8 @@ import ZoomParallax from '../Animations/ZoomParallax/ZoomParallax';
 import Contact from '../HomePages/Contact';
 function AboutUs() {
 
+  scrollTo(0, 0);
+
   return (
     <div>
       <div class="bg-animation absolute">

@@ -3,6 +3,8 @@ import { motion } from 'framer-motion';
 import { fadeIn } from '../../variants';
 import ZoomParallax from '../Animations/ZoomParallax/ZoomParallax';
 function ServicesPage() {
+  scrollTo(0, 0);
+
   return (
     <div>
           <div class="bg-animation absolute">

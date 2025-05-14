@@ -55,6 +55,7 @@ function getCategoryCounts(projects) {
 }
 
 function ProjectPage() {
+<<<<<<< HEAD
   const [selectedCategory, setSelectedCategory] = useState('All');
   const categoryCounts = getCategoryCounts(projects);
 
@@ -64,6 +65,9 @@ function ProjectPage() {
     selectedCategory === 'All'
       ? projects
       : projects.filter((p) => p.category === selectedCategory);
+=======
+  scrollTo(0, 0);
+>>>>>>> 2aafe4e426491af05a1ec5769330ba4ea115eccc
 
   return (
     <div>

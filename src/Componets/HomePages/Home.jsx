@@ -23,6 +23,7 @@ const sentences = [
 ];
 function Home() {
   const [currentSentenceIndex, setCurrentSentenceIndex] = useState(0);
+  scrollTo(0, 0);
 
   useEffect(() => {
     const interval = setInterval(() => {

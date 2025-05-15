@@ -21,6 +21,7 @@ import FreeTools from './Componets/HomePages/FreeTools';
 const App = () => {
   const [isActive, setIsActive] = useState(false);
 
+ 
   return (
     <>
       <Cursor className="" isActive={isActive} />

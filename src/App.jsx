@@ -10,20 +10,16 @@ import Footer from './Componets/HomePages/Footer';
 // import GradientCursor from "./Componets/Animations/CursorAnimation/GradientCursor";
 
 // Lazy loaded pages
-const Home = lazy(() => import('./Componets/HomePages/Home'));
-const Services = lazy(() => import('./Componets/HomePages/Services'));
-const Projects = lazy(() => import('./Componets/HomePages/Projects'));
-const Contact = lazy(() => import('./Componets/HomePages/Contact'));
-const Blog = lazy(() => import('./Componets/Pages/Blog'));
-const AboutUs = lazy(() => import('./Componets/Pages/AboutUs'));
-const FreeTools = lazy(() => import('./Componets/HomePages/FreeTools'));
+import Home from './Componets/HomePages/Home';
+import Services from './Componets/HomePages/Services';
+import Projects from './Componets/HomePages/Projects';
+import Contact from './Componets/HomePages/Contact';
+import Blog from './Componets/Pages/Blog';
+import AboutUs from './Componets/Pages/AboutUs';
+import FreeTools from './Componets/HomePages/FreeTools';
 
 const App = () => {
   const [isActive, setIsActive] = useState(false);
-
-  useEffect(() => {
-    window.scrollTo(0, 0); // Scroll to the top of the page
-  }, []);
 
   return (
     <>

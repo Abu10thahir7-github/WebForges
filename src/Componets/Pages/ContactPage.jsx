@@ -66,7 +66,7 @@ function ContactPage() {
               className="z-10  text-sm sm:text-base md:text-lg lg:text-3xl"
               href=""
             >
-              contact@capiproduct.com
+              contact@webforges.com
             </motion.a>
           </div>
           <div className=" flex justify-between border-t py-10">

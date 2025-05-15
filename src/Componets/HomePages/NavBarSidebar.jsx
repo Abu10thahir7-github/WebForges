@@ -33,13 +33,13 @@ export default function NavBarSidebar() {
       whileInView={'show'}
       viewport={{ once: true }}
  style={{ position: 'fixed', top: 20, zIndex: 50,display:'flex',justifyContent:'center'  }}   >
-      <Disclosure as="nav" className="navbar-container positon-sticky border-hidden bg-transparent  " style={{
+      <Disclosure as="nav" className="navbar-container positon-sticky    " style={{
         position: 'fixed',
         top: 30,
         zIndex: 50
       }}>
         <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8  ">
-          
+
           <div className="relative flex h-16 items-center justify-between  ">
           <center className='sm:hidden text-2xl flex items-center'> <img src="https://res.cloudinary.com/dsxcm3fie/image/upload/v1739266951/logo_xoukk2.png" alt="webforges-logo" className='w-11 h-11' />WEBFORGES</center>
 

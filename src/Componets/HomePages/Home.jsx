@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import skyImage from '../../assets/skyImg.webp';
-
+import { useLocation } from 'react-router-dom';
 import NavBarSidebar from './NavBarSidebar';
 import Animation from './animation';
 import Projects from './Projects';
@@ -11,27 +11,15 @@ import Contact from './Contact';
 import Footer from './Footer';
 import FreeTools from './FreeTools';
 import { Link } from 'react-router-dom';
+import TextRotateAnimate from '../Animations/TextRotateAnimate';
 
-const sentences = [
-  'Impact, Lasting changes',
-  'Innovation, Bold ideas',
-  'Design, Creative solutions',
-  'Experience, Experienced team',
-  'Bringing Your Digital Ideas to Life with Modern,',
-  'Scalable,',
-  'and High-Performing Solutions.',
-];
+
 function Home() {
-  const [currentSentenceIndex, setCurrentSentenceIndex] = useState(0);
-  scrollTo(0, 0);
 
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setCurrentSentenceIndex(prevIndex => (prevIndex + 1) % sentences.length);
-  //   }, 3000); // Change sentence every 5 seconds
+const location = useLocation();
 
-  //   return () => clearInterval(interval);
-  // }, []);
+
+
 
   return (
     <div>
@@ -276,13 +264,8 @@ function Home() {
             </linearGradient>
           </defs>
         </svg>
-        <div class="hero items-center flex h-[70vh]">
-          <div className="rotating-text-container z-10 text-xl sm:text-base md:text-lg lg:text-5xl">
-            {/* Add key prop here to reset animation on every change */}
-            <span key={currentSentenceIndex} className="rotating-text">
-              {sentences[currentSentenceIndex]}
-            </span>
-          </div>
+        <div class="hero items-center  m-auto w-fit flex h-[70vh]">
+          <TextRotateAnimate/>
         </div>
         <div class="scrollDown w-fit m-auto mb-7">
           <svg

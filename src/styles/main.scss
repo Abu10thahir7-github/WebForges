@@ -156,7 +156,7 @@ button{
   }
 
   .rotating-text {
-    position: absolute;
+    position: relative;
 
     opacity: 0;
 
@@ -577,3 +577,7 @@ form input, textarea:focus{
 .floating {
   animation: floating 3s ease-in-out infinite;
 }
+
+/* You can use Tailwind or regular CSS */
+
+ 

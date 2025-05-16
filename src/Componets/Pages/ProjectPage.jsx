@@ -111,7 +111,7 @@ function ProjectPage() {
             onClick={() => setSelectedCategory(cat)}
             className={`px-4 py-2 rounded-full border ${
               selectedCategory === cat
-                ? 'bg-yellow-400 text-white'
+                ? 'bg-yellow-400 text-black'
                 : 'bg-black text-white border-gray-300'
             }`}
           >

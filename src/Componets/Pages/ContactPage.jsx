@@ -63,11 +63,10 @@ function ContactPage() {
               initial="hidden"
               whileInView={'show'}
               viewport={{ once: true }}
-              className="z-10  text-sm sm:text-base md:text-lg lg:text-3xl"
+              className="z-10  text-sm sm:text-base md:text-lg lg:text-3xl hover:text-yellow-400"
               href="mailto:webforges.site@gmail.com"
             >
-                webforges.site@gmail.com
-
+              webforges.site@gmail.com
             </motion.a>
           </div>
           <div className=" flex justify-between border-t py-10">
@@ -78,15 +77,24 @@ function ContactPage() {
               viewport={{ once: true }}
               className=" z-10 text-sm"
             >
-           <a href="tel:+919037435846">+91 90374 35846</a><br />
-  <a href="https://wa.me/918921966289" target="_blank">+91 89219 66289 (WhatsApp)</a>
+              <a className="hover:text-yellow-400" href="tel:+919037435846">
+                +91 90374 35846
+              </a>
+              <br />
+              <a
+                className="hover:text-yellow-400"
+                href="https://wa.me/918921966289"
+                target="_blank"
+              >
+                +91 89219 66289 (WhatsApp)
+              </a>
             </motion.p>{' '}
             <motion.a
               variants={fadeIn('up', 0.2)}
               initial="hidden"
               whileInView={'show'}
               viewport={{ once: true }}
-              className="text-sm sm:text-base md:text-lg lg:text-3xl z-10"
+              className="text-sm sm:text-base md:text-lg lg:text-3xl z-10 hover:text-yellow-400"
               href="tel:+919037435846"
             >
               Book a call
@@ -127,34 +135,44 @@ function ContactPage() {
           variants={fadeIn('up', 0.2)}
           initial="hidden"
           whileInView={'show'}
-          viewport={{ once: true }} className="text-sm sm:text-base md:text-lg lg:text-3xl  text-white mt-16">
+          viewport={{ once: true }}
+          className="text-sm sm:text-base md:text-lg lg:text-3xl  text-white mt-16"
+        >
           {' '}
           Your informatio
         </motion.p>
-        <motion.form   variants={fadeIn('up', 0.2)}
-            initial="hidden"
-            whileInView={'show'}
-            viewport={{ once: true }} action="">
+        <motion.form
+          variants={fadeIn('up', 0.2)}
+          initial="hidden"
+          whileInView={'show'}
+          viewport={{ once: true }}
+          action=""
+        >
           <div className="flex justify-between flex-wrap  mt-10">
-            <motion.div  variants={fadeIn('up', 0.2)}
-            initial="hidden"
-            whileInView={'show'}
-            viewport={{ once: true }} className="w-full md:w-[49%]">
+            <motion.div
+              variants={fadeIn('up', 0.2)}
+              initial="hidden"
+              whileInView={'show'}
+              viewport={{ once: true }}
+              className="w-full md:w-[49%]"
+            >
               <label htmlFor="firstName" className="block mb-1">
                 First Name
               </label>
-              <input type="text" id="firstName" className="w-full p-2 " />
+              <input type="text" id="firstName" className="w-full p-2  text-yellow-400" />
             </motion.div>
 
             <motion.div
               variants={fadeIn('up', 0.2)}
               initial="hidden"
               whileInView={'show'}
-              viewport={{ once: true }} className="w-full md:w-[49%]">
+              viewport={{ once: true }}
+              className="w-full md:w-[49%]"
+            >
               <label htmlFor="lastName" className="block mb-1">
                 Last Name
               </label>
-              <input type="text" id="lastName" className="w-full p-2 " />
+              <input type="text" id="lastName" className="w-full p-2 text-yellow-400 " />
             </motion.div>
           </div>
 
@@ -163,42 +181,50 @@ function ContactPage() {
               variants={fadeIn('up', 0.2)}
               initial="hidden"
               whileInView={'show'}
-              viewport={{ once: true }} className="w-full md:full">
+              viewport={{ once: true }}
+              className="w-full md:full"
+            >
               <label htmlFor="email" className="block mb-1">
                 Email Address
               </label>
-              <input type="text" id="email" className="w-full p-2 " />
+              <input type="text" id="email" className="w-full p-2 text-yellow-400" />
             </motion.div>
             <motion.div
               variants={fadeIn('up', 0.2)}
               initial="hidden"
               whileInView={'show'}
-              viewport={{ once: true }} className="w-full md:full">
+              viewport={{ once: true }}
+              className="w-full md:full"
+            >
               <label htmlFor=" Phone" className="block mb-1">
                 {' '}
                 Phone{' '}
               </label>
-              <input type="text" id=" Phone" className="w-full p-2 " />
+              <input type="text" id=" Phone" className="w-full p-2 text-yellow-400 " />
             </motion.div>
             <motion.div
               variants={fadeIn('up', 0.2)}
               initial="hidden"
               whileInView={'show'}
-              viewport={{ once: true }} className="w-full md:full">
+              viewport={{ once: true }}
+              className="w-full md:full"
+            >
               <label htmlFor="Company" className="block mb-1">
                 Company{' '}
               </label>
-              <input type="text" id="Company" className="w-full p-2 " />
+              <input type="text" id="Company" className="w-full p-2 text-yellow-400" />
             </motion.div>
             <motion.div
               variants={fadeIn('up', 0.2)}
               initial="hidden"
               whileInView={'show'}
-              viewport={{ once: true }} className="w-full md:full">
+              viewport={{ once: true }}
+              className="w-full md:full"
+            >
               <label htmlFor="ProjectDetail" className="block mb-1">
                 ProjectDetail{' '}
               </label>
-              <textarea rows="5" type="text" id="ProjectDetail" className="w-full p-2 " />
+              <textarea rows="5" type="text" id="ProjectDetail" className="w-full p-2 text-yellow-400" />
             </motion.div>
           </div>
         </motion.form>

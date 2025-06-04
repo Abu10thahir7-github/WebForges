@@ -76,18 +76,18 @@ function Footer() {
             viewport={{ once: true }}
             className="flex flex-col   sm:mx-0 lg:mx-10"
           >
-            <p className="text-thin text-slate-200 mb-4">Our address</p>
+            <p className="text-thin border-b-2 w-fit text-slate-200 mb-4">Our address</p>
             <ul className="flex flex-col gap-4 ">
               <li>
-                <a href="mailto:webforges.site@gmail.com">webforges.site@gmail.com</a>
+                <a className='hover:text-yellow-400' href="mailto:webforges.site@gmail.com">webforges.site@gmail.com</a>
               </li>
 
               <li>
-            <a href="tel:+919037435846">+91 90374 35846</a><br />
-  <a href="https://wa.me/918921966289" target="_blank">+91 89219 66289 (WhatsApp)</a>
-                 
+            <a className='hover:text-yellow-400' href="tel:+919037435846">+91 90374 35846</a><br />
+  <a className='hover:text-yellow-400' href="https://wa.me/918921966289" target="_blank">+91 89219 66289 (WhatsApp)</a>
+
               </li>
-              <li>Palakkad, Kerala, India</li>
+              <li className='hover:text-yellow-400'>Palakkad, Kerala, India</li>
             </ul>
           </motion.div>
           <motion.div
@@ -97,7 +97,7 @@ function Footer() {
             viewport={{ once: true }}
             className="flex flex-col    sm:mx-0 lg:mx-10"
           >
-            <p className="text-thin mt-8  lg:mt-0  text-slate-200 mb-4">Follow us</p>
+            <p className="text-thin mt-8  lg:mt-0  text-slate-200 mb-4 border-b-2 w-fit">Follow us</p>
             <ul className="flex gap-4 ">
               <li>
                 <svg
@@ -155,7 +155,7 @@ function Footer() {
             viewport={{ once: true }}
             className="flex flex-col mt-8  lg:mt-0    "
           >
-            <p className="text-thin text-slate-200 mb-4">Navigation</p>
+            <p className="text-thin text-slate-200 mb-4 border-b-2 w-fit">Navigation</p>
             <ul className="flex flex-col gap-4 text-lg">
               {menuItems.map(item => (
                 <li

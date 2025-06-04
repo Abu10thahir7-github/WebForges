@@ -64,9 +64,10 @@ function ContactPage() {
               whileInView={'show'}
               viewport={{ once: true }}
               className="z-10  text-sm sm:text-base md:text-lg lg:text-3xl"
-              href=""
+              href="mailto:webforges.site@gmail.com"
             >
-              contact@webforges.com
+                webforges.site@gmail.com
+
             </motion.a>
           </div>
           <div className=" flex justify-between border-t py-10">
@@ -77,8 +78,8 @@ function ContactPage() {
               viewport={{ once: true }}
               className=" z-10 text-sm"
             >
-              +84 965 657 893
-              <br /> (WhatsApp/Telegram)
+           <a href="tel:+919037435846">+91 90374 35846</a><br />
+  <a href="https://wa.me/918921966289" target="_blank">+91 89219 66289 (WhatsApp)</a>
             </motion.p>{' '}
             <motion.a
               variants={fadeIn('up', 0.2)}
@@ -86,7 +87,7 @@ function ContactPage() {
               whileInView={'show'}
               viewport={{ once: true }}
               className="text-sm sm:text-base md:text-lg lg:text-3xl z-10"
-              href=""
+              href="tel:+919037435846"
             >
               Book a call
             </motion.a>

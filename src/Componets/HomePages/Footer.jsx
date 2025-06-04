@@ -28,7 +28,8 @@ function Footer() {
       </div>
       <div className="w-full flex flex-row flex-wrap justify-between pb-20 mb-10 border-gray-600 border-b   ">
         <div className="">
-          <motion.di v
+          <motion.di
+            v
             variants={fadeIn('up', 0.2)}
             initial="hidden"
             whileInView={'show'}
@@ -36,8 +37,8 @@ function Footer() {
             className="flex flex-col gap-10"
           >
             <h1 className="text-base sm:text-lg md:text-xl lg:text-3xl xl:text-5xl ">
-              L<span class="text-style-italic">e</span>t's w<span class="text-style-italic">o</span>rk <br />
-              t<span class="text-style-italic">o</span>gether
+              L<span class="text-style-italic">e</span>t's w<span class="text-style-italic">o</span>
+              rk <br />t<span class="text-style-italic">o</span>gether
             </h1>
             <p className="text-sm font-extralight">
               Reach out anytime to discuss a <br />
@@ -67,7 +68,7 @@ function Footer() {
             </motion.button>
           </motion.di>
         </div>
-        <div className="flex flex-col mt-8 md:flex-row lg:mt-0" >
+        <div className="flex flex-col mt-8 md:flex-row lg:mt-0">
           <motion.div
             variants={fadeIn('up', 0.2)}
             initial="hidden"
@@ -77,11 +78,14 @@ function Footer() {
           >
             <p className="text-thin text-slate-200 mb-4">Our address</p>
             <ul className="flex flex-col gap-4 ">
-              <li>contact@webforges.com</li>
               <li>
-              +91 90374 35846 <br />
-              +91 8921966289 <br />
-                (Whatsapp/Telegram)
+                <a href="mailto:webforges.site@gmail.com">webforges.site@gmail.com</a>
+              </li>
+
+              <li>
+            <a href="tel:+919037435846">+91 90374 35846</a><br />
+  <a href="https://wa.me/918921966289" target="_blank">+91 89219 66289 (WhatsApp)</a>
+                 
               </li>
               <li>Palakkad, Kerala, India</li>
             </ul>
@@ -185,17 +189,17 @@ function Footer() {
         viewport={{ once: true }}
         className="text-center  font-thin mb-20"
       >
-          <p>
-    © {new Date().getFullYear()} All rights reserved | Created by{" "}
-    <a
-      href="https://abu-thahir.vercel.app/"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="  underline hover:text-blue-600 transition"
-    >
-      Abu Thahir
-    </a>
-  </p>
+        <p>
+          © {new Date().getFullYear()} All rights reserved | Created by{' '}
+          <a
+            href="https://abu-thahir.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="  underline hover:text-blue-600 transition"
+          >
+            Abu Thahir
+          </a>
+        </p>
       </motion.h1>
     </div>
   );

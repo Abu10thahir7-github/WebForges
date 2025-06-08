@@ -26,6 +26,7 @@ function classNames(...classes) {
 
 export default function NavBarSidebar() {
   const location = useLocation();
+  const image_logo="https://postimg.cc/mhRh58XP";
   return (
     <motion.div
       variants={fadeIn('up', 0.2)}
@@ -41,7 +42,7 @@ export default function NavBarSidebar() {
         <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8  ">
 
           <div className="relative flex h-16 items-center justify-between  ">
-          <center className='sm:hidden text-2xl flex items-center'> <img src="https://res.cloudinary.com/dsxcm3fie/image/upload/v1739266951/logo_xoukk2.png" alt="webforges-logo" className='w-11 h-11' />WEBFORGES</center>
+          <center className='sm:hidden text-2xl flex items-center'> <img src={image_logo} alt="webforges-logo" className='w-11 h-11' />WEBFORGES</center>
 
             <div className="absolute inset-y-0 right-0 flex items-center sm:hidden  ">
 

@@ -10,6 +10,7 @@ import {
 import { motion } from 'framer-motion';
 import { fadeIn } from '../../variants';
 import { Link, useLocation } from 'react-router-dom';
+import image_logo from '../../assets/logo.png'
 
 const navigation = [
   { name: 'Home', href: '/', current: false },
@@ -26,7 +27,6 @@ function classNames(...classes) {
 
 export default function NavBarSidebar() {
   const location = useLocation();
-  const image_logo="https://postimg.cc/mhRh58XP";
   return (
     <motion.div
       variants={fadeIn('up', 0.2)}
@@ -34,13 +34,13 @@ export default function NavBarSidebar() {
       whileInView={'show'}
       viewport={{ once: true }}
  style={{ position: 'fixed', top: 20, zIndex: 50,display:'flex',justifyContent:'center'  }}   >
-      <Disclosure as="nav" className="navbar-container positon-sticky    " style={{
+      <Disclosure as="nav" className="navbar-container positon-sticky border-hidden bg-transparent  " style={{
         position: 'fixed',
         top: 30,
         zIndex: 50
       }}>
         <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8  ">
-
+          
           <div className="relative flex h-16 items-center justify-between  ">
           <center className='sm:hidden text-2xl flex items-center'> <img src={image_logo} alt="webforges-logo" className='w-11 h-11' />WEBFORGES</center>
 

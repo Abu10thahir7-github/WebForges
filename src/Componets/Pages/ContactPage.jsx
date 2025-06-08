@@ -1,9 +1,75 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { fadeIn } from '../../variants';
+import swal from 'sweetalert';
 function ContactPage() {
   const [selected, setSelected] = useState(null);
-  scrollTo(0, 0);
+  const [firstName, setFirstName] = useState('');
+const [lastName, setLastName] = useState('');
+const [email, setEmail] = useState('');
+const [phone, setPhone] = useState('');
+const [company, setCompany] = useState('');
+const [projectDetail, setProjectDetail] = useState('');
+const [budget, setBudget] = useState('');
+
+
+  const time = new Date().toLocaleString(); // submission time
+
+  const message = `*New Contact Form Submission*\n\n` +
+    `Service: ${selected || "Not selected"}\n` +
+    `First Name: ${firstName+" "+lastName}\n` +
+    `Last Name: ${lastName}\n` +
+    `Email: ${email}\n` +
+    `Phone: ${phone}\n` +
+    `Company: ${company}\n` +
+    `Details: ${projectDetail}\n` +
+    `Budget: ${budget || "Not specified"}\n` +
+    `Submitted At: ${time}`;
+
+ const handleSend = async (e) => {
+  e.preventDefault();
+
+fetch('https://hooks.zapier.com/hooks/catch/23284036/uyuaotx/', {
+  method: 'POST',
+  // Don't set 'Content-Type' explicitly to avoid CORS preflight
+  body: JSON.stringify({
+  "firstName": firstName,
+  "lastName": lastName,
+  "email": email,
+  "phone": phone,
+  "company": company,
+  "service": selected,
+  "details": projectDetail,
+  "budget": budget,
+  "submittedAt": time
+}),
+})
+.then(response => {
+  if (response.ok) {
+    console.log('✅ Data sent successfully');
+    swal("Good job!", "We have received your message and will get back to you soon!", "success");
+    setFirstName(''); // Reset the form
+    setLastName('');
+    setEmail('');
+    setPhone('');
+    setCompany('');
+    setSelected(null);
+    setProjectDetail('');
+    setBudget('');
+
+  } else {
+    console.error('❌ Failed to send data');
+    window.blank
+  }
+})
+.catch(error => {
+  console.error('❌ Error sending data:', error);
+  swal("Oops!", "Something went wrong! Please try again later.", "error");
+});
+};
+
+
+
 
   const services = [
     'Logo / branding',
@@ -159,7 +225,13 @@ function ContactPage() {
               <label htmlFor="firstName" className="block mb-1">
                 First Name
               </label>
-              <input type="text" id="firstName" className="w-full p-2  text-yellow-400" />
+<input
+  type="text"
+  id="firstName"
+  className="w-full p-2 text-yellow-400"
+  value={firstName}
+  onChange={(e) => setFirstName(e.target.value)}
+/>
             </motion.div>
 
             <motion.div
@@ -172,7 +244,10 @@ function ContactPage() {
               <label htmlFor="lastName" className="block mb-1">
                 Last Name
               </label>
-              <input type="text" id="lastName" className="w-full p-2 text-yellow-400 " />
+              <input type="text" id="lastName"
+               value={lastName}
+  onChange={(e) => setLastName(e.target.value)}
+   className="w-full p-2 text-yellow-400 " />
             </motion.div>
           </div>
 
@@ -187,7 +262,10 @@ function ContactPage() {
               <label htmlFor="email" className="block mb-1">
                 Email Address
               </label>
-              <input type="text" id="email" className="w-full p-2 text-yellow-400" />
+              <input type="text" id="email"
+              value={email}
+  onChange={(e) => setEmail(e.target.value)}
+              className="w-full p-2 text-yellow-400" />
             </motion.div>
             <motion.div
               variants={fadeIn('up', 0.2)}
@@ -200,7 +278,10 @@ function ContactPage() {
                 {' '}
                 Phone{' '}
               </label>
-              <input type="text" id=" Phone" className="w-full p-2 text-yellow-400 " />
+              <input type="text" id=" Phone"
+              value={phone}
+  onChange={(e) => setPhone(e.target.value)}
+              className="w-full p-2 text-yellow-400 " />
             </motion.div>
             <motion.div
               variants={fadeIn('up', 0.2)}
@@ -212,7 +293,10 @@ function ContactPage() {
               <label htmlFor="Company" className="block mb-1">
                 Company{' '}
               </label>
-              <input type="text" id="Company" className="w-full p-2 text-yellow-400" />
+              <input type="text" id="Company"
+              value={company}
+  onChange={(e) => setCompany(e.target.value)}
+              className="w-full p-2 text-yellow-400" />
             </motion.div>
             <motion.div
               variants={fadeIn('up', 0.2)}
@@ -224,7 +308,10 @@ function ContactPage() {
               <label htmlFor="ProjectDetail" className="block mb-1">
                 ProjectDetail{' '}
               </label>
-              <textarea rows="5" type="text" id="ProjectDetail" className="w-full p-2 text-yellow-400" />
+              <textarea rows="5" type="text" id="ProjectDetail"
+              value={projectDetail}
+  onChange={(e) => setProjectDetail(e.target.value)}
+              className="w-full p-2 text-yellow-400" />
             </motion.div>
           </div>
         </motion.form>
@@ -236,6 +323,8 @@ function ContactPage() {
               {' '}
               <input
                 type="checkbox"
+  checked={budget === 'Less than $5K'}
+  onChange={() => setBudget('Less than $5K')}
                 class="appearance-none w-3 h-3 bg-gray-300 rounded-[50px] checked:bg-yellow-400  transition"
               />
               Less than $5K
@@ -244,6 +333,8 @@ function ContactPage() {
               {' '}
               <input
                 type="checkbox"
+  checked={budget === '$5K - $15K'}
+  onChange={() => setBudget('$5K - $15K')}
                 class="appearance-none w-3 h-3 bg-gray-300 rounded-[50px] checked:bg-yellow-400  transition"
               />
               $5K - $15K
@@ -251,20 +342,26 @@ function ContactPage() {
             <label>
               <input
                 type="checkbox"
+  checked={budget === '$15K - $25K'}
+  onChange={() => setBudget('$15K - $25K')}
                 class="appearance-none w-3 h-3 bg-gray-300 rounded-[50px] checked:bg-yellow-400  transition"
               />
               $15K - $25K
             </label>
             <label>
               <input
-                type="checkbox"
+               type="checkbox"
+  checked={budget === '$25K - $35K'}
+  onChange={() => setBudget('$25K - $35K')}
                 class="appearance-none w-3 h-3 bg-gray-300 rounded-[50px] checked:bg-yellow-400  transition"
               />
               $25K - $35K{' '}
             </label>
             <label>
               <input
-                type="checkbox"
+               type="checkbox"
+  checked={budget === '$35K +'}
+  onChange={() => setBudget('$35K +')}
                 class="appearance-none w-3 h-3 bg-gray-300 rounded-[50px] checked:bg-yellow-400  transition"
               />
               $35K +
@@ -277,15 +374,14 @@ function ContactPage() {
             </label>
           </div>
 
-          <motion.button
-            variants={fadeIn('up', 0.2)}
-            initial="hidden"
-            whileInView={'show'}
-            viewport={{ once: true }}
-            className="uppercase flex items-center gap-2 mt-10 bg-[#f6bc16] p-3 text-black  px-20 text-lg rounded-full"
-          >
-            submit
-          </motion.button>
+         <button
+  type="submit"
+  onClick={handleSend}
+  className="mt-8 px-6 py-2 bg-yellow-400 text-black rounded-lg hover:bg-yellow-500 transition"
+>
+  Submit
+</button>
+
         </div>
       </div>
     </div>

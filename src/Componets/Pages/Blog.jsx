@@ -5,7 +5,7 @@ import BlogTextAnimation from '../Animations/BlogText';
 import Word from '../Animations/TextFillAnimation/Word';
 import Card from '../Animations/CardAnimation';
 import abu from '../../assets/abu.jpg';
-import sulaiman from '../../assets/sulu-photo.jpg';
+import sulaiman from '../../assets/sulai.jpg';
 
 
 import { useScroll } from 'framer-motion';

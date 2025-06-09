@@ -87,7 +87,6 @@ function FreeTools() {
           <span className="text-sm sm:text-base">{text}</span>
         </motion.li>
       ))}
-    </ul>
  <motion.button
   onClick={() => window.open('https://webforges.site/', '_blank')}
            variants={fadeIn('up', 0.2)}
@@ -97,6 +96,7 @@ function FreeTools() {
           className='uppercase mt-6 flex items-center gap-2 bg-[#f6bc16] px-5 py-3 text-black text-base sm:text-lg rounded-full shadow-md hover:scale-105 transition-transform'> go  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M2.85711 10.8931L13.7232 10.8931L8.73211 15.8841L9.99997 17.1431L17.1428 10.0002L9.99997 2.85735L8.74104 4.11628L13.7232 9.10735L2.85711 9.10735L2.85711 10.8931Z" fill="currentColor"></path>
 </svg></motion.button>
+    </ul>
           </div>
 
         </div>

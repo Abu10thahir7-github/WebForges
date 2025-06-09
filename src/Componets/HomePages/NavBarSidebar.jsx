@@ -81,7 +81,7 @@ export default function NavBarSidebar() {
                         className={classNames(
                           isActive
                             ? 'bg-yellow-500 text-black'
-                            : 'text-gray-300 hover:bg-yellow-500 hover:text-black',
+                            : 'text-white hover:bg-yellow-500 hover:text-black',
                           'rounded-full uppercase px-3 py-2 text-sm font-normal lg:text-lg',
                         )}
                       >

@@ -31,7 +31,7 @@ function TextRotateAnimate() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.6, ease: 'easeInOut' }}
-          className="text-lg sm:w-full sm:text-sm md:text-6xl text-center font-semibold"
+          className="text-lg  w-full sm:text-sm md:text-6xl text-center font-semibold "
         >
           {sentences[currentSentenceIndex]}
         </motion.span>

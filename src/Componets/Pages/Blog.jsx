@@ -11,6 +11,7 @@ import sulaiman from '../../assets/sulu-photo.jpg';
 import { useScroll } from 'framer-motion';
 import { useEffect, useRef } from 'react';
 import Lenis from '@studio-freight/lenis'
+import Contact from '../HomePages/Contact';
 export const projects = [
   {
     title: "Muhammed Sulaiman T",
@@ -197,11 +198,13 @@ function Blog() {
       <div>
 
       </div>
+      <div className='h-[20vh]'></div>
       <BlogTextAnimation/>
-
-      <div className="w-4/5 m-auto   mt-10 ">
+<div className='h-[30vh]'></div>
+      <div className="w-4/5 m-auto     ">
         <p className=' text-lg sm:text-2xl md:text-3xl lg:text-4xl'>  <Word paragraph={paragraph} />
 </p>
+
 <main ref={container} className='relative mt-36'>
       {
         projects.map( (project, i) => {
@@ -211,6 +214,7 @@ function Blog() {
       }
     </main>
       </div>
+          <Contact />
     </div>
   );
 }

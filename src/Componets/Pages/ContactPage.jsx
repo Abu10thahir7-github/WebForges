@@ -97,13 +97,14 @@ fetch('https://hooks.zapier.com/hooks/catch/23284036/uyuaotx/', {
           <div class="purple blob"></div>
         </div>
       </div>
-      <div className="w-4/5 m-auto h-screen flex  justify-center items-center gap-20 text-white  ">
+<div className="px-4 pt-32 w-[90%] md:w-4/5 mx-auto min-h-screen flex flex-col md:flex-row justify-center items-center gap-10 md:gap-20 text-white">
+
         <motion.h1
           variants={fadeIn('up', 0.2)}
           initial="hidden"
           whileInView={'show'}
           viewport={{ once: true }}
-          className="text-sm sm:text-base md:text-lg lg:text-7xl z-10 text-white"
+          className="text-3xl sm:text-3xl md:text-3xl lg:text-7xl z-10 text-white"
         >
           Let's <br /> Collab
         </motion.h1>
@@ -114,7 +115,7 @@ fetch('https://hooks.zapier.com/hooks/catch/23284036/uyuaotx/', {
           viewport={{ once: true }}
           className="w-[75%]"
         >
-          <div className=" py-10 border-t flex justify-between ">
+          <div className=" py-10 border-t flex flex-col md:flex-row  justify-between ">
             <motion.p
               variants={fadeIn('up', 0.2)}
               initial="hidden"
@@ -129,13 +130,13 @@ fetch('https://hooks.zapier.com/hooks/catch/23284036/uyuaotx/', {
               initial="hidden"
               whileInView={'show'}
               viewport={{ once: true }}
-              className="z-10  text-sm sm:text-base md:text-lg lg:text-3xl hover:text-yellow-400"
+              className="z-10  text-sm sm:text-base md:text-lg lg:text-3xl hover:text-yellow-400 mt-14 md:mt-0"
               href="mailto:webforges.site@gmail.com"
             >
               webforges.site@gmail.com
             </motion.a>
           </div>
-          <div className=" flex justify-between border-t py-10">
+          <div className=" flex justify-between border-t py-10   flex-col md:flex-row ">
             <motion.p
               variants={fadeIn('up', 0.2)}
               initial="hidden"
@@ -160,7 +161,7 @@ fetch('https://hooks.zapier.com/hooks/catch/23284036/uyuaotx/', {
               initial="hidden"
               whileInView={'show'}
               viewport={{ once: true }}
-              className="text-sm sm:text-base md:text-lg lg:text-3xl z-10 hover:text-yellow-400"
+              className="text-sm sm:text-base md:text-lg lg:text-3xl z-10 hover:text-yellow-400 mt-14 md:mt-0"
               href="tel:+919037435846"
             >
               Book a call
@@ -177,7 +178,7 @@ fetch('https://hooks.zapier.com/hooks/catch/23284036/uyuaotx/', {
           className="text-sm sm:text-base md:text-lg lg:text-3xl text-white"
         >
           {' '}
-          Projects type
+          Projects type:
         </motion.p>
         <div className="flex contact-form-projectType gap-5 mt-10 flex-wrap">
           {services.map((service, index) => (
@@ -188,7 +189,7 @@ fetch('https://hooks.zapier.com/hooks/catch/23284036/uyuaotx/', {
               viewport={{ once: true }}
               key={index}
               onClick={() => handleSelect(service)}
-              className={`px-4 py-2 rounded-lg border ${
+              className={`text-sm sm:text-2xl   px-4 py-2 rounded-lg border ${
                 selected === service ? 'bg-blue-600 text-white' : 'bg-white text-black'
               } transition`}
             >
@@ -205,7 +206,7 @@ fetch('https://hooks.zapier.com/hooks/catch/23284036/uyuaotx/', {
           className="text-sm sm:text-base md:text-lg lg:text-3xl  text-white mt-16"
         >
           {' '}
-          Your informatio
+          Your informatiom:
         </motion.p>
         <motion.form
           variants={fadeIn('up', 0.2)}
@@ -317,7 +318,7 @@ fetch('https://hooks.zapier.com/hooks/catch/23284036/uyuaotx/', {
         </motion.form>
 
         <div>
-          <p className="text-sm sm:text-base md:text-lg lg:text-3xl  text-white mt-16"> Budget</p>
+          <p className="text-sm sm:text-base md:text-lg lg:text-3xl  text-white mt-16"> Budget:</p>
           <div className="flex contact-form-Budget gap-5 mt-10 flex-wrap">
             <label>
               {' '}

@@ -40,9 +40,9 @@ export default function NavBarSidebar() {
         zIndex: 50
       }}>
         <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8  ">
-          
+
           <div className="relative flex h-16 items-center justify-between  ">
-          <center className='sm:hidden text-2xl flex items-center'> <img src={image_logo} alt="webforges-logo" className='w-11 h-11' />WEBFORGES</center>
+          <center className='sm:hidden text-2xl flex items-center'> <img src={image_logo} alt="webforges-logo" className='w-20 h-20' /></center>
 
             <div className="absolute inset-y-0 right-0 flex items-center sm:hidden  ">
 

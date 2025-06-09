@@ -580,4 +580,38 @@ form input, textarea:focus{
 
 /* You can use Tailwind or regular CSS */
 
- 
+ .blog{
+  img{
+    object-fit: cover;
+    width: 100%;
+        height: 20rem;
+
+    display: block;
+  }
+ }
+
+
+ .sliderContainer{
+  position: absolute;
+  top: calc(100vh - 350px);
+}
+
+.slider{
+  position: relative;
+  white-space: nowrap;
+}
+
+.slider p{
+  position: relative;
+  margin: 0px;
+  color: white;
+  font-size: 230px;
+  font-weight: 500;
+  padding-right: 50px;
+}
+
+.slider p:nth-of-type(2){
+  position: absolute;
+  left: 100%;
+  top: 0;
+}

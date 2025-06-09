@@ -7,9 +7,7 @@ import ProjectPage from './Componets/Pages/ProjectPage';
 import ServicesPage from './Componets/Pages/ServicesPage';
 import ContactPage from './Componets/Pages/ContactPage';
 import Footer from './Componets/HomePages/Footer';
-// import GradientCursor from "./Componets/Animations/CursorAnimation/GradientCursor";
 
-// Lazy loaded pages
 import Home from './Componets/HomePages/Home';
 import Services from './Componets/HomePages/Services';
 import Projects from './Componets/HomePages/Projects';
@@ -20,25 +18,38 @@ import FreeTools from './Componets/HomePages/FreeTools';
 
 const App = () => {
   const [isActive, setIsActive] = useState(false);
+  const [showContent, setShowContent] = useState(false);
 
- 
-  return (
-    <>
-      <Cursor className="" isActive={isActive} />
-      {/* <GradientCursor isActive={isActive} /> */}
-      <div className="navbar-postion-setup">
-        <NavBarSidebar />
-      </div>
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowContent(true);
+    }, 5000); // 5 seconds
 
-      <Suspense
-        fallback={
-          <div className="flex justify-center items-center h-screen space-x-2">
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (!showContent) {
+    return (
+      <div className="flex justify-center items-center h-screen bg-black text-white text-xl font-semibold">
+        {/* Your custom loading animation or message */}
+        Loading Website...
+            <div className="flex justify-center items-center h-screen space-x-2">
             <div className="w-4 h-4 bg-blue-500 rounded-full animate-bounce"></div>
             <div className="w-4 h-4 bg-blue-500 rounded-full animate-bounce [animation-delay:.2s]"></div>
             <div className="w-4 h-4 bg-blue-500 rounded-full animate-bounce [animation-delay:.4s]"></div>
           </div>
-        }
-      >
+      </div>
+    );
+  }
+
+  return (
+    <>
+      <Cursor className="" isActive={isActive} />
+      <div className="navbar-postion-setup">
+        <NavBarSidebar />
+      </div>
+
+
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<ServicesPage />} />
@@ -48,7 +59,7 @@ const App = () => {
           <Route path="/freetools" element={<FreeTools />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
-      </Suspense>
+
 
       <Footer />
     </>

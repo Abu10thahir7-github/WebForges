@@ -7,6 +7,7 @@ import velonto_mockup from './../../assets/projects/velonto design.jpg';
 import LSLIVEMEDIA from './../../assets/projects/LS LIVE MEDIA projct.png';
 import manasa from './../../assets/projects/manasa creation project.png';
 import sgAcademy from './../../assets/projects/sg project tumbnail.png';
+import Contact from '../HomePages/Contact';
 
 const projects = [
   {
@@ -156,6 +157,7 @@ function ProjectPage() {
         ))}
       </div>
     </div>
+    <Contact/>
     </div>
 
   );

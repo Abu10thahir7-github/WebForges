@@ -15,6 +15,8 @@ import Contact from './Componets/HomePages/Contact';
 import Blog from './Componets/Pages/Blog';
 import AboutUs from './Componets/Pages/AboutUs';
 import FreeTools from './Componets/HomePages/FreeTools';
+import EntryLoader from './Componets/Animations/LoadingAnimation';
+import LogoLoader from './Componets/Animations/LogoAniamtion';
 
 const App = () => {
   const [isActive, setIsActive] = useState(false);
@@ -23,21 +25,15 @@ const App = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowContent(true);
-    }, 5000); // 5 seconds
+    }, 4000); // 5 seconds
 
     return () => clearTimeout(timer);
   }, []);
 
   if (!showContent) {
     return (
-      <div className="flex justify-center items-center h-screen bg-black text-white text-xl font-semibold">
-        {/* Your custom loading animation or message */}
-        Loading Website...
-            <div className="flex justify-center items-center h-screen space-x-2">
-            <div className="w-4 h-4 bg-blue-500 rounded-full animate-bounce"></div>
-            <div className="w-4 h-4 bg-blue-500 rounded-full animate-bounce [animation-delay:.2s]"></div>
-            <div className="w-4 h-4 bg-blue-500 rounded-full animate-bounce [animation-delay:.4s]"></div>
-          </div>
+      <div className="flex justify-center items-center">
+       <LogoLoader/>
       </div>
     );
   }

@@ -190,7 +190,7 @@ fetch('https://hooks.zapier.com/hooks/catch/23284036/uyuaotx/', {
               key={index}
               onClick={() => handleSelect(service)}
               className={`text-sm sm:text-2xl   px-4 py-2 rounded-lg border ${
-                selected === service ? 'bg-blue-600 text-white' : 'bg-white text-black'
+                selected === service ? ' ' : ' '
               } transition`}
             >
               {service}
@@ -378,7 +378,7 @@ fetch('https://hooks.zapier.com/hooks/catch/23284036/uyuaotx/', {
          <button
   type="submit"
   onClick={handleSend}
-  className="mt-8 px-6 py-2 bg-yellow-400 text-black rounded-lg hover:bg-yellow-500 transition"
+  className="mt-8 px-6 py-2 bg-yellow-400 text-black rounded-full hover:bg-yellow-500 transition"
 >
   Submit
 </button>

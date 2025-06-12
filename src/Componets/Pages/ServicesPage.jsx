@@ -3,6 +3,8 @@ import { motion } from 'framer-motion';
 import { fadeIn } from '../../variants';
 import ZoomParallax from '../Animations/ZoomParallax/ZoomParallax';
 import Contact from '../HomePages/Contact';
+
+
 function ServicesPage() {
   scrollTo(0, 0);
 
@@ -49,6 +51,8 @@ function ServicesPage() {
 
       <ZoomParallax/>
       </div>
+
+
       <div className='md:hidden     w-4/5 m-auto flex flex-col justify-center items-center gap-10 bg-[#0f0f0f] p-3'>
         <motion.h2
           variants={fadeIn('up', 0.2)}

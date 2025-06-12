@@ -17,6 +17,7 @@ import AboutUs from './Componets/Pages/AboutUs';
 import FreeTools from './Componets/HomePages/FreeTools';
 import EntryLoader from './Componets/Animations/LoadingAnimation';
 import LogoLoader from './Componets/Animations/LogoAniamtion';
+import Pricing from './Componets/Pages/Pricing';
 
 const App = () => {
   const [isActive, setIsActive] = useState(false);
@@ -50,6 +51,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/projects" element={<ProjectPage />} />
+          <Route path="/pricing" element={<Pricing />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/freetools" element={<FreeTools />} />

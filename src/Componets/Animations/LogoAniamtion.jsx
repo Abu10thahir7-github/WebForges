@@ -1,6 +1,6 @@
 import React from 'react';
 import Lottie from 'lottie-react';
-import logoAnimation from '../../assets/Logo-animation.json'; // adjust the path if needed
+import logoAnimation from '../../assets/CricleLoading.json'; // adjust the path if needed
 
 const LogoLoader = () => {
   return (

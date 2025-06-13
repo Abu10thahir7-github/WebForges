@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { fadeIn } from '../../variants.js';
 import DiscoverTextAnimation from '../Animations/DiscoverTextAnimation.jsx';
-import TabsComponent from '../Animations/Tabs.jsx';
+import TabsComponent from '../Animations/ServiceTabContent.jsx';
 
 function Services() {
   scrollTo(0, 0);

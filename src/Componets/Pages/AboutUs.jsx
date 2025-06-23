@@ -14,7 +14,7 @@ const paragraph =
 
 import officeImg from '../../assets/office.jpg';
 import PerspeTranstions from '../Animations/perspectiveSectionTransition/PerspeTranstions';
-import ZoomParallax from '../Animations/ZoomParallax/ZoomParallax';
+
 import Contact from '../HomePages/Contact';
 function AboutUs() {
   scrollTo(0, 0);
@@ -38,18 +38,18 @@ function AboutUs() {
             initial="hidden"
             whileInView={'show'}
             viewport={{ once: true }}
-            className=" z-10 text-desgin font-medium   heading-style-h3 text-base sm:text-lg md:text-xl lg:text-3xl xl:text-7xl text-white"
+            className=" w-full z-10 text-desgin font-medium   heading-style-h3 text-base sm:text-lg md:text-xl lg:text-3xl xl:text-7xl text-white"
           >
-            <span className=" mr-96">
+            <span className="mr-0 md:mr-96 ">
               Creat<span class="text-style-italic">i</span>ve des
               <span class="text-style-italic">i</span>gn
             </span>{' '}
             <br />
-            <span className=" ml-56">
+            <span className="ml-0 md:ml-56">
               p<span class="text-style-italic">o</span>wered
             </span>{' '}
             <br />
-            <span className="ml-44">
+            <span className="ml-0 md:ml-44">
               by expert tal<span class="text-style-italic">e</span>nt.
             </span>
           </motion.p>
@@ -85,14 +85,14 @@ function AboutUs() {
           initial="hidden"
           whileInView={'show'}
           viewport={{ once: true }}
-          className="flex justify-between border-t-[1px]  border-gray-700 py-9"
+          className="flex flex-col md:flex-row justify-between border-t-[1px] gap-4 border-gray-700 py-9"
         >
           <p className="uppercase">
             [ &nbsp; Exceeding Design <br />
             Expectations &nbsp; &nbsp; &nbsp; &nbsp; ]
           </p>
 
-          <p className="w-[35%] font-thin text-gray-400">
+          <p className="w-full md:w-[35%] text-xl sm:text-xl md:text-xl    font-thin text-gray-400">
             Our diverse expertise and innovative approach ensure that we not only meet but exceed
             your project's goals, creating impactful solutions that drive success.
           </p>
@@ -116,7 +116,7 @@ function AboutUs() {
             </svg>
             2024
           </motion.h1>
-          <div className="flex justify-between ">
+          <div className="flex flex-col md:flex-row gap-6 justify-between ">
             <motion.p
               variants={fadeIn('up', 0.5)}
               initial="hidden"
@@ -134,19 +134,19 @@ function AboutUs() {
               initial="hidden"
               whileInView={'show'}
               viewport={{ once: true }}
-              width={'50%'}
+              className=" w-full md:w-[50%] m-auto"
               src={officeImg}
               alt=""
             />
           </div>
 
-                        <div className='w-4/5 flex m-auto justify-between my-32 pt-36'>
- <motion.p
+          <div className="w-4/5 flex flex-col sm:flex-row m-auto justify-between my-32 pt-36">
+            <motion.p
               variants={fadeIn('up', 0.5)}
               initial="hidden"
               whileInView={'show'}
               viewport={{ once: true }}
-              className="text-xl font-thin w-[50%] mt-10  text-gray-300"
+              className="text-base md:text-xl font-thin w-full md:w-[50%] mt-10 mb-10 text-gray-300"
             >
               Web Forges was established in 2018 with a vision to revolutionize UI/UX design.
               Recognizing that many digital interfaces lacked distinctiveness and user focus, our
@@ -156,9 +156,9 @@ function AboutUs() {
               exceptional user experiences.
             </motion.p>
             {/* Lottie Background */}
-            <div className="relative w-[50%] m-auto      ">
+            <div className="relative w-full md:w-[50%] m-auto      ">
               {/* Top gradient */}
-              <div className="absolute top-0 left-0 w-[500px] h-[10rem] bg-gradient-to-b from-black to-transparent z-10 pointer-events-none" />
+              <div className="absolute top-0 left-0 w-[500px] h-[3rem] md:h-[10rem] bg-gradient-to-b from-black to-transparent z-10 pointer-events-none" />
 
               {/* Lottie animation */}
               <div className="will-change-transform transform-gpu   ">
@@ -166,16 +166,14 @@ function AboutUs() {
                   animationData={logoAnimation}
                   loop
                   autoplay
-                  style={{ width: 500, height: 'auto' }}
+                  className="w-[200px] sm:w-[300px] md:w-[400px] lg:w-[500px]"
+                  style={{ height: 'auto' }}
                 />
               </div>
 
               {/* Bottom gradient */}
-              <div className="absolute -bottom-1 left-0 w-[500px] h-[10rem] bg-gradient-to-t from-black to-transparent z-10 pointer-events-none" />
+              <div className="absolute -bottom-1 left-0 w-[500px] h-[3rem] md:h-[10rem]  bg-gradient-to-t from-black to-transparent z-10 pointer-events-none" />
             </div>
-
-
-
           </div>
         </div>
         <div className="mt-40">

@@ -28,8 +28,7 @@ function Footer() {
       </div>
       <div className="w-full flex flex-row flex-wrap justify-between pb-20 mb-10 border-gray-600 border-b   ">
         <div className="">
-          <motion.di
-            v
+          <motion.div
             variants={fadeIn('up', 0.2)}
             initial="hidden"
             whileInView={'show'}
@@ -66,7 +65,7 @@ function Footer() {
                 ></path>
               </svg>
             </motion.button>
-          </motion.di>
+          </motion.div>
         </div>
         <div className="flex flex-col mt-8 md:flex-row lg:mt-0">
           <motion.div
@@ -79,15 +78,25 @@ function Footer() {
             <p className="text-thin border-b-2 w-fit text-slate-200 mb-4">Our address</p>
             <ul className="flex flex-col gap-4 ">
               <li>
-                <a className='hover:text-yellow-400' href="mailto:webforges.site@gmail.com">webforges.site@gmail.com</a>
+                <a className="hover:text-yellow-400" href="mailto:webforges.site@gmail.com">
+                  webforges.site@gmail.com
+                </a>
               </li>
 
               <li>
-            <a className='hover:text-yellow-400' href="tel:+919037435846">+91 90374 35846</a><br />
-  <a className='hover:text-yellow-400' href="https://wa.me/918921966289" target="_blank">+91 89219 66289 (WhatsApp)</a>
-
+                <a className="hover:text-yellow-400" href="tel:+919037435846">
+                  +91 90374 35846
+                </a>
+                <br />
+                <a
+                  className="hover:text-yellow-400"
+                  href="https://wa.me/918921966289"
+                  target="_blank"
+                >
+                  +91 89219 66289 (WhatsApp)
+                </a>
               </li>
-              <li className='hover:text-yellow-400'>Palakkad, Kerala, India</li>
+              <li className="hover:text-yellow-400">Palakkad, Kerala, India</li>
             </ul>
           </motion.div>
           <motion.div
@@ -97,7 +106,9 @@ function Footer() {
             viewport={{ once: true }}
             className="flex flex-col    sm:mx-0 lg:mx-10"
           >
-            <p className="text-thin mt-8  lg:mt-0  text-slate-200 mb-4 border-b-2 w-fit">Follow us</p>
+            <p className="text-thin mt-8  lg:mt-0  text-slate-200 mb-4 border-b-2 w-fit">
+              Follow us
+            </p>
             <ul className="flex gap-4 ">
               <li>
                 <svg

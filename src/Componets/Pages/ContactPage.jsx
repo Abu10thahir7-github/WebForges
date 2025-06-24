@@ -40,6 +40,17 @@ const [budget, setBudget] = useState('');
 
   return missingFields;
 };
+
+const resetForm = () => {
+  setFirstName('');
+  setLastName('');
+  setEmail('');
+  setPhone('');
+  setCompany('');
+  setProjectDetail('');
+  setBudget('');
+  setSelected(null);
+}
 const [loading, setLoading] = useState(false);
 const handleSend = async (e) => {
   e.preventDefault();
@@ -73,6 +84,7 @@ const handleSend = async (e) => {
     const result = await response.json();
     if (result.status === "success") {
       swal("Success", "✅ Message sent successfully!", "success");
+      resetForm();
     } else {
       alert("failed", "⚠️ Failed: " + result.message, "error");
     }
@@ -222,9 +234,10 @@ const handleSend = async (e) => {
               whileInView={'show'}
               viewport={{ once: true }}
               key={index}
-              onClick={() => handleSelect(service)}
-              className={`px-4 py-2 rounded-lg border ${
-                selected === service ? 'bg-blue-600 text-white' : 'bg-white text-black'
+            
+              onClick={(e) => handleSelect(e,service)}
+              className={`text-sm sm:text-2xl   px-4 py-2 rounded-lg border ${
+                selected === service ? ' ' : ' '
               } transition`}
             >
               {service}

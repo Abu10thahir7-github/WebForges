@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { fadeIn } from '../../variants';
 import swal from 'sweetalert';
+import axios from 'axios';
 function ContactPage() {
   const [selected, setSelected] = useState(null);
   const [firstName, setFirstName] = useState('');
@@ -25,48 +26,65 @@ const [budget, setBudget] = useState('');
     `Details: ${projectDetail}\n` +
     `Budget: ${budget || "Not specified"}\n` +
     `Submitted At: ${time}`;
+   const validateForm = () => {
+  const missingFields = [];
 
- const handleSend = async (e) => {
+  if (firstName === '') missingFields.push('First Name');
+  if (lastName === '') missingFields.push('Last Name');
+  if (email === '') missingFields.push('Email');
+  if (phone === '') missingFields.push('Phone');
+  if (company === '') missingFields.push('Company');
+  if (projectDetail === '') missingFields.push('Project Detail');
+  if (budget === '') missingFields.push('Budget');
+  if (selected === null) missingFields.push('Service');
+
+  return missingFields;
+};
+const [loading, setLoading] = useState(false);
+const handleSend = async (e) => {
   e.preventDefault();
 
-fetch('https://hooks.zapier.com/hooks/catch/23284036/uyuaotx/', {
-  method: 'POST',
-  // Don't set 'Content-Type' explicitly to avoid CORS preflight
-  body: JSON.stringify({
-  "firstName": firstName,
-  "lastName": lastName,
-  "email": email,
-  "phone": phone,
-  "company": company,
-  "service": selected,
-  "details": projectDetail,
-  "budget": budget,
-  "submittedAt": time
-}),
-})
-.then(response => {
-  if (response.ok) {
-    console.log('✅ Data sent successfully');
-    swal("Good job!", "We have received your message and will get back to you soon!", "success");
-    setFirstName(''); // Reset the form
-    setLastName('');
-    setEmail('');
-    setPhone('');
-    setCompany('');
-    setSelected(null);
-    setProjectDetail('');
-    setBudget('');
+  const missing = validateForm();
 
-  } else {
-    console.error('❌ Failed to send data');
-    window.blank
+  if (missing.length > 0) {
+    swal("⚠️ Missing Fields", `Please fill in: ${missing.join(', ')}`, "error");
+    return;
   }
-})
-.catch(error => {
-  console.error('❌ Error sending data:', error);
-  swal("Oops!", "Something went wrong! Please try again later.", "error");
-});
+
+ setLoading(true);
+
+  const formData = new FormData();
+  formData.append('firstName', firstName);
+  formData.append('lastName', lastName);
+  formData.append('email', email);
+  formData.append('phone', phone);
+  formData.append('company', company);
+  formData.append('selected', selected);
+  formData.append('projectDetail', projectDetail);
+  formData.append('budget', budget);
+  formData.append('time', new Date().toLocaleString());
+
+  try {
+    const response = await fetch("https://script.google.com/macros/s/AKfycbwqejPG8CpOKdT1LLt8pPD6qDnvF6hqYzmTZDiL-UtaAdEXdCu6Ow0YgmXu1kCeM43DAg/exec", {
+      method: "POST",
+      body: formData, // No headers set!
+    });
+
+    const result = await response.json();
+    if (result.status === "success") {
+      swal("Success", "✅ Message sent successfully!", "success");
+    } else {
+      alert("failed", "⚠️ Failed: " + result.message, "error");
+    }
+  } catch (err) {
+    alert("Error","❌ Network error", "error");
+    console.error(err);
+  }finally {
+    setLoading(false);
+  }
 };
+
+
 
 
 
@@ -80,13 +98,28 @@ fetch('https://hooks.zapier.com/hooks/catch/23284036/uyuaotx/', {
     'Other',
   ];
 
-  const handleSelect = service => {
+  const handleSelect = (e, service)=> {
+      e.preventDefault();
     setSelected(service);
     console.log('Selected service:', service);
     // You can do more actions here (API calls, filtering, etc.)
   };
   return (
     <div>
+      {loading && (
+  <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex justify-center items-center z-50">
+    <div className="flex gap-2">
+      {[...Array(5)].map((_, i) => (
+        <div
+          key={i}
+          className="w-4 h-4 bg-yellow-400 rounded-full animate-bounce"
+          style={{ animationDelay: `${i * 0.1}s` }}
+        ></div>
+      ))}
+    </div>
+  </div>
+)}
+
       <div class="bg-animation absolute">
         <div class=" z-[-1] noise-bg"></div>
         <div class="blob-cont">
@@ -168,7 +201,8 @@ fetch('https://hooks.zapier.com/hooks/catch/23284036/uyuaotx/', {
           </div>
         </motion.div>
       </div>
-      <div className="w-4/5 m-auto flex flex-col mt-16 justify-center p-12 bg-[#191919]">
+      <form className="w-4/5 m-auto flex flex-col mt-16 justify-center p-12 bg-[#191919]">
+
         <motion.p
           variants={fadeIn('up', 0.2)}
           initial="hidden"
@@ -187,7 +221,7 @@ fetch('https://hooks.zapier.com/hooks/catch/23284036/uyuaotx/', {
               whileInView={'show'}
               viewport={{ once: true }}
               key={index}
-              onClick={() => handleSelect(service)}
+              onClick={(e) => handleSelect(e, service)}
               className={`px-4 py-2 rounded-lg border ${
                 selected === service ? 'bg-blue-600 text-white' : 'bg-white text-black'
               } transition`}
@@ -262,7 +296,7 @@ fetch('https://hooks.zapier.com/hooks/catch/23284036/uyuaotx/', {
               <label htmlFor="email" className="block mb-1">
                 Email Address
               </label>
-              <input type="text" id="email"
+              <input type="email" id="email"
               value={email}
   onChange={(e) => setEmail(e.target.value)}
               className="w-full p-2 text-yellow-400" />
@@ -274,11 +308,11 @@ fetch('https://hooks.zapier.com/hooks/catch/23284036/uyuaotx/', {
               viewport={{ once: true }}
               className="w-full md:full"
             >
-              <label htmlFor=" Phone" className="block mb-1">
+              <label htmlFor="Phone" className="block mb-1">
                 {' '}
                 Phone{' '}
               </label>
-              <input type="text" id=" Phone"
+              <input type="number" id=" Phone"
               value={phone}
   onChange={(e) => setPhone(e.target.value)}
               className="w-full p-2 text-yellow-400 " />
@@ -383,7 +417,7 @@ fetch('https://hooks.zapier.com/hooks/catch/23284036/uyuaotx/', {
 </button>
 
         </div>
-      </div>
+      </form>
     </div>
   );
 }

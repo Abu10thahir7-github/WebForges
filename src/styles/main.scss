@@ -22,7 +22,7 @@ body {
   background-color: $primary-color;
   color: white;
 }
-button{
+button {
   transition: 0.3s;
 }
 .macondo-regular {
@@ -507,40 +507,42 @@ $style-presets: (
   display: flex;
   flex-direction: column;
 }
-form input, textarea{
+form input,
+textarea {
   background: transparent;
-    border: none;
-    border-bottom: solid 1px #505050;
-    border-radius: 0;
+  border: none;
+  border-bottom: solid 1px #505050;
+  border-radius: 0;
 }
-form input, textarea:focus{
+form input,
+textarea:focus {
   outline: none;
   border-bottom: solid 1px #505050;
 }
 
-.contact-form-projectType button{
- background-color:#333;
- color: rgb(195, 194, 194);
- border: none;
- border-radius: 50px;
- padding:10px;
+.contact-form-projectType button {
+  background-color: #333;
+  color: rgb(195, 194, 194);
+  border: none;
+  border-radius: 50px;
+  padding: 10px;
 }
-.contact-form-projectType button:focus{
+.contact-form-projectType button:focus {
   background-color: white;
   color: #000;
 }
-.contact-form-Budget label{
+.contact-form-Budget label {
   background: #333;
-    padding: 10px;
-    color: #aeaeae;
-    border-radius: 50px;
-    position: relative;
+  padding: 10px;
+  color: #aeaeae;
+  border-radius: 50px;
+  position: relative;
 }
 
-.contact-form-Budget input{
+.contact-form-Budget input {
   margin-top: auto;
   margin-bottom: auto;
-  margin-left: -.3rem;
+  margin-left: -0.3rem;
   position: absolute;
   inset: 0% auto 0% 0%;
 }
@@ -557,9 +559,7 @@ form input, textarea:focus{
   animation: infiniteRotate 10s linear infinite;
 }
 
-.abu-profile{
-
-
+.abu-profile {
 }
 
 @keyframes floating {
@@ -580,4 +580,50 @@ form input, textarea:focus{
 
 /* You can use Tailwind or regular CSS */
 
- 
+.blog {
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: 20rem;
+
+    display: block;
+  }
+}
+
+.sliderContainer {
+  position: absolute;
+  top: calc(100vh - 350px);
+}
+
+.slider {
+  position: relative;
+  white-space: nowrap;
+}
+
+.slider p {
+  position: relative;
+  margin: 0px;
+  color: white;
+  font-size: 230px;
+  font-weight: 500;
+  padding-right: 50px;
+}
+
+.slider p:nth-of-type(2) {
+  position: absolute;
+  left: 100%;
+  top: 0;
+}
+.services-sm-list {
+  li{
+    margin-block: 10px;
+
+   border-bottom: solid 1px gray;
+   padding: 10px;
+   color: #919191;
+  }
+  padding: 20px;
+  ;
+  font-weight: 500;
+  margin-bottom: 10px;
+}

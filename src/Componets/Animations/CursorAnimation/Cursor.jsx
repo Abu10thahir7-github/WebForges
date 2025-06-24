@@ -47,7 +47,7 @@ export default function BlurryCursor({isActive}) {
     }, [isActive])
 
     return (
-        <div className='relative z-10 '>
+        <div className='relative z-10 hidden lg:block'>
             <div
                 style={{
                     backgroundColor: "#fff",

@@ -7,6 +7,7 @@ import velonto_mockup from './../../assets/projects/velonto design.jpg';
 import LSLIVEMEDIA from './../../assets/projects/LS LIVE MEDIA projct.png';
 import manasa from './../../assets/projects/manasa creation project.png';
 import sgAcademy from './../../assets/projects/sg project tumbnail.png';
+import Contact from '../HomePages/Contact';
 
 const projects = [
   {
@@ -85,18 +86,19 @@ function ProjectPage() {
             initial="hidden"
             whileInView={'show'}
             viewport={{ once: true }}
-            className=" z-10 text-desgin font-medium   heading-style-h3 text-base sm:text-lg md:text-xl lg:text-3xl xl:text-7xl text-white"
+            className=" z-10 text-desgin font-medium   heading-style-h3 text-3xl sm:text-3xl md:text-3xl lg:text-3xl xl:text-7xl text-white"
           >
-            <span className=" mr-96">
+            <span className=" mr-0 md:mr-96">
               Bu<span class="text-style-italic">i</span>ld
               <span class="text-style-italic">i</span>ng
             </span>{' '}
             <br />
-            <span className=" ml-56">
+            <span className="ml-0 md:ml-56">
               your<span class="text-style-italic">V</span>ision
             </span>{' '}
             <br />
-            <span className="ml-44">
+            <span className="ml-0 md:ml-44">
+
               i<span class="text-style-italic">n </span>reality.
             </span>
           </motion.p>
@@ -155,6 +157,7 @@ function ProjectPage() {
         ))}
       </div>
     </div>
+    <Contact/>
     </div>
 
   );

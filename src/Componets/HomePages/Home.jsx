@@ -12,7 +12,7 @@ import Footer from './Footer';
 import FreeTools from './FreeTools';
 import { Link } from 'react-router-dom';
 import TextRotateAnimate from '../Animations/TextRotateAnimate';
-
+import image_logo from '../../assets/logo.png'
 
 function Home() {
 
@@ -26,7 +26,7 @@ const location = useLocation();
       <div className="noise"></div>
       <div class="home">
         <svg
-          className="absolute floating   right-0"
+          className="absolute floating   -right-1 md:-right-0 "
           width="324"
           height="578"
           viewBox="0 0 324 578"
@@ -264,7 +264,8 @@ const location = useLocation();
             </linearGradient>
           </defs>
         </svg>
-        <div class="hero items-center  m-auto w-fit flex h-[70vh]">
+        <div class="hero items-center  m-auto   flex h-[70vh]">
+<img className=' hidden md:block' src={image_logo} alt=""/>
           <TextRotateAnimate/>
         </div>
         <div class="scrollDown w-fit m-auto mb-7">

@@ -458,7 +458,7 @@ const location = useLocation();
           initial="hidden"
           whileInView={'show'}
           viewport={{ once: true }}
-          class=" mt-32 flex flex-col sm:flex-col md:flex-col lg:flex-row "
+          class=" mt-32 flex flex-col sm:flex-col md:flex-col lg:flex-row gap-4"
         >
           <div className="flex sm:w-full">
             <p className="  flex items-center text-thin font-thin uppercase text-gray-400">
@@ -468,18 +468,10 @@ const location = useLocation();
             </p>
           </div>
           <div className=" sm:w-full">
-            <h1 className=" text-lg sm:text-2xl md:text-3xl lg:text-4xl">
-              w<span class="text-style-italic">e</span> acc<span class="text-style-italic">e</span>l
-              <span class="text-style-italic">e</span>rat<span class="text-style-italic">e</span> d
-              <span class="text-style-italic">e</span>vel<span class="text-style-italic">o</span>
-              pment w<span class="text-style-italic">i</span>th n
-              <span class="text-style-italic">o</span>-c<span class="text-style-italic">o</span>de t
-              <span class="text-style-italic">oo</span>ls, del
-              <span class="text-style-italic">i</span>ver<span class="text-style-italic">i</span>ng
-              faster, m<span class="text-style-italic">o</span>re eff
-              <span class="text-style-italic">i</span>c<span class="text-style-italic">i</span>ent
-              results.
-            </h1>
+              <h1 className=" text-lg sm:text-2xl md:text-3xl lg:text-3xl"> <span className='manjari-regular'>
+   നിങ്ങളുടെ ബിസിനസ് കൂടുതൽ ആളുകളിലേക്ക് എത്തട്ടെ
+ മാത്രമല്ല, ഓൺലൈൻ ലോകത്ത് നിങ്ങളുടെ സ്ഥാനം ഉറപ്പാക്കാം!
+ </span></h1>
           </div>
         </motion.div>
       </div>
@@ -504,9 +496,9 @@ const location = useLocation();
               </svg>
               Industry Experience
             </h1>
-            <p className="uppercase mt-4 sm:w-full md:w-1/2  text-thin   font-thin text-base sm:text-sm md:text-lg lg:text-lg xl:text-lg text-gray-300">
-              Our designers deliver personalized solutions that bring business value across various
-              niches
+            <p className="uppercase mt-4 sm:w-full md:w-1/2  text-thin     text-base sm:text-sm md:text-lg lg:text-lg xl:text-2xl text-gray-300 manjari-regular">
+
+ഞങ്ങളുടെ ഡിസൈനർമാർ വിവിധ മേഖലകളിൽ ബിസിനസ് മൂല്യം കൊണ്ടുവരുന്ന വ്യക്തിഗത പരിഹാരങ്ങൾ നൽകുന്നു.
             </p>
           </motion.div>
           <motion.div

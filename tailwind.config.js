@@ -6,6 +6,11 @@ export default {
   ],
   theme: {
     extend: {
+
+       animation: {
+      bounce: 'bounce 0.6s infinite alternate',
+    },
+  
       
       fontWeight: {
         thin: 200,

@@ -92,9 +92,9 @@ function AboutUs() {
             Expectations &nbsp; &nbsp; &nbsp; &nbsp; ]
           </p>
 
-          <p className="w-full md:w-[35%] text-xl sm:text-xl md:text-xl    font-thin text-gray-400">
-            Our diverse expertise and innovative approach ensure that we not only meet but exceed
-            your project's goals, creating impactful solutions that drive success.
+          <p className="w-full md:w-[45%] text-xl sm:text-xl md:text-xl baloo-chettan   font-thin text-gray-400">
+
+ഞങ്ങളുടെ വൈവിധ്യമാർന്ന വൈദഗ്ധ്യവും നൂതനമായ സമീപനവും നിങ്ങളുടെ പ്രോജക്റ്റിന്റെ ലക്ഷ്യങ്ങൾ കൈവരിക്കുക മാത്രമല്ല, അവയെ മറികടക്കുകയും ചെയ്യുന്നു, വിജയത്തിലേക്ക് നയിക്കുന്ന ഫലപ്രദമായ പരിഹാരങ്ങൾ സൃഷ്ടിക്കുന്നു.
           </p>
         </motion.div>
         <div className="mt-52">

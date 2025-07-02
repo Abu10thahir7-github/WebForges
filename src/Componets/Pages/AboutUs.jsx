@@ -156,7 +156,7 @@ function AboutUs() {
               exceptional user experiences.
             </motion.p>
             {/* Lottie Background */}
-            <div className="relative w-full md:w-[50%] m-auto      ">
+            <div className="relative w-full hidden md:block md:w-[50%] m-auto      ">
               {/* Top gradient */}
               <div className="absolute top-0 left-0 w-[500px] h-[3rem] md:h-[10rem] bg-gradient-to-b from-black to-transparent z-10 pointer-events-none" />
 

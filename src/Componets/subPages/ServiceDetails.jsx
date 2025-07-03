@@ -38,12 +38,13 @@ export default function ServiceDetails() {
 
       <h2 className='text-xl mt-4 manjari-regular' dangerouslySetInnerHTML={{ __html: service.intro }} />
 
-{service.subContent.map((item, index) => (
+{service && Array.isArray(service.subContent) && service.subContent.map((item, index) => (
   <div key={index}>
     <h1 className='text-xl mt-4 ' dangerouslySetInnerHTML={{ __html: item.heading }} />
     <p className='text-base mt-4 ' dangerouslySetInnerHTML={{ __html: item.content }} />
   </div>
 ))}
+
 </div>
         <p className="text-lg text-gray-300 manjari-regular text-left mt-4">{service.content}</p>
       </div>

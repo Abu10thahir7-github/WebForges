@@ -18,7 +18,8 @@ import FreeTools from './Componets/HomePages/FreeTools';
 import EntryLoader from './Componets/Animations/LoadingAnimation';
 import LogoLoader from './Componets/Animations/LogoAniamtion';
 import Pricing from './Componets/Pages/Pricing';
-
+import Webdesgin from './Componets/subPages/Webdesgin';
+import ServiceDetails from './Componets/subPages/ServiceDetails';
 const App = () => {
   const [isActive, setIsActive] = useState(false);
   const [showContent, setShowContent] = useState(false);
@@ -56,6 +57,8 @@ const App = () => {
           <Route path="/about" element={<AboutUs />} />
           <Route path="/freetools" element={<FreeTools />} />
           <Route path="/contact" element={<ContactPage />} />
+          
+          <Route path="/services/:slug" element={<ServiceDetails />} />
         </Routes>
 
 

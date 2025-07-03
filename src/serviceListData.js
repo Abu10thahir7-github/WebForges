@@ -21,12 +21,48 @@ export const serviceList = [
     image: '/images/services/StaticWebsite.png',
     content: ` We create a professional website with ease. We offer a wide range of templates, customization options, and support for SEO and analytics.`
   },
-  {
+ {
     slug: 'webdesign',
     title: 'Web Designing',
     desc: 'Pixel‑perfect UI/UX as you wish.',
     image: '/images/services/Webdesgin.png',
-    content: `Our web design services focus on user experience and visual storytelling. We create clean, responsive, and accessible layouts to bring your brand identity to life.`
+   intro: `
+      🌐 <strong>What is Web Designing?</strong><br/>
+      Web designing means creating the visual layout of a website — including colors, fonts, images, buttons, menus, and more.<br/>
+      <br/>
+      
+    `,
+    subContent: [
+      {
+        heading: '🧰 Why is Web Design important?',
+        content: `
+          ✅ Boosts business credibility and professionalism<br/>
+          ✅ Improves user experience (UX/UI)<br/>
+          ✅ Supports SEO and mobile responsiveness<br/>
+          ✅ Helps sell products/services online (eCommerce)<br/>
+        `
+      },
+      {
+        heading: '❓ How does it help?',
+        content: `
+          🔹 Attracts new customers<br/>
+          🔹 Builds brand identity<br/>
+          🔹 Works on all devices (Responsive)<br/>
+          🔹 Increases business growth<br/>
+        `
+      },
+      {
+        heading: '💼 Who uses it?',
+        content: `
+          🔸 Business owners<br/>
+          🔸 Startups<br/>
+          🔸 Online/Offline shops<br/>
+          🔸 Institutions & Agencies<br/>
+          🔸 Personal Portfolios (വ്യക്തിഗത പോർട്ട്ഫോളിയോ)<br/>
+        `
+      },
+
+    ]
   },
   {
     slug: 'landingpage',

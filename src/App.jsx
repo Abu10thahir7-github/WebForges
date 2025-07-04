@@ -27,7 +27,7 @@ const App = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowContent(true);
-    }, 4000); // 5 seconds
+    }, 2000); // 5 seconds
 
     return () => clearTimeout(timer);
   }, []);

@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
 import { fadeIn } from '../../variants';
 
 
@@ -11,6 +12,56 @@ import check from '../../assets/check.svg';
 function FreeTools() {
   return (
     <div className=" free-tools ">
+      <Helmet>
+      {/* Basic Meta */}
+      <title>30+ Free Digital Tools - Translation, QR Code, Image Editing & More | WebForges</title>
+      <meta
+        name="description"
+        content="Explore 30+ free digital tools including Translation, QR Code Generator, Password Generator, Image Background Remover, Loan Calculator, Image Compressor, File Converter, and many more at WebForges."
+      />
+      <meta
+        name="keywords"
+        content="free digital tools, translation tool, qr code generator, password generator, image background remover, loan calculator, image compressor, file converter, watermark remover, image enhancer, currency converter, text to speech, speech to text, json formatter, image resizer, ai image generator, youtube video downloader, instagram downloader"
+      />
+      <meta name="robots" content="index, follow" />
+      <meta name="author" content="WebForges" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <link rel="canonical" href="https://dev.webforges.site/freetools" />
+
+      {/* Open Graph / Facebook */}
+      <meta property="og:type" content="website" />
+      <meta
+        property="og:title"
+        content="30+ Free Digital Tools - Translation, QR Code, Image Editing & More | WebForges"
+      />
+      <meta
+        property="og:description"
+        content="Discover and use 30+ free digital tools such as translation, QR code generators, image editing, file converters, and video downloaders at WebForges."
+      />
+      <meta
+        property="og:image"
+        content="https://dev.webforges.site/logo.png" // Replace with an image representing free tools
+      />
+      <meta property="og:url" content="https://dev.webforges.site/freetools" />
+      <meta property="og:site_name" content="WebForges" />
+
+      {/* Twitter Card */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta
+        name="twitter:title"
+        content="30+ Free Digital Tools - Translation, QR Code, Image Editing & More | WebForges"
+      />
+      <meta
+        name="twitter:description"
+        content="Explore a wide range of free digital tools including translation, QR code generators, image editing, file converters, and video downloaders at WebForges."
+      />
+      <meta
+        name="twitter:image"
+        content="https://dev.webforges.site/logo.png" // Same as OG image or another relevant image
+      />
+      <meta name="twitter:site" content="@WebForges" />
+      <meta name="twitter:creator" content="@WebForges" />
+    </Helmet>
 
       <div className="h-[50vh]"></div>
       <div className="w-4/5 relative m-auto h-auto">

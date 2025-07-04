@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
 import { fadeIn } from '../../variants';
 import swal from 'sweetalert';
 import axios from 'axios';
@@ -118,6 +119,34 @@ const handleSend = async (e) => {
   };
   return (
     <div>
+       <Helmet>
+        <title>Contact Us - Collaborate with WebForges | Professional Web Design & Development</title>
+        <meta
+          name="description"
+          content="Get in touch with WebForges for professional web design, branding, no-code development, mobile app design, and landing page services. Let's collaborate to bring your project to life."
+        />
+        <meta name="keywords" content="contact, webforges, web design contact, branding, mobile app design, landing page, no-code development, collaborate, web development" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://dev.webforges.site/contact" />
+        
+        {/* Open Graph tags */}
+        <meta property="og:title" content="Contact Us - Collaborate with WebForges" />
+        <meta
+          property="og:description"
+          content="Reach out to WebForges for expert web design, branding, and app development services. Let's build your project together."
+        />
+        <meta property="og:url" content="https://dev.webforges.site/contact" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="WebForges" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Contact Us - Collaborate with WebForges" />
+        <meta
+          name="twitter:description"
+          content="Connect with WebForges for professional web and app development projects."
+        />
+      </Helmet>
       {loading && (
   <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex justify-center items-center z-50">
     <div className="flex gap-2">

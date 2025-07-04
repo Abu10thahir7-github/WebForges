@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
 import { fadeIn } from '../../variants';
 import BlogTextAnimation from '../Animations/BlogText';
 import Word from '../Animations/TextFillAnimation/Word';
@@ -117,6 +118,50 @@ function Blog() {
 
   return (
     <div>
+      <Helmet>
+        {/* Basic Meta */}
+        <title>WebForges Blog - Insights on UX, Design & Web Development</title>
+        <meta
+          name="description"
+          content="Stay updated with the latest trends in UX design, web development, no-code tools, and case studies from WebForges team."
+        />
+        <meta
+          name="keywords"
+          content="web development blog, UX design articles, case studies, no-code tools, frontend development, web design tips"
+        />
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="WebForges" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="canonical" href="https://dev.webforges.site/blog" />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:title"
+          content="WebForges Blog - Insights on UX, Design & Web Development"
+        />
+        <meta
+          property="og:description"
+          content="Stay updated with the latest trends in UX design, web development, no-code tools, and case studies from WebForges team."
+        />
+        <meta property="og:image" content="https://dev.webforges.site/logo.png" />
+        <meta property="og:url" content="https://dev.webforges.site/blog" />
+        <meta property="og:site_name" content="WebForges" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="WebForges Blog - Insights on UX, Design & Web Development"
+        />
+        <meta
+          name="twitter:description"
+          content="Stay updated with the latest trends in UX design, web development, no-code tools, and case studies from WebForges team."
+        />
+        <meta name="twitter:image" content="https://dev.webforges.site/logo.png" />
+        <meta name="twitter:site" content="@WebForges" />
+        <meta name="twitter:creator" content="@WebForges" />
+      </Helmet>
       <div class="bg-animation absolute">
         <div class="noise-bg"></div>
         <div class="blob-cont">

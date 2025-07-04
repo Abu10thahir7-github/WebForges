@@ -2,79 +2,90 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <!-- GSAP & ScrollTrigger -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Favicon -->
-    <link
-      rel="icon"
-      type="image/png"
-      href="logo.png"
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Title -->
+    <title>Web Forges | Professional Web Development & SEO Services</title>
+
+    <!-- Description -->
+    <meta
+      name="description"
+      content="Web Forges offers affordable, SEO-friendly, high-performance websites using React, Node.js, and modern UI/UX. Perfect for startups, freelancers, and businesses in India."
     />
 
+    <!-- Keywords (Max SEO Effect) -->
+    <meta
+      name="keywords"
+      content="web development, React developer, Node developer, MERN stack, SEO web design, freelance developer India, responsive website, affordable web agency, ecommerce website design, portfolio sites, UI/UX design, fast websites, hosting included, best budget web developer"
+    />
+
+    <!-- Author -->
+    <meta name="author" content="Webforges Team, Palakkad, Kerala" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="Web Forges | Freelance Web Development Agency" />
+    <meta
+      property="og:description"
+      content="Affordable & premium web development. We build modern, fast, SEO-optimized websites for small businesses, startups, and individuals."
+    />
+    <meta property="og:url" content="https://dev.webforges.site/" />
+    <meta property="og:image" content="https://dev.webforges.site/logo.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Webforges" />
+    <meta property="og:locale" content="en_IN" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Webforges - Affordable Website Design for Startups & Freelancers" />
+    <meta
+      name="twitter:description"
+      content="Get a fully responsive, SEO-ready, fast website at budget price. MERN stack + UI/UX + Branding in one place!"
+    />
+    <meta name="twitter:image" content="https://dev.webforges.site/logo.png" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://dev.webforges.site/" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="logo.png" />
+
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Chilanka&family=Macondo&family=Manjari:wght@100;400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chilanka&family=Macondo&family=Manjari:wght@100;400;700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Styles -->
     <link rel="stylesheet" href="styles.css" />
 
-    <!-- SEO Title -->
-    <title>Web Forges | High-Quality Web Development Agency | High-Quality, SEO-Ready Websites</title>
+    <!-- GSAP Scroll Animations (Optional Performance Boost Tip: Load defer) -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
-    <!-- Meta Description -->
-    <meta
-      name="description"
-      content="Web Forges offers affordable web development services including MERN stack, UI/UX design, SEO optimization, eCommerce websites, and fast responsive websites for startups and small businesses."
-    />
-
-    <!-- ✅ 50+ Keywords for SEO -->
-    <meta
-      name="keywords"
-      content="
-      High-Quality web development, best freelance web developer, budget website design, affordable web design agency, low cost websites,
-      mern stack development, eCommerce website development, responsive web design, UI/UX design agency, startup website builder,
-      SEO-friendly websites, professional website designer, full-stack developer, custom website development, react js developer,
-      node js developer, mongodb developer, express js developer, fast loading website, mobile optimized web design, user-friendly interface,
-      portfolio website design, small business website, personal website builder, web development service provider, freelance react developer,
-      best UI designer, modern web design, clean website design, seo optimized website, web agency India, cheap web design company,
-      ecommerce platform development, product landing page, single page applications, website for local business, creative design agency,
-      stylish website builder, custom coded website, secure web application, fast hosting solutions, domain and hosting included,
-      online store creation, website redesign service, affordable maintenance plans, digital branding services, interactive websites,
-      website for marketing agency, website for freelancers, WhatsApp integrated website, call-to-action landing pages, startup landing pages,
-      affordable SEO services, top website builder India, budget-friendly websites, high conversion design
-    "
-    />
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:title" content="Web Forges | High-Quality Web Development Agency" />
-    <meta
-      property="og:description"
-      content="High-quality websites, low prices. MERN stack, SEO, UI/UX, eCommerce. Perfect for startups & small businesses."
-    />
-    <meta
-      property="og:image"
-      content="webforges card.png"
-    />
-    <meta property="og:url" content="https://dev.webforges.site/" />
-    <meta property="og:type" content="website" />
-
-    <!-- Twitter Meta -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Web Forges | Freelance Web Developer & Design Expert" />
-    <meta
-      name="twitter:description"
-      content="Affordable web development for small businesses. MERN stack, UI/UX, SEO-ready solutions."
-    />
-    <meta
-      name="twitter:image"
-      content="https://res.cloudinary.com/dsxcm3fie/image/upload/v1739266951/logo_xoukk2.png"
-    />
-
-    <!-- Canonical Link -->
-    <link rel="canonical" href="https://dev.webforges.site/" />
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Webforges",
+        "url": "https://dev.webforges.site",
+        "author": {
+          "@type": "Person",
+          "name": "Muhammed Sulaiman T"
+        },
+        "description": "Webforges is a freelance web agency building modern, fast, responsive websites using the MERN stack with SEO optimization.",
+        "image": "https://dev.webforges.site/logo.png",
+        "inLanguage": "en-IN",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Webforges"
+        }
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>

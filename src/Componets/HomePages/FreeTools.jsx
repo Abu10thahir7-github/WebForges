@@ -43,6 +43,7 @@ function FreeTools() {
         content="https://dev.webforges.site/logo.png" // Replace with an image representing free tools
       />
       <meta property="og:url" content="https://dev.webforges.site/freetools" />
+        <link rel="canonical" href="https://dev.webforges.site/freetools" />
       <meta property="og:site_name" content="WebForges" />
 
       {/* Twitter Card */}

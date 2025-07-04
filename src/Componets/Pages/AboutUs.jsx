@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { motion } from 'framer-motion';
-import { Helmet } from 'react-helmet-async';
+import { Helmet } from 'react-helmet';
 
 import { fadeIn } from '../../variants';
 import Lottie from 'lottie-react';
@@ -22,8 +22,8 @@ function AboutUs() {
   scrollTo(0, 0);
 
   return (
-    <div>
-       (
+    
+       
     <div>
       <Helmet>
         {/* Basic Meta */}
@@ -302,6 +302,7 @@ function AboutUs() {
       </div>
       <Contact />
     </div>
+  
   );
 }
 

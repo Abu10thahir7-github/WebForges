@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Helmet } from 'react-helmet-async';
+import { Helmet } from 'react-helmet';
 import { fadeIn } from '../../variants';
 import BlogTextAnimation from '../Animations/BlogText';
 import Word from '../Animations/TextFillAnimation/Word';

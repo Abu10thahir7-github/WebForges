@@ -1,6 +1,8 @@
 import React from 'react';
 
 import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
+
 import { fadeIn } from '../../variants';
 import Lottie from 'lottie-react';
 import logoAnimation from '../../assets/ITwords.json'; // adjust the path if needed
@@ -20,7 +22,53 @@ function AboutUs() {
   scrollTo(0, 0);
 
   return (
+    
+       
     <div>
+      <Helmet>
+        {/* Basic Meta */}
+        <title>About Us - WebForges | Creative Design Powered by Expert Talent</title>
+        <meta
+          name="description"
+          content="Discover the story behind WebForges, our expert team, and our passion for delivering innovative design solutions and exceptional user experiences."
+        />
+        <meta
+          name="keywords"
+          content="WebForges, About WebForges, UI/UX Design Team, Creative Design Agency, Expert Web Developers, Innovative Web Solutions, Kerala Web Agency"
+        />
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="WebForges" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="canonical" href="https://dev.webforges.site/about" />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:title"
+          content="About Us - WebForges | Creative Design Powered by Expert Talent"
+        />
+        <meta
+          property="og:description"
+          content="Discover the story behind WebForges, our expert team, and our passion for delivering innovative design solutions and exceptional user experiences."
+        />
+        <meta property="og:image" content="https://dev.webforges.site/logo.png" />
+        <meta property="og:url" content="https://dev.webforges.site/about" />
+        <meta property="og:site_name" content="WebForges" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="About Us - WebForges | Creative Design Powered by Expert Talent"
+        />
+        <meta
+          name="twitter:description"
+          content="Discover the story behind WebForges, our expert team, and our passion for delivering innovative design solutions and exceptional user experiences."
+        />
+        <meta name="twitter:image" content="https://dev.webforges.site/logo.png" />
+        <meta name="twitter:site" content="@WebForges" />
+        <meta name="twitter:creator" content="@WebForges" />
+      </Helmet>
       <div class="bg-animation absolute">
         <div class="noise-bg"></div>
         <div class="blob-cont">
@@ -254,6 +302,7 @@ function AboutUs() {
       </div>
       <Contact />
     </div>
+  
   );
 }
 

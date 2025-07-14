@@ -30,7 +30,11 @@ const App = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowContent(true);
+<<<<<<< HEAD
     }, 3500); // 5 seconds
+=======
+    }, 2000); // 5 seconds
+>>>>>>> caa08e287305a5ed31440557036824be3040896d
 
     return () => clearTimeout(timer);
   }, []);

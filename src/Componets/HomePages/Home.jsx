@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
+
 import skyImage from '../../assets/skyImg.webp';
 import { useLocation } from 'react-router-dom';
 import NavBarSidebar from './NavBarSidebar';
@@ -23,6 +25,7 @@ const location = useLocation();
 
   return (
     <div>
+       
       <div className="noise"></div>
       <div class="home">
         <svg

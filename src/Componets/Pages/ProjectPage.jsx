@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
+
 import { motion } from 'framer-motion';
 import { fadeIn } from '../../variants';
 
@@ -68,6 +70,50 @@ function ProjectPage() {
 
   return (
     <div>
+      <Helmet>
+        {/* Basic Meta */}
+        <title>Projects Portfolio - WebForges | Full Stack, Static & No-Code Websites</title>
+        <meta
+          name="description"
+          content="Explore our portfolio of projects including e-commerce, event management, food delivery, brand identity, and no-code websites built by WebForges."
+        />
+        <meta
+          name="keywords"
+          content="web development portfolio, full stack projects, static websites, no-code websites, e-commerce projects, event management websites, food delivery app"
+        />
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="WebForges" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="canonical" href="https://dev.webforges.site/projects" />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:title"
+          content="Projects Portfolio - WebForges | Full Stack, Static & No-Code Websites"
+        />
+        <meta
+          property="og:description"
+          content="Explore our portfolio of projects including e-commerce, event management, food delivery, brand identity, and no-code websites built by WebForges."
+        />
+        <meta property="og:image" content="https://dev.webforges.site/logo.png" />
+        <meta property="og:url" content="https://dev.webforges.site/projects" />
+        <meta property="og:site_name" content="WebForges" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Projects Portfolio - WebForges | Full Stack, Static & No-Code Websites"
+        />
+        <meta
+          name="twitter:description"
+          content="Explore our portfolio of projects including e-commerce, event management, food delivery, brand identity, and no-code websites built by WebForges."
+        />
+        <meta name="twitter:image" content="https://dev.webforges.site/logo.png" />
+        <meta name="twitter:site" content="@WebForges" />
+        <meta name="twitter:creator" content="@WebForges" />
+      </Helmet>
       <div class="bg-animation absolute">
         <div class="noise-bg"></div>
         <div class="blob-cont">

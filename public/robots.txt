@@ -1,0 +1,6 @@
+# Allow all bots full access
+User-agent: *
+Disallow:
+
+# Sitemap location
+Sitemap: https://dev.webforges.site/sitemap.xml

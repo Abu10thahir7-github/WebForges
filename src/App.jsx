@@ -18,16 +18,19 @@ import FreeTools from './Componets/HomePages/FreeTools';
 import EntryLoader from './Componets/Animations/LoadingAnimation';
 import LogoLoader from './Componets/Animations/LogoAniamtion';
 import Pricing from './Componets/Pages/Pricing';
- 
+
 import ServiceDetails from './Componets/subPages/ServiceDetails';
 const App = () => {
   const [isActive, setIsActive] = useState(false);
   const [showContent, setShowContent] = useState(false);
 
+    useEffect(() => {
+    window.scrollTo(0, 0); // Scroll to the top of the page
+  }, []); 
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowContent(true);
-    }, 4000); // 5 seconds
+    }, 3500); // 5 seconds
 
     return () => clearTimeout(timer);
   }, []);

@@ -118,10 +118,11 @@ export default function TabsComponent() {
       </div>
 
       {/* current tab panels */}
-      <div className="mt-6 w-full text-center">
+      <div className="mt-6 w-full  ">
         <div className="services-tabs border-t border-gray-700">
           {TABS.find(t => t.id === activeTab).items.map(item => (
             <HoverCard
+              className=""
               key={item.to}
               title={item.title}
               desc={item.desc}

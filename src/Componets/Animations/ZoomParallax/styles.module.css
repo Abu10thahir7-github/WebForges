@@ -1,0 +1,84 @@
+.container {
+  height: 300vh;
+  position: relative;
+}
+.container .sticky {
+  text-align: center;
+  position: sticky;
+  overflow: hidden;
+  top: 0;
+  height: 100vh;
+}
+.container .sticky .el {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container .sticky .el .textContainer {
+  position: relative;
+  width: 25vw;
+  height: 25vh;
+}
+.container .sticky .el .textContainer img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.container .sticky .el:nth-of-type(2) .textContainer {
+  top: -30vh;
+  left: 5vw;
+  width: 35vw;
+  height: 30vh;
+}
+.container .sticky .el:nth-of-type(3) .textContainer {
+  top: -10vh;
+  left: -29vw;
+  width: 25vw;
+  height: 45vh;
+}
+.container .sticky .el:nth-of-type(4) .textContainer {
+  left: 27.5vw;
+  width: 25vw;
+  height: 25vh;
+}
+.container .sticky .el:nth-of-type(5) .textContainer {
+  top: 27.5vh;
+  left: 5vw;
+  width: 25vw;
+  height: 25vh;
+}
+.container .sticky .el:nth-of-type(6) .textContainer {
+  top: 27.5vh;
+  left: -29.5vw;
+  width: 30vw;
+  height: 25vh;
+}
+.container .sticky .el:nth-of-type(7) .textContainer {
+  top: 22.5vh;
+  left: 30vw;
+  width: 25vw;
+  height: 15vh;
+}
+.container .sticky .el:nth-of-type(8) .textContainer {
+  bottom: 29vh;
+  left: 29vw;
+  width: 19vw;
+  height: 15vh;
+}
+
+.textContainer {
+  background: url("/src/assets/neon-bg.jpg") no-repeat center center;
+  background-size: cover;
+  -webkit-background-clip: text;
+  color: transparent;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  background-size: 350% auto;
+}
+
+h2 {
+  word-wrap: break-word;
+}/*# sourceMappingURL=styles.module.css.map */

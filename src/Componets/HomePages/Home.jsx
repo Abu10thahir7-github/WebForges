@@ -25,7 +25,33 @@ const location = useLocation();
 
   return (
     <div>
-       
+        <Helmet>
+               {/* Basic Meta */}
+               <title> WebForges | Creative Web Design & SEO Experts</title>
+               <meta name="description" content="Discover premium website design, e-commerce solutions, UI/UX, SEO optimization, and more with WebForges. Your partner in digital success." />
+               <meta name="keywords" content="web design, SEO services, e-commerce development, UI/UX design, responsive websites, website maintenance, branding, creative solutions" />
+               <meta name="robots" content="index, follow" />
+               <meta name="author" content="WebForges" />
+               <meta name="viewport" content="width=device-width, initial-scale=1" />
+               <link rel="canonical" href="https://dev.webforges.site" />
+
+               {/* Open Graph / Facebook */}
+               <meta property="og:type" content="website" />
+               <meta property="og:title" content="Our Services - WebForges | Creative Web Design & SEO Experts" />
+               <meta property="og:description" content="Discover premium website design, e-commerce solutions, UI/UX, SEO optimization, and more with WebForges. Your partner in digital success." />
+               <meta property="og:image" content="https://dev.webforges.site/logo.png" />
+               <meta property="og:url" content="https://dev.webforges.site" />
+               <meta property="og:site_name" content="WebForges" />
+
+               {/* Twitter Card */}
+               <meta name="twitter:card" content="summary_large_image" />
+               <meta name="twitter:title" content="Our Services - WebForges | Creative Web Design & SEO Experts" />
+               <meta name="twitter:description" content="Discover premium website design, e-commerce solutions, UI/UX, SEO optimization, and more with WebForges. Your partner in digital success." />
+               <meta name="twitter:image" content="https://dev.webforges.site/logo.png" />
+               <meta name="twitter:site" content="@WebForges" />
+               <meta name="twitter:creator" content="@WebForges" />
+             </Helmet>
+
       <div className="noise"></div>
       <div class="home">
         <svg

@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet-async';
 import { fadeIn } from '../../variants';
 import ZoomParallax from '../Animations/ZoomParallax/ZoomParallax';
 import Contact from '../HomePages/Contact';
-
+import Animation from '../../../public/images/services/animation.gif';
 
 function ServicesPage() {
   scrollTo(0, 0);
@@ -38,7 +38,7 @@ function ServicesPage() {
         <meta name="twitter:site" content="@WebForges" />
         <meta name="twitter:creator" content="@WebForges" />
       </Helmet>
-      
+
           <div class="bg-animation absolute">
         <div class="noise-bg"></div>
         <div class="blob-cont">
@@ -107,6 +107,15 @@ function ServicesPage() {
           <li>8. SEO</li>
         </motion.ul>
 
+
+      </div>
+      <div>
+<img
+  src={Animation}
+  alt="WebForges Logo"
+  className="w-4/5 m-auto"
+  loading="lazy"
+/>
 
       </div>
       <Contact/>

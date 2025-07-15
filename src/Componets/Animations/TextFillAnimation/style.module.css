@@ -1,0 +1,44 @@
+.paragraph {
+  display: flex;
+  font-size: 5rem;
+  line-height: 1;
+  max-width: 1280px;
+  color: white;
+  flex-wrap: wrap;
+}
+.paragraph .word {
+  position: relative;
+  margin-right: 12px;
+  margin-top: 12px;
+}
+.paragraph .word .shadow {
+  position: absolute;
+  opacity: 20%;
+}
+@media (max-width: 1024px) {
+  .paragraph {
+    font-size: 4rem;
+  }
+  .paragraph .word {
+    margin-right: 10px;
+    margin-top: 10px;
+  }
+}
+@media (max-width: 768px) {
+  .paragraph {
+    font-size: 3rem;
+  }
+  .paragraph .word {
+    margin-right: 8px;
+    margin-top: 8px;
+  }
+}
+@media (max-width: 480px) {
+  .paragraph {
+    font-size: 2rem;
+  }
+  .paragraph .word {
+    margin-right: 6px;
+    margin-top: 6px;
+  }
+}/*# sourceMappingURL=style.module.css.map */

@@ -18,19 +18,19 @@ export const serviceList = [
     slug: 'static',
     title: 'Static Website',
     desc: 'Create a professional website with ease.',
-    image: '/images/services/StaticWebsite.png',
+    image: 'https://res.cloudinary.com/dcrf52w3g/image/upload/v1755290402/StaticWebsite_dwz46q.png',
     content: ` We create a professional website with ease. We offer a wide range of templates, customization options, and support for SEO and analytics.`
   },
  {
     slug: 'webdesign',
     title: 'Web Designing',
     desc: 'Pixel‑perfect UI/UX as you wish.',
-    image: '/images/services/Webdesgin.png',
+    image: 'https://res.cloudinary.com/dcrf52w3g/image/upload/v1755290418/Webdesgin_ejjoo5.png',
    intro: `
       🌐 <strong>What is Web Designing?</strong><br/>
       Web designing means creating the visual layout of a website — including colors, fonts, images, buttons, menus, and more.<br/>
       <br/>
-      
+
     `,
     subContent: [
       {

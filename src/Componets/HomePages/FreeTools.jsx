@@ -64,7 +64,7 @@ function FreeTools() {
       <meta name="twitter:creator" content="@WebForges" />
     </Helmet>
 
-      <div className="h-[50vh]"></div>
+      <div className="md:h-[30vh]"></div>
       <div className="w-4/5 relative m-auto h-auto">
         <div className=" mb-32  flex items-center flex-col md:flex-row">
           <motion.div
@@ -153,7 +153,7 @@ function FreeTools() {
 
         </div>
       </div>
-      <div className="h-[50vh]"></div>
+      <div className="h-[5vh] md:h-[30vh]"></div>
     </div>
   );
 }

@@ -29,7 +29,7 @@ export default function DiscoverTextAnimation() {
 
   return (
     <main className="overflow-hidden">
-      <div className='h-[27vh]'/>
+      <div className='md:h-[27vh]'/>
       <div ref={container}>
 
         <Slide    direction={'right'} left={"-8%"} progress={scrollYProgress}/>
@@ -37,7 +37,7 @@ export default function DiscoverTextAnimation() {
 
 
       </div>
-      <div className='h-[20vh]' />
+      <div className='md:h-[20vh]' />
     </main>
   );
 }

@@ -8,26 +8,50 @@ import Card from '../Animations/CardAnimation';
 import abu from '../../assets/abu.jpg';
 import sulaiman from '../../assets/sulai.jpg';
 
-
 import { useScroll } from 'framer-motion';
 import { useEffect, useRef } from 'react';
-import Lenis from '@studio-freight/lenis'
+import Lenis from '@studio-freight/lenis';
 import Contact from '../HomePages/Contact';
 export const projects = [
   {
-    title: "Muhammed Sulaiman T",
-    description: "Full Stack Developer | Backend Engineer | API Specialist\n\nFrom secure authentication systems to custom APIs and database design, I handle the logic and power behind your web application. My mission? Build clean, scalable, and secure systems using modern stacks like MERN (MongoDB, Express, React, Node.js).",
+    title: '',
+
     src: sulaiman,
-    link: "https://mhdsulu786.vercel.app/",
-    color: "#212121"
+    link: 'https://mhdsulu786.vercel.app/',
+    color: '#212121',
   },
   {
-    title: "Abuthahir",
-    description: "Frontend Developer | UI/UX Designer | Responsive Web Specialist\n\nI create websites that are not just beautiful but also fully responsive, fast-loading, and user-friendly. Whether it’s a sleek portfolio or a feature-rich dashboard, I make sure your visitors get a seamless experience — on any device.",
-    src:  abu,
-    link: "https://abu-thahir.vercel.app/",
-    color: "black"
-  }
+    title: 'Abuthahir',
+    description:
+      'Frontend Developer | UI/UX Designer | Responsive Web Specialist\n\nI create websites that are not just beautiful but also fully responsive, fast-loading, and user-friendly. Whether it’s a sleek portfolio or a feature-rich dashboard, I make sure your visitors get a seamless experience — on any device.',
+    src: abu,
+    link: 'https://abu-thahir.vercel.app/',
+    color: 'black',
+  },
+];
+const teamMembers = [
+  {
+    name: "Abu Thahir",
+    role: "MERN Stack Developer",
+    image: abu,
+    socials: {
+      linkedin: "#",
+      github: "#",
+      twitter: "https://mhdsulu786.vercel.app/",
+    },
+  },
+  {
+    name: "Muhammed Sulaiman T",
+    role: "Full Stack Developer",
+    image:sulaiman ,
+    socials: {
+      linkedin: "#",
+      github: "#",
+      twitter: "#",
+    },
+  },
+
+
 ];
 
 const paragraph =
@@ -97,24 +121,22 @@ function Blog() {
   const filteredArticles =
     activeTab === 'ALL' ? articles : articles.filter(article => article.category === activeTab);
 
-
-
-      const container = useRef(null);
+  const container = useRef(null);
   const { scrollYProgress } = useScroll({
     target: container,
-    offset: ['start start', 'end end']
-  })
+    offset: ['start start', 'end end'],
+  });
 
-  useEffect( () => {
-    const lenis = new Lenis()
+  useEffect(() => {
+    const lenis = new Lenis();
 
     function raf(time) {
-      lenis.raf(time)
-      requestAnimationFrame(raf)
+      lenis.raf(time);
+      requestAnimationFrame(raf);
     }
 
-    requestAnimationFrame(raf)
-  })
+    requestAnimationFrame(raf);
+  });
 
   return (
     <div>
@@ -188,7 +210,7 @@ function Blog() {
           </motion.p>
         </div>
       </div>
-      <div className="h-[30vh]"></div>
+      <div className="h-[20vh]"></div>
       <div className="w-4/5  m-auto blog  ">
         <div className="bg-black text-white p-4">
           {/* Tabs */}
@@ -216,15 +238,25 @@ function Blog() {
             initial="hidden"
             whileInView={'show'}
             viewport={{ once: true }}
-            className="mt-40 "
+            className="md:mt-40 "
           >
             {filteredArticles.length > 0 ? (
               filteredArticles.map(article => (
-                <div key={article.id} className="mb-10 border-t pt-10    border-gray-600 p-0 md:p-20   flex-col  md:flex-row gap-4">
+                <div
+                  key={article.id}
+                  className="mb-10 border-t pt-10    border-gray-600 p-0 md:p-20   flex-col  md:flex-row gap-4"
+                >
                   <p className="text-sm text-gray-400 mb-2">{article.date}</p>
-                  <img src={article.image} alt={article.title} className=" object-cover  " loading="lazy" />
+                  <img
+                    src={article.image}
+                    alt={article.title}
+                    className=" object-cover  "
+                    loading="lazy"
+                  />
                   <div>
-                    <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-4xl py-5  ">{article.title}</h2>
+                    <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-4xl py-5  ">
+                      {article.title}
+                    </h2>
                     <a
                       href={article.link}
                       className="inline-block mt-3 px-4 py-1 border border-white rounded-full text-sm hover:bg-white hover:text-black transition"
@@ -240,26 +272,72 @@ function Blog() {
           </motion.div>
         </div>
       </div>
-      <div>
-
-      </div>
-      <div className='h-[20vh]'></div>
-      <BlogTextAnimation/>
-<div className='h-[30vh]'></div>
+      <div></div>
+      <div className="md:h-[20vh]"></div>
+      <BlogTextAnimation />
+      <div className="md:h-[30vh]"></div>
       <div className="w-4/5 m-auto     ">
-        <p className=' text-lg sm:text-2xl md:text-3xl lg:text-4xl'>  <Word paragraph={paragraph} />
-</p>
+        <p className=" text-lg sm:text-2xl md:text-3xl lg:text-4xl">
+          {' '}
+          <Word paragraph={paragraph} />
+        </p>
 
-<main ref={container} className='relative mt-36'>
-      {
-        projects.map( (project, i) => {
-          const targetScale = 1 - ( (projects.length - i) * 0.05);
-          return <Card key={`p_${i}`} i={i} {...project} progress={scrollYProgress} range={[i * .25, 1]} targetScale={targetScale}/>
-        })
-      }
-    </main>
+         <section className="py-20 ">
+      <div className="max-w-7xl mx-auto px-6 text-center">
+
+
+        {/* Team Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+          {teamMembers.map((member, i) => (
+            <motion.div
+              key={i}
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.3 }}
+              className=" backdrop-blur-xl
+                         rounded-2xl p-6 shadow-lg flex flex-col items-center
+                         "
+            >
+              {/* Profile Image */}
+              <div className="w-32 h-32 rounded-full overflow-hidden shadow-md mb-4">
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+
+              {/* Info */}
+              <h3 className="text-xl  text-white">{member.name}</h3>
+              <p className="text-gray-400 text-sm mb-4">{member.role}</p>
+
+              {/* Socials */}
+              <div className="flex gap-4">
+                <a
+                  href={member.socials.linkedin}
+                  className="text-blue-400 hover:text-blue-500 transition"
+                >
+                  <i className="fab fa-linkedin text-xl"></i>
+                </a>
+                <a
+                  href={member.socials.github}
+                  className="text-gray-300 hover:text-white transition"
+                >
+                  <i className="fab fa-github text-xl"></i>
+                </a>
+                <a
+                  href={member.socials.twitter}
+                  className="text-sky-400 hover:text-sky-500 transition"
+                >
+                  <i className="fab fa-twitter text-xl"></i>
+                </a>
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
-          <Contact />
+    </section>
+      </div>
+      <Contact />
     </div>
   );
 }

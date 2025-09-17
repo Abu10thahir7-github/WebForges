@@ -9,7 +9,7 @@ function Contact() {
 
   return (
     <>
-      <div className="h-[50vh]"></div>
+      <div className="md:h-[10vh]"></div>
       <div className="contact   ">
         <div className="contact-container flex flex-col w-4/5  m-auto h-screen">
           <motion.div

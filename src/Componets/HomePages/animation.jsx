@@ -30,7 +30,7 @@ export default function Animation() {
 
   return (
     <main className="overflow-hidden">
-      <div className='h-[50vh]'/>
+      <div className='md:h-[30vh]'/>
       <div ref={container}>
         <Slide  src={viteSvg} direction={'left'} left={"-60%"} progress={scrollYProgress}/>
         <Slide     direction={'right'} left={"-75%"} progress={scrollYProgress}/>

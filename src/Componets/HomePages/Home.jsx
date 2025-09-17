@@ -487,7 +487,7 @@ const location = useLocation();
           initial="hidden"
           whileInView={'show'}
           viewport={{ once: true }}
-          class=" mt-32 flex flex-col sm:flex-col md:flex-col lg:flex-row gap-4"
+          class=" mt-10 flex flex-col sm:flex-col md:flex-col lg:flex-row gap-4"
         >
           <div className="flex sm:w-full">
             <p className="  flex items-center text-thin font-thin uppercase text-gray-400">

@@ -22,8 +22,8 @@ function AboutUs() {
   scrollTo(0, 0);
 
   return (
-    
-       
+
+
     <div>
       <Helmet>
         {/* Basic Meta */}
@@ -104,7 +104,7 @@ function AboutUs() {
         </div>
       </div>
       <div className="w-4/5 m-auto ">
-        <div className="h-[20vh]"></div>
+        <div className=" mt-10  "></div>
         <motion.h1
           variants={fadeIn('up', 0.5)}
           initial="hidden"
@@ -126,7 +126,7 @@ function AboutUs() {
         <motion.div>
           <Word paragraph={paragraph} />
         </motion.div>
-        <div className="h-[30vh]"></div>
+        <div className=" h-[10vh]  md:h-[20vh]"></div>
 
         <motion.div
           variants={fadeIn('up', 0.2)}
@@ -145,7 +145,7 @@ function AboutUs() {
 ഞങ്ങളുടെ വൈവിധ്യമാർന്ന വൈദഗ്ധ്യവും നൂതനമായ സമീപനവും നിങ്ങളുടെ പ്രോജക്റ്റിന്റെ ലക്ഷ്യങ്ങൾ കൈവരിക്കുക മാത്രമല്ല, അവയെ മറികടക്കുകയും ചെയ്യുന്നു, വിജയത്തിലേക്ക് നയിക്കുന്ന ഫലപ്രദമായ പരിഹാരങ്ങൾ സൃഷ്ടിക്കുന്നു.
           </p>
         </motion.div>
-        <div className="mt-52">
+        <div className=" mt-10 md:mt-32">
           <motion.h1
             variants={fadeIn('up', 0.5)}
             initial="hidden"
@@ -188,7 +188,7 @@ function AboutUs() {
             />
           </div>
 
-          <div className="w-4/5 flex flex-col sm:flex-row m-auto justify-between my-32 pt-36">
+          <div className="md:w-4/5 flex flex-col sm:flex-row m-auto justify-between md:my-32 ">
             <motion.p
               variants={fadeIn('up', 0.5)}
               initial="hidden"
@@ -224,7 +224,7 @@ function AboutUs() {
             </div>
           </div>
         </div>
-        <div className="mt-40">
+        <div className="md:mt-40">
           <motion.h1
             variants={fadeIn('up', 0.5)}
             initial="hidden"
@@ -302,7 +302,7 @@ function AboutUs() {
       </div>
       <Contact />
     </div>
-  
+
   );
 }
 

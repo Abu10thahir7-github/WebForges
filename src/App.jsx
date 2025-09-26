@@ -1,7 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import { Suspense, lazy, useEffect, useState } from 'react';
 
-import NavBarSidebar from './Componets/HomePages/NavBarSidebar';
 import Cursor from './Componets/Animations/CursorAnimation/Cursor';
 import ProjectPage from './Componets/Pages/ProjectPage';
 import ServicesPage from './Componets/Pages/ServicesPage';
@@ -18,28 +17,27 @@ import FreeTools from './Componets/HomePages/FreeTools';
 import EntryLoader from './Componets/Animations/LoadingAnimation';
 import LogoLoader from './Componets/Animations/LogoAniamtion';
 import Pricing from './Componets/Pages/Pricing';
-
+import Header from './Componets/header';
 import ServiceDetails from './Componets/subPages/ServiceDetails';
 const App = () => {
   const [isActive, setIsActive] = useState(false);
   const [showContent, setShowContent] = useState(false);
 
-    useEffect(() => {
+  useEffect(() => {
     window.scrollTo(0, 0); // Scroll to the top of the page
   }, []);
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowContent(true);
-
     }, 2000); // 5 seconds
- 
+
     return () => clearTimeout(timer);
   }, []);
 
   if (!showContent) {
     return (
       <div className="flex justify-center items-center">
-       <LogoLoader/>
+        <LogoLoader />
       </div>
     );
   }
@@ -48,23 +46,21 @@ const App = () => {
     <>
       <Cursor className="" isActive={isActive} />
       <div className="navbar-postion-setup">
-        <NavBarSidebar />
+        <Header />
       </div>
 
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/services" element={<ServicesPage />} />
+        <Route path="/projects" element={<ProjectPage />} />
+        <Route path="/pricing" element={<Pricing />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/about" element={<AboutUs />} />
+        <Route path="/freetools" element={<FreeTools />} />
+        <Route path="/contact" element={<ContactPage />} />
 
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/services" element={<ServicesPage />} />
-          <Route path="/projects" element={<ProjectPage />} />
-          <Route path="/pricing" element={<Pricing />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/about" element={<AboutUs />} />
-          <Route path="/freetools" element={<FreeTools />} />
-          <Route path="/contact" element={<ContactPage />} />
-
-          <Route path="/services/:slug" element={<ServiceDetails />} />
-        </Routes>
-
+        <Route path="/services/:slug" element={<ServiceDetails />} />
+      </Routes>
 
       <Footer />
     </>

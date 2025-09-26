@@ -1,0 +1,27 @@
+.link {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  .indicator {
+    width: 10px;
+    height: 10px;
+    background-color: #f6bc17;
+    border-radius: 50%;
+    position: absolute;
+    left: -30px;
+
+    // Mobile responsive indicator
+    @media (max-width: 768px) {
+      width: 8px;
+      height: 8px;
+      left: -25px;
+    }
+
+    @media (max-width: 480px) {
+      width: 6px;
+      height: 6px;
+      left: -20px;
+    }
+  }
+}

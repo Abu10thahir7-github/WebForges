@@ -73,7 +73,7 @@ export default function index() {
             );
           })}
         </div>
-        <Footer />
+        <Footer className="mt-20"/>
       </div>
       <Curve />
     </motion.div>

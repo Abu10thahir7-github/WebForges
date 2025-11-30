@@ -453,6 +453,7 @@ const location = useLocation();
             ></path>
           </svg>
         </div>
+        <div></div>
         <motion.div
           variants={fadeIn('up', 0.2)}
           initial="hidden"

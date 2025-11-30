@@ -212,7 +212,7 @@ function Footer() {
             rel="noopener noreferrer"
             className="  underline hover:text-blue-600 transition"
           >
-            Abu Thahir
+            WebForges
           </a>
         </p>
       </motion.h1>

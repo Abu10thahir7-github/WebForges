@@ -232,7 +232,7 @@ function Services() {
         </defs>
       </svg>
       <div className="w-4/5 m-auto">
-        <TabsComponent />
+    
       </div>
     </div>
   );

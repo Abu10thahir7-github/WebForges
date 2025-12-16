@@ -14,43 +14,57 @@ import Footer from './Footer';
 import FreeTools from './FreeTools';
 import { Link } from 'react-router-dom';
 import TextRotateAnimate from '../Animations/TextRotateAnimate';
-import image_logo from '../../assets/logo.png'
+import image_logo from '../../assets/logo.png';
 
 function Home() {
-
-const location = useLocation();
-
-
-
+  const location = useLocation();
 
   return (
     <div>
-        <Helmet>
-               {/* Basic Meta */}
-               <title> WebForges | Creative Web Design & SEO Experts</title>
-               <meta name="description" content="Discover premium website design, e-commerce solutions, UI/UX, SEO optimization, and more with WebForges. Your partner in digital success." />
-               <meta name="keywords" content="web design, SEO services, e-commerce development, UI/UX design, responsive websites, website maintenance, branding, creative solutions" />
-               <meta name="robots" content="index, follow" />
-               <meta name="author" content="WebForges" />
-               <meta name="viewport" content="width=device-width, initial-scale=1" />
-               <link rel="canonical" href="https://dev.webforges.site" />
+      <Helmet>
+        {/* Basic Meta */}
+        <title> WebForges | Creative Web Design & SEO Experts</title>
+        <meta
+          name="description"
+          content="Discover premium website design, e-commerce solutions, UI/UX, SEO optimization, and more with WebForges. Your partner in digital success."
+        />
+        <meta
+          name="keywords"
+          content="web design, SEO services, e-commerce development, UI/UX design, responsive websites, website maintenance, branding, creative solutions"
+        />
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="WebForges" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="canonical" href="https://dev.webforges.site" />
 
-               {/* Open Graph / Facebook */}
-               <meta property="og:type" content="website" />
-               <meta property="og:title" content="Our Services - WebForges | Creative Web Design & SEO Experts" />
-               <meta property="og:description" content="Discover premium website design, e-commerce solutions, UI/UX, SEO optimization, and more with WebForges. Your partner in digital success." />
-               <meta property="og:image" content="https://dev.webforges.site/logo.png" />
-               <meta property="og:url" content="https://dev.webforges.site" />
-               <meta property="og:site_name" content="WebForges" />
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:title"
+          content="Our Services - WebForges | Creative Web Design & SEO Experts"
+        />
+        <meta
+          property="og:description"
+          content="Discover premium website design, e-commerce solutions, UI/UX, SEO optimization, and more with WebForges. Your partner in digital success."
+        />
+        <meta property="og:image" content="https://dev.webforges.site/logo.png" />
+        <meta property="og:url" content="https://dev.webforges.site" />
+        <meta property="og:site_name" content="WebForges" />
 
-               {/* Twitter Card */}
-               <meta name="twitter:card" content="summary_large_image" />
-               <meta name="twitter:title" content="Our Services - WebForges | Creative Web Design & SEO Experts" />
-               <meta name="twitter:description" content="Discover premium website design, e-commerce solutions, UI/UX, SEO optimization, and more with WebForges. Your partner in digital success." />
-               <meta name="twitter:image" content="https://dev.webforges.site/logo.png" />
-               <meta name="twitter:site" content="@WebForges" />
-               <meta name="twitter:creator" content="@WebForges" />
-             </Helmet>
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Our Services - WebForges | Creative Web Design & SEO Experts"
+        />
+        <meta
+          name="twitter:description"
+          content="Discover premium website design, e-commerce solutions, UI/UX, SEO optimization, and more with WebForges. Your partner in digital success."
+        />
+        <meta name="twitter:image" content="https://dev.webforges.site/logo.png" />
+        <meta name="twitter:site" content="@WebForges" />
+        <meta name="twitter:creator" content="@WebForges" />
+      </Helmet>
 
       <div className="noise"></div>
       <div class="home">
@@ -175,7 +189,7 @@ const location = useLocation();
         </svg>
         <svg
           className="absolute floating   rotate-180 left-0"
-          style={{rotate: '180deg'}}
+          style={{ rotate: '180deg' }}
           width="324"
           height="578"
           viewBox="0 0 324 578"
@@ -294,8 +308,8 @@ const location = useLocation();
           </defs>
         </svg>
         <div class="hero items-center  m-auto   flex h-[70vh]">
-<img className=' hidden md:block' src={image_logo} alt=""/>
-          <TextRotateAnimate/>
+          <img className=" hidden md:block" src={image_logo} alt="" />
+          <TextRotateAnimate />
         </div>
         <div class="scrollDown w-fit m-auto mb-7">
           <svg
@@ -498,10 +512,13 @@ const location = useLocation();
             </p>
           </div>
           <div className=" sm:w-full">
-              <h1 className=" text-lg sm:text-2xl md:text-3xl lg:text-3xl"> <span className='manjari-regular'>
-   നിങ്ങളുടെ ബിസിനസ് കൂടുതൽ ആളുകളിലേക്ക് എത്തട്ടെ
- മാത്രമല്ല, ഓൺലൈൻ ലോകത്ത് നിങ്ങളുടെ സ്ഥാനം ഉറപ്പാക്കാം!
- </span></h1>
+            <h1 className=" text-lg sm:text-2xl md:text-3xl lg:text-3xl">
+              {' '}
+              <span className="manjari-regular">
+                നിങ്ങളുടെ ബിസിനസ് കൂടുതൽ ആളുകളിലേക്ക് എത്തട്ടെ മാത്രമല്ല, ഓൺലൈൻ ലോകത്ത് നിങ്ങളുടെ
+                സ്ഥാനം ഉറപ്പാക്കാം!
+              </span>
+            </h1>
           </div>
         </motion.div>
       </div>
@@ -527,8 +544,8 @@ const location = useLocation();
               Industry Experience
             </h1>
             <p className="uppercase mt-4 sm:w-full md:w-1/2  text-thin     text-base sm:text-sm md:text-lg lg:text-lg xl:text-2xl text-gray-300 manjari-regular">
-
-ഞങ്ങളുടെ ഡിസൈനർമാർ വിവിധ മേഖലകളിൽ ബിസിനസ് മൂല്യം കൊണ്ടുവരുന്ന വ്യക്തിഗത പരിഹാരങ്ങൾ നൽകുന്നു.
+              ഞങ്ങളുടെ ഡിസൈനർമാർ വിവിധ മേഖലകളിൽ ബിസിനസ് മൂല്യം കൊണ്ടുവരുന്ന വ്യക്തിഗത പരിഹാരങ്ങൾ
+              നൽകുന്നു.
             </p>
           </motion.div>
           <motion.div
@@ -553,13 +570,7 @@ const location = useLocation();
       <Animation />
       <FreeTools />
       <div class=" w-4/5 h-full m-auto flex flex-col md:flex-row">
-        <motion.div
-          variants={fadeIn('up', 2)}
-          initial="hidden"
-          whileInView={'show'}
-          viewport={{ once: true }}
-          class="background"
-        ></motion.div>
+     
         <motion.div
           variants={fadeIn('up', 0.2)}
           initial="hidden"
@@ -590,37 +601,35 @@ const location = useLocation();
             utc<span class="text-style-italic">o</span>mes
           </p>
 
-        <Link to={'/projects'} >
-          <motion.button
-            variants={fadeIn('left', 0.2)}
-            initial="hidden"
-            whileInView={'show'}
-            viewport={{ once: true }}
-            className="bg-[#f6bc17]  rounded-full px-4 py-2 text-black  text-base uppercase flex items-center gap-3 mt-3"
+          <Link to={'/projects'}>
+            <motion.button
+              variants={fadeIn('left', 0.2)}
+              initial="hidden"
+              whileInView={'show'}
+              viewport={{ once: true }}
+              className="bg-[#f6bc17]  rounded-full px-4 py-2 text-black  text-base uppercase flex items-center gap-3 mt-3"
             >
-            see all work{' '}
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 20 20"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
+              see all work{' '}
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
               >
-              <path
-                d="M2.85711 10.8929L13.7232 10.8929L8.73211 15.8839L9.99997 17.1429L17.1428 10L9.99997 2.85714L8.74104 4.11607L13.7232 9.10714L2.85711 9.10714L2.85711 10.8929Z"
-                fill="currentColor"
+                <path
+                  d="M2.85711 10.8929L13.7232 10.8929L8.73211 15.8839L9.99997 17.1429L17.1428 10L9.99997 2.85714L8.74104 4.11607L13.7232 9.10714L2.85711 9.10714L2.85711 10.8929Z"
+                  fill="currentColor"
                 ></path>
-            </svg>
-          </motion.button>
-                </Link>
+              </svg>
+            </motion.button>
+          </Link>
         </motion.div>
       </div>
       <Projects />
 
       <Services />
       <Contact />
-
-
     </div>
   );
 }

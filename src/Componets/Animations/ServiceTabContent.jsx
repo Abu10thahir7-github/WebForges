@@ -7,48 +7,161 @@ import { fadeIn } from '../../variants';          // adjust to your path
 const TABS = [
   {
     id: 1,
-    label: 'All Web Services',
+    label: 'Website Services',
     items: [
-      { title: 'Web Development', desc: 'Create a website for your business.', to: '/services/webdevelopment' },
-      { title: 'E‑Commerce', desc: 'Launch a conversion‑ready online store.', to: '/services/ecommerce' },
-      { title: 'Static', desc: ' Create a professional website with ease.', to: '/services/static' },
-      { title: 'Web Designing', desc: 'Pixel‑perfect UI/UX as you wish.', to: '/services/webdesign' },
-      { title: 'Landing Page Design', desc: 'High‑impact one‑page sites.', to: '/services/landingpage' },
-      { title: 'Startup Business Website', desc: 'Website for your startup business.', to: '/services/startup-website' },
-      { title: 'Dynamic Website', desc: 'Create a dynamic website for your business.', to: '/services/dynamic-website' },
-      { title: 'Professional Business Website', desc: 'Website for your professional business.', to: '/services/professional-website' },
-      { title: 'SEO Website', desc: 'Website for your SEO business.', to: '/services/seo-website' },
-      { title: 'Marketing Web Designing', desc: 'Website for your marketing business.', to: '/services/marketing-webdesign' },
-      { title: 'Unlimited Page With 4 Admin Panel', desc: 'Website with unlimited pages & multiple admin roles.', to: '/services/unlimited-pages' },
-      { title: 'Multiple Location Website', desc: 'One website for multiple locations.', to: '/services/multiple-location' },
-      { title: 'Custom Web Designing', desc: 'Tailor-made web designs as per your needs.', to: '/services/custom-webdesign' },
+      {
+        title: 'Business Website Development',
+        desc: 'Professional websites tailored for businesses of all sizes.',
+        to: '/services/business-website',
+      },
+      {
+        title: 'E-Commerce Website Development',
+        desc: 'Conversion-focused online stores with secure payments.',
+        to: '/services/ecommerce',
+      },
+      {
+        title: 'Static Website Development',
+        desc: 'Fast, lightweight, and cost-effective static websites.',
+        to: '/services/static',
+      },
+      {
+        title: 'Custom Website Design',
+        desc: 'Tailor-made website designs aligned with your brand.',
+        to: '/services/custom-webdesign',
+      },
+      {
+        title: 'Landing Page Design',
+        desc: 'High-converting single-page websites for promotions.',
+        to: '/services/landingpage',
+      },
+      {
+        title: 'Startup Website Solutions',
+        desc: 'Scalable websites built for startups and new ventures.',
+        to: '/services/startup-website',
+      },
+      {
+        title: 'Dynamic Website Development',
+        desc: 'Feature-rich dynamic websites with admin control.',
+        to: '/services/dynamic-website',
+      },
+      {
+        title: 'Professional Corporate Website',
+        desc: 'Premium websites for professional and corporate brands.',
+        to: '/services/professional-website',
+      },
+      {
+        title: 'SEO-Optimized Website',
+        desc: 'Websites built with SEO best practices for better ranking.',
+        to: '/services/seo-website',
+      },
+      {
+        title: 'Multi-Location Website',
+        desc: 'One website optimized for multiple business locations.',
+        to: '/services/multiple-location',
+      },
     ],
   },
   {
     id: 2,
-    label: 'Web Portal Development',
+    label: 'Digital Marketing & Design',
     items: [
-      { title: 'Real Estate Portal', desc: 'For your property business.', to: '/services/realestate-portal' },
-      { title: 'Food Delivery Portal', desc: 'Optimized UX for delivery businesses.', to: '/services/fooddelivery-portal' },
-      { title: 'E Learning Portal', desc: 'Build your own online learning platform.', to: '/services/elearning-portal' },
-      { title: 'Travel Agency Portal', desc: 'Showcase trips, packages, and offers.', to: '/services/travelagency-portal' },
-      { title: 'Job Consultancy Portal', desc: 'For job seekers and HR firms.', to: '/services/jobconsultancy-portal' },
-      { title: 'Matrimony Portal', desc: 'Connect people through your match-making portal.', to: '/services/matrimony-portal' },
+      {
+        title: 'Meta Ads Management',
+        desc: 'Facebook & Instagram ads to generate quality leads.',
+        to: '/services/meta-ads',
+      },
+      {
+        title: 'Google Ads Management',
+        desc: 'Search and display ads to boost conversions.',
+        to: '/services/google-ads',
+      },
+      {
+        title: 'Marketing Poster Design',
+        desc: 'High-impact posters for ads, social media & promotions.',
+        to: '/services/marketing-poster',
+      },
+      {
+        title: 'Social Media Creatives',
+        desc: 'Eye-catching designs for Instagram & Facebook.',
+        to: '/services/social-media-design',
+      },
+      {
+        title: 'Branding & Visual Design',
+        desc: 'Logos, banners, and brand identity designs.',
+        to: '/services/branding',
+      },
     ],
   },
   {
     id: 3,
-    label: 'Related Services',
+    label: 'Web Portal Development',
     items: [
-      { title: 'Website Maintenance', desc: 'Keep your website up-to-date and secure.', to: '/services/website-maintenance' },
-      { title: 'Website Support', desc: 'Get professional support for your website.', to: '/services/website-support' },
-      { title: 'Website Redesign', desc: 'Revamp your site with a fresh new design.', to: '/services/website-redesign' },
-      { title: 'Google Ads Management', desc: 'Manage your Google Ads campaigns effectively.', to: '/services/google-ads' },
-      { title: 'Google Analytics', desc: 'Track and analyze your site’s traffic.', to: '/services/google-analytics' },
-      { title: 'Domain Registration', desc: 'Secure your domain name with trusted registrars.', to: '/services/domain-registration' },
+      {
+        title: 'Real Estate Portal',
+        desc: 'Property listing portals for real estate businesses.',
+        to: '/services/realestate-portal',
+      },
+      {
+        title: 'Food Delivery Portal',
+        desc: 'Online ordering systems for food delivery businesses.',
+        to: '/services/fooddelivery-portal',
+      },
+      {
+        title: 'E-Learning Portal',
+        desc: 'Online education platforms with courses and dashboards.',
+        to: '/services/elearning-portal',
+      },
+      {
+        title: 'Travel Agency Portal',
+        desc: 'Travel portals showcasing packages, tours, and bookings.',
+        to: '/services/travelagency-portal',
+      },
+      {
+        title: 'Job Consultancy Portal',
+        desc: 'Recruitment portals for job seekers and employers.',
+        to: '/services/jobconsultancy-portal',
+      },
+      {
+        title: 'Matrimony Portal',
+        desc: 'Match-making portals with secure user management.',
+        to: '/services/matrimony-portal',
+      },
+    ],
+  },
+
+  {
+    id: 4,
+    label: 'Support & Maintenance',
+    items: [
+      {
+        title: 'Website Maintenance',
+        desc: 'Regular updates, security checks, and optimization.',
+        to: '/services/website-maintenance',
+      },
+      {
+        title: 'Website Support',
+        desc: 'Reliable technical support whenever you need it.',
+        to: '/services/website-support',
+      },
+      {
+        title: 'Website Redesign',
+        desc: 'Modern redesigns to refresh your existing website.',
+        to: '/services/website-redesign',
+      },
+      {
+        title: 'Domain & Hosting Services',
+        desc: 'Domain registration and reliable hosting solutions.',
+        to: '/services/domain-registration',
+      },
+      {
+        title: 'Analytics & Tracking Setup',
+        desc: 'Google Analytics and conversion tracking setup.',
+        to: '/services/google-analytics',
+      },
     ],
   },
 ];
+
 
 export default function TabsComponent() {
   const navigate = useNavigate();

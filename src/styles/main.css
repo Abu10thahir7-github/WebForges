@@ -13,7 +13,7 @@
 }
 
 body {
-  font-family: "Poppins", serif;
+  font-family: 'Poppins', serif;
   background-color: #000000;
   color: white;
 }
@@ -23,26 +23,26 @@ button {
 }
 
 .macondo-regular {
-  font-family: "Macondo", cursive;
+  font-family: 'Macondo', cursive;
   font-weight: 400;
   font-style: normal;
 }
 
 .chilanka-regular {
-  font-family: "Chilanka", cursive;
+  font-family: 'Chilanka', cursive;
   font-weight: 400;
   font-style: normal;
 }
 
 .baloo-chettan {
-  font-family: "Baloo Chettan 2", sans-serif;
+  font-family: 'Baloo Chettan 2', sans-serif;
   font-optical-sizing: auto;
   font-weight: 900;
   font-style: normal;
 }
 
 .manjari-regular {
-  font-family: "Manjari", sans-serif;
+  font-family: 'Manjari', sans-serif;
   font-weight: 400;
   font-style: normal;
 }
@@ -76,7 +76,7 @@ button {
   border: solid 1px rgba(255, 255, 255, 0.3725490196);
   border-radius: 50px;
   -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
 }
 
 .navbar-postion-setup {
@@ -97,7 +97,7 @@ button {
   }
 }
 .background {
-  background-image: url("../assets/futuristic-moon-background.jpg");
+  background-image: url('../assets/futuristic-moon-background.jpg');
   background-size: cover;
   background-position: center;
   position: absolute;
@@ -110,7 +110,7 @@ button {
 }
 
 .noise {
-  background-image: url("../assets/newnoise.webp");
+  background-image: url('../assets/newnoise.webp');
   background-size: cover;
   background-position: center;
   position: absolute;
@@ -191,7 +191,7 @@ button {
 }
 
 .Experts {
-  background-image: url("../assets/skyImg.webp");
+  background-image: url('../assets/skyImg.webp');
   background-size: cover;
   background-position: center;
   height: 70vh;
@@ -270,7 +270,7 @@ button {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("../assets/newnoise.webp");
+  background-image: url('../assets/newnoise.webp');
   background-repeat: repeat;
   opacity: 100%;
   pointer-events: none;
@@ -287,7 +287,26 @@ button {
   pointer-events: none;
 }
 
-.blob, .mint, .beige, .navy, .lime, .indigo, .teal, .gray, .brown, .purple, .pink, .orange, .black, .cyan, .violet, .yellow, .green, .darkBlue, .blue, .red {
+.blob,
+.mint,
+.beige,
+.navy,
+.lime,
+.indigo,
+.teal,
+.gray,
+.brown,
+.purple,
+.pink,
+.orange,
+.black,
+.cyan,
+.violet,
+.yellow,
+.green,
+.darkBlue,
+.blue,
+.red {
   position: absolute;
   border-radius: 50%;
   filter: blur(80px);
@@ -877,7 +896,7 @@ textarea:focus {
 /* You can use Tailwind or regular CSS */
 .blog img {
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   width: 100%;
   height: 20rem;
   display: block;
@@ -918,4 +937,4 @@ textarea:focus {
   border-bottom: solid 1px gray;
   padding: 10px;
   color: #919191;
-}/*# sourceMappingURL=main.css.map */
+} /*# sourceMappingURL=main.css.map */

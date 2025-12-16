@@ -5,147 +5,65 @@ import { motion } from 'framer-motion';
 import { fadeIn } from '../../variants';
 const tiers = [
   {
-    name: 'Landing Page',
-    id: 'tier-landing',
+    name: 'Starter (Static Website)',
+    id: 'basic-static-website',
     href: '#',
-    priceMonthly: '₹1,999',
-    description: 'Perfect for individuals or startups just getting online.',
+    priceMonthly: '₹4,999 – ₹6,999',
+    description: 'Best for personal websites & small businesses',
     features: [
-      '1 Page + Responsive',
-      'Custom Design',
+      '1–5 Pages + Fully Responsive',
+      'Custom Modern UI Design',
       'Contact Form Integration',
       'Basic SEO Setup',
       'Social Media Links',
-      '2 Week Support',
+      'WhatsApp Chat Button',
+      'Free Domain – 1 Year (Limited)',
+      '1 Weeks Free Support',
     ],
     featured: false,
   },
+
   {
-    name: 'Static Website',
-    id: 'tier-static',
+    name: 'Business (E-Commerce Website)',
+    id: 'basic-ecommerce-website',
     href: '#',
-    priceMonthly: '₹4,999',
-    description: 'For small businesses looking to establish an online presence.',
+    priceMonthly: '₹14,999',
+    description: 'Best for startups & small online stores',
     features: [
-      '5–8 Page Website (Dynamic)',
-      'Basic SEO',
-      'Contact & Quote Forms',
-      'Hosting & Domain Support',
-      'Responsive on All Devices',
-      'WhatsApp Integration',
-      '3 Months Support',
+      'Product Listing & Categories',
+      'Add to Cart & Checkout',
+      'User Login & Signup',
+      'Payment Gateway Integration',
+      'Order Management Dashboard',
+      'Mobile & Tablet Responsive',
+      'Basic SEO Setup',
+      'WhatsApp Order Support',
+      'Free Domain – 1 Year (Limited)',
+      '1 Month Free Support',
     ],
-    featured: false,
+    featured: true,
   },
+
   {
-    name: 'Startup Website',
-    id: 'tier-startup',
+    name: 'Premium Pro (Advanced / SEO + Ads)',
+    id: 'premium-website',
     href: '#',
-    priceMonthly: '₹7,499+',
-    description: 'Tailored for growing brands & eCommerce businesses.',
+    priceMonthly: '₹34,999',
+    description: 'Best for growing brands & professional businesses',
     features: [
-      'Unlimited Pages',
-      'Animations',
-      'Hosting & Domain Support',
-      'Speed & SEO Optimization',
-      'WhatsApp Integration',
-      '6 Months Support',
-    ],
-    featured: false,
-  },
-  {
-    name: 'Business Website',
-    id: 'tier-business',
-    href: '#',
-    priceMonthly: '₹9,999+',
-    description: 'For businesses needing advanced features and integrations.',
-    features: [
-      '10+ Pages',
-      'Advanced Contact Forms',
-      'Service & Product Pages',
-      'WhatsApp & Chat Support',
-      'Analytics Integration',
-      '6 Months Support',
-    ],
-    featured: false,
-  },
-  {
-    name: 'Professional Website',
-    id: 'tier-professional',
-    href: '#',
-    priceMonthly: '₹14,999+',
-    description: 'Best for agencies and professionals needing branding + performance.',
-    features: [
-      'Custom UI/UX Design',
-      'CMS Integration (e.g., WordPress)',
-      'Blog, Portfolio, Testimonials',
-      'Performance Optimization',
-      'Premium SEO Tools',
-      '1 Year Support',
-    ],
-    featured: false,
-  },
-  {
-    name: 'SEO Website',
-    id: 'tier-seo',
-    href: '#',
-    priceMonthly: '₹12,499+',
-    description: 'Focuses on visibility, search rankings, and organic growth.',
-    features: [
-      'SEO-Focused Design',
-      'Content Optimization',
-      'Keyword Setup',
-      'Google Analytics + Search Console',
-      'Blog Integration',
-      'Ongoing SEO Recommendations',
-    ],
-    featured: false,
-  },
-  {
-    name: 'Marketing Website',
-    id: 'tier-marketing',
-    href: '#',
-    priceMonthly: '₹11,999+',
-    description: 'Built for campaigns, promotions, and conversion-focused strategies.',
-    features: [
-      'Landing Pages for Campaigns',
-      'Lead Capture Forms',
-      'Analytics & Conversion Tracking',
-      'SEO & Speed Optimized',
-      'Email Integration (e.g., Mailchimp)',
-      '3–6 Months Support',
-    ],
-    featured: false,
-  },
-  {
-    name: 'Multiple Location Website',
-    id: 'tier-multi-location',
-    href: '#',
-    priceMonthly: '₹17,499+',
-    description: 'Perfect for franchises and multi-branch businesses.',
-    features: [
-      'Location-wise Pages',
-      'Map Integration',
-      'Separate SEO for Locations',
-      'Branch-wise Contact Forms',
-      'Fast Navigation & Filtering',
-      '1 Year Support',
-    ],
-    featured: false,
-  },
-  {
-    name: 'Advanced Website (Unlimited Pages)',
-    id: 'tier-advanced',
-    href: '#',
-    priceMonthly: '₹22,999+',
-    description: 'Complete business solution with unlimited scalability.',
-    features: [
-      'Unlimited Pages',
-      'High-End Animations',
-      'API & CMS Integrations',
-      'SEO + Performance Optimization',
-      'Custom Admin Panel',
-      'Lifetime Support (Optional)',
+      'Unlimited Pages / Products',
+      'Premium UI/UX Design',
+      'Advanced Admin Dashboard',
+      'Secure Website (SSL + Protection)',
+      'Payment Gateway & Order Tracking',
+      'Speed & Performance Optimization',
+      '1 Month SEO Optimization',
+      '1 Month Meta Ads Setup (FB & Instagram)',
+      'Backup & Security Setup',
+      'Mobile, Tablet & Desktop Responsive',
+      'Free Domain – 1 Year (Limited)',
+      'Free Hosting – 1 Year',
+      '3 Months Priority Support',
     ],
     featured: false,
   },
@@ -156,9 +74,17 @@ function classNames(...classes) {
 }
 
 export default function Pricing() {
+  const getWhatsAppLink = tier => {
+    const phoneNumber = '918921966289';
+    const message = encodeURIComponent(
+      `Hello! I'm interested in the ${tier.name} plan (${tier.priceMonthly}). Can you provide more details?`,
+    );
+    return `https://wa.me/${phoneNumber}?text=${message}`;
+  };
+
   return (
     <div className="    ">
-       <Helmet>
+      <Helmet>
         {/* Basic Meta */}
         <title>Affordable Website Pricing Plans - WebForges | Custom & SEO Optimized</title>
         <meta
@@ -236,13 +162,13 @@ export default function Pricing() {
           </motion.p>
         </div>
       </div>
-      <div className="mx-auto max-w-4xl mt-36 text-center">
-        <h2 className="text-base/7 font-semibold text-indigo-600 spa">Pricing</h2>
-        <p className="mt-2 text-2xl font-semibold tracking-tight text-balance text-white sm:text-6xl">
+      <div className="mx-auto max-w-4xl mt-10 md:mt-36 text-center">
+        <h2 className="text-2xl md:text-5xl font-semibold text-indigo-600 spa">Pricing</h2>
+        <p className="mt-2 text-2xl font-semibold tracking-tight text-balance text-white md:text-4xl">
           Choose the right plan for you
         </p>
       </div>
-      <p className="mx-auto mt-6 max-w-3xl text-center text-sm font-medium text-pretty text-yellow-500 sm:text-2xl manjari-regular">
+      <p className="mx-auto mt-6 max-w-3xl text-center text-lg  font-medium text-pretty text-yellow-500 md:text-2xl manjari-regular">
         നിങ്ങളുടെ പ്രേക്ഷകരെ ആകർഷിക്കുന്നതിനും ഉപഭോക്തൃ വിശ്വസ്തത സൃഷ്ടിക്കുന്നതിനും വിൽപ്പന
         വർദ്ധിപ്പിക്കുന്നതിനും ഏറ്റവും മികച്ച സവിശേഷതകൾ നിറഞ്ഞ ഒരു താങ്ങാനാവുന്ന പ്ലാൻ
         തിരഞ്ഞെടുക്കുക.{' '}
@@ -253,7 +179,7 @@ export default function Pricing() {
             key={tier.id}
             className={classNames(
               tier.featured ? 'bg-gray-900 shadow-2xl' : 'bg-white',
-              'rounded-3xl p-8 ring-2 ring-gray-900/10 sm:p-10',
+              'rounded-3xl p-8 ring-2 mx-4 md:mx-0 ring-gray-900/10 sm:p-10',
             )}
           >
             <h3
@@ -269,7 +195,7 @@ export default function Pricing() {
               <span
                 className={classNames(
                   tier.featured ? 'text-white' : 'text-gray-900',
-                  'text-5xl font-semibold tracking-tight',
+                  'text-3xl md:text-4xl font-semibold tracking-tight',
                 )}
               >
                 {tier.priceMonthly}
@@ -304,7 +230,9 @@ export default function Pricing() {
               ))}
             </ul>
             <a
-              href={tier.href}
+              href={getWhatsAppLink(tier)}
+              target="_blank"
+              rel="noopener noreferrer"
               aria-describedby={tier.id}
               className={classNames(
                 tier.featured

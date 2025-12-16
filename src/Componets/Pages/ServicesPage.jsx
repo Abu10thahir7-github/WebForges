@@ -6,6 +6,7 @@ import { fadeIn } from '../../variants';
 import ZoomParallax from '../Animations/ZoomParallax/ZoomParallax';
 import Contact from '../HomePages/Contact';
 import Animation from '../../../public/images/services/animation.gif';
+import TabsComponent from '../Animations/ServiceTabContent';
 
 function ServicesPage() {
   scrollTo(0, 0);
@@ -82,40 +83,12 @@ function ServicesPage() {
       </div>
 
 
-      <div className='md:hidden     w-4/5 m-auto flex flex-col justify-center items-center gap-10 bg-[#0f0f0f] p-3'>
-        <motion.h2
-          variants={fadeIn('up', 0.2)}
-          initial="hidden"
-          whileInView={'show'}
-          viewport={{ once: true }}
-          className='text-center text-xl sm:text-xl md:text-xl lg:text-3xl xl:text-7xl text-white    mt-10 underline'  >
-          <span class="text-style-italic">O</span>ur S<span class="text-style-italic">e</span>rv<span class="text-style-italic">i</span>ces
-        </motion.h2>
-
-        <motion.ul variants={fadeIn('up', 0.2)}
-          initial="hidden"
-          whileInView={'show'}
-          viewport={{ once: true }} className='services-sm-list '>
-          <motion.li
-          >1. Website Design & Development</motion.li>
-          <li>2. E-Commerce Solutions</li>
-          <li>3. Web Applications</li>
-          <li>4. UI/UX Design</li>
-          <li>5. Mobile-Friendly Development</li>
-          <li>6. Website Maintenance & Support</li>
-          <li>7. Branding & Creative</li>
-          <li>8. SEO</li>
-        </motion.ul>
-
-
-      </div>
+ 
       <div>
-<img
-  src={Animation}
-  alt="WebForges Logo"
-  className="w-4/5 m-auto"
-  loading="lazy"
-/>
+
+      <div className="w-4/5 m-auto">
+        <TabsComponent />
+      </div>
 
       </div>
       <Contact/>

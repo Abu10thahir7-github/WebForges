@@ -86,7 +86,7 @@ function AboutUs() {
             initial="hidden"
             whileInView={'show'}
             viewport={{ once: true }}
-            className=" w-full z-10 text-desgin font-medium   heading-style-h3 text-base sm:text-lg md:text-xl lg:text-3xl xl:text-7xl text-white"
+            className=" w-full z-10 text-desgin font-medium   heading-style-h3 text-2xl sm:text-3xl md:text-3xl lg:text-3xl xl:text-7xl text-white"
           >
             <span className="mr-0 md:mr-96 ">
               Creat<span class="text-style-italic">i</span>ve des

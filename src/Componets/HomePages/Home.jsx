@@ -570,7 +570,7 @@ function Home() {
       <Animation />
       <FreeTools />
       <div class=" w-4/5 h-full m-auto flex flex-col md:flex-row">
-     
+
         <motion.div
           variants={fadeIn('up', 0.2)}
           initial="hidden"

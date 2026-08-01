@@ -4,12 +4,10 @@ import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { fadeIn } from '../../variants';
 
-import trendziowebforges from './../../assets/projects/trendziowebforges.svg';
+import trendzio_mockup from './../../assets/projects/trendzio mockup.png';
 import velonto_mockup from './../../assets/projects/velonto design.jpg';
 import LSLIVEMEDIA from './../../assets/projects/LS LIVE MEDIA projct.png';
 import manasa from './../../assets/projects/manasa creation project.png';
-
-import flyoean from './../../assets/projects/Flyoceanmoockkup.svg';
 import sgAcademy from './../../assets/projects/sg project tumbnail.png';
 import Contact from '../HomePages/Contact';
 
@@ -18,15 +16,8 @@ const projects = [
     title: 'Trendzio',
     subtitle: 'E-Commerce',
     category: 'Full Stack',
-    img: trendziowebforges,
+    img: trendzio_mockup,
     link: 'https://www.trendzio.shop/',
-  },
-  {
-    title: 'Flyocean Travel & Tourism',
-    subtitle: 'Travel Agency',
-    category: 'Static Website',
-    img: flyoean,
-    link: 'https://www.flyoceantravel.com/',
   },
   {
     title: 'LS LIVE MEDIA',
@@ -60,7 +51,7 @@ const projects = [
 
 function getCategoryCounts(projects) {
   const counts = {};
-  projects.forEach(p => {
+  projects.forEach((p) => {
     counts[p.category] = (counts[p.category] || 0) + 1;
   });
   return counts;
@@ -73,7 +64,9 @@ function ProjectPage() {
   const categories = ['All', ...Object.keys(categoryCounts)];
 
   const filteredProjects =
-    selectedCategory === 'All' ? projects : projects.filter(p => p.category === selectedCategory);
+    selectedCategory === 'All'
+      ? projects
+      : projects.filter((p) => p.category === selectedCategory);
 
   return (
     <div>
@@ -151,66 +144,68 @@ function ProjectPage() {
             </span>{' '}
             <br />
             <span className="ml-0 md:ml-44">
+
               i<span class="text-style-italic">n </span>reality.
             </span>
           </motion.p>
         </div>
       </div>
       <div className="project-container sm:w-full md:w-full lg:w-4/5 m-auto px-4 py-8">
-        {/* Filter Buttons with Counts */}
-        <div className="flex flex-wrap gap-4 justify-center mb-16">
-          {categories.map(cat => (
-            <button
-              key={cat}
-              onClick={() => setSelectedCategory(cat)}
-              className={`px-4 py-2 rounded-full border ${
-                selectedCategory === cat
-                  ? 'bg-yellow-400 text-black'
-                  : 'bg-black text-white border-gray-300'
-              }`}
-            >
-              {cat.toUpperCase()} {cat !== 'All' && `[${categoryCounts[cat]}]`}
-            </button>
-          ))}
-        </div>
-
-        {/* Project Cards */}
-        <div className="w-full mt-16 sm:w-4/5 md:w-4/6 lg:w-4/6 mx-auto flex flex-col gap-10">
-          {filteredProjects.map((project, index) => (
-            <motion.div
-              key={index}
-              onClick={() => window.open(project.link, '_blank')}
-              variants={fadeIn('up', 0.2)}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true }}
-              className="project-card cursor-pointer"
-            >
-              <img src={project.img} alt={`${project.title}_mockup`} />
-              <div className="project-card-text flex justify-between border-t-[1px] border-t-[#363636] my-5 py-5">
-                <div>
-                  <h2 className="uppercase">{project.title}</h2>
-                  <p className="text-lg text-gray-500 font-light">{project.subtitle}</p>
-                </div>
-                <svg
-                  width="28"
-                  height="28"
-                  viewBox="0 0 28 28"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M4 15.25L19.2125 15.25L12.225 22.2375L14 24L24 14L14 4L12.2375 5.7625L19.2125 12.75L4 12.75L4 15.25Z"
-                    fill="currentColor"
-                  />
-                </svg>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+      {/* Filter Buttons with Counts */}
+      <div className="flex flex-wrap gap-4 justify-center mb-16">
+        {categories.map((cat) => (
+          <button
+            key={cat}
+            onClick={() => setSelectedCategory(cat)}
+            className={`px-4 py-2 rounded-full border ${
+              selectedCategory === cat
+                ? 'bg-yellow-400 text-black'
+                : 'bg-black text-white border-gray-300'
+            }`}
+          >
+            {cat.toUpperCase()} {cat !== 'All' && `[${categoryCounts[cat]}]`}
+          </button>
+        ))}
       </div>
-      <Contact />
+
+      {/* Project Cards */}
+      <div className="w-full mt-16 sm:w-4/5 md:w-4/6 lg:w-4/6 mx-auto flex flex-col gap-10">
+        {filteredProjects.map((project, index) => (
+          <motion.div
+            key={index}
+            onClick={() => window.open(project.link, '_blank')}
+            variants={fadeIn('up', 0.2)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            className="project-card cursor-pointer"
+          >
+            <img src={project.img} alt={`${project.title}_mockup`} />
+            <div className="project-card-text flex justify-between border-t-[1px] border-t-[#363636] my-5 py-5">
+              <div>
+                <h2 className="uppercase">{project.title}</h2>
+                <p className="text-lg text-gray-500 font-light">{project.subtitle}</p>
+              </div>
+              <svg
+                width="28"
+                height="28"
+                viewBox="0 0 28 28"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M4 15.25L19.2125 15.25L12.225 22.2375L14 24L24 14L14 4L12.2375 5.7625L19.2125 12.75L4 12.75L4 15.25Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </div>
+          </motion.div>
+        ))}
+      </div>
     </div>
+    <Contact/>
+    </div>
+
   );
 }
 

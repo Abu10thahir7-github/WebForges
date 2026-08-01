@@ -1,11 +1,11 @@
 import React from 'react';
+import trendzio_mockup from './../../assets/projects/trendzio mockup.png';
 import velonto_mockup from './../../assets/projects/velonto design.jpg';
 import LSLIVEMEDIA from './../../assets/projects/LS LIVE MEDIA projct.png';
 import manasa from './../../assets/projects/manasa creation project.png';
 import sgAcademy from './../../assets/projects/sg project tumbnail.png';
 import flyoean from './../../assets/projects/Flyoceanmoockkup.svg';
 import talktowermockup from './../../assets/projects/talktowermockup.svg';
-import trendziowebforges from './../../assets/projects/trendziowebforges.svg';
 import { motion } from 'framer-motion';
 import { fadeIn } from '../../variants';
 import Footer from './Footer';
@@ -31,7 +31,7 @@ function Projects() {
           viewport={{ once: true }}
           className="project-card cursor-pointer"
         >
-          <img className="" src={trendziowebforges} alt="trendzio_mockup" />
+          <img className="" src={trendzio_mockup} alt="trendzio_mockup" />
           <div className="project-card-text flex justify-between border-t-[1px] border-t-[#363636] my-5 py-5">
             <div>
               <h2 className="uppercase">Trendzio</h2>

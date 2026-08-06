@@ -35,6 +35,13 @@
     <changefreq>monthly</changefreq>
   </url>
 
+  <!-- Articles Page -->
+  <url>
+    <loc>https://dev.webforges.site/articles</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
   <!-- About Us Page -->
   <url>
     <loc>https://dev.webforges.site/about</loc>

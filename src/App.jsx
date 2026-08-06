@@ -19,6 +19,9 @@ import LogoLoader from './Componets/Animations/LogoAniamtion';
 import Pricing from './Componets/Pages/Pricing';
 import Header from './Componets/header';
 import ServiceDetails from './Componets/subPages/ServiceDetails';
+import AdminPage from './Componets/Pages/AdminPage';
+import ArticlesPage from './Componets/Pages/ArticlesPage';
+import ArticleDetailPage from './Componets/Pages/ArticleDetailPage';
 const App = () => {
   const [isActive, setIsActive] = useState(false);
   const [showContent, setShowContent] = useState(false);
@@ -58,6 +61,9 @@ const App = () => {
         <Route path="/about" element={<AboutUs />} />
         <Route path="/freetools" element={<FreeTools />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/articles" element={<ArticlesPage />} />
+        <Route path="/articles/:slug" element={<ArticleDetailPage />} />
+        <Route path="/admin" element={<AdminPage />} />
 
         <Route path="/services/:slug" element={<ServiceDetails />} />
       </Routes>

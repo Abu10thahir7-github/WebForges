@@ -1,6 +1,6 @@
-# Allow all bots full access
+# Allow all bots full access except the hidden admin area
 User-agent: *
-Disallow:
+Disallow: /admin
 
 # Sitemap location
 Sitemap: https://dev.webforges.site/sitemap.xml

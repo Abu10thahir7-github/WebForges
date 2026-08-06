@@ -98,7 +98,7 @@ export default function Pricing() {
         <meta name="robots" content="index, follow" />
         <meta name="author" content="WebForges" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="canonical" href="https://dev.webforges.site/pricing" />
+        <link rel="canonical" href="https://webforges.site/pricing" />
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
@@ -110,8 +110,8 @@ export default function Pricing() {
           property="og:description"
           content="Choose affordable website pricing plans designed for startups, businesses, and professionals. Responsive, SEO-friendly, and fully supported by WebForges."
         />
-        <meta property="og:image" content="https://dev.webforges.site/logo.png" />
-        <meta property="og:url" content="https://dev.webforges.site/pricing" />
+        <meta property="og:image" content="https://webforges.site/logo.png" />
+        <meta property="og:url" content="https://webforges.site/pricing" />
         <meta property="og:site_name" content="WebForges" />
 
         {/* Twitter Card */}
@@ -124,7 +124,7 @@ export default function Pricing() {
           name="twitter:description"
           content="Choose affordable website pricing plans designed for startups, businesses, and professionals. Responsive, SEO-friendly, and fully supported by WebForges."
         />
-        <meta name="twitter:image" content="https://dev.webforges.site/logo.png" />
+        <meta name="twitter:image" content="https://webforges.site/logo.png" />
         <meta name="twitter:site" content="@WebForges" />
         <meta name="twitter:creator" content="@WebForges" />
       </Helmet>

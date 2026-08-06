@@ -127,7 +127,7 @@ const handleSend = async (e) => {
         />
         <meta name="keywords" content="contact, webforges, web design contact, branding, mobile app design, landing page, no-code development, collaborate, web development" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://dev.webforges.site/contact" />
+        <link rel="canonical" href="https://webforges.site/contact" />
         
         {/* Open Graph tags */}
         <meta property="og:title" content="Contact Us - Collaborate with WebForges" />
@@ -135,7 +135,7 @@ const handleSend = async (e) => {
           property="og:description"
           content="Reach out to WebForges for expert web design, branding, and app development services. Let's build your project together."
         />
-        <meta property="og:url" content="https://dev.webforges.site/contact" />
+        <meta property="og:url" content="https://webforges.site/contact" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="WebForges" />
 

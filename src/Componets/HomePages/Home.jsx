@@ -35,7 +35,7 @@ function Home() {
         <meta name="robots" content="index, follow" />
         <meta name="author" content="WebForges" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="canonical" href="https://dev.webforges.site" />
+        <link rel="canonical" href="https://webforges.site" />
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
@@ -47,8 +47,8 @@ function Home() {
           property="og:description"
           content="Discover premium website design, e-commerce solutions, UI/UX, SEO optimization, and more with WebForges. Your partner in digital success."
         />
-        <meta property="og:image" content="https://dev.webforges.site/logo.png" />
-        <meta property="og:url" content="https://dev.webforges.site" />
+        <meta property="og:image" content="https://webforges.site/logo.png" />
+        <meta property="og:url" content="https://webforges.site" />
         <meta property="og:site_name" content="WebForges" />
 
         {/* Twitter Card */}
@@ -61,7 +61,7 @@ function Home() {
           name="twitter:description"
           content="Discover premium website design, e-commerce solutions, UI/UX, SEO optimization, and more with WebForges. Your partner in digital success."
         />
-        <meta name="twitter:image" content="https://dev.webforges.site/logo.png" />
+        <meta name="twitter:image" content="https://webforges.site/logo.png" />
         <meta name="twitter:site" content="@WebForges" />
         <meta name="twitter:creator" content="@WebForges" />
       </Helmet>

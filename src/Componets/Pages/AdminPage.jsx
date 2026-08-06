@@ -73,6 +73,7 @@ function emptyForm() {
     category: CATEGORIES[0],
     coverEmoji: '📱',
     author: 'Muhammed Sulaiman T (WebDeveloper)',
+    links: [],
   };
 }
 
@@ -123,6 +124,21 @@ export default function AdminPage() {
 
   function removeFaq(index) {
     setFaqs(faqs.filter((_, faqIndex) => faqIndex !== index));
+  }
+
+  function addLink() {
+    setForm({ ...form, links: [...(form.links || []), { name: '', src: '', link: '', time: '', alt: '' }] });
+  }
+
+  function updateLink(index, field, value) {
+    setForm({
+      ...form,
+      links: (form.links || []).map((l, i) => (i === index ? { ...l, [field]: value } : l)),
+    });
+  }
+
+  function removeLink(index) {
+    setForm({ ...form, links: (form.links || []).filter((_, i) => i !== index) });
   }
 
   function handlePublish(event) {
@@ -327,6 +343,58 @@ export default function AdminPage() {
               placeholder={BODY_PLACEHOLDER}
               className="mt-3 w-full rounded-2xl border border-slate-700 bg-slate-900/70 px-3 py-3 font-mono text-sm text-white outline-none transition focus:border-orange-400 focus:ring-2 focus:ring-orange-500/20"
             />
+          </fieldset>
+
+          <fieldset className="rounded-3xl border border-slate-800 bg-slate-950/60 p-5 sm:p-6">
+            <legend className="px-1 text-xs font-semibold uppercase tracking-[0.35em] text-orange-400">
+              Buttons &amp; links (optional)
+            </legend>
+            <div className="mt-4 space-y-3">
+              {(form.links || []).map((ln, index) => (
+                <div key={`${ln.name}-${index}`} className="rounded-2xl border border-slate-800 bg-slate-900/70 p-3">
+                  <div className="grid gap-2 sm:grid-cols-2">
+                    <input
+                      value={ln.name}
+                      onChange={(e) => updateLink(index, 'name', e.target.value)}
+                      placeholder="Name"
+                      className="w-full rounded-2xl border border-slate-700 bg-slate-950/70 px-3 py-2.5 text-sm text-white outline-none transition focus:border-orange-400 focus:ring-2 focus:ring-orange-500/20"
+                    />
+                    <input
+                      value={ln.src}
+                      onChange={(e) => updateLink(index, 'src', e.target.value)}
+                      placeholder="Src (image src)"
+                      className="w-full rounded-2xl border border-slate-700 bg-slate-950/70 px-3 py-2.5 text-sm text-white outline-none transition focus:border-orange-400 focus:ring-2 focus:ring-orange-500/20"
+                    />
+                    <input
+                      value={ln.link}
+                      onChange={(e) => updateLink(index, 'link', e.target.value)}
+                      placeholder="Link (URL)"
+                      className="w-full rounded-2xl border border-slate-700 bg-slate-950/70 px-3 py-2.5 text-sm text-white outline-none transition focus:border-orange-400 focus:ring-2 focus:ring-orange-500/20"
+                    />
+                    <input
+                      value={ln.time}
+                      onChange={(e) => updateLink(index, 'time', e.target.value)}
+                      placeholder="Time (optional)"
+                      className="w-full rounded-2xl border border-slate-700 bg-slate-950/70 px-3 py-2.5 text-sm text-white outline-none transition focus:border-orange-400 focus:ring-2 focus:ring-orange-500/20"
+                    />
+                    <input
+                      value={ln.alt}
+                      onChange={(e) => updateLink(index, 'alt', e.target.value)}
+                      placeholder="Alt text (for images)"
+                      className="w-full rounded-2xl border border-slate-700 bg-slate-950/70 px-3 py-2.5 text-sm text-white outline-none transition focus:border-orange-400 focus:ring-2 focus:ring-orange-500/20"
+                    />
+                  </div>
+                  <div className="mt-3 flex justify-end">
+                    <button type="button" onClick={() => removeLink(index)} className="text-xs font-semibold text-red-400 hover:underline">
+                      Remove
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <button type="button" onClick={addLink} className="mt-4 rounded-full border border-slate-700 px-4 py-2 text-xs font-semibold text-slate-200 transition hover:border-orange-400 hover:text-orange-300">
+              + Add link/button
+            </button>
           </fieldset>
 
           <fieldset className="rounded-3xl border border-slate-800 bg-slate-950/60 p-5 sm:p-6">

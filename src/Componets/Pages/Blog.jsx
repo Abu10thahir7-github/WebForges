@@ -154,7 +154,7 @@ function Blog() {
         <meta name="robots" content="index, follow" />
         <meta name="author" content="WebForges" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="canonical" href="https://dev.webforges.site/blog" />
+        <link rel="canonical" href="https://webforges.site/blog" />
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
@@ -166,8 +166,8 @@ function Blog() {
           property="og:description"
           content="Stay updated with the latest trends in UX design, web development, no-code tools, and case studies from WebForges team."
         />
-        <meta property="og:image" content="https://dev.webforges.site/logo.png" />
-        <meta property="og:url" content="https://dev.webforges.site/blog" />
+        <meta property="og:image" content="https://webforges.site/logo.png" />
+        <meta property="og:url" content="https://webforges.site/blog" />
         <meta property="og:site_name" content="WebForges" />
 
         {/* Twitter Card */}
@@ -180,7 +180,7 @@ function Blog() {
           name="twitter:description"
           content="Stay updated with the latest trends in UX design, web development, no-code tools, and case studies from WebForges team."
         />
-        <meta name="twitter:image" content="https://dev.webforges.site/logo.png" />
+        <meta name="twitter:image" content="https://webforges.site/logo.png" />
         <meta name="twitter:site" content="@WebForges" />
         <meta name="twitter:creator" content="@WebForges" />
       </Helmet>

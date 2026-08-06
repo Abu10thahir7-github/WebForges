@@ -39,7 +39,7 @@ function AboutUs() {
         <meta name="robots" content="index, follow" />
         <meta name="author" content="WebForges" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="canonical" href="https://dev.webforges.site/about" />
+        <link rel="canonical" href="https://webforges.site/about" />
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
@@ -51,8 +51,8 @@ function AboutUs() {
           property="og:description"
           content="Discover the story behind WebForges, our expert team, and our passion for delivering innovative design solutions and exceptional user experiences."
         />
-        <meta property="og:image" content="https://dev.webforges.site/logo.png" />
-        <meta property="og:url" content="https://dev.webforges.site/about" />
+        <meta property="og:image" content="https://webforges.site/logo.png" />
+        <meta property="og:url" content="https://webforges.site/about" />
         <meta property="og:site_name" content="WebForges" />
 
         {/* Twitter Card */}
@@ -65,7 +65,7 @@ function AboutUs() {
           name="twitter:description"
           content="Discover the story behind WebForges, our expert team, and our passion for delivering innovative design solutions and exceptional user experiences."
         />
-        <meta name="twitter:image" content="https://dev.webforges.site/logo.png" />
+        <meta name="twitter:image" content="https://webforges.site/logo.png" />
         <meta name="twitter:site" content="@WebForges" />
         <meta name="twitter:creator" content="@WebForges" />
       </Helmet>

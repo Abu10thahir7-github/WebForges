@@ -3,4 +3,4 @@ User-agent: *
 Disallow: /admin
 
 # Sitemap location
-Sitemap: https://dev.webforges.site/sitemap.xml
+Sitemap: https://webforges.site/sitemap.xml

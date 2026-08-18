@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
-import { fadeIn } from '../../variants';
-import BlogTextAnimation from '../Animations/BlogText';
-import Word from '../Animations/TextFillAnimation/Word';
-import Card from '../Animations/CardAnimation';
-import abu from '../../assets/abu.jpg';
-import sulaiman from '../../assets/sulai.jpg';
+import { fadeIn } from '../data/variants';
+import BlogTextAnimation from '../Componets/Animations/BlogText';
+import Word from '../Componets/Animations/TextFillAnimation/Word';
+import Card from '../Componets/Animations/CardAnimation';
+import abu from '../assets/images/team/abu.jpg';
+import sulaiman from '../assets/images/team/sulai.jpg';
 
 import { useScroll } from 'framer-motion';
 import { useEffect, useRef } from 'react';
 import Lenis from '@studio-freight/lenis';
-import Contact from '../HomePages/Contact';
+import Contact from '../pages/Home/Sections/Contact';
 export const projects = [
   {
     title: '',
@@ -31,27 +31,25 @@ export const projects = [
 ];
 const teamMembers = [
   {
-    name: "Abu Thahir",
-    role: "MERN Stack Developer",
+    name: 'Abu Thahir',
+    role: 'MERN Stack Developer',
     image: abu,
     socials: {
-      linkedin: "#",
-      github: "#",
-      twitter: "https://mhdsulu786.vercel.app/",
+      linkedin: '#',
+      github: '#',
+      twitter: 'https://mhdsulu786.vercel.app/',
     },
   },
   {
-    name: "Muhammed Sulaiman T",
-    role: "Full Stack Developer",
-    image:sulaiman ,
+    name: 'Muhammed Sulaiman T',
+    role: 'Full Stack Developer',
+    image: sulaiman,
     socials: {
-      linkedin: "#",
-      github: "#",
-      twitter: "#",
+      linkedin: '#',
+      github: '#',
+      twitter: '#',
     },
   },
-
-
 ];
 
 const paragraph =
@@ -121,22 +119,14 @@ function Blog() {
   const filteredArticles =
     activeTab === 'ALL' ? articles : articles.filter(article => article.category === activeTab);
 
-  const container = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: container,
-    offset: ['start start', 'end end'],
-  });
-
   useEffect(() => {
     const lenis = new Lenis();
-
     function raf(time) {
       lenis.raf(time);
       requestAnimationFrame(raf);
     }
-
     requestAnimationFrame(raf);
-  });
+  }); // ← no dependency array, no cleanup
 
   return (
     <div>
@@ -282,60 +272,58 @@ function Blog() {
           <Word paragraph={paragraph} />
         </p>
 
-         <section className="py-20 ">
-      <div className="max-w-7xl mx-auto px-6 text-center">
-
-
-        {/* Team Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-          {teamMembers.map((member, i) => (
-            <motion.div
-              key={i}
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.3 }}
-              className=" backdrop-blur-xl
+        <section className="py-20 ">
+          <div className="max-w-7xl mx-auto px-6 text-center">
+            {/* Team Cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+              {teamMembers.map((member, i) => (
+                <motion.div
+                  key={i}
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.3 }}
+                  className=" backdrop-blur-xl
                          rounded-2xl p-6 shadow-lg flex flex-col items-center
                          "
-            >
-              {/* Profile Image */}
-              <div className="w-32 h-32 rounded-full overflow-hidden shadow-md mb-4">
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="w-full h-full object-cover"
-                />
-              </div>
+                >
+                  {/* Profile Image */}
+                  <div className="w-32 h-32 rounded-full overflow-hidden shadow-md mb-4">
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
 
-              {/* Info */}
-              <h3 className="text-xl  text-white">{member.name}</h3>
-              <p className="text-gray-400 text-sm mb-4">{member.role}</p>
+                  {/* Info */}
+                  <h3 className="text-xl  text-white">{member.name}</h3>
+                  <p className="text-gray-400 text-sm mb-4">{member.role}</p>
 
-              {/* Socials */}
-              <div className="flex gap-4">
-                <a
-                  href={member.socials.linkedin}
-                  className="text-blue-400 hover:text-blue-500 transition"
-                >
-                  <i className="fab fa-linkedin text-xl"></i>
-                </a>
-                <a
-                  href={member.socials.github}
-                  className="text-gray-300 hover:text-white transition"
-                >
-                  <i className="fab fa-github text-xl"></i>
-                </a>
-                <a
-                  href={member.socials.twitter}
-                  className="text-sky-400 hover:text-sky-500 transition"
-                >
-                  <i className="fab fa-twitter text-xl"></i>
-                </a>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
+                  {/* Socials */}
+                  <div className="flex gap-4">
+                    <a
+                      href={member.socials.linkedin}
+                      className="text-blue-400 hover:text-blue-500 transition"
+                    >
+                      <i className="fab fa-linkedin text-xl"></i>
+                    </a>
+                    <a
+                      href={member.socials.github}
+                      className="text-gray-300 hover:text-white transition"
+                    >
+                      <i className="fab fa-github text-xl"></i>
+                    </a>
+                    <a
+                      href={member.socials.twitter}
+                      className="text-sky-400 hover:text-sky-500 transition"
+                    >
+                      <i className="fab fa-twitter text-xl"></i>
+                    </a>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
       </div>
       <Contact />
     </div>

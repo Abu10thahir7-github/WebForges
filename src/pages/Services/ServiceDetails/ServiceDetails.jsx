@@ -1,12 +1,12 @@
 // ServicePage.jsx
 import { useParams, Link } from 'react-router-dom';
-import { serviceList } from '../../serviceListData'; // adjust path
+import { serviceList } from '../../../data/serviceListData'; // adjust path
 import { useState } from 'react';
 import { div } from 'framer-motion/client';
-import Word from '../Animations/TextFillAnimation/Word';
-import { fadeIn } from '../../variants';
+import Word from '../../../Componets/Animations/TextFillAnimation/Word';
+import { fadeIn } from '../../../data/variants';
 import { motion } from 'framer-motion';
-import DiscoverTextAnimation from '../Animations/DiscoverTextAnimation';
+import DiscoverTextAnimation from '../../../Componets/Animations/DiscoverTextAnimation';
 export default function ServiceDetails() {
   const { slug } = useParams();
   const service = serviceList.find(item => item.slug === slug);
@@ -33,7 +33,6 @@ export default function ServiceDetails() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-950 to-black text-white pt-40 pb-20 px-6">
       <div className="max-w-6xl mx-auto text-center">
-
         {/* Main Content */}
         <div className="mt-12 grid justify-center  md:grid-cols-2 gap-10 items-center">
           {/* Image */}
@@ -53,10 +52,9 @@ export default function ServiceDetails() {
             </p>
           </div>
           <div>
-
-          {/* Title + Description */}
-          <h1 className="text-4xl md:text-5xl font-bold">{service.title}</h1>
-          <p className="max-w-2xl mx-auto mt-4 text-lg opacity-90">{service.desc}</p>
+            {/* Title + Description */}
+            <h1 className="text-4xl md:text-5xl font-bold">{service.title}</h1>
+            <p className="max-w-2xl mx-auto mt-4 text-lg opacity-90">{service.desc}</p>
           </div>
         </div>
         <div className="space-y-12 mt-10">

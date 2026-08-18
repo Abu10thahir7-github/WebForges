@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import logo from '../../assets/logo.png'; // Replace with your correct logo import path
+import logo from '../../assets/images/brand/logo.png'; // Replace with your correct logo import path
 
 export default function EntryLoader() {
   const [showLoader, setShowLoader] = useState(true);

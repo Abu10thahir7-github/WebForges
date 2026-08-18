@@ -1,72 +1,102 @@
-import { Routes, Route } from 'react-router-dom';
-import { Suspense, lazy, useEffect, useState } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
+import { Suspense, lazy, useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 
-import Cursor from './Componets/Animations/CursorAnimation/Cursor';
-import ProjectPage from './Componets/Pages/ProjectPage';
-import ServicesPage from './Componets/Pages/ServicesPage';
-import ContactPage from './Componets/Pages/ContactPage';
-import Footer from './Componets/HomePages/Footer';
+import Header from './app/layout/header';
 
-import Home from './Componets/HomePages/Home';
-import Services from './Componets/HomePages/Services';
-import Projects from './Componets/HomePages/Projects';
-import Contact from './Componets/HomePages/Contact';
-import Blog from './Componets/Pages/Blog';
-import AboutUs from './Componets/Pages/AboutUs';
-import FreeTools from './Componets/HomePages/FreeTools';
 import EntryLoader from './Componets/Animations/LoadingAnimation';
-import LogoLoader from './Componets/Animations/LogoAniamtion';
-import Pricing from './Componets/Pages/Pricing';
-import Header from './Componets/header';
-import ServiceDetails from './Componets/subPages/ServiceDetails';
-import AdminPage from './Componets/Pages/AdminPage';
-import ArticlesPage from './Componets/Pages/ArticlesPage';
-import ArticleDetailPage from './Componets/Pages/ArticleDetailPage';
-const App = () => {
-  const [isActive, setIsActive] = useState(false);
-  const [showContent, setShowContent] = useState(false);
+import Footer from './app/layout/Footer';
 
+// ── Public pages: lazy-loaded so first paint only ships Home's code ──
+const Home = lazy(() => import('./pages/Home/Home'));
+const ServicesPage = lazy(() => import('./pages/Services/ServicesPage'));
+const ProjectPage = lazy(() => import('./pages/ProjectPage'));
+const Pricing = lazy(() => import('./pages/Pricing'));
+const Blog = lazy(() => import('./pages/Blog'));
+const AboutUs = lazy(() => import('./pages/AboutUs/AboutUs'));
+
+const ContactPage = lazy(() => import('./pages/ContactPage'));
+const ArticlesPage = lazy(() => import('./pages/ArticlesPage'));
+const ArticleDetailPage = lazy(() => import('./pages/ArticleDetailPage'));
+const ServiceDetails = lazy(() => import('./pages/Services/ServiceDetails/ServiceDetails'));
+// const NotFound = lazy(() => import('./Componets/Pages/NotFound'));
+
+// ── Admin: separate chunk, never bundled with public routes, never indexed ──
+const AdminPage = lazy(() => import('./admin/AdminPage'));
+
+/**
+ * Resets scroll position on every route change (the old code only did this
+ * once on mount, so client-side nav between pages kept the previous
+ * scroll offset — bad UX and looks broken to users/bots alike).
+ */
+function ScrollToTop() {
+  const { pathname } = useLocation();
   useEffect(() => {
-    window.scrollTo(0, 0); // Scroll to the top of the page
-  }, []);
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowContent(true);
-    }, 2000); // 5 seconds
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+}
 
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (!showContent) {
-    return (
-      <div className="flex justify-center items-center">
-        <LogoLoader />
-      </div>
-    );
-  }
-
+/** Keeps /admin out of search results without needing a robots.txt hack. */
+function AdminGuard({ children }) {
   return (
     <>
-      <Cursor className="" isActive={isActive} />
+      <Helmet>
+        <meta name="robots" content="noindex, nofollow" />
+      </Helmet>
+      {children}
+    </>
+  );
+}
+
+const App = () => {
+  return (
+    <>
       <div className="navbar-postion-setup">
         <Header />
       </div>
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/services" element={<ServicesPage />} />
-        <Route path="/projects" element={<ProjectPage />} />
-        <Route path="/pricing" element={<Pricing />} />
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/about" element={<AboutUs />} />
-        <Route path="/freetools" element={<FreeTools />} />
-        <Route path="/contact" element={<ContactPage />} />
-        <Route path="/articles" element={<ArticlesPage />} />
-        <Route path="/articles/:slug" element={<ArticleDetailPage />} />
-        <Route path="/admin" element={<AdminPage />} />
+      <ScrollToTop />
 
-        <Route path="/services/:slug" element={<ServiceDetails />} />
-      </Routes>
+      <Suspense fallback={<EntryLoader />}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/services/:slug" element={<ServiceDetails />} />
+          <Route path="/projects" element={<ProjectPage />} />
+          <Route path="/pricing" element={<Pricing />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/about" element={<AboutUs />} />
+
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/articles" element={<ArticlesPage />} />
+          <Route path="/articles/:slug" element={<ArticleDetailPage />} />
+
+          <Route
+            path="/admin"
+            element={
+              <AdminGuard>
+                <AdminPage />
+              </AdminGuard>
+            }
+          />
+
+          {/* Catch-all: real pages should never render a client-side-only
+              blank screen for bad URLs — that's a soft-404 in Google's eyes. */}
+          <Route
+            path="*"
+            element={
+              <>
+                <Helmet>
+                  <meta name="robots" content="noindex, follow" />
+                  <title>Page Not Found | WebForges</title>
+                </Helmet>
+                {/* <NotFound /> */}
+              </>
+            }
+          />
+        </Routes>
+      </Suspense>
 
       <Footer />
     </>

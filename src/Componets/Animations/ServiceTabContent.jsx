@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { fadeIn } from '../../variants';          // adjust to your path
+import { fadeIn } from '../../data/variants'; // adjust to your path
 
 /* ----— central data so you write each service only once ----— */
 const TABS = [
@@ -161,7 +161,6 @@ const TABS = [
     ],
   },
 ];
-
 
 export default function TabsComponent() {
   const navigate = useNavigate();

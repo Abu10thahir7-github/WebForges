@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useParams, Link } from 'react-router-dom';
-import { getArticleBySlug } from '../../lib/articles';
+import { getArticleBySlug } from '../data/articles';
 
 function renderMarkdown(markdown) {
   const lines = (markdown || '').split('\n');
@@ -10,12 +10,14 @@ function renderMarkdown(markdown) {
 
   const flushList = () => {
     if (listItems.length) {
-      html.push(`<ul class="mt-4 list-disc space-y-2 pl-6 text-slate-300">${listItems.map((item) => `<li>${item}</li>`).join('')}</ul>`);
+      html.push(
+        `<ul class="mt-4 list-disc space-y-2 pl-6 text-slate-300">${listItems.map(item => `<li>${item}</li>`).join('')}</ul>`,
+      );
       listItems = [];
     }
   };
 
-  lines.forEach((line) => {
+  lines.forEach(line => {
     const trimmed = line.trim();
 
     if (!trimmed) {
@@ -25,13 +27,17 @@ function renderMarkdown(markdown) {
 
     if (/^##\s+/.test(trimmed)) {
       flushList();
-      html.push(`<h2 class="mt-8 text-2xl font-semibold text-white">${trimmed.replace(/^##\s+/, '')}</h2>`);
+      html.push(
+        `<h2 class="mt-8 text-2xl font-semibold text-white">${trimmed.replace(/^##\s+/, '')}</h2>`,
+      );
       return;
     }
 
     if (/^###\s+/.test(trimmed)) {
       flushList();
-      html.push(`<h3 class="mt-6 text-xl font-semibold text-slate-100">${trimmed.replace(/^###\s+/, '')}</h3>`);
+      html.push(
+        `<h3 class="mt-6 text-xl font-semibold text-slate-100">${trimmed.replace(/^###\s+/, '')}</h3>`,
+      );
       return;
     }
 
@@ -81,15 +87,22 @@ export default function ArticleDetailPage() {
         <meta name="description" content={article.metaDescription || article.excerpt} />
       </Helmet>
       <div className="mx-auto max-w-4xl rounded-[32px] border border-white/10 bg-slate-900/70 p-6 shadow-2xl shadow-black/20 backdrop-blur sm:p-8 lg:p-10">
-        <Link to="/articles" className="text-sm font-semibold text-orange-400">← Back to articles</Link>
-        <p className="mt-6 text-sm font-semibold uppercase tracking-[0.35em] text-orange-400">{article.category}</p>
+        <Link to="/articles" className="text-sm font-semibold text-orange-400">
+          ← Back to articles
+        </Link>
+        <p className="mt-6 text-sm font-semibold uppercase tracking-[0.35em] text-orange-400">
+          {article.category}
+        </p>
         <h1 className="mt-3 font-display text-3xl font-bold text-white sm:text-4xl">
           {article.coverEmoji} {article.title}
         </h1>
         <p className="mt-4 text-sm text-slate-400">
           By {article.author} · {new Date(article.publishedAt).toLocaleDateString('en-IN')}
         </p>
-        <div className="mt-8 max-w-none text-base leading-8 text-slate-300" dangerouslySetInnerHTML={{ __html: renderMarkdown(article.body) }} />
+        <div
+          className="mt-8 max-w-none text-base leading-8 text-slate-300"
+          dangerouslySetInnerHTML={{ __html: renderMarkdown(article.body) }}
+        />
       </div>
     </article>
   );

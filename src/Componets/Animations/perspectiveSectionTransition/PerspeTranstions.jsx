@@ -4,7 +4,7 @@
 import { useScroll, useTransform, motion } from "framer-motion";
 import { useEffect, useRef } from "react";
 import Lenis from 'lenis';
-import grid from '../../../assets/grid.png';
+import grid from '../../../assets/images/backgrounds/grid.png';
 import abu from '../../../assets/abu.png';
 export default function PerspeTranstions() {
 

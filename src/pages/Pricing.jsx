@@ -2,7 +2,7 @@ import { CheckIcon } from '@heroicons/react/20/solid';
 import { Helmet } from 'react-helmet-async';
 
 import { motion } from 'framer-motion';
-import { fadeIn } from '../../variants';
+import { fadeIn } from '../data/variants';
 const tiers = [
   {
     name: 'Starter (Static Website)',

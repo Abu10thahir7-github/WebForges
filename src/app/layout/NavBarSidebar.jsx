@@ -1,12 +1,8 @@
-import {
-  Disclosure,
-  DisclosureButton,
-  DisclosurePanel,
-} from '@headlessui/react';
+import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react';
 import { motion } from 'framer-motion';
-import { fadeIn } from '../../variants';
+import { fadeIn } from '../../data/variants';
 import { Link, useLocation } from 'react-router-dom';
-import image_logo from '../../assets/logo.png';
+import image_logo from '../../assets/images/brand/logo.png';
 import { useEffect, useState } from 'react';
 
 const navigation = [
@@ -60,10 +56,7 @@ export default function NavBarSidebar() {
         width: '100%',
       }}
     >
-      <Disclosure
-        as="nav"
-        className="navbar-container border-hidden bg-transparent"
-      >
+      <Disclosure as="nav" className="navbar-container border-hidden bg-transparent">
         <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
           <div className="relative flex h-16 items-center justify-between">
             <center className="sm:hidden text-2xl flex items-center">
@@ -108,7 +101,7 @@ export default function NavBarSidebar() {
                           isActive
                             ? 'bg-yellow-500 text-black'
                             : 'text-white hover:bg-yellow-500 hover:text-black',
-                          'rounded-full uppercase px-3 py-2 text-sm font-normal lg:text-lg'
+                          'rounded-full uppercase px-3 py-2 text-sm font-normal lg:text-lg',
                         )}
                       >
                         {item.name}
@@ -136,7 +129,7 @@ export default function NavBarSidebar() {
                     isActive
                       ? 'bg-yellow-500 text-black'
                       : 'text-gray-300 hover:bg-yellow-500 hover:text-white',
-                    'block uppercase rounded-full px-3 py-2 text-base font-medium'
+                    'block uppercase rounded-full px-3 py-2 text-base font-medium',
                   )}
                 >
                   {item.name}

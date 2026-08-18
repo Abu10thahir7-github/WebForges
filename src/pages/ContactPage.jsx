@@ -1,106 +1,104 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
-import { fadeIn } from '../../variants';
+import { fadeIn } from '../data/variants';
 import swal from 'sweetalert';
 import axios from 'axios';
 function ContactPage() {
   const [selected, setSelected] = useState(null);
   const [firstName, setFirstName] = useState('');
-const [lastName, setLastName] = useState('');
-const [email, setEmail] = useState('');
-const [phone, setPhone] = useState('');
-const [company, setCompany] = useState('');
-const [projectDetail, setProjectDetail] = useState('');
-const [budget, setBudget] = useState('');
-
+  const [lastName, setLastName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [company, setCompany] = useState('');
+  const [projectDetail, setProjectDetail] = useState('');
+  const [budget, setBudget] = useState('');
 
   const time = new Date().toLocaleString(); // submission time
 
-  const message = `*New Contact Form Submission*\n\n` +
-    `Service: ${selected || "Not selected"}\n` +
-    `First Name: ${firstName+" "+lastName}\n` +
+  const message =
+    `*New Contact Form Submission*\n\n` +
+    `Service: ${selected || 'Not selected'}\n` +
+    `First Name: ${firstName + ' ' + lastName}\n` +
     `Last Name: ${lastName}\n` +
     `Email: ${email}\n` +
     `Phone: ${phone}\n` +
     `Company: ${company}\n` +
     `Details: ${projectDetail}\n` +
-    `Budget: ${budget || "Not specified"}\n` +
+    `Budget: ${budget || 'Not specified'}\n` +
     `Submitted At: ${time}`;
-   const validateForm = () => {
-  const missingFields = [];
+  const validateForm = () => {
+    const missingFields = [];
 
-  if (firstName === '') missingFields.push('First Name');
-  if (lastName === '') missingFields.push('Last Name');
-  if (email === '') missingFields.push('Email');
-  if (phone === '') missingFields.push('Phone');
-  if (company === '') missingFields.push('Company');
-  if (projectDetail === '') missingFields.push('Project Detail');
-  if (budget === '') missingFields.push('Budget');
-  if (selected === null) missingFields.push('Service');
+    if (firstName === '') missingFields.push('First Name');
+    if (lastName === '') missingFields.push('Last Name');
+    if (email === '') missingFields.push('Email');
+    if (phone === '') missingFields.push('Phone');
+    if (company === '') missingFields.push('Company');
+    if (projectDetail === '') missingFields.push('Project Detail');
+    if (budget === '') missingFields.push('Budget');
+    if (selected === null) missingFields.push('Service');
 
-  return missingFields;
-};
+    return missingFields;
+  };
 
-const resetForm = () => {
-  setFirstName('');
-  setLastName('');
-  setEmail('');
-  setPhone('');
-  setCompany('');
-  setProjectDetail('');
-  setBudget('');
-  setSelected(null);
-}
-const [loading, setLoading] = useState(false);
-const handleSend = async (e) => {
-  e.preventDefault();
+  const resetForm = () => {
+    setFirstName('');
+    setLastName('');
+    setEmail('');
+    setPhone('');
+    setCompany('');
+    setProjectDetail('');
+    setBudget('');
+    setSelected(null);
+  };
+  const [loading, setLoading] = useState(false);
+  const handleSend = async e => {
+    e.preventDefault();
 
-  const missing = validateForm();
+    const missing = validateForm();
 
-  if (missing.length > 0) {
-    swal("⚠️ Missing Fields", `Please fill in: ${missing.join(', ')}`, "error");
-    return;
-  }
-
- setLoading(true);
-
-  const formData = new FormData();
-  formData.append('firstName', firstName);
-  formData.append('lastName', lastName);
-  formData.append('email', email);
-  formData.append('phone', phone);
-  formData.append('company', company);
-  formData.append('selected', selected);
-  formData.append('projectDetail', projectDetail);
-  formData.append('budget', budget);
-  formData.append('time', new Date().toLocaleString());
-
-  try {
-    const response = await fetch("https://script.google.com/macros/s/AKfycbwqejPG8CpOKdT1LLt8pPD6qDnvF6hqYzmTZDiL-UtaAdEXdCu6Ow0YgmXu1kCeM43DAg/exec", {
-      method: "POST",
-      body: formData, // No headers set!
-    });
-
-    const result = await response.json();
-    if (result.status === "success") {
-      swal("Success", "✅ Message sent successfully!", "success");
-      resetForm();
-    } else {
-      alert("failed", "⚠️ Failed: " + result.message, "error");
+    if (missing.length > 0) {
+      swal('⚠️ Missing Fields', `Please fill in: ${missing.join(', ')}`, 'error');
+      return;
     }
-  } catch (err) {
-    alert("Error","❌ Network error", "error");
-    console.error(err);
-  }finally {
-    setLoading(false);
-  }
-};
 
+    setLoading(true);
 
+    const formData = new FormData();
+    formData.append('firstName', firstName);
+    formData.append('lastName', lastName);
+    formData.append('email', email);
+    formData.append('phone', phone);
+    formData.append('company', company);
+    formData.append('selected', selected);
+    formData.append('projectDetail', projectDetail);
+    formData.append('budget', budget);
+    formData.append('time', new Date().toLocaleString());
 
+    try {
+      const response = await fetch(
+        'https://script.google.com/macros/s/AKfycbwqejPG8CpOKdT1LLt8pPD6qDnvF6hqYzmTZDiL-UtaAdEXdCu6Ow0YgmXu1kCeM43DAg/exec',
+        {
+          method: 'POST',
+          body: formData, // No headers set!
+        },
+      );
 
-
+      const result = await response.json();
+      if (result.status === 'success') {
+        swal('Success', '✅ Message sent successfully!', 'success');
+        resetForm();
+      } else {
+        alert('failed', '⚠️ Failed: ' + result.message, 'error');
+      }
+    } catch (err) {
+      alert('Error', '❌ Network error', 'error');
+      console.error(err);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const services = [
     'Logo / branding',
@@ -111,24 +109,29 @@ const handleSend = async (e) => {
     'Other',
   ];
 
-  const handleSelect = (e, service)=> {
-      e.preventDefault();
+  const handleSelect = (e, service) => {
+    e.preventDefault();
     setSelected(service);
     console.log('Selected service:', service);
     // You can do more actions here (API calls, filtering, etc.)
   };
   return (
     <div>
-       <Helmet>
-        <title>Contact Us - Collaborate with WebForges | Professional Web Design & Development</title>
+      <Helmet>
+        <title>
+          Contact Us - Collaborate with WebForges | Professional Web Design & Development
+        </title>
         <meta
           name="description"
           content="Get in touch with WebForges for professional web design, branding, no-code development, mobile app design, and landing page services. Let's collaborate to bring your project to life."
         />
-        <meta name="keywords" content="contact, webforges, web design contact, branding, mobile app design, landing page, no-code development, collaborate, web development" />
+        <meta
+          name="keywords"
+          content="contact, webforges, web design contact, branding, mobile app design, landing page, no-code development, collaborate, web development"
+        />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://webforges.site/contact" />
-        
+
         {/* Open Graph tags */}
         <meta property="og:title" content="Contact Us - Collaborate with WebForges" />
         <meta
@@ -148,18 +151,18 @@ const handleSend = async (e) => {
         />
       </Helmet>
       {loading && (
-  <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex justify-center items-center z-50">
-    <div className="flex gap-2">
-      {[...Array(5)].map((_, i) => (
-        <div
-          key={i}
-          className="w-4 h-4 bg-yellow-400 rounded-full animate-bounce"
-          style={{ animationDelay: `${i * 0.1}s` }}
-        ></div>
-      ))}
-    </div>
-  </div>
-)}
+        <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex justify-center items-center z-50">
+          <div className="flex gap-2">
+            {[...Array(5)].map((_, i) => (
+              <div
+                key={i}
+                className="w-4 h-4 bg-yellow-400 rounded-full animate-bounce"
+                style={{ animationDelay: `${i * 0.1}s` }}
+              ></div>
+            ))}
+          </div>
+        </div>
+      )}
 
       <div class="bg-animation absolute">
         <div class=" z-[-1] noise-bg"></div>
@@ -171,8 +174,7 @@ const handleSend = async (e) => {
           <div class="purple blob"></div>
         </div>
       </div>
-<div className="px-4 pt-32 w-[90%] md:w-4/5 mx-auto min-h-screen flex flex-col md:flex-row justify-center items-center gap-10 md:gap-20 text-white">
-
+      <div className="px-4 pt-32 w-[90%] md:w-4/5 mx-auto min-h-screen flex flex-col md:flex-row justify-center items-center gap-10 md:gap-20 text-white">
         <motion.h1
           variants={fadeIn('up', 0.2)}
           initial="hidden"
@@ -244,7 +246,6 @@ const handleSend = async (e) => {
         </motion.div>
       </div>
       <form className="w-4/5 m-auto flex flex-col mt-16 justify-center p-12 bg-[#191919]">
-
         <motion.p
           variants={fadeIn('up', 0.2)}
           initial="hidden"
@@ -263,8 +264,7 @@ const handleSend = async (e) => {
               whileInView={'show'}
               viewport={{ once: true }}
               key={index}
-            
-              onClick={(e) => handleSelect(e,service)}
+              onClick={e => handleSelect(e, service)}
               className={`text-sm sm:text-2xl   px-4 py-2 rounded-lg border ${
                 selected === service ? ' ' : ' '
               } transition`}
@@ -302,13 +302,13 @@ const handleSend = async (e) => {
               <label htmlFor="firstName" className="block mb-1">
                 First Name
               </label>
-<input
-  type="text"
-  id="firstName"
-  className="w-full p-2 text-yellow-400"
-  value={firstName}
-  onChange={(e) => setFirstName(e.target.value)}
-/>
+              <input
+                type="text"
+                id="firstName"
+                className="w-full p-2 text-yellow-400"
+                value={firstName}
+                onChange={e => setFirstName(e.target.value)}
+              />
             </motion.div>
 
             <motion.div
@@ -321,10 +321,13 @@ const handleSend = async (e) => {
               <label htmlFor="lastName" className="block mb-1">
                 Last Name
               </label>
-              <input type="text" id="lastName"
-               value={lastName}
-  onChange={(e) => setLastName(e.target.value)}
-   className="w-full p-2 text-yellow-400 " />
+              <input
+                type="text"
+                id="lastName"
+                value={lastName}
+                onChange={e => setLastName(e.target.value)}
+                className="w-full p-2 text-yellow-400 "
+              />
             </motion.div>
           </div>
 
@@ -339,10 +342,13 @@ const handleSend = async (e) => {
               <label htmlFor="email" className="block mb-1">
                 Email Address
               </label>
-              <input type="email" id="email"
-              value={email}
-  onChange={(e) => setEmail(e.target.value)}
-              className="w-full p-2 text-yellow-400" />
+              <input
+                type="email"
+                id="email"
+                value={email}
+                onChange={e => setEmail(e.target.value)}
+                className="w-full p-2 text-yellow-400"
+              />
             </motion.div>
             <motion.div
               variants={fadeIn('up', 0.2)}
@@ -355,10 +361,13 @@ const handleSend = async (e) => {
                 {' '}
                 Phone{' '}
               </label>
-              <input type="number" id=" Phone"
-              value={phone}
-  onChange={(e) => setPhone(e.target.value)}
-              className="w-full p-2 text-yellow-400 " />
+              <input
+                type="number"
+                id=" Phone"
+                value={phone}
+                onChange={e => setPhone(e.target.value)}
+                className="w-full p-2 text-yellow-400 "
+              />
             </motion.div>
             <motion.div
               variants={fadeIn('up', 0.2)}
@@ -370,10 +379,13 @@ const handleSend = async (e) => {
               <label htmlFor="Company" className="block mb-1">
                 Company{' '}
               </label>
-              <input type="text" id="Company"
-              value={company}
-  onChange={(e) => setCompany(e.target.value)}
-              className="w-full p-2 text-yellow-400" />
+              <input
+                type="text"
+                id="Company"
+                value={company}
+                onChange={e => setCompany(e.target.value)}
+                className="w-full p-2 text-yellow-400"
+              />
             </motion.div>
             <motion.div
               variants={fadeIn('up', 0.2)}
@@ -385,10 +397,14 @@ const handleSend = async (e) => {
               <label htmlFor="ProjectDetail" className="block mb-1">
                 ProjectDetail{' '}
               </label>
-              <textarea rows="5" type="text" id="ProjectDetail"
-              value={projectDetail}
-  onChange={(e) => setProjectDetail(e.target.value)}
-              className="w-full p-2 text-yellow-400" />
+              <textarea
+                rows="5"
+                type="text"
+                id="ProjectDetail"
+                value={projectDetail}
+                onChange={e => setProjectDetail(e.target.value)}
+                className="w-full p-2 text-yellow-400"
+              />
             </motion.div>
           </div>
         </motion.form>
@@ -400,8 +416,8 @@ const handleSend = async (e) => {
               {' '}
               <input
                 type="checkbox"
-  checked={budget === 'Less than $5K'}
-  onChange={() => setBudget('Less than $5K')}
+                checked={budget === 'Less than $5K'}
+                onChange={() => setBudget('Less than $5K')}
                 class="appearance-none w-3 h-3 bg-gray-300 rounded-[50px] checked:bg-yellow-400  transition"
               />
               Less than $5K
@@ -410,8 +426,8 @@ const handleSend = async (e) => {
               {' '}
               <input
                 type="checkbox"
-  checked={budget === '$5K - $15K'}
-  onChange={() => setBudget('$5K - $15K')}
+                checked={budget === '$5K - $15K'}
+                onChange={() => setBudget('$5K - $15K')}
                 class="appearance-none w-3 h-3 bg-gray-300 rounded-[50px] checked:bg-yellow-400  transition"
               />
               $5K - $15K
@@ -419,26 +435,26 @@ const handleSend = async (e) => {
             <label>
               <input
                 type="checkbox"
-  checked={budget === '$15K - $25K'}
-  onChange={() => setBudget('$15K - $25K')}
+                checked={budget === '$15K - $25K'}
+                onChange={() => setBudget('$15K - $25K')}
                 class="appearance-none w-3 h-3 bg-gray-300 rounded-[50px] checked:bg-yellow-400  transition"
               />
               $15K - $25K
             </label>
             <label>
               <input
-               type="checkbox"
-  checked={budget === '$25K - $35K'}
-  onChange={() => setBudget('$25K - $35K')}
+                type="checkbox"
+                checked={budget === '$25K - $35K'}
+                onChange={() => setBudget('$25K - $35K')}
                 class="appearance-none w-3 h-3 bg-gray-300 rounded-[50px] checked:bg-yellow-400  transition"
               />
               $25K - $35K{' '}
             </label>
             <label>
               <input
-               type="checkbox"
-  checked={budget === '$35K +'}
-  onChange={() => setBudget('$35K +')}
+                type="checkbox"
+                checked={budget === '$35K +'}
+                onChange={() => setBudget('$35K +')}
                 class="appearance-none w-3 h-3 bg-gray-300 rounded-[50px] checked:bg-yellow-400  transition"
               />
               $35K +
@@ -451,14 +467,13 @@ const handleSend = async (e) => {
             </label>
           </div>
 
-         <button
-  type="submit"
-  onClick={handleSend}
-  className="mt-8 px-6 py-2 bg-yellow-400 text-black rounded-full hover:bg-yellow-500 transition"
->
-  Submit
-</button>
-
+          <button
+            type="submit"
+            onClick={handleSend}
+            className="mt-8 px-6 py-2 bg-yellow-400 text-black rounded-full hover:bg-yellow-500 transition"
+          >
+            Submit
+          </button>
         </div>
       </form>
     </div>

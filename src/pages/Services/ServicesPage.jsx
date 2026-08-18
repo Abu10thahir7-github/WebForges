@@ -1,12 +1,12 @@
-import React from 'react'
+import React from 'react';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 
-import { fadeIn } from '../../variants';
-import ZoomParallax from '../Animations/ZoomParallax/ZoomParallax';
-import Contact from '../HomePages/Contact';
-import Animation from '../../../public/images/services/animation.gif';
-import TabsComponent from '../Animations/ServiceTabContent';
+import { fadeIn } from '../../data/variants';
+import ZoomParallax from '../../Componets/Animations/ZoomParallax/ZoomParallax';
+import Contact from '../Home/Sections/Contact';
+import Animation from '../../assets/images/services/animation.gif';
+import TabsComponent from '../../Componets/Animations/ServiceTabContent';
 
 function ServicesPage() {
   scrollTo(0, 0);
@@ -16,8 +16,14 @@ function ServicesPage() {
       <Helmet>
         {/* Basic Meta */}
         <title>Our Services - WebForges | Creative Web Design & SEO Experts</title>
-        <meta name="description" content="Discover premium website design, e-commerce solutions, UI/UX, SEO optimization, and more with WebForges. Your partner in digital success." />
-        <meta name="keywords" content="web design, SEO services, e-commerce development, UI/UX design, responsive websites, website maintenance, branding, creative solutions" />
+        <meta
+          name="description"
+          content="Discover premium website design, e-commerce solutions, UI/UX, SEO optimization, and more with WebForges. Your partner in digital success."
+        />
+        <meta
+          name="keywords"
+          content="web design, SEO services, e-commerce development, UI/UX design, responsive websites, website maintenance, branding, creative solutions"
+        />
         <meta name="robots" content="index, follow" />
         <meta name="author" content="WebForges" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -25,30 +31,40 @@ function ServicesPage() {
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Our Services - WebForges | Creative Web Design & SEO Experts" />
-        <meta property="og:description" content="Discover premium website design, e-commerce solutions, UI/UX, SEO optimization, and more with WebForges. Your partner in digital success." />
+        <meta
+          property="og:title"
+          content="Our Services - WebForges | Creative Web Design & SEO Experts"
+        />
+        <meta
+          property="og:description"
+          content="Discover premium website design, e-commerce solutions, UI/UX, SEO optimization, and more with WebForges. Your partner in digital success."
+        />
         <meta property="og:image" content="https://webforges.site/logo.png" />
         <meta property="og:url" content="https://webforges.site/services" />
         <meta property="og:site_name" content="WebForges" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Our Services - WebForges | Creative Web Design & SEO Experts" />
-        <meta name="twitter:description" content="Discover premium website design, e-commerce solutions, UI/UX, SEO optimization, and more with WebForges. Your partner in digital success." />
+        <meta
+          name="twitter:title"
+          content="Our Services - WebForges | Creative Web Design & SEO Experts"
+        />
+        <meta
+          name="twitter:description"
+          content="Discover premium website design, e-commerce solutions, UI/UX, SEO optimization, and more with WebForges. Your partner in digital success."
+        />
         <meta name="twitter:image" content="https://webforges.site/logo.png" />
         <meta name="twitter:site" content="@WebForges" />
         <meta name="twitter:creator" content="@WebForges" />
       </Helmet>
 
-          <div class="bg-animation absolute">
+      <div class="bg-animation absolute">
         <div class="noise-bg"></div>
         <div class="blob-cont">
           <div class="mint blob"></div>
           <div class="mint blob"></div>
           <div class="lime blob"></div>
           <div class="lime blob"></div>
-
-
         </div>
       </div>
 
@@ -76,25 +92,19 @@ function ServicesPage() {
           </motion.p>
         </div>
       </div>
-      <div className='h-[30vh]'></div>
-      <div className='hidden md:block '>
-
-      <ZoomParallax/>
+      <div className="h-[30vh]"></div>
+      <div className="hidden md:block ">
+        <ZoomParallax />
       </div>
 
-
- 
       <div>
-
-      <div className="w-4/5 m-auto">
-        <TabsComponent />
+        <div className="w-4/5 m-auto">
+          <TabsComponent />
+        </div>
       </div>
-
-      </div>
-      <Contact/>
+      <Contact />
     </div>
-
-  )
+  );
 }
 
-export default ServicesPage
+export default ServicesPage;

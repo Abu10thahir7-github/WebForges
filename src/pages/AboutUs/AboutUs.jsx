@@ -3,27 +3,26 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 
-import { fadeIn } from '../../variants';
+import { fadeIn } from '../../data/variants';
 import Lottie from 'lottie-react';
-import logoAnimation from '../../assets/ITwords.json'; // adjust the path if needed
+import logoAnimation from '../../assets/lottie/ITwords.json'; // adjust the path if needed
 // scss imports
 import './aboutUs.scss';
-import Paragraph from '../Animations/TextFillAnimation/Character';
-import Word from '../Animations/TextFillAnimation/Word';
-import Character from '../Animations/TextFillAnimation/Character';
+import Paragraph from '../../Componets/Animations/TextFillAnimation/Character';
+import Word from '../../Componets/Animations/TextFillAnimation/Word';
+import Character from '../../Componets/Animations/TextFillAnimation/Character';
 const paragraph =
   'We are a talented team,tackling design challenges and delivering beyond expectations.';
 
-import officeImg from '../../assets/office.jpg';
-import PerspeTranstions from '../Animations/perspectiveSectionTransition/PerspeTranstions';
+import officeImg from '../../assets/images/backgrounds/office.jpg';
+import PerspeTranstions from '../../Componets/Animations/perspectiveSectionTransition/PerspeTranstions';
 
-import Contact from '../HomePages/Contact';
+import Contact from '../Home/Sections/Contact';
+
 function AboutUs() {
   scrollTo(0, 0);
 
   return (
-
-
     <div>
       <Helmet>
         {/* Basic Meta */}
@@ -141,8 +140,9 @@ function AboutUs() {
           </p>
 
           <p className="w-full md:w-[45%] text-xl sm:text-xl md:text-xl baloo-chettan   font-thin text-gray-400">
-
-ഞങ്ങളുടെ വൈവിധ്യമാർന്ന വൈദഗ്ധ്യവും നൂതനമായ സമീപനവും നിങ്ങളുടെ പ്രോജക്റ്റിന്റെ ലക്ഷ്യങ്ങൾ കൈവരിക്കുക മാത്രമല്ല, അവയെ മറികടക്കുകയും ചെയ്യുന്നു, വിജയത്തിലേക്ക് നയിക്കുന്ന ഫലപ്രദമായ പരിഹാരങ്ങൾ സൃഷ്ടിക്കുന്നു.
+            ഞങ്ങളുടെ വൈവിധ്യമാർന്ന വൈദഗ്ധ്യവും നൂതനമായ സമീപനവും നിങ്ങളുടെ പ്രോജക്റ്റിന്റെ ലക്ഷ്യങ്ങൾ
+            കൈവരിക്കുക മാത്രമല്ല, അവയെ മറികടക്കുകയും ചെയ്യുന്നു, വിജയത്തിലേക്ക് നയിക്കുന്ന ഫലപ്രദമായ
+            പരിഹാരങ്ങൾ സൃഷ്ടിക്കുന്നു.
           </p>
         </motion.div>
         <div className=" mt-10 md:mt-32">
@@ -302,7 +302,6 @@ function AboutUs() {
       </div>
       <Contact />
     </div>
-
   );
 }
 

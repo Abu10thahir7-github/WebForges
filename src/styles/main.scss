@@ -91,7 +91,7 @@ button {
   }
 }
 .background {
-  background-image: url('../assets/futuristic-moon-background.jpg');
+  background-image: url('../assets/images/backgrounds/futuristic-moon-background.jpg');
   background-size: cover;
   background-position: center;
   position: absolute;
@@ -103,7 +103,7 @@ button {
   rotate: 34deg;
 }
 .noise {
-  background-image: url('../assets/newnoise.webp');
+  background-image: url('../assets/images/backgrounds/newnoise.webp');
   background-size: cover;
   background-position: center;
   position: absolute;
@@ -112,9 +112,6 @@ button {
   z-index: 1;
 }
 .home {
-  width: 80%;
-  margin: auto;
-  margin-top: 10%;
 
   .logo-title {
     font-style: italic;
@@ -192,7 +189,7 @@ button {
   }
 }
 .Experts {
-  background-image: url('../assets/skyImg.webp');
+
   background-size: cover;
   background-position: center;
   height: 70vh;
@@ -238,7 +235,7 @@ button {
   background-color: $yellow;
 }
 .contact {
-  background-image: url(/src/assets/moon.webp);
+  background-image: url(/src/assets/images/backgrounds/moon.webp);
   background-size: cover;
   background-position: center;
   height: 70vh;
@@ -260,7 +257,7 @@ button {
 }
 .robot-container {
   border: solid 1px;
-  border-color: hsla(0, 0%, 100%, 0.1);
+  border-color: hsla(0, 4%, 5%, 0.186);
 }
 
 .bg-animation {
@@ -277,7 +274,7 @@ button {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('../assets/newnoise.webp');
+  background-image: url('../assets/images/backgrounds/newnoise.webp');
   background-repeat: repeat;
   opacity: 100%;
   pointer-events: none;

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+
 import { Helmet } from 'react-helmet-async';
 import { fadeIn } from '../data/variants';
 import swal from 'sweetalert';
@@ -175,51 +175,23 @@ function ContactPage() {
         </div>
       </div>
       <div className="px-4 pt-32 w-[90%] md:w-4/5 mx-auto min-h-screen flex flex-col md:flex-row justify-center items-center gap-10 md:gap-20 text-white">
-        <motion.h1
-          variants={fadeIn('up', 0.2)}
-          initial="hidden"
-          whileInView={'show'}
-          viewport={{ once: true }}
-          className="text-3xl sm:text-3xl md:text-3xl lg:text-7xl z-10 text-white"
-        >
+        <h1 className="text-3xl sm:text-3xl md:text-3xl lg:text-7xl z-10 text-white">
           Let's <br /> Collab
-        </motion.h1>
-        <motion.div
-          variants={fadeIn('up', 0.2)}
-          initial="hidden"
-          whileInView={'show'}
-          viewport={{ once: true }}
-          className="w-[75%]"
-        >
+        </h1>
+        <div className="w-[75%]">
           <div className=" py-10 border-t flex flex-col md:flex-row  justify-between ">
-            <motion.p
-              variants={fadeIn('up', 0.2)}
-              initial="hidden"
-              whileInView={'show'}
-              viewport={{ once: true }}
-              className=" z-10 text-sm"
-            >
+            <p className=" z-10 text-sm">
               Reach out to collaborate or just <br /> to chat. We're here for you.
-            </motion.p>{' '}
-            <motion.a
-              variants={fadeIn('up', 0.2)}
-              initial="hidden"
-              whileInView={'show'}
-              viewport={{ once: true }}
+            </p>{' '}
+            <a
               className="z-10  text-sm sm:text-base md:text-lg lg:text-3xl hover:text-yellow-400 mt-14 md:mt-0"
               href="mailto:webforges.site@gmail.com"
             >
               webforges.site@gmail.com
-            </motion.a>
+            </a>
           </div>
           <div className=" flex justify-between border-t py-10   flex-col md:flex-row ">
-            <motion.p
-              variants={fadeIn('up', 0.2)}
-              initial="hidden"
-              whileInView={'show'}
-              viewport={{ once: true }}
-              className=" z-10 text-sm"
-            >
+            <p className=" z-10 text-sm">
               <a className="hover:text-yellow-400" href="tel:+919037435846">
                 +91 90374 35846
               </a>
@@ -231,38 +203,21 @@ function ContactPage() {
               >
                 +91 89219 66289 (WhatsApp)
               </a>
-            </motion.p>{' '}
-            <motion.a
-              variants={fadeIn('up', 0.2)}
-              initial="hidden"
-              whileInView={'show'}
-              viewport={{ once: true }}
+            </p>{' '}
+            <a
               className="text-sm sm:text-base md:text-lg lg:text-3xl z-10 hover:text-yellow-400 mt-14 md:mt-0"
               href="tel:+919037435846"
             >
               Book a call
-            </motion.a>
+            </a>
           </div>
-        </motion.div>
+        </div>
       </div>
       <form className="w-4/5 m-auto flex flex-col mt-16 justify-center p-12 bg-[#191919]">
-        <motion.p
-          variants={fadeIn('up', 0.2)}
-          initial="hidden"
-          whileInView={'show'}
-          viewport={{ once: true }}
-          className="text-sm sm:text-base md:text-lg lg:text-3xl text-white"
-        >
-          {' '}
-          Projects type:
-        </motion.p>
+        <p className="text-sm sm:text-base md:text-lg lg:text-3xl text-white"> Projects type:</p>
         <div className="flex contact-form-projectType gap-5 mt-10 flex-wrap">
           {services.map((service, index) => (
-            <motion.button
-              variants={fadeIn('up', 0.2)}
-              initial="hidden"
-              whileInView={'show'}
-              viewport={{ once: true }}
+            <button
               key={index}
               onClick={e => handleSelect(e, service)}
               className={`text-sm sm:text-2xl   px-4 py-2 rounded-lg border ${
@@ -270,35 +225,17 @@ function ContactPage() {
               } transition`}
             >
               {service}
-            </motion.button>
+            </button>
           ))}
         </div>
 
-        <motion.p
-          variants={fadeIn('up', 0.2)}
-          initial="hidden"
-          whileInView={'show'}
-          viewport={{ once: true }}
-          className="text-sm sm:text-base md:text-lg lg:text-3xl  text-white mt-16"
-        >
+        <p className="text-sm sm:text-base md:text-lg lg:text-3xl  text-white mt-16">
           {' '}
           Your informatiom:
-        </motion.p>
-        <motion.form
-          variants={fadeIn('up', 0.2)}
-          initial="hidden"
-          whileInView={'show'}
-          viewport={{ once: true }}
-          action=""
-        >
+        </p>
+        <motion.form action="">
           <div className="flex justify-between flex-wrap  mt-10">
-            <motion.div
-              variants={fadeIn('up', 0.2)}
-              initial="hidden"
-              whileInView={'show'}
-              viewport={{ once: true }}
-              className="w-full md:w-[49%]"
-            >
+            <div className="w-full md:w-[49%]">
               <label htmlFor="firstName" className="block mb-1">
                 First Name
               </label>
@@ -309,15 +246,9 @@ function ContactPage() {
                 value={firstName}
                 onChange={e => setFirstName(e.target.value)}
               />
-            </motion.div>
+            </div>
 
-            <motion.div
-              variants={fadeIn('up', 0.2)}
-              initial="hidden"
-              whileInView={'show'}
-              viewport={{ once: true }}
-              className="w-full md:w-[49%]"
-            >
+            <div className="w-full md:w-[49%]">
               <label htmlFor="lastName" className="block mb-1">
                 Last Name
               </label>
@@ -328,17 +259,11 @@ function ContactPage() {
                 onChange={e => setLastName(e.target.value)}
                 className="w-full p-2 text-yellow-400 "
               />
-            </motion.div>
+            </div>
           </div>
 
           <div className="  contact-form-input    mt-10  ">
-            <motion.div
-              variants={fadeIn('up', 0.2)}
-              initial="hidden"
-              whileInView={'show'}
-              viewport={{ once: true }}
-              className="w-full md:full"
-            >
+            <div className="w-full md:full">
               <label htmlFor="email" className="block mb-1">
                 Email Address
               </label>
@@ -349,14 +274,8 @@ function ContactPage() {
                 onChange={e => setEmail(e.target.value)}
                 className="w-full p-2 text-yellow-400"
               />
-            </motion.div>
-            <motion.div
-              variants={fadeIn('up', 0.2)}
-              initial="hidden"
-              whileInView={'show'}
-              viewport={{ once: true }}
-              className="w-full md:full"
-            >
+            </div>
+            <div className="w-full md:full">
               <label htmlFor="Phone" className="block mb-1">
                 {' '}
                 Phone{' '}
@@ -368,14 +287,8 @@ function ContactPage() {
                 onChange={e => setPhone(e.target.value)}
                 className="w-full p-2 text-yellow-400 "
               />
-            </motion.div>
-            <motion.div
-              variants={fadeIn('up', 0.2)}
-              initial="hidden"
-              whileInView={'show'}
-              viewport={{ once: true }}
-              className="w-full md:full"
-            >
+            </div>
+            <div className="w-full md:full">
               <label htmlFor="Company" className="block mb-1">
                 Company{' '}
               </label>
@@ -386,14 +299,8 @@ function ContactPage() {
                 onChange={e => setCompany(e.target.value)}
                 className="w-full p-2 text-yellow-400"
               />
-            </motion.div>
-            <motion.div
-              variants={fadeIn('up', 0.2)}
-              initial="hidden"
-              whileInView={'show'}
-              viewport={{ once: true }}
-              className="w-full md:full"
-            >
+            </div>
+            <div className="w-full md:full">
               <label htmlFor="ProjectDetail" className="block mb-1">
                 ProjectDetail{' '}
               </label>
@@ -405,7 +312,7 @@ function ContactPage() {
                 onChange={e => setProjectDetail(e.target.value)}
                 className="w-full p-2 text-yellow-400"
               />
-            </motion.div>
+            </div>
           </div>
         </motion.form>
 

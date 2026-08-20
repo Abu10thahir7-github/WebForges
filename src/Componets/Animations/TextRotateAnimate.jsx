@@ -25,7 +25,7 @@ function TextRotateAnimate() {
   return (
     <div className="relative h-[200px] overflow-hidden flex items-center justify-center">
       <AnimatePresence mode="wait">
-        <motion.span
+        <span
           key={currentSentenceIndex}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -34,7 +34,7 @@ function TextRotateAnimate() {
           className="text-lg  w-full sm:text-sm md:text-6xl text-center font-semibold "
         >
           {sentences[currentSentenceIndex]}
-        </motion.span>
+        </span>
       </AnimatePresence>
     </div>
   );

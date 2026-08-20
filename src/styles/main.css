@@ -12,10 +12,14 @@
   box-sizing: border-box;
 }
 
-body {
+html,body {
   font-family: 'Poppins', serif;
   background-color: #ffffff;
   color: white;
+  overflow-x: hidden;
+  max-width: 100%;
+
+
 }
 
 button {
@@ -191,7 +195,7 @@ button {
 }
 
 .Experts {
- 
+
   background-size: cover;
   background-position: center;
   height: 70vh;
@@ -938,3 +942,14 @@ textarea:focus {
   padding: 10px;
   color: #919191;
 } /*# sourceMappingURL=main.css.map */
+
+
+@keyframes marqueeScroll {
+  from { transform: translateX(0%); }
+  to { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  animation: marqueeScroll 24s linear infinite;
+  will-change: transform;
+}

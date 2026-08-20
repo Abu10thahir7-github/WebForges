@@ -11,7 +11,6 @@ import {
   Star,
 } from 'lucide-react';
 
-import { motion } from 'framer-motion';
 import { fadeIn } from '../../../data/variants';
 
 /**
@@ -48,34 +47,29 @@ export default function FreeToolsSection() {
     <section
       id="freetools"
       aria-labelledby="freetools-heading"
-      className="relative  w-4/5 m-auto pt-16 md:pt-24"
+      className="relative  w-4/5 m-auto py-16 md:py-20"
     >
       <div className=" ">
-        <motion.p
-          variants={fadeIn('up', 0.1)}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          className="text-lg flex items-center gap-3 uppercase text-[#f6bc17] font-medium"
-        >
-          <svg
-            width="11"
-            height="13"
-            viewBox="0 0 11 13"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true"
-          >
-            <path d="M11 6.5L0.499999 12.5622L0.5 0.437822L11 6.5Z" fill="currentColor"></path>
-          </svg>
-          Our Free Tools
-        </motion.p>
+        <div className="flex flex-col md:flex-row justify-between">
+          <p className="text-lg flex items-center gap-3 uppercase text-[#f6bc17] font-medium">
+            <svg
+              width="11"
+              height="13"
+              viewBox="0 0 11 13"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <path d="M11 6.5L0.499999 12.5622L0.5 0.437822L11 6.5Z" fill="currentColor"></path>
+            </svg>
+            Our Free Tools
+          </p>
 
-        <p className="mt-4 max-w-lg text-neutral-400">
-          A web app I'm building with 37+ browser-based utilities — image, PDF, audio and developer
-          tools, free with no sign-up.
-        </p>
-
+          <p className="mt-4 max-w-lg text-neutral-600">
+            A web app I'm building with 37+ browser-based utilities — image, PDF, audio and
+            developer tools, free with no sign-up.
+          </p>
+        </div>
         {/* showcase card */}
         <div className="mt-10 overflow-hidden rounded-xl border border-black/10 bg-white/[0.02]">
           {/* preview — mock browser window standing in for a real screenshot */}

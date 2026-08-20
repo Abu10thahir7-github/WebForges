@@ -28,14 +28,14 @@ export default function Index() {
   ];
 
   return (
-    <div ref={container} className={styles.container }>
+    <div ref={container} className={styles.container}>
       <div className={styles.sticky}>
         {texts.map(({ text, scale }, index) => (
-          <motion.div key={index} style={{ scale }} className={styles.el}>
+          <div key={index} style={{ scale }} className={styles.el}>
             <div className={styles.textContainer}>
-              <h2 className='text-sm md:text-4xl font-semibold uppercase '>{text}</h2>
+              <h2 className="text-sm md:text-4xl font-semibold uppercase ">{text}</h2>
             </div>
-          </motion.div>
+          </div>
         ))}
       </div>
     </div>

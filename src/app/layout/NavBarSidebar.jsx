@@ -1,5 +1,5 @@
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react';
-import { motion } from 'framer-motion';
+
 import { fadeIn } from '../../data/variants';
 import { Link, useLocation } from 'react-router-dom';
 import image_logo from '../../assets/images/brand/logo.png';
@@ -44,9 +44,7 @@ export default function NavBarSidebar() {
   }, [lastScrollY]);
 
   return (
-    <motion.div
-      variants={fadeIn('up', 0.2)}
-      initial="hidden"
+    <div
       animate={{ y: showNavbar ? 0 : -100, opacity: showNavbar ? 1 : 0 }}
       transition={{ duration: 0.3 }}
       style={{
@@ -139,6 +137,6 @@ export default function NavBarSidebar() {
           </div>
         </DisclosurePanel>
       </Disclosure>
-    </motion.div>
+    </div>
   );
 }

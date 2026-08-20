@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styles from './style.module.css';
-import { motion } from 'framer-motion';
+
 import { useLocation } from 'react-router-dom';
 import { menuSlide } from '../anim';
 import Link from './Link';
@@ -44,7 +44,7 @@ export default function index() {
   const [selectedIndicator, setSelectedIndicator] = useState(pathname);
 
   return (
-    <motion.div
+    <div
       variants={menuSlide}
       initial="initial"
       animate="enter"
@@ -73,9 +73,9 @@ export default function index() {
             );
           })}
         </div>
-        <Footer className="mt-20"/>
+        <Footer className="mt-20" />
       </div>
       <Curve />
-    </motion.div>
+    </div>
   );
 }

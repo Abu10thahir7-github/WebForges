@@ -1,13 +1,13 @@
 import styles from './style.module.scss';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+
 import { slide, scale } from '../../anim';
 
 export default function Index({ data, isActive, setSelectedIndicator }) {
   const { title, href, index } = data;
 
   return (
-    <motion.div
+    <div
       className={styles.link}
       onMouseEnter={() => {
         setSelectedIndicator(href);
@@ -18,12 +18,12 @@ export default function Index({ data, isActive, setSelectedIndicator }) {
       animate="enter"
       exit="exit"
     >
-      <motion.div
+      <div
         variants={scale}
         animate={isActive ? 'open' : 'closed'}
         className={styles.indicator}
-      ></motion.div>
+      ></div>
       <Link to={href}>{title}</Link>
-    </motion.div>
+    </div>
   );
 }

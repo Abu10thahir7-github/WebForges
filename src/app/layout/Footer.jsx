@@ -1,7 +1,8 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+
 import { useLocation, useNavigate } from 'react-router-dom';
 import { fadeIn } from '../../data/variants';
+import Button from '../../Componets/UI/Button';
 
 const ACCENT = '#f6bc16';
 
@@ -9,7 +10,7 @@ function Footer() {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const getActiveLink = (path) =>
+  const getActiveLink = path =>
     location.pathname === path ? 'text-yellow-300' : 'text-slate-300 hover:text-yellow-300';
 
   const menuItems = [
@@ -28,65 +29,39 @@ function Footer() {
   ];
 
   return (
-    <footer className="w-[90%] sm:w-4/5 mx-auto mt-16">
+    <footer  className='bg-black'>
+      <div className="w-[90%] sm:w-4/5 mx-auto pt-16 ">
+
+
       <div className="mb-8">
         <h2 className="text-xl font-semibold tracking-tight">Web Forges</h2>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 pb-10 mb-8 border-b border-white/10">
         {/* Intro + CTA */}
-        <motion.div
-          variants={fadeIn('up', 0.2)}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          className="lg:col-span-5 flex flex-col gap-6"
-        >
+        <div className="lg:col-span-5 flex flex-col gap-6">
           <h1 className="text-3xl sm:text-4xl md:text-5xl leading-[1.1]">
             L<span className="italic font-light">e</span>t's w
-            <span className="italic font-light">o</span>rk <br />
-            t<span className="italic font-light">o</span>gether
+            <span className="italic font-light">o</span>rk <br />t
+            <span className="italic font-light">o</span>gether
           </h1>
           <p className="text-sm font-extralight text-slate-300 max-w-[280px]">
             Reach out anytime to discuss a collaboration or just to connect with our team.
           </p>
-          <motion.button
-            onClick={() => navigate('/contact')}
-            whileHover={{ gap: '12px' }}
-            transition={{ duration: 0.2 }}
-            style={{ backgroundColor: ACCENT }}
-            className="uppercase w-fit flex items-center gap-2 p-3 px-5 text-black text-sm font-medium rounded-full"
-          >
-            Contact us
-            <svg
-              width="18"
-              height="18"
-              viewBox="0 0 20 20"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M2.85711 10.8931L13.7232 10.8931L8.73211 15.8841L9.99997 17.1431L17.1428 10.0002L9.99997 2.85735L8.74104 4.11628L13.7232 9.10735L2.85711 9.10735L2.85711 10.8931Z"
-                fill="currentColor"
-              ></path>
-            </svg>
-          </motion.button>
-        </motion.div>
+       <Button to="/contact"   size="md">Contact us</Button>
+        </div>
 
         {/* Address */}
-        <motion.div
-          variants={fadeIn('up', 0.25)}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          className="lg:col-span-3 flex flex-col"
-        >
+        <div className="lg:col-span-3 flex flex-col">
           <p className="text-sm text-slate-400 pb-3 mb-4 border-b border-white/10 w-fit">
             Our address
           </p>
           <ul className="flex flex-col gap-3 text-sm text-slate-200">
             <li>
-              <a className="hover:text-yellow-300 transition-colors" href="mailto:webforges.site@gmail.com">
+              <a
+                className="hover:text-yellow-300 transition-colors"
+                href="mailto:webforges.site@gmail.com"
+              >
                 webforges.site@gmail.com
               </a>
             </li>
@@ -105,21 +80,15 @@ function Footer() {
             </li>
             <li className="text-slate-400">Palakkad, Kerala, India</li>
           </ul>
-        </motion.div>
+        </div>
 
         {/* Follow us */}
-        <motion.div
-          variants={fadeIn('up', 0.3)}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          className="lg:col-span-2 flex flex-col"
-        >
+        <div className="lg:col-span-2 flex flex-col">
           <p className="text-sm text-slate-400 pb-3 mb-4 border-b border-white/10 w-fit">
             Follow us
           </p>
           <ul className="flex gap-3">
-            {socials.map((s) => (
+            {socials.map(s => (
               <li key={s.name}>
                 {s.href ? (
                   <a
@@ -145,21 +114,15 @@ function Footer() {
               </li>
             ))}
           </ul>
-        </motion.div>
+        </div>
 
         {/* Navigation */}
-        <motion.div
-          variants={fadeIn('up', 0.35)}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          className="lg:col-span-2 flex flex-col"
-        >
+        <div className="lg:col-span-2 flex flex-col">
           <p className="text-sm text-slate-400 pb-3 mb-4 border-b border-white/10 w-fit">
             Navigation
           </p>
           <ul className="flex flex-col gap-3 text-base">
-            {menuItems.map((item) => (
+            {menuItems.map(item => (
               <li key={item.path}>
                 <button
                   onClick={() => navigate(item.path)}
@@ -183,16 +146,10 @@ function Footer() {
               </li>
             ))}
           </ul>
-        </motion.div>
+        </div>
       </div>
 
-      <motion.p
-        variants={fadeIn('up', 0.2)}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
-        className="text-center text-xs font-thin text-slate-400 pb-8"
-      >
+      <p className="text-center text-xs font-thin text-slate-400 pb-8">
         © {new Date().getFullYear()} All rights reserved | Created by{' '}
         <a
           href="https://abu-thahir.vercel.app/"
@@ -202,7 +159,8 @@ function Footer() {
         >
           WebForges
         </a>
-      </motion.p>
+      </p>
+       </div>
     </footer>
   );
 }
@@ -210,7 +168,13 @@ function Footer() {
 function SocialIcon({ name }) {
   if (name === 'x') {
     return (
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
         <path
           d="M5.45993 2H4.0499C3.1199 2 2.64991 3.13 3.30991 3.79L9.03989 9.52C10.6799 11.16 13.3299 11.16 14.9699 9.52L20.6999 3.79C21.3599 3.13 20.8899 2 19.9599 2H18.5499C17.7199 2 16.9199 2.33 16.3299 2.92L12.7499 6.5C12.3399 6.91 11.6799 6.91 11.2699 6.5L7.68991 2.92C7.08991 2.33 6.28993 2 5.45993 2Z"
           fill="currentColor"
@@ -224,7 +188,13 @@ function SocialIcon({ name }) {
   }
   if (name === 'facebook') {
     return (
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
         <path
           d="M22 16.19C22 19.83 19.83 22 16.19 22H15C14.45 22 14 21.55 14 21V15.23C14 14.96 14.22 14.73 14.49 14.73L16.25 14.7C16.39 14.69 16.51 14.59 16.54 14.45L16.89 12.54C16.92 12.36 16.78 12.19 16.59 12.19L14.46 12.22C14.18 12.22 13.96 12 13.95 11.73L13.91 9.28C13.91 9.12 14.04 8.98001 14.21 8.98001L16.61 8.94C16.78 8.94 16.91 8.81001 16.91 8.64001L16.87 6.23999C16.87 6.06999 16.74 5.94 16.57 5.94L13.87 5.98001C12.21 6.01001 10.89 7.37 10.92 9.03L10.97 11.78C10.98 12.06 10.76 12.28 10.48 12.29L9.28 12.31C9.11 12.31 8.98001 12.44 8.98001 12.61L9.01001 14.51C9.01001 14.68 9.14 14.81 9.31 14.81L10.51 14.79C10.79 14.79 11.01 15.01 11.02 15.28L11.11 20.98C11.12 21.54 10.67 22 10.11 22H7.81C4.17 22 2 19.83 2 16.18V7.81C2 4.17 4.17 2 7.81 2H16.19C19.83 2 22 4.17 22 7.81V16.19Z"
           fill="currentColor"

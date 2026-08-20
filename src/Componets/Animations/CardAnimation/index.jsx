@@ -16,7 +16,7 @@ const Card = ({ i, title, description, src, url, color, progress, range, targetS
 
   return (
     <div ref={container} className={styles.cardContainer}>
-      <motion.div
+      <div
         style={{ backgroundColor: color, scale, top: `calc(-5vh + ${i * 25}px)` }}
         className={styles.card + ' border-2 border-gray-300 rounded-lg shadow-lg'}
       >
@@ -44,12 +44,12 @@ const Card = ({ i, title, description, src, url, color, progress, range, targetS
           </div>
 
           <div className={styles.imageContainer}>
-            <motion.div className={styles.inner} style={{ scale: imageScale }}>
+            <div className={styles.inner} style={{ scale: imageScale }}>
               <img src={src} alt="image" />
-            </motion.div>
+            </div>
           </div>
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 };

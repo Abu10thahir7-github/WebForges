@@ -6,9 +6,10 @@ import manasa from '../../../assets/projects/manasa creation project.png';
 import sgAcademy from '../../../assets/projects/sg project tumbnail.png';
 import flyoean from '../../../assets/projects/Flyoceanmoockkup.svg';
 import talktowermockup from '../../../assets/projects/talktowermockup.svg';
-import { motion } from 'framer-motion';
+
 import { fadeIn } from '../../../data/variants';
 import Footer from '../../../app/layout/Footer';
+import Button from '../../../Componets/UI/Button';
 
 const projects = [
   {
@@ -29,8 +30,6 @@ const projects = [
     category: 'Education',
     url: 'https://www.talktower.in/',
   },
-
-
 ];
 
 function ArrowIcon() {
@@ -46,14 +45,7 @@ function ArrowIcon() {
 
 function ProjectCard({ project, index }) {
   return (
-    <motion.div
-      onClick={() => window.open(project.url, '_blank')}
-      variants={fadeIn('up', 0.15 * (index % 4))}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true }}
-      className="group cursor-pointer"
-    >
+    <div onClick={() => window.open(project.url, '_blank')} className="group cursor-pointer">
       {/* Thumbnail — fixed aspect ratio, capped size, cropped/cover so
           large source images never blow out the grid */}
       <div className="relative w-full aspect-[4/3] overflow-hidden rounded-2xl bg-[#EFEBE2]">
@@ -87,7 +79,7 @@ function ProjectCard({ project, index }) {
           Visit
         </span>
       </div>
-    </motion.div>
+    </div>
   );
 }
 
@@ -95,18 +87,12 @@ function Projects() {
   scrollTo(0, 0);
 
   return (
-    <div className="relative bg-[#FAF8F2] mt-7 pt-7 ">
+    <div className="relative bg-[#FAF8F2]  pt-7 ">
       <div
         className="w-4/5 h-full m-auto flex flex-col md:flex-row my-5"
         aria-labelledby="projects-heading"
       >
-        <motion.div
-          variants={fadeIn('up', 0.2)}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          className="flex sm:w-full md:w-1/2"
-        >
+        <div className="flex sm:w-full md:w-1/2">
           <p className="text-lg flex items-center gap-3 uppercase text-[#e0a500] font-medium">
             <svg
               width="11"
@@ -120,54 +106,24 @@ function Projects() {
             </svg>
             Our projects
           </p>
-        </motion.div>
-        <motion.div className="sm:w-full md:w-1/2">
+        </div>
+        <div className="sm:w-full md:w-1/2">
           <h2
             id="projects-heading"
-            className="heading-style-h3 text-base sm:text-lg md:text-xl lg:text-3xl text-gray-900"
+            className="heading-style-h3 text-base sm:text-lg md:text-xl lg:text-3xl pb-2 text-gray-900"
           >
             Our unique strategy ensures successful project outcomes
           </h2>
 
-          <a to="/projects">
-            <motion.span
-              variants={fadeIn('left', 0.2)}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true }}
-              className="bg-[#f6bc17] rounded-full px-4 py-2 text-black text-base uppercase flex items-center gap-3 mt-3 w-fit"
-            >
-              See all work
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true"
-              >
-                <path
-                  d="M2.85711 10.8929L13.7232 10.8929L8.73211 15.8839L9.99997 17.1429L17.1428 10L9.99997 2.85714L8.74104 4.11607L13.7232 9.10714L2.85711 9.10714L2.85711 10.8929Z"
-                  fill="currentColor"
-                ></path>
-              </svg>
-            </motion.span>
-          </a>
-        </motion.div>
+          <Button to="/projects">See all work</Button>
+        </div>
       </div>
 
-      <motion.div
-        variants={fadeIn('up', 2)}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
-        className="background"
-      ></motion.div>
+      <div className="background"></div>
 
       <div className=" w-4/5 mx-auto mt-7 pb-10">
         {/* Section header, matching the hero's eyebrow + serif/bold pairing */}
         <div className="mb-10">
-
           <h2 className="mt-4 text-3xl sm:text-4xl leading-tight text-[#0B0F19]">
             <span className="   font-serif   italic text-gray-700  ">Projects,</span>{' '}
             <span className="font-extrabold">DELIVERED.</span>

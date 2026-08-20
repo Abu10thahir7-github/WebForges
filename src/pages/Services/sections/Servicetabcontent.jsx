@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { fadeIn } from '../../data/variants';
 
 const services = [
   {
@@ -41,9 +40,7 @@ const services = [
   {
     title: 'Support & Maintenance',
     tagline: 'Ongoing fixes for sites under a support agreement.',
-    items: [
-      'Contract bug fixing, on-call for sites already under agreement',
-    ],
+    items: ['Contract bug fixing, on-call for sites already under agreement'],
   },
 ];
 
@@ -52,21 +49,17 @@ function Servicetabcontent() {
   const [openMobile, setOpenMobile] = useState(0);
 
   return (
-    <motion.div
-      variants={fadeIn('up', 0.2)}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true }}
-      className="grid grid-cols-1 sm:grid-cols-[280px_1fr] gap-6 sm:gap-14"
-    >
+    <div className="grid grid-cols-1  gap-6   sm:gap-14">
       {/* ---------- Desktop: tab list ---------- */}
-      <div className="hidden sm:flex flex-col border-t border-white/10">
+      <div className="hidden flex-col border-t border-gray-200 sm:flex">
         {services.map((service, i) => (
           <button
             key={service.title}
+            type="button"
             onClick={() => setActive(i)}
-            className={`group flex items-center justify-between border-b border-white/10 py-5 text-left transition-colors ${
-              active === i ? 'text-white' : 'text-white/40 hover:text-white/70'
+            aria-pressed={active === i}
+            className={`group flex items-center justify-between border-b border-gray-200 py-5 text-left transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f6bc17] ${
+              active === i ? 'text-gray-900' : 'text-gray-400 hover:text-gray-600'
             }`}
           >
             <span className="flex items-center gap-4">
@@ -75,7 +68,7 @@ function Servicetabcontent() {
             </span>
             <span
               className={`h-1.5 w-1.5 rounded-full transition-all ${
-                active === i ? 'bg-[#F5B937] scale-100' : 'scale-0'
+                active === i ? 'scale-100 bg-[#f6bc17]' : 'scale-0'
               }`}
             />
           </button>
@@ -83,96 +76,92 @@ function Servicetabcontent() {
       </div>
 
       {/* ---------- Desktop: active tab detail ---------- */}
-      <div className="hidden sm:block min-h-[260px]">
+      <div className="hidden min-h-[260px] sm:block">
         <AnimatePresence mode="wait">
-          <motion.div
+          <div
             key={services[active].title}
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
             transition={{ duration: 0.35, ease: 'easeOut' }}
           >
-            <p className="text-2xl italic font-light text-white mb-6">
+            <p className="mb-6 text-2xl font-light italic text-gray-900">
               {services[active].tagline}
             </p>
             <ul className="space-y-4">
-              {services[active].items.map((item) => (
-                <li
-                  key={item}
-                  className="flex gap-3 text-white/60 leading-relaxed"
-                >
-                  <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-[#F5B937]" />
+              {services[active].items.map(item => (
+                <li key={item} className="flex gap-3 leading-relaxed text-gray-600">
+                  <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-[#f6bc17]" />
                   {item}
                 </li>
               ))}
             </ul>
-          </motion.div>
+          </div>
         </AnimatePresence>
       </div>
 
       {/* ---------- Mobile: accordion ---------- */}
-      <div className="sm:hidden flex flex-col border-t border-white/10">
+      {/* fixed: was text-white on a white page — the accordion was opening,
+          you just couldn't see any of the content once it did */}
+      <div className="flex flex-col border-t border-gray-200 sm:hidden">
         {services.map((service, i) => {
           const isOpen = openMobile === i;
           return (
-            <div key={service.title} className="border-b border-white/10">
+            <div key={service.title} className="border-b border-gray-200">
               <button
+                type="button"
                 onClick={() => setOpenMobile(isOpen ? -1 : i)}
-                className="flex w-full items-center justify-between py-4 text-left"
+                className="flex w-full items-center justify-between py-4 text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f6bc17]"
                 aria-expanded={isOpen}
               >
                 <span className="flex items-center gap-3">
-                  <span className="text-xs text-white/40 tabular-nums">
+                  <span className="text-xs tabular-nums text-gray-400">
                     {String(i + 1).padStart(2, '0')}
                   </span>
                   <span
-                    className={`text-base font-medium ${
-                      isOpen ? 'text-white' : 'text-white/60'
-                    }`}
+                    className={`text-base font-medium ${isOpen ? 'text-gray-900' : 'text-gray-600'}`}
                   >
                     {service.title}
                   </span>
                 </span>
-                <motion.span
+                <span
                   animate={{ rotate: isOpen ? 45 : 0 }}
                   transition={{ duration: 0.25 }}
-                  className="text-[#F5B937] text-xl leading-none"
+                  className="text-xl leading-none text-[#f6bc17]"
+                  aria-hidden="true"
                 >
                   +
-                </motion.span>
+                </span>
               </button>
 
               <AnimatePresence initial={false}>
                 {isOpen && (
-                  <motion.div
+                  <div
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: 'auto', opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.3, ease: 'easeInOut' }}
                     className="overflow-hidden"
                   >
-                    <p className="text-lg italic font-light text-white pb-4">
+                    <p className="pb-4 text-lg font-light italic text-gray-900">
                       {service.tagline}
                     </p>
                     <ul className="space-y-3 pb-5">
-                      {service.items.map((item) => (
-                        <li
-                          key={item}
-                          className="flex gap-3 text-sm text-white/60 leading-relaxed"
-                        >
-                          <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-[#F5B937]" />
+                      {service.items.map(item => (
+                        <li key={item} className="flex gap-3 text-sm leading-relaxed text-gray-600">
+                          <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-[#f6bc17]" />
                           {item}
                         </li>
                       ))}
                     </ul>
-                  </motion.div>
+                  </div>
                 )}
               </AnimatePresence>
             </div>
           );
         })}
       </div>
-    </motion.div>
+    </div>
   );
 }
 

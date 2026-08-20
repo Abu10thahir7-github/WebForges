@@ -1,107 +1,163 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useEffect } from 'react';
+
 import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
 
 import { fadeIn } from '../../data/variants';
-import ZoomParallax from '../../Componets/Animations/ZoomParallax/ZoomParallax';
 import Contact from '../Home/Sections/Contact';
-import Animation from '../../assets/images/services/animation.gif';
-import TabsComponent from '../../Componets/Animations/ServiceTabContent';
+import Servicetabcontent from './sections/Servicetabcontent';
+import AllServiceTabContent from '../../Componets/Animations/AllServiceTabContent';
+import ServicesHero from './sections/Hero';
+import WhatWeDo from './sections/WhatWeDo';
+import ServiceSections from './sections/ServiceSection';
+import HowWeWork from './sections/HowWeWork';
+import WhatYouGet from './sections/WhatYouGet';
+import Technology from './sections/Technology';
+import DiscoverTextAnimation from '../../Componets/Animations/DiscoverTextAnimation';
+import AllServicesSection from './sections/AllSerivces';
+
+const faqs = [
+  {
+    q: 'How long does a typical website take to build?',
+    a: 'Most business sites take 2–4 weeks from kickoff to launch, depending on the number of pages and whether content and images are ready when we start. E-commerce and portal builds usually run 4–8 weeks.',
+  },
+  {
+    q: 'Do you handle SEO after the site is live, or is that separate?',
+    a: 'Basic on-page SEO is included in every build — structured data, meta tags, sitemap, semantic headings. Ongoing SEO re-optimization and AI search setup are separate, ongoing engagements since they require ongoing work, not a one-time fix.',
+  },
+  {
+    q: "Can you fix bugs on a site you didn't build?",
+    a: "Yes, under a support agreement. We'll need to review the codebase first to scope the work, since fix time depends heavily on how the existing site was built.",
+  },
+  {
+    q: 'What does a no-login reseller catalog actually mean?',
+    a: "A product catalog site where visitors browse and inquire, but there's no account creation and no online payment — common for wholesalers and resellers who close deals over calls or WhatsApp rather than checkout flows.",
+  },
+  {
+    q: 'Do you offer payment plans, or is it full payment upfront?',
+    a: "This varies by project scope — get in touch with the details of what you need and we'll walk through what makes sense.",
+  },
+];
+
+ 
 
 function ServicesPage() {
-  scrollTo(0, 0);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  // ---- Core SEO: structured data ----
+  // TODO: swap these for your existing builders in structuredData.js
+  // (buildBreadcrumbList / buildService / buildFAQPage) once you confirm
+  // their exact param shape — the JSON output below matches schema.org's
+  // spec either way, so this is safe to ship as-is in the meantime.
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://webforges.site/' },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Services',
+        item: 'https://webforges.site/services',
+      },
+    ],
+  };
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(item => ({
+      '@type': 'Question',
+      name: item.q,
+      acceptedAnswer: { '@type': 'Answer', text: item.a },
+    })),
+  };
+
+  const serviceSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    serviceType: 'Web design, e-commerce, SEO, and digital marketing',
+    provider: {
+      '@type': 'Organization',
+      name: 'WebForges',
+      url: 'https://webforges.site',
+      areaServed: 'Kerala, India',
+    },
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'WebForges Services',
+      itemListElement: [
+        'Web Design',
+        'E-Commerce',
+        'Digital Products',
+        'Marketing & Visibility',
+        'Support & Maintenance',
+      ].map(name => ({
+        '@type': 'Offer',
+        itemOffered: { '@type': 'Service', name },
+      })),
+    },
+  };
 
   return (
-    <div>
+    <div className="bg-white">
       <Helmet>
-        {/* Basic Meta */}
-        <title>Our Services - WebForges | Creative Web Design & SEO Experts</title>
+        <title>Web Design, SEO & Digital Marketing Services - WebForges Kerala</title>
         <meta
           name="description"
-          content="Discover premium website design, e-commerce solutions, UI/UX, SEO optimization, and more with WebForges. Your partner in digital success."
+          content="Website design, e-commerce, SEO re-optimization, Google & Meta Ads, AI search setup, and ongoing support — WebForges builds and runs your digital presence, based in Kerala."
         />
         <meta
           name="keywords"
-          content="web design, SEO services, e-commerce development, UI/UX design, responsive websites, website maintenance, branding, creative solutions"
+          content="web design Kerala, ecommerce development, SEO re-optimization, google ads management, meta ads management, AI search optimization, landing page design, digital products, website redesign, website maintenance, reseller catalog website, contract bug fixing"
         />
         <meta name="robots" content="index, follow" />
         <meta name="author" content="WebForges" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="canonical" href="https://webforges.site/services" />
 
-        {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta
           property="og:title"
-          content="Our Services - WebForges | Creative Web Design & SEO Experts"
+          content="Web Design, SEO & Digital Marketing Services - WebForges"
         />
         <meta
           property="og:description"
-          content="Discover premium website design, e-commerce solutions, UI/UX, SEO optimization, and more with WebForges. Your partner in digital success."
+          content="Website design, e-commerce, SEO, Google & Meta Ads, AI search setup, and ongoing support from a Kerala-based team."
         />
         <meta property="og:image" content="https://webforges.site/logo.png" />
         <meta property="og:url" content="https://webforges.site/services" />
         <meta property="og:site_name" content="WebForges" />
 
-        {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content="Our Services - WebForges | Creative Web Design & SEO Experts"
+          content="Web Design, SEO & Digital Marketing Services - WebForges"
         />
         <meta
           name="twitter:description"
-          content="Discover premium website design, e-commerce solutions, UI/UX, SEO optimization, and more with WebForges. Your partner in digital success."
+          content="Website design, e-commerce, SEO, and ongoing support from a Kerala-based team."
         />
         <meta name="twitter:image" content="https://webforges.site/logo.png" />
         <meta name="twitter:site" content="@WebForges" />
         <meta name="twitter:creator" content="@WebForges" />
+
+        {/* structured data — this is what earns breadcrumb trails and FAQ
+            accordions directly in Google's search results, not just a
+            plain blue link */}
+        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
-
-      <div class="bg-animation absolute">
-        <div class="noise-bg"></div>
-        <div class="blob-cont">
-          <div class="mint blob"></div>
-          <div class="mint blob"></div>
-          <div class="lime blob"></div>
-          <div class="lime blob"></div>
-        </div>
-      </div>
-
-      <div className="w-4/5 m-auto h-screen flex flex-col justify-center items-center gap-10">
-        <div className="hero_text">
-          <motion.p
-            variants={fadeIn('up', 0.2)}
-            initial="hidden"
-            whileInView={'show'}
-            viewport={{ once: true }}
-            className=" z-10 text-desgin font-medium   heading-style-h3 text-3xl sm:text-3xl md:text-3xl lg:text-3xl xl:text-7xl text-white"
-          >
-            <span className=" mr-0 md:mr-96">
-              Creat<span class="text-style-italic">i</span>ve des
-              <span class="text-style-italic">i</span>gn
-            </span>{' '}
-            <br />
-            <span className=" ml-0 md:ml-56">
-              p<span class="text-style-italic">o</span>wered
-            </span>{' '}
-            <br />
-            <span className="ml-0 md:l-44">
-              by expert tal<span class="text-style-italic">e</span>nt.
-            </span>
-          </motion.p>
-        </div>
-      </div>
-      <div className="h-[30vh]"></div>
-      <div className="hidden md:block ">
-        <ZoomParallax />
-      </div>
-
-      <div>
-        <div className="w-4/5 m-auto">
-          <TabsComponent />
-        </div>
-      </div>
+      <ServicesHero />
+      <WhatWeDo />
+      <ServiceSections />
+      <HowWeWork />
+      <Technology />
+      <AllServicesSection />
+      <WhatYouGet />
       <Contact />
     </div>
   );

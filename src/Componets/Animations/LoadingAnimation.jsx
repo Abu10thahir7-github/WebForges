@@ -15,13 +15,13 @@ export default function EntryLoader() {
   return (
     <AnimatePresence>
       {showLoader && (
-        <motion.div
+        <div
           className="fixed inset-0 bg-black z-[9999] flex items-center justify-center"
           initial={{ opacity: 1 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0, transition: { duration: 1 } }}
         >
-          <motion.img
+          <img
             src={logo}
             alt="Webforges Logo"
             className="w-56 h-56"
@@ -29,7 +29,7 @@ export default function EntryLoader() {
             animate={{ scale: 1.2, rotate: 360, opacity: 1 }}
             transition={{ duration: 2, ease: 'easeInOut' }}
           />
-        </motion.div>
+        </div>
       )}
     </AnimatePresence>
   );

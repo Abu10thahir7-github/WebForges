@@ -1,7 +1,6 @@
 import { CheckIcon } from '@heroicons/react/20/solid';
 import { Helmet } from 'react-helmet-async';
 
-import { motion } from 'framer-motion';
 import { fadeIn } from '../data/variants';
 const tiers = [
   {
@@ -139,13 +138,7 @@ export default function Pricing() {
       </div>
       <div className="w-4/5 m-auto h-screen flex flex-col justify-center items-center gap-10">
         <div className="hero_text">
-          <motion.p
-            variants={fadeIn('up', 0.2)}
-            initial="hidden"
-            whileInView={'show'}
-            viewport={{ once: true }}
-            className=" z-10 text-desgin font-medium gap-12 heading-style-h3 text-2xl sm:text-3xl md:text-3xl lg:text-3xl xl:text-7xl text-white text-center"
-          >
+          <p className=" z-10 text-desgin font-medium gap-12 heading-style-h3 text-2xl sm:text-3xl md:text-3xl lg:text-3xl xl:text-7xl text-white text-center">
             <span className="mr-0 md:mr-96">
               A<span class="text-style-italic">ff</span>ordab
               <span class="text-style-italic">l</span>e Pl<span class="text-style-italic">a</span>ns
@@ -159,7 +152,7 @@ export default function Pricing() {
               Y<span class="text-style-italic">o</span>ur Bus
               <span class="text-style-italic">i</span>ness
             </span>
-          </motion.p>
+          </p>
         </div>
       </div>
       <div className="mx-auto max-w-4xl mt-10 md:mt-36 text-center">

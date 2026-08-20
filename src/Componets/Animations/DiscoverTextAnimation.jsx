@@ -1,59 +1,48 @@
-'use client';
-import { useScroll, useTransform, motion } from 'framer-motion';
+// src/Componets/Animations/DiscoverTextAnimation.jsx
+import { useScroll, useTransform, useSpring, motion } from 'framer-motion';
+import { useRef } from 'react';
 
-import Lenis from '@studio-freight/lenis';
-
-import { useEffect, useRef } from 'react';
-
-export default function DiscoverTextAnimation() {
-  const container = useRef();
+export default function DiscoverTextAnimation({ Text }) {
+  const container = useRef(null);
   const { scrollYProgress } = useScroll({
     target: container,
     offset: ['start end', 'end start'],
   });
 
-  useEffect(() => {
-    const lenis = new Lenis();
-
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-
-    requestAnimationFrame(raf);
-  }, []);
+  // smooths the raw scroll value so the transform doesn't visually stutter
+  // on fast/short scroll bursts — cheap, and removes most of the remaining jank
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 300,
+    damping: 40,
+    mass: 0.5,
+  });
 
   return (
-    <main className="overflow-hidden  ">
-      <div ref={container} className="">
-        <Slide direction={'right'} left={'-4%'} progress={scrollYProgress} />
+    <div className="w-full min-w-0 overflow-hidden">
+      <div ref={container}>
+        <Slide direction="right" left="-4%" progress={smoothProgress} text={Text} />
       </div>
-    </main>
+    </div>
   );
 }
 
 const Slide = props => {
-  const direction = props.direction == 'left' ? -1 : 1;
+  const direction = props.direction === 'left' ? -1 : 1;
   const translateX = useTransform(props.progress, [0, 1], [150 * direction, -150 * direction]);
   return (
     <motion.div
-      style={{ x: translateX, left: props.left }}
+      style={{ x: translateX, left: props.left, willChange: 'transform' }}
       className="relative flex whitespace-nowrap"
     >
-      <Phrase src={props.src} />
+      <Phrase text={props.text} />
     </motion.div>
   );
 };
 
-const Phrase = () => {
+const Phrase = ({ text }) => {
   return (
-    <p className="px-4 sm:px-6 shrink-0  block font-serif text-3xl italic text-gray-700 sm:text-4xl md:text-5xl leading-none text-white text-[13vw] sm:text-[9vw] md:text-[7vw] lg:text-[6vw]">
-      D<span className=" font-light">i</span>sc
-      <span className=" font-light">o</span>very{' '}
-      <span className=" font-light">o</span>ur s
-      <span className=" font-light">e</span>rv
-      <span className=" font-light">i</span>ce
-      <span className=" font-light">s</span>
+    <p className="p-4 sm:px-6 shrink-0 block font-serif text-3xl italic text-gray-700 sm:text-4xl md:text-5xl leading-none text-[13vw] sm:text-[9vw] md:text-[7vw] lg:text-[6vw]">
+      {text}
     </p>
   );
 };

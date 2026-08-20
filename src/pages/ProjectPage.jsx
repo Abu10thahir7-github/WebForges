@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 
-import { motion } from 'framer-motion';
 import { fadeIn } from '../data/variants';
 
 import trendzio_mockup from '../assets/projects/trendzio mockup.png';
@@ -125,13 +124,7 @@ function ProjectPage() {
 
       <div className="w-4/5 m-auto h-screen flex flex-col justify-center items-center gap-10">
         <div className="hero_text">
-          <motion.p
-            variants={fadeIn('up', 0.2)}
-            initial="hidden"
-            whileInView={'show'}
-            viewport={{ once: true }}
-            className=" z-10 text-desgin font-medium   heading-style-h3 text-3xl sm:text-3xl md:text-3xl lg:text-3xl xl:text-7xl text-white"
-          >
+          <p className=" z-10 text-desgin font-medium   heading-style-h3 text-3xl sm:text-3xl md:text-3xl lg:text-3xl xl:text-7xl text-white">
             <span className=" mr-0 md:mr-96">
               Bu<span class="text-style-italic">i</span>ld
               <span class="text-style-italic">i</span>ng
@@ -144,7 +137,7 @@ function ProjectPage() {
             <span className="ml-0 md:ml-44">
               i<span class="text-style-italic">n </span>reality.
             </span>
-          </motion.p>
+          </p>
         </div>
       </div>
       <div className="project-container sm:w-full md:w-full lg:w-4/5 m-auto px-4 py-8">
@@ -168,13 +161,9 @@ function ProjectPage() {
         {/* Project Cards */}
         <div className="w-full mt-16 sm:w-4/5 md:w-4/6 lg:w-4/6 mx-auto flex flex-col gap-10">
           {filteredProjects.map((project, index) => (
-            <motion.div
+            <div
               key={index}
               onClick={() => window.open(project.link, '_blank')}
-              variants={fadeIn('up', 0.2)}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true }}
               className="project-card cursor-pointer"
             >
               <img src={project.img} alt={`${project.title}_mockup`} />
@@ -196,7 +185,7 @@ function ProjectPage() {
                   />
                 </svg>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

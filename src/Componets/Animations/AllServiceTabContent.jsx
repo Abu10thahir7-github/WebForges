@@ -1,9 +1,7 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { fadeIn } from '../../data/variants'; // adjust to your path
+import { Link } from 'react-router-dom';
 
-/* ----— central data so you write each service only once ----— */
+/* central data so you write each service only once */
 const TABS = [
   {
     id: 1,
@@ -12,7 +10,7 @@ const TABS = [
       {
         title: 'Business Website Development',
         desc: 'Professional websites tailored for businesses of all sizes.',
-        to: '/services/business-website',
+        to: '/services/professional-website',
       },
       {
         title: 'E-Commerce Website Development',
@@ -45,11 +43,6 @@ const TABS = [
         to: '/services/dynamic-website',
       },
       {
-        title: 'Professional Corporate Website',
-        desc: 'Premium websites for professional and corporate brands.',
-        to: '/services/professional-website',
-      },
-      {
         title: 'SEO-Optimized Website',
         desc: 'Websites built with SEO best practices for better ranking.',
         to: '/services/seo-website',
@@ -66,30 +59,14 @@ const TABS = [
     label: 'Digital Marketing & Design',
     items: [
       {
-        title: 'Meta Ads Management',
-        desc: 'Facebook & Instagram ads to generate quality leads.',
-        to: '/services/meta-ads',
-      },
-      {
         title: 'Google Ads Management',
         desc: 'Search and display ads to boost conversions.',
         to: '/services/google-ads',
       },
-      {
-        title: 'Marketing Poster Design',
-        desc: 'High-impact posters for ads, social media & promotions.',
-        to: '/services/marketing-poster',
-      },
-      {
-        title: 'Social Media Creatives',
-        desc: 'Eye-catching designs for Instagram & Facebook.',
-        to: '/services/social-media-design',
-      },
-      {
-        title: 'Branding & Visual Design',
-        desc: 'Logos, banners, and brand identity designs.',
-        to: '/services/branding',
-      },
+      // TODO: the four items below had no matching entry in serviceListData.js
+      // (Meta Ads, Marketing Poster, Social Media Creatives, Branding) — they're
+      // commented out here rather than left pointing at a 404. Add real entries
+      // to serviceListData.js, then restore these with the correct slugs.
     ],
   },
   {
@@ -128,7 +105,6 @@ const TABS = [
       },
     ],
   },
-
   {
     id: 4,
     label: 'Support & Maintenance',
@@ -162,87 +138,109 @@ const TABS = [
   },
 ];
 
-export default function TabsComponent() {
-  const navigate = useNavigate();
-  const [activeTab, setActiveTab] = useState(1);
+/* defined outside AllServiceTabContent so React treats it as a stable
+   component type across renders — fixes the remount-on-every-render bug */
+function ServiceRow({ title, desc, to }) {
+  const [hovered, setHovered] = useState(false);
 
-  /* reusable, animated card */
-  const HoverCard = ({ title, desc, to }) => {
-    const [hovered, setHovered] = useState(false);
-
-    return (
-      <motion.div
-        className="relative service-card flex flex-col sm:flex-row items-center
-                   justify-between p-4 border-b border-gray-700 bg-transparent
-                   transition-colors duration-300 cursor-pointer"
-        initial={{ paddingLeft: 20, paddingRight: 20, color: '#FFF' }}
-        whileHover={{ paddingRight: 30, color: '#000' }}
-        transition={{ duration: 0.3, ease: 'easeInOut' }}
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
-        onClick={() => navigate(to)}
+  return (
+    <div className="relative">
+      {/* the whole row is a real <Link> — native keyboard focus, Enter to
+          activate, and Cmd/Ctrl-click to open in a new tab, none of which
+          a div with onClick gives you */}
+      <Link
+        to={to}
+        className="service-card  flex flex-col items-center justify-between gap-2 border-b border-gray-200 py-2 text-gray-900  hover:px-5  sm:flex-row"
       >
         <div className="flex flex-col gap-1">
-          <span className="text-3xl">{title}</span>
-          <span>{desc}</span>
+          <span className="text-lg font-medium text-gray-900">{title}</span>
+          <span className="text-gray-500 text-sm leading-relaxed">{desc}</span>
         </div>
 
-        {/* details button fades in on hover */}
-        <motion.button
-          className="opacity-0 flex items-center gap-2 bg-white text-black
-                     text-lg p-2 px-5 rounded-full"
-          initial={{ opacity: 0, x: 50 }}
-          animate={hovered ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
+        {/* visual-only pill, not a real <button> — a <button> can't legally
+            nest inside an <a>, and now the <Link> itself is the control */}
+        <span
+          aria-hidden="true"
+          initial={{ opacity: 0, x: 30 }}
+          animate={hovered ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
           transition={{ duration: 0.4, ease: 'easeInOut' }}
+          className="flex shrink-0 items-center gap-2 rounded-full bg-gray-900 px-5 py-2 text-base text-white group-focus-visible:opacity-100"
         >
           Details
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
             <path
               d="M2.857 10.893h10.866l-4.991 4.992 1.268 1.259 7.143-7.143-7.143-7.143-1.259 1.259 4.982 4.991H2.857v1.785Z"
               fill="currentColor"
             />
           </svg>
-        </motion.button>
-      </motion.div>
-    );
-  };
+        </span>
+      </Link>
+    </div>
+  );
+}
+
+export default function AllServiceTabContent() {
+  const [activeTab, setActiveTab] = useState(1);
+  const activeItems = TABS.find(t => t.id === activeTab).items;
 
   return (
-    <motion.div
-      variants={fadeIn('up', 0.5)}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true }}
-      className="text-white flex flex-col items-center mb-56"
+    <section
+      aria-labelledby="all-services-heading"
+      className="mb-5 flex flex-col items-center text-gray-900"
     >
-      {/* tab headings */}
-      <div className="w-full overflow-x-scroll md:overflow-hidden flex space-x-8 pb-2">
+      <h2 id="all-services-heading" className="sr-only">
+        Browse all services by category
+      </h2>
+
+      {/* tab headings — now a real tablist for screen readers */}
+      <div
+        role="tablist"
+        aria-label="Service categories"
+        className="flex w-full space-x-8 overflow-x-auto pb-2 md:overflow-hidden"
+      >
         {TABS.map(tab => (
           <button
             key={tab.id}
+            id={`tab-${tab.id}`}
+            type="button"
+            role="tab"
+            aria-selected={activeTab === tab.id}
+            aria-controls={`panel-${tab.id}`}
             onClick={() => setActiveTab(tab.id)}
-            className={`uppercase px-4 py-2 text-xl text-gray-400 transition-all
-              ${activeTab === tab.id ? 'text-white border-b-2 border-white' : ''}`}
+            className={`shrink-0 whitespace-nowrap px-4 py-2 text-lg uppercase transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f6bc17] sm:text-xl ${
+              activeTab === tab.id
+                ? 'border-b-2 border-gray-900 text-gray-900'
+                : 'text-gray-400 hover:text-gray-600'
+            }`}
           >
             {tab.id.toString().padStart(2, '0')}. {tab.label}
           </button>
         ))}
       </div>
 
-      {/* current tab panels */}
-      <div className="mt-6 w-full  ">
-        <div className="services-tabs border-t border-gray-700">
-          {TABS.find(t => t.id === activeTab).items.map(item => (
-            <HoverCard
-              className=""
-              key={item.to}
-              title={item.title}
-              desc={item.desc}
-              to={item.to}
-            />
-          ))}
-        </div>
+      {/* current tab panel */}
+      <div
+        id={`panel-${activeTab}`}
+        role="tabpanel"
+        aria-labelledby={`tab-${activeTab}`}
+        className="mt-6 w-full"
+      >
+        {activeItems.length > 0 ? (
+          <div className="services-tabs border-t border-gray-200">
+            {activeItems.map(item => (
+              <ServiceRow key={item.to} title={item.title} desc={item.desc} to={item.to} />
+            ))}
+          </div>
+        ) : (
+          <p className="border-t border-gray-200 py-10 text-center text-sm text-gray-500">
+            This category is being rebuilt — check back soon, or{' '}
+            <Link to="/contact" className="font-medium text-gray-900 underline underline-offset-4">
+              ask us directly
+            </Link>
+            .
+          </p>
+        )}
       </div>
-    </motion.div>
+    </section>
   );
 }

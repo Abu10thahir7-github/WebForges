@@ -17,10 +17,13 @@ $yellow: #f6bc16;
   padding: 0px;
   box-sizing: border-box;
 }
+html,
 body {
   font-family: 'Poppins', serif;
-  background-color: $primary-color;
+  background-color: #ffffff;
   color: white;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 button {
   transition: 0.3s;
@@ -112,7 +115,6 @@ button {
   z-index: 1;
 }
 .home {
-
   .logo-title {
     font-style: italic;
 
@@ -189,7 +191,6 @@ button {
   }
 }
 .Experts {
-
   background-size: cover;
   background-position: center;
   height: 70vh;
@@ -281,7 +282,8 @@ button {
   z-index: 0;
 }
 
-$colors: 'red', 'blue', 'darkBlue', 'green', 'yellow', 'violet', 'cyan', 'black', 'orange', 'pink',
+$colors:
+  'red', 'blue', 'darkBlue', 'green', 'yellow', 'violet', 'cyan', 'black', 'orange', 'pink',
   'purple', 'brown', 'gray', 'teal', 'indigo', 'lime', 'navy', 'beige', 'mint', 'peach';
 
 $color-vars: (
@@ -638,4 +640,15 @@ textarea:focus {
   padding: 20px;
   font-weight: 500;
   margin-bottom: 10px;
+}
+
+
+@keyframes marqueeScroll {
+  from { transform: translateX(0%); }
+  to { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  animation: marqueeScroll 24s linear infinite;
+  will-change: transform;
 }

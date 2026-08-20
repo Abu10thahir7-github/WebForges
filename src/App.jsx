@@ -6,6 +6,8 @@ import Header from './app/layout/header';
 
 import EntryLoader from './Componets/Animations/LoadingAnimation';
 import Footer from './app/layout/Footer';
+import useLenisScroll from './hook/useLenisScroll';
+import Navbar from './app/layout/Navbar';
 
 // ── Public pages: lazy-loaded so first paint only ships Home's code ──
 const Home = lazy(() => import('./pages/Home/Home'));
@@ -36,6 +38,12 @@ function ScrollToTop() {
   }, [pathname]);
   return null;
 }
+// paste in console on the affected page
+[...document.querySelectorAll('*')].forEach(el => {
+  if (el.scrollWidth > document.documentElement.clientWidth) {
+    console.log(el, el.scrollWidth);
+  }
+});
 
 /** Keeps /admin out of search results without needing a robots.txt hack. */
 function AdminGuard({ children }) {
@@ -50,16 +58,20 @@ function AdminGuard({ children }) {
 }
 
 const App = () => {
+  useLenisScroll();
   return (
     <>
       <div className="navbar-postion-setup">
-        <Header />
+        <Navbar />
+
+
       </div>
 
       <ScrollToTop />
 
       <Suspense fallback={<EntryLoader />}>
         <Routes>
+
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/services/:slug" element={<ServiceDetails />} />

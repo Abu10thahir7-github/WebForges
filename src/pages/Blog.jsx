@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+
 import { Helmet } from 'react-helmet-async';
 import { fadeIn } from '../data/variants';
 import BlogTextAnimation from '../Componets/Animations/BlogText';
@@ -189,15 +189,9 @@ function Blog() {
 
       <div className="w-4/5 m-auto h-[90vh] flex flex-col justify-center sm:justify-end sm:items-start items-center gap-10">
         <div className="hero_text">
-          <motion.p
-            variants={fadeIn('up', 0.2)}
-            initial="hidden"
-            whileInView={'show'}
-            viewport={{ once: true }}
-            className=" z-10 text-desgin font-medium   heading-style-h3 text-2xl sm:text-3xl md:text-3xl lg:text-3xl xl:text-7xl text-white"
-          >
+          <p className=" z-10 text-desgin font-medium   heading-style-h3 text-2xl sm:text-3xl md:text-3xl lg:text-3xl xl:text-7xl text-white">
             Blog
-          </motion.p>
+          </p>
         </div>
       </div>
       <div className="h-[20vh]"></div>
@@ -223,13 +217,7 @@ function Blog() {
           </div>
 
           {/* Articles */}
-          <motion.div
-            variants={fadeIn('up', 0.2)}
-            initial="hidden"
-            whileInView={'show'}
-            viewport={{ once: true }}
-            className="md:mt-40 "
-          >
+          <div className="md:mt-40 ">
             {filteredArticles.length > 0 ? (
               filteredArticles.map(article => (
                 <div
@@ -259,7 +247,7 @@ function Blog() {
             ) : (
               <div className="text-gray-500 italic">No articles under "{activeTab}" yet.</div>
             )}
-          </motion.div>
+          </div>
         </div>
       </div>
       <div></div>
@@ -277,7 +265,7 @@ function Blog() {
             {/* Team Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
               {teamMembers.map((member, i) => (
-                <motion.div
+                <div
                   key={i}
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.3 }}
@@ -319,7 +307,7 @@ function Blog() {
                       <i className="fab fa-twitter text-xl"></i>
                     </a>
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>

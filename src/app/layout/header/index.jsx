@@ -17,17 +17,8 @@ export default function Home() {
 
   return (
     <>
-      <motion.div
-        initial={{ y: 0, opacity: 1 }}
-        animate={{ y: showHeader ? 0 : -100, opacity: showHeader ? 1 : 0 }}
-        transition={{ duration: 0.3 }}
-        style={{
-          position: 'fixed',
-          top: 0,
-          zIndex: 1001,
-          width: '100%',
-        }}
-        className={styles.main}
+      <div
+
       >
         <div className={styles.header}>
           <div
@@ -39,12 +30,12 @@ export default function Home() {
             <div className={`${styles.burger} ${isActive ? styles.burgerActive : ''}`}></div>
           </div>
         </div>
-      </motion.div>
+      </div>
 
       {/* Background Overlay */}
       <AnimatePresence>
         {isActive && (
-          <motion.div
+          <div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}

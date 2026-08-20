@@ -1,17 +1,10 @@
 .header {
-  padding: 20px;
-  position: fixed;
+
+position: relative;
   right: 0;
   z-index: 1;
+  top: 0;
 
-  // Mobile responsive padding
-  @media (max-width: 768px) {
-    padding: 15px;
-  }
-
-  @media (max-width: 480px) {
-    padding: 10px;
-  }
 
   .button {
     width: 60px;

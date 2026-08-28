@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { fadeIn } from '../../../data/variants';
 import { buildFAQPageSchema } from '../../../Componets/seo/structuredData.js';
-
+import SectionLabel from '../../../Componets/UI/SectionLabel.jsx';
 
 const faqs = [
   {
@@ -30,7 +30,7 @@ const faqs = [
 
 function FaqItem({ item, isOpen, onToggle, index }) {
   return (
-    <motion.div
+    <div
       variants={fadeIn('up', 0.1 + index * 0.05)}
       initial="hidden"
       whileInView="show"
@@ -70,7 +70,7 @@ function FaqItem({ item, isOpen, onToggle, index }) {
 
       <AnimatePresence initial={false}>
         {isOpen && (
-          <motion.div
+          <div
             id={`faq-panel-${index}`}
             role="region"
             aria-labelledby={`faq-header-${index}`}
@@ -83,19 +83,17 @@ function FaqItem({ item, isOpen, onToggle, index }) {
             <p className="pb-6 pr-10 text-sm sm:text-base leading-relaxed text-gray-500">
               {item.a}
             </p>
-          </motion.div>
+          </div>
         )}
       </AnimatePresence>
-    </motion.div>
+    </div>
   );
 }
 
 function CoreSeoFaq() {
   const [openIndex, setOpenIndex] = useState(0);
 
-  const faqSchema = buildFAQPageSchema(
-    faqs.map((f) => ({ question: f.q, answer: f.a }))
-  );
+  const faqSchema = buildFAQPageSchema(faqs.map(f => ({ question: f.q, answer: f.a })));
 
   return (
     <section className="w-4/5 m-auto py-16 md:py-20" aria-labelledby="seo-faq-heading">
@@ -104,19 +102,7 @@ function CoreSeoFaq() {
       <div className="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)]">
         {/* left: heading column, sticky on desktop */}
         <div className="lg:sticky lg:top-28 lg:self-start">
-          <motion.p
-            variants={fadeIn('up', 0.1)}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            className="flex items-center gap-3 text-lg font-medium uppercase text-[#f6bc17]"
-          >
-            <svg width="11" height="13" viewBox="0 0 11 13" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <path d="M11 6.5L0.499999 12.5622L0.5 0.437822L11 6.5Z" fill="currentColor"></path>
-            </svg>
-            Core SEO
-          </motion.p>
-
+          <SectionLabel text="Core SEO" />
           <motion.h2
             id="seo-faq-heading"
             variants={fadeIn('up', 0.2)}
@@ -135,7 +121,8 @@ function CoreSeoFaq() {
             viewport={{ once: true }}
             className="mt-4 max-w-sm text-sm text-gray-500"
           >
-            Structured data, Core Web Vitals, and local search — the technical foundation behind every WebForges build.
+            Structured data, Core Web Vitals, and local search — the technical foundation behind
+            every WebForges build.
           </motion.p>
         </div>
 

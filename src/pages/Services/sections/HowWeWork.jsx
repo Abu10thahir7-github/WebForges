@@ -1,5 +1,6 @@
 // src/Componets/Pages/HowWeWork.jsx
 import React from 'react';
+import SectionLabel from '../../../Componets/UI/SectionLabel';
 
 const STEPS = [
   {
@@ -46,14 +47,7 @@ export default function HowWeWork() {
       <div className="mx-auto max-w-6xl">
         {/* eyebrow */}
 
-        <div className="flex items-center justify-start gap-3">
-          <svg width="11" height="13" viewBox="0 0 11 13" fill="none" aria-hidden="true">
-            <path d="M11 6.5L0.499999 12.5622L0.5 0.437822L11 6.5Z" fill="#f6bc17" />
-          </svg>
-          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-gray-500">
-            Our Process
-          </span>
-        </div>
+        <SectionLabel text=" Our Process" />
 
         <h2 className=" mt-6   text-3xl font-semibold leading-tight text-gray-900 sm:text-4xl">
           From idea to launch, <span className="font-serif italic font-normal">without the</span>{' '} <br/>

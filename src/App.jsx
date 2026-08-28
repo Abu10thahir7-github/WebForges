@@ -21,6 +21,7 @@ const ContactPage = lazy(() => import('./pages/ContactPage'));
 const ArticlesPage = lazy(() => import('./pages/ArticlesPage'));
 const ArticleDetailPage = lazy(() => import('./pages/ArticleDetailPage'));
 const ServiceDetails = lazy(() => import('./pages/Services/ServiceDetails/ServiceDetails'));
+import ProjectDetailPage from './pages/Project/ProjectDetailPage';
 // const NotFound = lazy(() => import('./Componets/Pages/NotFound'));
 
 // ── Admin: separate chunk, never bundled with public routes, never indexed ──
@@ -80,6 +81,7 @@ const App = () => {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/articles" element={<ArticlesPage />} />
           <Route path="/articles/:slug" element={<ArticleDetailPage />} />
+          <Route path="/projects/:slug" element={<ProjectDetailPage />} />
 
           <Route
             path="/admin"

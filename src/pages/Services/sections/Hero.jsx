@@ -3,6 +3,7 @@ import React from 'react';
 
 import { Link } from 'react-router-dom';
 import Button from '../../../Componets/UI/Button';
+import SectionLabel from '../../../Componets/UI/SectionLabel';
 
 const TAGS = ['Web Development', 'Business Automation', 'UI/UX Design', 'E-Commerce', 'SEO'];
 
@@ -89,14 +90,8 @@ export default function ServicesHero() {
       {/* <div className="noise absolute z-0 inset-0 opacity-[0.08]" aria-hidden="true" /> */}
       <div className="relative z-10 !mt-24 px-5  sm:px-10 ">
         {/* eyebrow */}
-        <div className="flex  items-center gap-3">
-          <svg width="11" height="13" viewBox="0 0 11 13" fill="none" aria-hidden="true">
-            <path d="M11 6.5L0.499999 12.5622L0.5 0.437822L11 6.5Z" fill="#f6bc17" />
-          </svg>
-          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-gray-500">
-            Our Services
-          </span>
-        </div>
+
+        <SectionLabel text="Our Services" />
 
         {/* headline + CTA row */}
         <div className=" mt-3 flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-end">

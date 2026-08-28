@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { fadeIn } from '../../data/variants';
 
 // TODO: swap these images for real screenshots of each live product.
@@ -47,19 +46,14 @@ const caseStudies = [
 
 function CaseStudyBlock({ study, index }) {
   return (
-    <motion.div
-      variants={fadeIn('up', 0.1)}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true }}
-      className="grid grid-cols-1 gap-12 border-t border-gray-200 py-16 lg:grid-cols-[1fr_1.1fr] lg:gap-16"
-    >
+    <div className="grid grid-cols-1 gap-12 border-t border-gray-200 py-16 lg:grid-cols-[1fr_1.1fr] lg:gap-16">
       {/* Content — left */}
       <div className="flex flex-col gap-8">
         <div>
           <p className="text-sm font-semibold uppercase tracking-wide text-[#f6bc17]">
             {String(index + 1).padStart(2, '0')} — {study.subtitle}
-          </p>c
+          </p>
+          c
           <h3 className="mt-2 text-3xl font-black uppercase text-gray-900 sm:text-4xl">
             {study.title}
           </h3>
@@ -112,14 +106,20 @@ function CaseStudyBlock({ study, index }) {
           <p className="text-sm leading-relaxed text-gray-500">{study.outcome}</p>
         </div>
 
-<a
+        <a
           href={study.link}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex w-fit items-center gap-2 rounded-full bg-[#f6bc17] px-6 py-3 text-sm font-medium text-black shadow-md transition-transform hover:scale-105"
         >
           Visit live site
-          <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 20 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
             <path
               d="M2.857 10.893h10.866l-4.991 4.992 1.268 1.259 7.143-7.143-7.143-7.143-1.259 1.259 4.982 4.991H2.857v1.785Z"
               fill="currentColor"
@@ -147,37 +147,35 @@ function CaseStudyBlock({ study, index }) {
           </div>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }
 
 export default function CaseStudies() {
   return (
     <section className="w-4/5 m-auto pb-24">
-      <motion.div
-        variants={fadeIn('up', 0.1)}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
-        className="mb-4 flex items-center gap-3"
-      >
-        <svg width="11" height="13" viewBox="0 0 11 13" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-[#f6bc17]">
+      <div className="mb-4 flex items-center gap-3">
+        <svg
+          width="11"
+          height="13"
+          viewBox="0 0 11 13"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="text-[#f6bc17]"
+        >
           <path d="M11 6.5L0.499999 12.5622L0.5 0.437822L11 6.5Z" fill="currentColor"></path>
         </svg>
         <span className="text-sm uppercase tracking-[0.2em] font-semibold text-gray-500">
           Case Studies
         </span>
-      </motion.div>
+      </div>
 
-      <motion.h2
-        variants={fadeIn('up', 0.15)}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
+      <h2
+
         className="heading-style-h3 max-w-2xl text-2xl text-gray-900 sm:text-3xl md:text-4xl"
       >
         A closer look at <span className="font-serif italic font-normal">how we build</span>
-      </motion.h2>
+      </h2>
 
       <div>
         {caseStudies.map((study, index) => (

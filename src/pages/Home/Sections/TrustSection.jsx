@@ -1,7 +1,7 @@
 // src/Componets/HomePages/WhyWebForges.jsx
 
 import { motion } from 'framer-motion';
- import bg from '../../../assets/images/backgrounds/why-webforges.png';
+import bg from '../../../assets/images/backgrounds/why-webforges.png';
 import Marquee from '../../../Componets/Animations/Marquee.jsx';
 
 const stats = [
@@ -147,51 +147,46 @@ function WhyWebForges() {
         </p>
         {/* main heading */}
         {/* main heading */}
-        <div className='flex flex-col md:flex-row justify-between'>
+        <div className="flex flex-col md:flex-row justify-between">
           <div>
-        <div className="flex justify-between flex-col     ">
-          <motion.h2 className=" mt-4 text-start text-3xl font-semibold leading-tight text-gray-900 sm:text-4xl">
-            Built with modern technology,
-            <br />
-            <span className="font-serif italic font-normal">delivered</span> with purpose
-          </motion.h2>
+            <div className="flex justify-between flex-col     ">
+              <motion.h2 className=" mt-4 text-start text-3xl font-semibold leading-tight text-gray-900 sm:text-4xl">
+                Built with modern technology,
+                <br />
+                <span className="font-serif italic font-normal">delivered</span> with purpose
+              </motion.h2>
 
-          {/* subtext */}
-          <p p className="mt-5 text-gray-500 max-w-xl text-sm sm:text-base">
-            Modern websites, applications and automation systems <br /> built around real business
-            goals.
-          </p>
-        </div>
-        {/* stats row */}
-        <div
-
-          className="mt-10 flex flex-wrap gap-10 sm:gap-16"
-        >
-          {stats.map((stat, i) => (
-            <div key={i} className="flex flex-col">
-              <span className="text-3xl sm:text-4xl md:text-5xl font-semibold text-gray-900">
-                {stat.value}
-              </span>
-              <span className="uppercase text-xs sm:text-sm text-gray-500 mt-1 tracking-wide">
-                {stat.label}
-              </span>
+              {/* subtext */}
+              <p p className="mt-5 text-gray-500 max-w-xl text-sm sm:text-base">
+                Modern websites, applications and automation systems <br /> built around real
+                business goals.
+              </p>
             </div>
-          ))}
-        </div></div>
-         <img
-        src={bg}
-        alt=""
-        aria-hidden="true"
-        className="  sm:block sm:-right-6   md:w-[42%]  "
-      /></div>
+            {/* stats row */}
+            <div className="mt-10 flex flex-wrap gap-10 sm:gap-16">
+              {stats.map((stat, i) => (
+                <div key={i} className="flex flex-col">
+                  <span className="text-3xl sm:text-4xl md:text-5xl font-semibold text-gray-900">
+                    {stat.value}
+                  </span>
+                  <span className="uppercase text-xs sm:text-sm text-gray-500 mt-1 tracking-wide">
+                    {stat.label}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+          <img
+            src={bg}
+            alt=""
+            aria-hidden="true"
+            className="  sm:block sm:-right-6   md:w-[42%]  "
+          />
+        </div>
         {/* highlight cards */}
         <div className=" grid grid-cols-1 sm:grid-cols-3 gap-4">
           {highlights.map((item, i) => (
-            <div
-              key={item.title}
-
-              className={`${item.tint} rounded-2xl p-5 sm:p-6`}
-            >
+            <div key={item.title} className={`${item.tint} rounded-2xl p-5 sm:p-6`}>
               <span className="flex items-center justify-center w-9 h-9 rounded-full bg-white shadow-sm mb-4">
                 {item.icon}
               </span>
@@ -203,9 +198,8 @@ function WhyWebForges() {
       </div>
 
       {/* tech marquee */}
-      <div className='py-5'>
-
-      <Marquee items={STACK} direction="left" speed={30} pauseOnHover={true} />
+      <div className="py-5">
+        <Marquee items={STACK} direction="left" speed={30} pauseOnHover={true} />
       </div>
     </section>
   );

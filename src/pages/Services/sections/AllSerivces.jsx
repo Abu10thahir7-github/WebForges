@@ -3,6 +3,7 @@ import React from 'react';
 
 import DiscoverTextAnimation from '../../../Componets/Animations/DiscoverTextAnimation';
 import AllServiceTabContent from '../../../Componets/Animations/AllServiceTabContent';
+import SectionLabel from '../../../Componets/UI/SectionLabel';
 
 export default function AllServicesSection() {
   return (
@@ -21,14 +22,8 @@ export default function AllServicesSection() {
 
       <div className="mx-auto max-w-6xl">
         {/* eyebrow */}
-        <div className="flex items-center gap-3">
-          <svg width="11" height="13" viewBox="0 0 11 13" fill="none" aria-hidden="true">
-            <path d="M11 6.5L0.499999 12.5622L0.5 0.437822L11 6.5Z" fill="#f6bc17" />
-          </svg>
-          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-gray-500">
-            Browse All Services
-          </span>
-        </div>
+        
+        <SectionLabel text="Browse All Services" />
 
         {/* animated headline — reuses the italic scroll-slide component */}
         <div className="-ml-4 mt-2 relative sm:-ml-6">

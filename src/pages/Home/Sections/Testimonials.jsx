@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { fadeIn } from '../../../data/variants.js';
+import SectionLabel from '../../../Componets/UI/SectionLabel.jsx';
 
 const testimonials = [
   {
@@ -76,16 +77,21 @@ function TestimonialCard({ item }) {
   return (
     <div className="flex h-full flex-col rounded-2xl border border-gray-200 bg-gray-50 p-3 sm:p-5">
       {/* quote mark */}
-      <svg width="32" height="24" viewBox="0 0 32 24" fill="none" aria-hidden="true" className="text-[#f6bc17]">
+      <svg
+        width="32"
+        height="24"
+        viewBox="0 0 32 24"
+        fill="none"
+        aria-hidden="true"
+        className="text-[#f6bc17]"
+      >
         <path
           d="M13.6 0L8 12h5.6v12H0V12.8L5.6 0h8zm18.4 0l-5.6 12H32v12H18.4V12.8L24 0h8z"
           fill="currentColor"
         />
       </svg>
 
-      <p className="mt-5    text-base  text-gray-700">
-        {item.quote}
-      </p>
+      <p className="mt-5    text-base  text-gray-700">{item.quote}</p>
 
       <div className="mt-2 flex items-center justify-between border-t border-gray-200 pt-2">
         <div className="flex items-center gap-3">
@@ -109,34 +115,22 @@ function Testimonials() {
   const [index, setIndex] = useState(0);
   const [direction, setDirection] = useState(0);
 
-  const paginate = (dir) => {
+  const paginate = dir => {
     setDirection(dir);
-    setIndex((prev) => (prev + dir + testimonials.length) % testimonials.length);
+    setIndex(prev => (prev + dir + testimonials.length) % testimonials.length);
   };
 
   const variants = {
-    enter: (dir) => ({ x: dir > 0 ? 80 : -80, opacity: 0 }),
+    enter: dir => ({ x: dir > 0 ? 80 : -80, opacity: 0 }),
     center: { x: 0, opacity: 1 },
-    exit: (dir) => ({ x: dir > 0 ? -80 : 80, opacity: 0 }),
+    exit: dir => ({ x: dir > 0 ? -80 : 80, opacity: 0 }),
   };
 
   return (
     <section className="md:w-4/5 p-3 m-auto py-16 md:py-20" aria-labelledby="testimonials-heading">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
         <div>
-          <motion.p
-            variants={fadeIn('up', 0.1)}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            className="flex items-center gap-3 text-lg font-medium uppercase text-[#f6bc17]"
-          >
-            <svg width="11" height="13" viewBox="0 0 11 13" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <path d="M11 6.5L0.499999 12.5622L0.5 0.437822L11 6.5Z" fill="currentColor"></path>
-            </svg>
-            Testimonials
-          </motion.p>
-
+          <SectionLabel text="Testimonials" />
           <motion.h2
             id="testimonials-heading"
             variants={fadeIn('up', 0.2)}
@@ -145,7 +139,8 @@ function Testimonials() {
             viewport={{ once: true }}
             className="heading-style-h3 mt-4 max-w-lg text-2xl sm:text-3xl md:text-4xl text-gray-900"
           >
-            Trusted by <span className="font-serif italic font-normal">businesses</span> across Kerala
+            Trusted by <span className="font-serif italic font-normal">businesses</span> across
+            Kerala
           </motion.h2>
         </div>
 
@@ -207,7 +202,7 @@ function Testimonials() {
             }}
             className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3"
           >
-            {[0, 1, 2].map((offset) => {
+            {[0, 1, 2].map(offset => {
               const item = testimonials[(index + offset) % testimonials.length];
               return <TestimonialCard key={`${index}-${offset}`} item={item} />;
             })}

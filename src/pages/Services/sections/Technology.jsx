@@ -2,6 +2,7 @@
 import React from 'react';
 import bg from '../../../assets/images/backgrounds/tools-section image.webp';
 import Marquee from '../../../Componets/Animations/Marquee';
+import SectionLabel from '../../../Componets/UI/SectionLabel';
 const STACK = [
   'Next.js',
   'React',
@@ -35,14 +36,8 @@ export default function Technology() {
       />
       <div className="mx-auto max-w-6xl">
         {/* eyebrow */}
-        <div className="flex items-center justify-start gap-3">
-          <svg width="11" height="13" viewBox="0 0 11 13" fill="none" aria-hidden="true">
-            <path d="M11 6.5L0.499999 12.5622L0.5 0.437822L11 6.5Z" fill="#f6bc17" />
-          </svg>
-          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-gray-500">
-            Technology
-          </span>
-        </div>
+         
+        <SectionLabel text="Technology" />
 
         <h2 className="mt-3 text-3xl font-medium leading-tight text-gray-900 sm:text-4xl">
           Modern tools.<span className="font-serif italic font-normal">Practical</span> <br />

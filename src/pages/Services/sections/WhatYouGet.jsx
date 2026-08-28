@@ -2,6 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { fadeIn } from '../../../data/variants';
+import SectionLabel from '../../../Componets/UI/SectionLabel';
 
 const POINTS = [
   {
@@ -72,14 +73,8 @@ export default function WhatYouGet() {
       <div className="mx-auto max-w-6xl">
         {/* eyebrow */}
 
-        <div className="flex items-center justify-start gap-3">
-          <svg width="11" height="13" viewBox="0 0 11 13" fill="none" aria-hidden="true">
-            <path d="M11 6.5L0.499999 12.5622L0.5 0.437822L11 6.5Z" fill="#f6bc17" />
-          </svg>
-          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-gray-500">
-            Our Approach
-          </span>
-        </div>
+
+        <SectionLabel text="Our Approach" />
 
         <h2 className=" mt-3  text-3xl font-medium leading-tight text-gray-900 sm:text-4xl">
           More than a website. <br />

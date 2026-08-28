@@ -111,7 +111,7 @@ export default function Navbar() {
       <AnimatePresence>
         {menuOpen && (
           <>
-            <motion.div
+            <div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -119,7 +119,7 @@ export default function Navbar() {
               onClick={() => setMenuOpen(false)}
               className="fixed inset-0 z-40 bg-black/20 backdrop-blur-sm"
             />
-            <motion.div
+            <div
               id="mobile-menu"
               role="dialog"
               aria-modal="true"
@@ -155,7 +155,7 @@ export default function Navbar() {
                   {NAV_LINKS.map((link, i) => {
                     const isActive = location.pathname === link.href;
                     return (
-                      <motion.div
+                      <div
                         key={link.href}
                         initial={{ opacity: 0, x: 30 }}
                         animate={{ opacity: 1, x: 0 }}
@@ -169,13 +169,13 @@ export default function Navbar() {
                         >
                           {link.name}
                         </Link>
-                      </motion.div>
+                      </div>
                     );
                   })}
                 </nav>
               </div>
 
-              <motion.div
+              <div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 0.4 }}
@@ -195,8 +195,8 @@ export default function Navbar() {
                     />
                   </svg>
                 </Link>
-              </motion.div>
-            </motion.div>
+              </div>
+            </div>
           </>
         )}
       </AnimatePresence>

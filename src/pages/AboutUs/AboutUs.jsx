@@ -16,7 +16,7 @@ const paragraph =
 import officeImg from '../../assets/images/backgrounds/office.jpg';
 import PerspeTranstions from '../../Componets/Animations/perspectiveSectionTransition/PerspeTranstions';
 
-import Contact from '../Home/Sections/Contact';
+import Contact from '../../Componets/Animations/Contact.jsx';
 
 function AboutUs() {
   scrollTo(0, 0);

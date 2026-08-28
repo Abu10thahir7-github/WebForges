@@ -4,15 +4,15 @@ import { useEffect } from 'react';
 
 import { getProjectBySlug, getAdjacentProject } from '../../data/projectDetailsData';
 
-import ProjectHero from './sections/ProjectHero';
-import ProjectOverview from './sections/ProjectOverview';
-import NarrativeSection from './sections/NarrativeSection';
-import KeyFeatures from './sections/KeyFeatures';
-import TechStack from './sections/TechStack';
-import Screenshots from './sections/Screenshots';
-import Outcome from './sections/Outcome';
-import NextProject from './sections/NextProject';
-import ProjectCTA from './sections/ProjectCTA';
+import ProjectHero from './ProjectDetailsComponents/ProjectHero';
+import ProjectOverview from './ProjectDetailsComponents/ProjectOverview';
+import NarrativeSection from './ProjectDetailsComponents/NarrativeSection';
+import KeyFeatures from './ProjectDetailsComponents/KeyFeatures';
+import TechStack from './ProjectDetailsComponents/TechStack';
+import Screenshots from './ProjectDetailsComponents/Screenshots';
+import Outcome from './ProjectDetailsComponents/Outcome';
+import NextProject from './ProjectDetailsComponents/NextProject';
+import ProjectCTA from './ProjectDetailsComponents/ProjectCTA';
 
 export default function ProjectDetailPage() {
   const { slug } = useParams();

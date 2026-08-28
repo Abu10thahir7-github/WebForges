@@ -57,7 +57,7 @@ export default function Navbar() {
       <motion.header
         className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
           scrolled
-            ? 'bg-white/90 shadow-sm backdrop-blur-sm  '
+            ? 'bg-white/95 shadow-sm   '
             : 'bg-transparent'
         }`}
       >

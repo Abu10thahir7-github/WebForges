@@ -1,5 +1,7 @@
 // TODO: swap every image path below for a real screenshot once assets are ready.
+
 export const projectDetails = [
+
   {
     slug: 'trendzio',
     category: 'E-Commerce',

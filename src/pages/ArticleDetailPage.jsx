@@ -69,7 +69,7 @@ export default function ArticleDetailPage() {
           <title>Article not found | WebForges</title>
           <meta name="robots" content="noindex, nofollow" />
         </Helmet>
-        <div className="mx-auto max-w-4xl rounded-[32px] border border-white/10 bg-slate-900/70 p-8 shadow-2xl shadow-black/20 backdrop-blur">
+        <div className="mx-auto max-w-4xl rounded-[32px] border border-white/10 bg-slate-900/70 p-8 shadow-2xl shadow-black/20 backdrop-blur-sm">
           <h1 className="font-display text-3xl font-bold text-white">Article not found</h1>
           <p className="mt-3 text-slate-300">The article you are looking for does not exist yet.</p>
           <Link to="/articles" className="mt-6 inline-flex text-sm font-semibold text-orange-400">
@@ -86,7 +86,7 @@ export default function ArticleDetailPage() {
         <title>{article.metaTitle || article.title} | WebForges</title>
         <meta name="description" content={article.metaDescription || article.excerpt} />
       </Helmet>
-      <div className="mx-auto max-w-4xl rounded-[32px] border border-white/10 bg-slate-900/70 p-6 shadow-2xl shadow-black/20 backdrop-blur sm:p-8 lg:p-10">
+      <div className="mx-auto max-w-4xl rounded-[32px] border border-white/10 bg-slate-900/70 p-6 shadow-2xl shadow-black/20 backdrop-blur-sm sm:p-8 lg:p-10">
         <Link to="/articles" className="text-sm font-semibold text-orange-400">
           ← Back to articles
         </Link>

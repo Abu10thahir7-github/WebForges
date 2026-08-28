@@ -1,62 +1,142 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { fadeIn } from '../../../data/variants.js';
+
+import { Link } from 'react-router-dom';
 import DiscoverTextAnimation from '../../../Componets/Animations/DiscoverTextAnimation.jsx';
-import Servicetabcontent from '../../Services/sections/Servicetabcontent.jsx';
+
+import Button from '../../../Componets/UI/Button.jsx';
 
 function Services() {
-  scrollTo(0, 0);
 
+const solutions = [
+  {
+    title: 'Web Design & Development',
+    desc: 'Custom, responsive sites built to load fast and convert visitors into leads.',
+    href: '/services/webdesign',
+    icon: <path d="M4 5h16v11H4V5Zm0 14h16M9 12l2-2 2 2 3-3" />,
+  },
+  {
+    title: 'E-Commerce',
+    desc: 'Conversion-ready online stores with secure checkout and inventory built in.',
+    href: '/services/ecommerce',
+    icon: <path d="M6 6h12l-1 13a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L6 6ZM9 6V4a3 3 0 0 1 6 0v2" />,
+  },
+  {
+    title: 'SEO Optimization',
+    desc: 'Structured content and technical SEO so the right people can find you first.',
+    href: '/services/seo-website',
+    icon: <path d="M11 19a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm10 2-4.35-4.35" />,
+  },
+  {
+    title: 'Website Maintenance',
+    desc: 'Ongoing updates, backups, and fixes so you never think about uptime again.',
+    href: '/services/website-maintenance',
+    icon: (
+      <path d="M14.7 6.3a4 4 0 0 1-5.4 5.4L4 17l3 3 5.3-5.3a4 4 0 0 1 5.4-5.4L21 6l-3-3-3.3 3.3Z" />
+    ),
+  },
+  {
+    title: 'Branding & Design',
+    desc: 'Logos, banners, and visual identity that make your business recognizable.',
+    href: '/services/branding',
+    icon: (
+      <path d="M12 3v3M12 18v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M3 12h3M18 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1" />
+    ),
+  },
+  {
+    title: 'Automation & Workflows',
+    desc: 'Connect the tools you already use so leads and orders follow up themselves.',
+    href: '/contact',
+    icon: <path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z" />,
+  },
+];
   return (
-    <div className="services relative overflow-hidden bg-white py-6 md:py-10">
-      {/* fixed: was missing a closing paren, so this never rendered at all.
-          also softened to a light glow — a full-opacity conic blob reads
-          heavy on a white page in a way it didn't on black. */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -right-40 -top-40 h-[560px] w-[560px] rounded-full opacity-40 blur-3xl sm:-right-20 sm:h-[640px] sm:w-[640px]"
-        style={{
-          background:
-            'conic-gradient(from 175deg, rgba(246,188,23,0.9), rgba(255,255,255,0), rgba(255,255,255,0), rgba(246,188,23,0.9))',
-        }}
-      />
-      <div
-        className="noise pointer-events-none absolute inset-0 opacity-[0.04]"
-        aria-hidden="true"
-      />
-
-      <div className="relative z-10 w-[90%] sm:w-4/5 mx-auto">
-        <div className="flex w-full sm:w-1/2">
-          <h1 className="flex items-center gap-3 text-sm font-medium tracking-[0.15em] text-[#f6bc17] sm:text-base">
+    <section className="md:w-4/5 px-6 m-auto py-16 md:py-20" aria-labelledby="solutions-heading">
+          <p className="text-lg flex items-center gap-3 uppercase text-[#f6bc17] font-medium">
             <svg
               width="11"
               height="13"
               viewBox="0 0 11 13"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              className="shrink-0 text-[#f6bc17]"
               aria-hidden="true"
             >
               <path d="M11 6.5L0.499999 12.5622L0.5 0.437822L11 6.5Z" fill="currentColor"></path>
             </svg>
-            OUR SERVICES
-          </h1>
-        </div>
-      </div>
+            Our Services
+          </p>
 
-      <div className="relative z-10 mt-6 sm:mt-8">
-        <DiscoverTextAnimation />
-      </div>
+          <div className="mt-4 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+            <h2
+              id="solutions-heading"
+              className="heading-style-h3 max-w-2xl text-2xl sm:text-3xl md:text-4xl text-gray-900"
+            >
+              Everything you need to launch and grow online
+            </h2>
+            <div className="flex flex-col  ">
+              <p className="max-w-sm text-sm pb-2 text-gray-500">
+                Pick a starting point below, or tell us where you're stuck and we'll point you to
+                the right one.
+              </p>
+              <Button to="/service" size="md" variant="primary">
+                See all services
+              </Button>
+            </div>
+          </div>
+          <div className="relative z-10 mt-6 sm:mt-8">
+            {' '}
+            <div className="absolute left-0 top-0 h-full w-16 md:w-24 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+            <DiscoverTextAnimation Text="Discovery our services" />
+          </div>
+          <div className="mt-5 grid grid-cols-2 gap-2 sm:grid-cols-2  md:gap-3 lg:grid-cols-3">
+            {solutions.map((item, i) => (
+              <Link
+                key={item.title}
+                to={item.href}
+                className="group relative flex h-full flex-row items-center justify-between gap-3 overflow-hidden rounded-2xl border border-gray-200 bg-white p-3 transition-all hover:border-gray-300 hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f6bc17]"
+              >
+                {/* accent bar, top edge */}
+                <span className="absolute left-0 top-0 h-1 w-0 bg-[#f6bc17] transition-all duration-300 group-hover:w-full" />
 
-      <div
-        variants={fadeIn('up', 0.3)}
-        whileInView="show"
+                {/* index + icon row */}
+                <div className="flex items-center gap-2 justify-between">
+                  <span className="flex md:h-11 md:w-11 shrink-0 items-center justify-center rounded-full md:border border-gray-200 bg-white text-gray-900 transition-all group-hover:border-[#f6bc17] group-hover:bg-[#f6bc17]">
+                    <svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.6"
+                      aria-hidden="true"
+                    >
+                      {item.icon}
+                    </svg>
+                  </span>
+                <h3 className="sm:text-base text-sm font-semibold text-gray-900">{item.title}</h3>
+                </div>
 
-        className="relative z-10 w-[90%] sm:w-4/5 mx-auto sm:mt-16"
-      >
-        <Servicetabcontent />
-      </div>
-    </div>
+                {/* title + desc, grows to fill space */}
+
+
+                {/* learn more, pinned to bottom, aligns across all cards */}
+                <span className=" hidden sm:block flex items-center   text-sm font-medium text-gray-900">
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    aria-hidden="true"
+                    className="transition-transform group-hover:translate-x-1"
+                  >
+                    <path
+                      d="M2.85 10.89h10.87L8.73 15.88 10 17.14l7.14-7.14L10 2.86 8.74 4.12l4.98 4.98H2.85v1.79Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </span>
+              </Link>
+            ))}
+          </div>
+        </section>
   );
 }
 

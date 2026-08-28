@@ -26,7 +26,7 @@ const STACK = [
 
 export default function Technology() {
   return (
-    <section className="relative overflow-hidden bg-white py-7 sm:py-10">
+    <section className="relative overflow-hidden bg-white px-3 py-7 sm:py-10">
       <img
         src={bg}
         alt=""

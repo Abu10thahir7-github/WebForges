@@ -57,7 +57,7 @@ export default function Navbar() {
       <motion.header
         className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
           scrolled
-            ? 'bg-white/90 shadow-sm backdrop-blur border-b border-gray-100'
+            ? 'bg-white/90 shadow-sm backdrop-blur-sm  '
             : 'bg-transparent'
         }`}
       >
@@ -101,10 +101,9 @@ export default function Navbar() {
               <span className="hidden sm:inline">Available now</span>
             </span>
           </Link>
-<div className='block md:hidden'>
-
-          <Header />
-</div>
+          <div className="block md:hidden">
+            <Header />
+          </div>
         </div>
       </motion.header>
 

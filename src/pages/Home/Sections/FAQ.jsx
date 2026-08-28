@@ -12,7 +12,7 @@ const faqs = [
   },
   {
     q: 'How long does it take to build a website?',
-    a: 'A static or business website typically takes 1–2 weeks. E-commerce stores and custom portals usually take 3–6 weeks depending on features. We\'ll give you a clear timeline before the project starts.',
+    a: "A static or business website typically takes 1–2 weeks. E-commerce stores and custom portals usually take 3–6 weeks depending on features. We'll give you a clear timeline before the project starts.",
   },
   {
     q: 'How much does a website cost?',
@@ -20,7 +20,7 @@ const faqs = [
   },
   {
     q: 'Do you provide hosting and domain support?',
-    a: 'Yes. Most of our plans include free domain registration for the first year and guidance on hosting setup, so you don\'t have to manage the technical side alone.',
+    a: "Yes. Most of our plans include free domain registration for the first year and guidance on hosting setup, so you don't have to manage the technical side alone.",
   },
   {
     q: 'Will my website be mobile-friendly and SEO-optimized?',
@@ -36,7 +36,7 @@ const faqs = [
   },
   {
     q: 'How do I get started with WebForges?',
-    a: 'Just reach out through our Contact page or WhatsApp. We\'ll discuss your goals, recommend the right solution, and share a timeline and quote — no pressure, no obligation.',
+    a: "Just reach out through our Contact page or WhatsApp. We'll discuss your goals, recommend the right solution, and share a timeline and quote — no pressure, no obligation.",
   },
 ];
 
@@ -92,9 +92,7 @@ function FaqItem({ item, isOpen, onToggle, index }) {
             transition={{ duration: 0.3, ease: 'easeInOut' }}
             className="overflow-hidden"
           >
-            <p className="pb-3 pr-10 text-sm sm:text-base   text-gray-500">
-              {item.a}
-            </p>
+            <p className="pb-3 pr-10 text-sm sm:text-base   text-gray-500">{item.a}</p>
           </motion.div>
         )}
       </AnimatePresence>
@@ -105,12 +103,10 @@ function FaqItem({ item, isOpen, onToggle, index }) {
 function Faq() {
   const [openIndex, setOpenIndex] = useState(0);
 
-  const faqSchema = buildFAQPageSchema(
-    faqs.map((f) => ({ question: f.q, answer: f.a }))
-  );
+  const faqSchema = buildFAQPageSchema(faqs.map(f => ({ question: f.q, answer: f.a })));
 
   return (
-    <section className="w-4/5 m-auto py-16 md:py-20" aria-labelledby="faq-heading">
+    <section className="md:w-4/5 p-3 m-auto py-16 md:py-20" aria-labelledby="faq-heading">
       <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
 
       <div className="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)]">
@@ -123,7 +119,14 @@ function Faq() {
             viewport={{ once: true }}
             className="flex items-center gap-3 text-lg font-medium uppercase text-[#f6bc17]"
           >
-            <svg width="11" height="13" viewBox="0 0 11 13" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <svg
+              width="11"
+              height="13"
+              viewBox="0 0 11 13"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
               <path d="M11 6.5L0.499999 12.5622L0.5 0.437822L11 6.5Z" fill="currentColor"></path>
             </svg>
             FAQ
@@ -147,10 +150,12 @@ function Faq() {
             viewport={{ once: true }}
             className="mt-4 max-w-sm text-sm text-gray-500"
           >
-            Everything you need to know about working with WebForges — from pricing to timelines to support.
+            Everything you need to know about working with WebForges — from pricing to timelines to
+            support.
           </motion.p>
-<Button href="https://wa.me/918921966289" variant="primary">Still have a question? Ask us</Button>
- 
+          <Button href="https://wa.me/918921966289" variant="primary">
+            Still have a question? Ask us
+          </Button>
         </div>
 
         {/* right: accordion */}

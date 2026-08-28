@@ -61,7 +61,7 @@ export default function HowWeWork() {
         </h2>
 
         {/* cards */}
-        <div className="mt-7 grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-7 grid grid-cols-2 gap-2 sm:grid-cols-2 lg:grid-cols-3">
           {STEPS.map((step, i) => (
             <div key={step.number} className={`rounded-3xl p-4 shadow-sm space-y-1 ${step.bg}`}>
               <div className='flex items-center gap-2'>

@@ -187,7 +187,7 @@ export default function AdminPage() {
           <title>Admin sign-in | WebForges</title>
           <meta name="robots" content="noindex, nofollow" />
         </Helmet>
-        <div className="mx-auto flex min-h-[70vh] max-w-md flex-col justify-center rounded-[32px] border border-white/10 bg-slate-900/80 p-8 shadow-2xl shadow-black/30 backdrop-blur">
+        <div className="mx-auto flex min-h-[70vh] max-w-md flex-col justify-center rounded-[32px] border border-white/10 bg-slate-900/80 p-8 shadow-2xl shadow-black/30 backdrop-blur-sm">
           <p className="text-sm font-semibold uppercase tracking-[0.35em] text-orange-400">
             WebForges studio
           </p>
@@ -225,7 +225,7 @@ export default function AdminPage() {
         <title>Write articles | WebForges</title>
         <meta name="robots" content="noindex, nofollow" />
       </Helmet>
-      <div className="mx-auto max-w-6xl rounded-[32px] border border-white/10 bg-slate-900/80 p-4 shadow-2xl shadow-black/30 backdrop-blur sm:p-6 lg:p-8">
+      <div className="mx-auto max-w-6xl rounded-[32px] border border-white/10 bg-slate-900/80 p-4 shadow-2xl shadow-black/30 backdrop-blur-sm sm:p-6 lg:p-8">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.35em] text-orange-400">

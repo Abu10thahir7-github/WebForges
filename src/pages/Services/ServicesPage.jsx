@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 
 import { fadeIn } from '../../data/variants';
-import Contact from '../Home/Sections/Contact';
+import Contact from '../../Componets/Animations/Contact';
 import Servicetabcontent from './sections/Servicetabcontent';
 import AllServiceTabContent from '../../Componets/Animations/AllServiceTabContent';
 import ServicesHero from './sections/Hero';
@@ -38,8 +38,6 @@ const faqs = [
     a: "This varies by project scope — get in touch with the details of what you need and we'll walk through what makes sense.",
   },
 ];
-
- 
 
 function ServicesPage() {
   useEffect(() => {

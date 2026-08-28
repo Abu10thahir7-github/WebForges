@@ -47,7 +47,7 @@ export default function FreeToolsSection() {
     <section
       id="freetools"
       aria-labelledby="freetools-heading"
-      className="relative  w-4/5 m-auto py-16 md:py-20"
+      className="relative p-3 md:w-4/5 m-auto py-16 md:py-20"
     >
       <div className=" ">
         <div className="flex flex-col md:flex-row justify-between">
@@ -82,7 +82,7 @@ export default function FreeToolsSection() {
                 backgroundSize: '40px 40px',
               }}
             />
-            <span className="absolute right-3 top-3 z-50 inline-flex items-center gap-1 rounded-full bg-black/20 px-2.5 py-1 text-[11px] font-medium text-[#f6bc17] backdrop-blur-xs">
+            <span className="absolute right-3 top-3 z-50 inline-flex items-center gap-1 rounded-full bg-black/20 px-2.5 py-1 text-[11px] font-medium text-[#f6bc17] backdrop-blur-sm">
               <Star size={12} className="text-[#f6bc17]" aria-hidden />
               Featured
             </span>

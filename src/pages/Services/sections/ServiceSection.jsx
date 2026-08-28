@@ -238,7 +238,7 @@ function ServiceSection({ section, index }) {
                 </p>
                 <div className="flex gap-1 flex-wrap">
                   {section.meta.map((item, i) => (
-                    <p className="rounded-full border border-gray-200 bg-white/70 px-3 py-1 text-xs text-gray-600 backdrop-blur">
+                    <p className="rounded-full border border-gray-200 bg-white/70 px-3 py-1 text-xs text-gray-600 backdrop-blur-sm">
                       {' '}
                       {item}
                     </p>

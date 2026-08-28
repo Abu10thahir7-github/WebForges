@@ -1,17 +1,17 @@
 import React from 'react';
 
-import { fadeIn } from '../../../data/variants';
-import moonImg from '../../../assets/images/backgrounds/moon.webp';
+import { fadeIn } from '../../data/variants';
+import moonImg from '../../assets/images/backgrounds/moon.webp';
 import { Link } from 'react-router-dom';
-import Button from '../../../Componets/UI/Button';
+import Button from '../UI/Button';
 
 function Contact() {
   scrollTo(0, 0);
 
   return (
     <>
-      <div className="contact   ">
-        <div className="contact-container flex flex-col w-4/5  m-auto  ">
+      <div className="contact  h-[30vh] md:h-[50vh] ">
+        <div className="contact-container flex flex-col  w-4/5  m-auto  ">
           <div className="   ">
             <h1 className="text-lg flex items-center gap-3">
               <svg
@@ -35,7 +35,10 @@ function Contact() {
               <span class="text-style-italic">o</span>rk w<span class="text-style-italic">i</span>th
               y<span class="text-style-italic">o</span>u
             </p>
-           <Button to="/contact"  size="md"> Get in touch</Button>
+            <Button to="/contact" size="md">
+              {' '}
+              Get in touch
+            </Button>
           </div>
         </div>
       </div>

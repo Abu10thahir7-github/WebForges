@@ -11,7 +11,7 @@ import sulaiman from '../assets/images/team/sulai.jpg';
 import { useScroll } from 'framer-motion';
 import { useEffect, useRef } from 'react';
 import Lenis from '@studio-freight/lenis';
-import Contact from '../pages/Home/Sections/Contact';
+import Contact from '../Componets/Animations/Contact';
 export const projects = [
   {
     title: '',
@@ -269,7 +269,7 @@ function Blog() {
                   key={i}
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.3 }}
-                  className=" backdrop-blur-xl
+                  className=" backdrop-blur-sm
                          rounded-2xl p-6 shadow-lg flex flex-col items-center
                          "
                 >

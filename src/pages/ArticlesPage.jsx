@@ -17,7 +17,7 @@ export default function ArticlesPage() {
         <meta name="description" content="Read the latest articles published by WebForges." />
       </Helmet>
       <div className="mx-auto max-w-6xl">
-        <div className="max-w-2xl rounded-[32px] border border-white/10 bg-slate-900/70 p-8 shadow-2xl shadow-black/20 backdrop-blur">
+        <div className="max-w-2xl rounded-[32px] border border-white/10 bg-slate-900/70 p-8 shadow-2xl shadow-black/20 backdrop-blur-sm">
           <p className="text-sm font-semibold uppercase tracking-[0.35em] text-orange-400">
             Technical insights
           </p>

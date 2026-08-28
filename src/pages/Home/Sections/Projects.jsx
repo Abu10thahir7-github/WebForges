@@ -62,7 +62,7 @@ function ProjectCard({ project, index }) {
         </div>
 
         {/* Index tag, echoes the pill-tag language from the hero */}
-        <span className="absolute top-3 left-3 rounded-full bg-white/80 backdrop-blur px-2.5 py-1 text-[11px] tracking-wide text-[#0B0F19]/70">
+        <span className="absolute top-3 left-3 rounded-full bg-white/80 backdrop-blur-sm px-2.5 py-1 text-[11px] tracking-wide text-[#0B0F19]/70">
           {String(index + 1).padStart(2, '0')}
         </span>
       </div>
@@ -89,7 +89,7 @@ function Projects() {
   return (
     <div className="relative bg-[#FAF8F2]  pt-7 ">
       <div
-        className="w-4/5 h-full m-auto flex flex-col md:flex-row my-5"
+        className="md:w-4/5 p-3 h-full m-auto flex flex-col md:flex-row my-5"
         aria-labelledby="projects-heading"
       >
         <div className="flex sm:w-full md:w-1/2">
@@ -119,9 +119,9 @@ function Projects() {
         </div>
       </div>
 
-      <div className="background"></div>
 
-      <div className=" w-4/5 mx-auto mt-7 pb-10">
+
+      <div className=" md:w-4/5 px-3 mx-auto mt-7 pb-10">
         {/* Section header, matching the hero's eyebrow + serif/bold pairing */}
         <div className="mb-10">
           <h2 className="mt-4 text-3xl sm:text-4xl leading-tight text-[#0B0F19]">

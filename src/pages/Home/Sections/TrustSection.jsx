@@ -130,7 +130,7 @@ function TechMarquee() {
 function WhyWebForges() {
   return (
     <section className="relative bg-white pt-6 md:pt-10">
-      <div className="w-4/5 m-auto">
+      <div className="md:w-4/5 px-3 m-auto">
         {/* eyebrow label */}
         <p className="text-lg flex items-center gap-3 uppercase text-[#f6bc17] font-medium">
           <svg

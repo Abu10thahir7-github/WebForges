@@ -1,5 +1,7 @@
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { fadeIn } from '../../data/variants';
 
 /* central data so you write each service only once */
 const TABS = [
@@ -63,10 +65,9 @@ const TABS = [
         desc: 'Search and display ads to boost conversions.',
         to: '/services/google-ads',
       },
-      // TODO: the four items below had no matching entry in serviceListData.js
-      // (Meta Ads, Marketing Poster, Social Media Creatives, Branding) — they're
-      // commented out here rather than left pointing at a 404. Add real entries
-      // to serviceListData.js, then restore these with the correct slugs.
+      // TODO: Meta Ads, Marketing Poster, Social Media Creatives, and Branding
+      // have no matching entries in serviceListData.js yet. Add slugs there,
+      // then restore these items with the correct `to` values.
     ],
   },
   {
@@ -138,42 +139,39 @@ const TABS = [
   },
 ];
 
-/* defined outside AllServiceTabContent so React treats it as a stable
-   component type across renders — fixes the remount-on-every-render bug */
-function ServiceRow({ title, desc, to }) {
-  const [hovered, setHovered] = useState(false);
-
+/* defined outside the parent so React treats it as a stable component type
+   across renders — avoids the remount-on-every-render bug */
+function ServiceCard({ title, desc, to, index }) {
   return (
-    <div className="relative">
-      {/* the whole row is a real <Link> — native keyboard focus, Enter to
-          activate, and Cmd/Ctrl-click to open in a new tab, none of which
-          a div with onClick gives you */}
+    <div>
       <Link
         to={to}
-        className="service-card  flex flex-col items-center justify-between gap-2 border-b border-gray-200 py-2 text-gray-900  hover:px-5  sm:flex-row"
+        className="group relative flex h-full flex-col justify-between gap-2 rounded-2xl border border-gray-200 bg-gray-50 p-3 transition-colors duration-300 hover:border-[#f6bc17] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f6bc17]"
       >
-        <div className="flex flex-col gap-1">
-          <span className="text-lg font-medium text-gray-900">{title}</span>
-          <span className="text-gray-500 text-sm leading-relaxed">{desc}</span>
+        <div className="flex items-start justify-between gap-4">
+          <h3 className="text-base font-medium text-gray-900">{title}</h3>
+          <div className=" flex items-center rounded-full border border-gray-200 bg-white text-gray-900 transition-colors duration-300 group-hover:border-[#f6bc17] group-hover:bg-[#f6bc17] px-3 py-1 text-[12px] font-medium gap-1">
+            <p className="    text-gray-500">View </p>
+
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="text-gray-500"
+            >
+              <path
+                d="M2.857 10.893h10.866l-4.991 4.992 1.268 1.259 7.143-7.143-7.143-7.143-1.259 1.259 4.982 4.991H2.857v1.785Z"
+                fill="currentColor"
+              />
+            </svg>
+          </div>
         </div>
 
-        {/* visual-only pill, not a real <button> — a <button> can't legally
-            nest inside an <a>, and now the <Link> itself is the control */}
-        <span
-          aria-hidden="true"
-          initial={{ opacity: 0, x: 30 }}
-          animate={hovered ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
-          transition={{ duration: 0.4, ease: 'easeInOut' }}
-          className="flex shrink-0 items-center gap-2 rounded-full bg-gray-900 px-5 py-2 text-base text-white group-focus-visible:opacity-100"
-        >
-          Details
-          <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
-            <path
-              d="M2.857 10.893h10.866l-4.991 4.992 1.268 1.259 7.143-7.143-7.143-7.143-1.259 1.259 4.982 4.991H2.857v1.785Z"
-              fill="currentColor"
-            />
-          </svg>
-        </span>
+        <div>
+          <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
+        </div>
       </Link>
     </div>
   );
@@ -184,19 +182,18 @@ export default function AllServiceTabContent() {
   const activeItems = TABS.find(t => t.id === activeTab).items;
 
   return (
-    <section
-      aria-labelledby="all-services-heading"
-      className="mb-5 flex flex-col items-center text-gray-900"
-    >
-      <h2 id="all-services-heading" className="sr-only">
-        Browse all services by category
-      </h2>
+    <section aria-labelledby="all-services-heading" className="mb-24 text-gray-900">
+      {/* Eyebrow */}
 
-      {/* tab headings — now a real tablist for screen readers */}
-      <div
+      {/* Tabs */}
+      <motion.div
+        variants={fadeIn('up', 0.2)}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
         role="tablist"
         aria-label="Service categories"
-        className="flex w-full space-x-8 overflow-x-auto pb-2 md:overflow-hidden"
+        className="mb-2 flex w-full gap-3 overflow-x-auto pb-2 md:flex-wrap md:overflow-visible"
       >
         {TABS.map(tab => (
           <button
@@ -207,38 +204,45 @@ export default function AllServiceTabContent() {
             aria-selected={activeTab === tab.id}
             aria-controls={`panel-${tab.id}`}
             onClick={() => setActiveTab(tab.id)}
-            className={`shrink-0 whitespace-nowrap px-4 py-2 text-lg uppercase transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f6bc17] sm:text-xl ${
+            className={`shrink-0 whitespace-nowrap rounded-full border px-5 py-2.5 text-sm font-medium uppercase tracking-wide transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f6bc17] ${
               activeTab === tab.id
-                ? 'border-b-2 border-gray-900 text-gray-900'
-                : 'text-gray-400 hover:text-gray-600'
+                ? 'border-[#f6bc17] bg-[#f6bc17] text-black'
+                : 'border-gray-200 text-gray-500 hover:border-gray-300 hover:text-gray-900'
             }`}
           >
-            {tab.id.toString().padStart(2, '0')}. {tab.label}
+            {tab.label}
           </button>
         ))}
-      </div>
+      </motion.div>
 
-      {/* current tab panel */}
-      <div
-        id={`panel-${activeTab}`}
-        role="tabpanel"
-        aria-labelledby={`tab-${activeTab}`}
-        className="mt-6 w-full"
-      >
+      {/* Panel */}
+      <div id={`panel-${activeTab}`} role="tabpanel" aria-labelledby={`tab-${activeTab}`}>
         {activeItems.length > 0 ? (
-          <div className="services-tabs border-t border-gray-200">
-            {activeItems.map(item => (
-              <ServiceRow key={item.to} title={item.title} desc={item.desc} to={item.to} />
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {activeItems.map((item, index) => (
+              <ServiceCard
+                key={item.to}
+                index={index}
+                title={item.title}
+                desc={item.desc}
+                to={item.to}
+              />
             ))}
           </div>
         ) : (
-          <p className="border-t border-gray-200 py-10 text-center text-sm text-gray-500">
+          <motion.p
+            variants={fadeIn('up', 0.2)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            className="rounded-2xl border border-dashed border-gray-200 bg-gray-50 py-14 text-center text-sm text-gray-500"
+          >
             This category is being rebuilt — check back soon, or{' '}
             <Link to="/contact" className="font-medium text-gray-900 underline underline-offset-4">
               ask us directly
             </Link>
             .
-          </p>
+          </motion.p>
         )}
       </div>
     </section>

@@ -73,7 +73,7 @@ function Hero() {
       <header className="relative overflow-hidden pt-20 bg-white">
         {/* signature gradient blob — same role as Nexo's, re-colored to WebForges */}
         <div
-          className="pointer-events-none absolute -right-40 -top-40 h-[560px] w-[560px] rounded-full opacity-90 blur-3xl sm:-right-20 sm:h-[640px] sm:w-[640px]"
+          className="pointer-events-none absolute -right-40 -top-40 h-[560px] w-[560px] rounded-full opacity-90 blur-2xl sm:-right-20 sm:h-[640px] sm:w-[640px]"
           style={{
             background:
               'conic-gradient(from 210deg at 50% 50%, #f6bc17, #0a0a0a, #ffffff, #f6bc17)',
@@ -89,7 +89,7 @@ function Hero() {
             tag => (
               <span
                 key={tag}
-                className="rounded-full border border-gray-200 bg-white/70 px-3 py-1 text-xs text-gray-600 backdrop-blur"
+                className="rounded-full border border-gray-200 bg-white/70 px-3 py-1 text-xs text-gray-600 backdrop-blur-sm"
               >
                 {tag}
               </span>
@@ -119,7 +119,7 @@ function Hero() {
         </div>
 
         {/* trust strip */}
-        <div className="relative flex flex-col items-start justify-center gap-6 border-t border-gray-100 px-5 py-8 sm:flex-row sm:items-center sm:px-10">
+        {/* <div className="relative flex flex-col items-start justify-center gap-6 border-t border-gray-100 px-5 py-8 sm:flex-row sm:items-center sm:px-10">
           <motion.div className="flex flex-wrap items-center gap-3 sm:gap-4 text-xs sm:text-sm font-medium text-gray-500">
             {pillars.map((item, i) => (
               <React.Fragment key={item.label}>
@@ -131,7 +131,7 @@ function Hero() {
               </React.Fragment>
             ))}
           </motion.div>
-        </div>
+        </div> */}
       </header>
     </div>
   );

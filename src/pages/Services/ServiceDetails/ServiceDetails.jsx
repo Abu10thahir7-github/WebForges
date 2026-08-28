@@ -121,7 +121,7 @@ export default function ServiceDetails() {
                   <div
                     key={index}
                     className="p-5 rounded-2xl bg-gradient-to-br from-[#1f2937]/60 to-[#111827]/40
-                     border border-white/10 backdrop-blur-md
+                     border border-white/10 backdrop-blur-sm
                      shadow-lg hover:shadow-xl hover:scale-[1.02]
                      transition-all duration-300 ease-in-out"
                   >
@@ -159,7 +159,7 @@ export default function ServiceDetails() {
                     <div
                       key={index}
                       className="p-5 rounded-2xl bg-gradient-to-br from-[#374151]/60 to-[#1f2937]/40
-                     border border-white/10 backdrop-blur-md
+                     border border-white/10 backdrop-blur-sm
                      shadow-lg hover:shadow-xl hover:scale-[1.02]
                      transition-all duration-300 ease-in-out"
                     >
@@ -195,7 +195,7 @@ export default function ServiceDetails() {
                   <div
                     key={index}
                     className="p-5 rounded-2xl bg-gradient-to-br from-[#111827]/60 to-[#0f172a]/40
-                     border border-white/10 backdrop-blur-md
+                     border border-white/10 backdrop-blur-sm
                      shadow-lg hover:shadow-xl hover:scale-[1.02]
                      transition-all duration-300 ease-in-out"
                   >

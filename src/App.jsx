@@ -12,7 +12,7 @@ import Navbar from './app/layout/Navbar';
 // ── Public pages: lazy-loaded so first paint only ships Home's code ──
 const Home = lazy(() => import('./pages/Home/Home'));
 const ServicesPage = lazy(() => import('./pages/Services/ServicesPage'));
-const ProjectPage = lazy(() => import('./pages/ProjectPage'));
+const ProjectPage = lazy(() => import('./pages/Project/ProjectPage'));
 const Pricing = lazy(() => import('./pages/Pricing'));
 const Blog = lazy(() => import('./pages/Blog'));
 const AboutUs = lazy(() => import('./pages/AboutUs/AboutUs'));
@@ -63,15 +63,12 @@ const App = () => {
     <>
       <div className="navbar-postion-setup">
         <Navbar />
-
-
       </div>
 
       <ScrollToTop />
 
       <Suspense fallback={<EntryLoader />}>
         <Routes>
-
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/services/:slug" element={<ServiceDetails />} />

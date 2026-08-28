@@ -67,8 +67,8 @@ const Slide = ({ direction, left, progress, src }) => {
 
 const Phrase = ({ src }) => {
   return (
-    <div className="flex items-center gap-3 px-3 text-black ">
-      <p className="text-[10vw] leading-none sm:text-5xl">HIGH-PERFORMING</p>
+    <div className="flex items-center md:gap-3 gap-2 lowercase text-black ">
+      <p className="text-base leading-none sm:text-5xl">HIGH-PERFORMING</p>
 
       <svg
         width="56"
@@ -77,7 +77,7 @@ const Phrase = ({ src }) => {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         aria-hidden="true"
-        className="shrink-0 sm:h-10 sm:w-20 md:h-[52px] md:w-[94px]"
+        className="shrink-0 h-5 w-5 md:h-[52px] md:w-[94px]"
       >
         <path
           d="M32 14H7.66L18.84 2.82L16 0L0 16L16 32L18.82 29.18L7.66 18H32V14Z"
@@ -88,7 +88,7 @@ const Phrase = ({ src }) => {
           fill="#F6BC17"
         />
       </svg>
-      <p className="text-[10vw] leading-none sm:text-5xl">AUTOMATED</p>
+      <p className="text-base leading-none sm:text-5xl">AUTOMATED</p>
       <svg
         width="56"
         height="30"
@@ -96,7 +96,7 @@ const Phrase = ({ src }) => {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         aria-hidden="true"
-        className="shrink-0 sm:h-10 sm:w-20 md:h-[52px] md:w-[94px]"
+        className="shrink-0 h-5 w-5 md:h-[52px] md:w-[94px]"
       >
         <path
           d="M32 14H7.66L18.84 2.82L16 0L0 16L16 32L18.82 29.18L7.66 18H32V14Z"
@@ -107,7 +107,7 @@ const Phrase = ({ src }) => {
           fill="#F6BC17"
         />
       </svg>
-      <p className="text-[10vw] leading-none sm:text-5xl">SCALABLE</p>
+      <p className="text-base leading-none sm:text-5xl">SCALABLE</p>
         <svg
         width="56"
         height="30"
@@ -115,7 +115,7 @@ const Phrase = ({ src }) => {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         aria-hidden="true"
-        className="shrink-0 sm:h-10 sm:w-20 md:h-[52px] md:w-[94px]"
+        className="shrink-0 h-5 w-5 md:h-[52px] md:w-[94px]"
       >
         <path
           d="M32 14H7.66L18.84 2.82L16 0L0 16L16 32L18.82 29.18L7.66 18H32V14Z"

@@ -1,69 +1,70 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 
-import { fadeIn } from '../data/variants';
+import { fadeIn } from '../../data/variants';
 
-import trendzio_mockup from '../assets/projects/trendzio mockup.png';
-import velonto_mockup from '../assets/projects/velonto design.jpg';
-import LSLIVEMEDIA from '../assets/projects/LS LIVE MEDIA projct.png';
-import manasa from '../assets/projects/manasa creation project.png';
-import sgAcademy from '../assets/projects/sg project tumbnail.png';
-import Contact from '../pages/Home/Sections/Contact';
+// import trendzio_mockup from '../assets/projects/trendzio mockup.png';
+// import velonto_mockup from '../assets/projects/velonto design.jpg';
+// import LSLIVEMEDIA from '../assets/projects/LS LIVE MEDIA projct.png';
+// import manasa from '../assets/projects/manasa creation project.png';
+// import sgAcademy from '../assets/projects/sg project tumbnail.png';
+import Contact from '../../Componets/Animations/Contact';
+import Hero from './sections/Hero';
 
-const projects = [
-  {
-    title: 'Trendzio',
-    subtitle: 'E-Commerce',
-    category: 'Full Stack',
-    img: trendzio_mockup,
-    link: 'https://www.trendzio.shop/',
-  },
-  {
-    title: 'LS LIVE MEDIA',
-    subtitle: 'Event Management',
-    category: 'Static Website',
-    img: LSLIVEMEDIA,
-    link: 'https://sls-live-media.envisiondesigns.co.in/',
-  },
-  {
-    title: 'Velonto',
-    subtitle: 'Food Delivery',
-    category: 'Full Stack',
-    img: velonto_mockup,
-    link: 'https://velonto.vercel.app/',
-  },
-  {
-    title: 'SG Academy',
-    subtitle: 'Brand Identity',
-    category: 'Static Website',
-    img: sgAcademy,
-    link: 'https://www.sgacdemy.com/',
-  },
-  {
-    title: 'Manasa Creations',
-    subtitle: 'No-Code Development',
-    category: 'Static Website',
-    img: manasa,
-    link: 'https://manasa-creations.envisiondesigns.co.in/',
-  },
-];
+// const projects = [
+//   {
+//     title: 'Trendzio',
+//     subtitle: 'E-Commerce',
+//     category: 'Full Stack',
+//     img: trendzio_mockup,
+//     link: 'https://www.trendzio.shop/',
+//   },
+//   {
+//     title: 'LS LIVE MEDIA',
+//     subtitle: 'Event Management',
+//     category: 'Static Website',
+//     img: LSLIVEMEDIA,
+//     link: 'https://sls-live-media.envisiondesigns.co.in/',
+//   },
+//   {
+//     title: 'Velonto',
+//     subtitle: 'Food Delivery',
+//     category: 'Full Stack',
+//     img: velonto_mockup,
+//     link: 'https://velonto.vercel.app/',
+//   },
+//   {
+//     title: 'SG Academy',
+//     subtitle: 'Brand Identity',
+//     category: 'Static Website',
+//     img: sgAcademy,
+//     link: 'https://www.sgacdemy.com/',
+//   },
+//   {
+//     title: 'Manasa Creations',
+//     subtitle: 'No-Code Development',
+//     category: 'Static Website',
+//     img: manasa,
+//     link: 'https://manasa-creations.envisiondesigns.co.in/',
+//   },
+// ];
 
-function getCategoryCounts(projects) {
-  const counts = {};
-  projects.forEach(p => {
-    counts[p.category] = (counts[p.category] || 0) + 1;
-  });
-  return counts;
-}
+// function getCategoryCounts(projects) {
+//   const counts = {};
+//   projects.forEach(p => {
+//     counts[p.category] = (counts[p.category] || 0) + 1;
+//   });
+//   return counts;
+// }
 
 function ProjectPage() {
-  const [selectedCategory, setSelectedCategory] = useState('All');
-  const categoryCounts = getCategoryCounts(projects);
+  // const [selectedCategory, setSelectedCategory] = useState('All');
+  // // const categoryCounts = getCategoryCounts(projects);
 
-  const categories = ['All', ...Object.keys(categoryCounts)];
+  // // const categories = ['All', ...Object.keys(categoryCounts)];
 
-  const filteredProjects =
-    selectedCategory === 'All' ? projects : projects.filter(p => p.category === selectedCategory);
+  // const filteredProjects =
+  //   selectedCategory === 'All' ? projects : projects.filter(p => p.category === selectedCategory);
 
   return (
     <div>
@@ -111,7 +112,7 @@ function ProjectPage() {
         <meta name="twitter:site" content="@WebForges" />
         <meta name="twitter:creator" content="@WebForges" />
       </Helmet>
-      <div class="bg-animation absolute">
+      {/* <div class="bg-animation absolute">
         <div class="noise-bg"></div>
         <div class="blob-cont">
           <div class="teal blob"></div>
@@ -120,9 +121,9 @@ function ProjectPage() {
           <div class="black blob"></div>
           <div class="peach blob"></div>
         </div>
-      </div>
+      </div> */}
 
-      <div className="w-4/5 m-auto h-screen flex flex-col justify-center items-center gap-10">
+      {/* <div className="w-4/5 m-auto h-screen flex flex-col justify-center items-center gap-10">
         <div className="hero_text">
           <p className=" z-10 text-desgin font-medium   heading-style-h3 text-3xl sm:text-3xl md:text-3xl lg:text-3xl xl:text-7xl text-white">
             <span className=" mr-0 md:mr-96">
@@ -139,10 +140,11 @@ function ProjectPage() {
             </span>
           </p>
         </div>
-      </div>
+      </div> */}
+      <Hero/>
       <div className="project-container sm:w-full md:w-full lg:w-4/5 m-auto px-4 py-8">
         {/* Filter Buttons with Counts */}
-        <div className="flex flex-wrap gap-4 justify-center mb-16">
+        {/* <div className="flex flex-wrap gap-4 justify-center mb-16">
           {categories.map(cat => (
             <button
               key={cat}
@@ -156,10 +158,10 @@ function ProjectPage() {
               {cat.toUpperCase()} {cat !== 'All' && `[${categoryCounts[cat]}]`}
             </button>
           ))}
-        </div>
+        </div> */}
 
         {/* Project Cards */}
-        <div className="w-full mt-16 sm:w-4/5 md:w-4/6 lg:w-4/6 mx-auto flex flex-col gap-10">
+        {/* <div className="w-full mt-16 sm:w-4/5 md:w-4/6 lg:w-4/6 mx-auto flex flex-col gap-10">
           {filteredProjects.map((project, index) => (
             <div
               key={index}
@@ -187,7 +189,7 @@ function ProjectPage() {
               </div>
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
       <Contact />
     </div>

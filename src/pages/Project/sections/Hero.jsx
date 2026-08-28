@@ -56,17 +56,7 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* tag pills */}
-        <div className="  text-center mt-5 flex  justify-center flex-wrap gap-2 py-5    ">
-          {TAGS.map(tag => (
-            <span
-              key={tag}
-              className="rounded-full border border-gray-200 bg-white/70 px-3 py-1 text-xs text-gray-600 backdrop-blur-sm"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
+       
       </div>
     </header>
   );

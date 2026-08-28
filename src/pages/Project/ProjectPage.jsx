@@ -3,13 +3,10 @@ import { Helmet } from 'react-helmet-async';
 
 import { fadeIn } from '../../data/variants';
 
-// import trendzio_mockup from '../assets/projects/trendzio mockup.png';
-// import velonto_mockup from '../assets/projects/velonto design.jpg';
-// import LSLIVEMEDIA from '../assets/projects/LS LIVE MEDIA projct.png';
-// import manasa from '../assets/projects/manasa creation project.png';
-// import sgAcademy from '../assets/projects/sg project tumbnail.png';
 import Contact from '../../Componets/Animations/Contact';
 import Hero from './sections/Hero';
+
+import FeaturedProjects from './sections/FeaturedProjects';
 
 // const projects = [
 //   {
@@ -65,6 +62,7 @@ function ProjectPage() {
 
   // const filteredProjects =
   //   selectedCategory === 'All' ? projects : projects.filter(p => p.category === selectedCategory);
+const [activeCategory, setActiveCategory] = useState('All');
 
   return (
     <div>
@@ -142,55 +140,8 @@ function ProjectPage() {
         </div>
       </div> */}
       <Hero/>
-      <div className="project-container sm:w-full md:w-full lg:w-4/5 m-auto px-4 py-8">
-        {/* Filter Buttons with Counts */}
-        {/* <div className="flex flex-wrap gap-4 justify-center mb-16">
-          {categories.map(cat => (
-            <button
-              key={cat}
-              onClick={() => setSelectedCategory(cat)}
-              className={`px-4 py-2 rounded-full border ${
-                selectedCategory === cat
-                  ? 'bg-yellow-400 text-black'
-                  : 'bg-black text-white border-gray-300'
-              }`}
-            >
-              {cat.toUpperCase()} {cat !== 'All' && `[${categoryCounts[cat]}]`}
-            </button>
-          ))}
-        </div> */}
 
-        {/* Project Cards */}
-        {/* <div className="w-full mt-16 sm:w-4/5 md:w-4/6 lg:w-4/6 mx-auto flex flex-col gap-10">
-          {filteredProjects.map((project, index) => (
-            <div
-              key={index}
-              onClick={() => window.open(project.link, '_blank')}
-              className="project-card cursor-pointer"
-            >
-              <img src={project.img} alt={`${project.title}_mockup`} />
-              <div className="project-card-text flex justify-between border-t-[1px] border-t-[#363636] my-5 py-5">
-                <div>
-                  <h2 className="uppercase">{project.title}</h2>
-                  <p className="text-lg text-gray-500 font-light">{project.subtitle}</p>
-                </div>
-                <svg
-                  width="28"
-                  height="28"
-                  viewBox="0 0 28 28"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M4 15.25L19.2125 15.25L12.225 22.2375L14 24L24 14L14 4L12.2375 5.7625L19.2125 12.75L4 12.75L4 15.25Z"
-                    fill="currentColor"
-                  />
-                </svg>
-              </div>
-            </div>
-          ))}
-        </div> */}
-      </div>
+<FeaturedProjects activeCategory={activeCategory} />
       <Contact />
     </div>
   );

@@ -12,15 +12,15 @@
   box-sizing: border-box;
 }
 
-html,body {
+html,
+body {
   font-family: 'Poppins', serif;
   background-color: #ffffff;
   color: white;
-  overflow-x: hidden;
   max-width: 100%;
-
-
 }
+
+ 
 
 button {
   transition: 0.3s;
@@ -195,7 +195,6 @@ button {
 }
 
 .Experts {
-
   background-size: cover;
   background-position: center;
   height: 70vh;
@@ -241,7 +240,7 @@ button {
   background-image: url(/src/assets/images/backgrounds/moon.webp);
   background-size: cover;
   background-position: center;
-  
+
   width: 100%;
   display: flex;
   justify-content: center;
@@ -943,10 +942,13 @@ textarea:focus {
   color: #919191;
 } /*# sourceMappingURL=main.css.map */
 
-
 @keyframes marqueeScroll {
-  from { transform: translateX(0%); }
-  to { transform: translateX(-50%); }
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 .marquee-track {

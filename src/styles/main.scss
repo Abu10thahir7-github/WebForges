@@ -17,14 +17,14 @@ $yellow: #f6bc16;
   padding: 0px;
   box-sizing: border-box;
 }
-html,
-body {
+html, body {
   font-family: 'Poppins', serif;
   background-color: #ffffff;
   color: white;
-  overflow-x: hidden;
   max-width: 100%;
 }
+
+
 button {
   transition: 0.3s;
 }

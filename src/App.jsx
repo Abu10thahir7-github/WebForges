@@ -13,7 +13,7 @@ import Navbar from './app/layout/Navbar';
 const Home = lazy(() => import('./pages/Home/Home'));
 const ServicesPage = lazy(() => import('./pages/Services/ServicesPage'));
 const ProjectPage = lazy(() => import('./pages/Project/ProjectPage'));
-const Pricing = lazy(() => import('./pages/Pricing'));
+const Pricing = lazy(() => import('./pages/Pricing/PricingPage'));
 const Blog = lazy(() => import('./pages/Blog'));
 const AboutUs = lazy(() => import('./pages/AboutUs/AboutUs'));
 

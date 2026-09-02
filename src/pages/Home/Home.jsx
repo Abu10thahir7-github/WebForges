@@ -17,9 +17,10 @@ import Hero from './Sections/Hero.jsx';
 import WhyWebForges from './Sections/TrustSection.jsx';
 import DiscoverTextAnimation from '../../Componets/Animations/DiscoverTextAnimation.jsx';
 import CoreSeoFaq from './Sections/CoreSeoFaq.jsx';
-import Faq from './Sections/FAQ.jsx';
+import Faq from '../../Componets/UI/FAQ.jsx';
 import Testimonials from './Sections/Testimonials.jsx';
 import Button from '../../Componets/UI/Button.jsx';
+import { HomeFaqs } from '../../data/datas.js';
 
 /**
  * ── SEO NOTES ──────────────────────────────────────────────────────────────
@@ -209,7 +210,7 @@ function Home() {
 
         <Projects />
         <Testimonials />
-        <Faq />
+        <Faq  faqs={HomeFaqs} />
 
         <Animation Text="" />
         <FreeTools />

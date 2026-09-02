@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { fadeIn } from '../../../data/variants';
+import SectionLabel from '../../../Componets/UI/SectionLabel';
 
 const tabs = ['Desktop UI', 'Mobile UI', 'Components', 'Typography', 'Color System', 'Interaction'];
 
@@ -11,26 +12,15 @@ export default function DesignShowcase({ intro, images = {} }) {
   return (
     <section className="w-4/5 m-auto border-t border-gray-200 py-16">
       {/* Intro */}
-      <motion.div
-        variants={fadeIn('up', 0.1)}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
-        className="mb-10 max-w-2xl"
-      >
-        <p className="mb-3 text-xs font-semibold uppercase tracking-wide text-[#f6bc17]">
-          Design
-        </p>
-        <h2 className="text-2xl font-bold text-gray-900 sm:text-3xl">Designed for clarity</h2>
+        <SectionLabel text=" Design" />
+
+        <h2 className="text-2xl mt-2 font-bold text-gray-900 sm:text-3xl">Designed for clarity</h2>
         <p className="mt-4 text-base leading-relaxed text-gray-500">{intro}</p>
-      </motion.div>
+
 
       {/* Tabs */}
-      <motion.div
-        variants={fadeIn('up', 0.15)}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
+      <div
+
         role="tablist"
         aria-label="Design showcase categories"
         className="mb-10 flex gap-3 overflow-x-auto pb-2"
@@ -51,18 +41,15 @@ export default function DesignShowcase({ intro, images = {} }) {
             {tab}
           </button>
         ))}
-      </motion.div>
+      </div>
 
       {/* Large screenshots for the active tab */}
       {activeImages.length > 0 ? (
         <div className="flex flex-col gap-8">
           {activeImages.map((src, index) => (
-            <motion.div
+            <div
               key={src}
-              variants={fadeIn('up', 0.1 + index * 0.05)}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true }}
+
               className="overflow-hidden rounded-2xl border border-gray-200 bg-gray-50"
             >
               <img
@@ -71,7 +58,7 @@ export default function DesignShowcase({ intro, images = {} }) {
                 loading="lazy"
                 className="w-full object-cover"
               />
-            </motion.div>
+            </div>
           ))}
         </div>
       ) : (

@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import bg from '../../../assets/images/backgrounds/why-webforges.png';
 import Marquee from '../../../Componets/Animations/Marquee.jsx';
+import { STACK } from '../../../data/datas.js';
 
 const stats = [
   { value: '15+', label: 'Projects' },
@@ -10,27 +11,6 @@ const stats = [
   { value: '2+', label: 'Years' },
 ];
 
-const STACK = [
-  'Next.js',
-  'React',
-  'TypeScript',
-  'JavaScript',
-  'Node.js',
-  'Express.js',
-  'Tailwind CSS',
-  'SQL',
-  'PostgreSQL',
-  'MongoDB',
-  'Prisma',
-  'REST APIs',
-  'Redux Toolkit',
-  'Figma',
-  'Git',
-  'GitHub',
-  'Webhooks',
-  'API Integrations',
-  'Workflow Automation',
-];
 const highlights = [
   {
     tint: 'bg-amber-50',

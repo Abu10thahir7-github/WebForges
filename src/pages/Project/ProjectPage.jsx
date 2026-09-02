@@ -26,9 +26,7 @@ import {
 } from '../../data/datas';
 
 function ProjectPage() {
- 
-
-const [activeCategory, setActiveCategory] = useState('All');
+  const [activeCategory, setActiveCategory] = useState('All');
 
   return (
     <div>
@@ -77,17 +75,17 @@ const [activeCategory, setActiveCategory] = useState('All');
         <meta name="twitter:creator" content="@WebForges" />
       </Helmet>
 
-      <Hero/>
+      <Hero />
 
-<FeaturedProjects activeCategory={activeCategory} />
-<HowWeWork />
-<OurApproach />
-<KeyFeatures features={keyFeatures} />
-<DesignShowcase intro={designIntro} images={designImages} />
-<TechStack stack={techStack} />
-<Screenshots sections={screenshotSections} />
-<Outcome metrics={metrics} qualitative={qualitative} />
-<Testimonials />
+      <FeaturedProjects activeCategory={activeCategory} />
+      <HowWeWork />
+
+      <KeyFeatures features={keyFeatures} />
+      <DesignShowcase intro={designIntro} images={designImages} />
+      <TechStack stack={techStack} />
+      {/* <Screenshots sections={screenshotSections} /> */}
+      <Outcome metrics={metrics} qualitative={qualitative} />
+      <Testimonials />
       <Contact />
     </div>
   );

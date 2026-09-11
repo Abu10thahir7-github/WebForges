@@ -276,7 +276,7 @@ export const featuredArticles = [
     title: 'How to Build a Website That Actually Grows Your Business',
     excerpt:
       "A website isn't just a digital brochure — it's a growth tool. Here's how to think about structure, content, and conversion from day one.",
-    image: '/images/blog/grow-your-business.jpg',
+    image: 'https://res.cloudinary.com/dcrf52w3g/image/upload/v1789120351/featured-article_pschgw.webp',
     link: '/articles/how-to-build-a-website-that-grows-your-business',
   },
 ];

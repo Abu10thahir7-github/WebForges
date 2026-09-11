@@ -1,255 +1,96 @@
-import React, { useState } from 'react';
-
+import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { fadeIn } from '../../data/variants';
-import BlogTextAnimation from '../../Componets/Animations/BlogText';
-import Word from '../../Componets/Animations/TextFillAnimation/Word';
-import Card from '../../Componets/Animations/CardAnimation';
-import abu from '../../assets/images/team/abu.jpg';
-import sulaiman from '../../assets/images/team/sulai.jpg';
 
-import { useScroll } from 'framer-motion';
-import { useEffect, useRef } from 'react';
-import Lenis from '@studio-freight/lenis';
-import Contact from '../../Componets/Animations/Contact';
 import PageHero from '../../Componets/shared/PageHero';
-import FeaturedArticle from './sections/FeaturedArticle';
-import { featuredArticles } from '../../data/datas';
-export const projects = [
-  {
-    title: '',
 
-    src: sulaiman,
-    link: 'https://mhdsulu786.vercel.app/',
-    color: '#212121',
-  },
-  {
-    title: 'Abuthahir',
-    description:
-      'Frontend Developer | UI/UX Designer | Responsive Web Specialist\n\nI create websites that are not just beautiful but also fully responsive, fast-loading, and user-friendly. Whether it’s a sleek portfolio or a feature-rich dashboard, I make sure your visitors get a seamless experience — on any device.',
-    src: abu,
-    link: 'https://abu-thahir.vercel.app/',
-    color: 'black',
-  },
-];
-const teamMembers = [
-  {
-    name: 'Abu Thahir',
-    role: 'MERN Stack Developer',
-    image: abu,
-    socials: {
-      linkedin: '#',
-      github: '#',
-      twitter: 'https://mhdsulu786.vercel.app/',
-    },
-  },
-  {
-    name: 'Muhammed Sulaiman T',
-    role: 'Full Stack Developer',
-    image: sulaiman,
-    socials: {
-      linkedin: '#',
-      github: '#',
-      twitter: '#',
-    },
-  },
-];
 
-const paragraph =
-  '👥 Meet the Makers Behind Webforges Dev We’re a two-person team blending design and development to bring ideas to life:';
-const articles = [
-  {
-    id: 1,
-    category: 'UX 101',
-    date: '23.5.2025',
-    title: 'What Makes a Great Landing Page in 2025? UX Experts Weigh In',
-    image:
-      'https://cdn.prod.website-files.com/62c5589fc4bbccac9fe40ae7/682ff2bfe87a49bd3118ff41_68a8bdb0c338555b27349ceb44b40fe5.gif',
-    link: '#',
-  },
-  {
-    id: 2,
-    category: 'UX 101',
-    date: '23.5.2025',
-    title: 'Designing Mobile Apps for Accessibility: A UX Must-Have in 2025',
-    image:
-      'https://cdn.prod.website-files.com/62c5589fc4bbccac9fe40ae7/68258debf5ab4eab7ca255f8_876ff64c89ed84b20058c669b1a0a186.gif',
-    link: '#',
-  },
-  {
-    id: 3,
-    category: 'UX 101',
-    date: '23.5.2025',
-    title: "Web Design vs. Web UX: What's the Difference and Why It Matters in 2025",
-    image:
-      'https://cdn.prod.website-files.com/62c5589fc4bbccac9fe40ae7/681c6d4f7ab4f513f4ee817e_5336509c84cd8d1fc7ab7c619928c60b.gif',
-    link: '#',
-  },
-  {
-    id: 4,
-    category: 'CASE STUDY',
-    date: '23.5.2025',
-    title: 'Creating Emotional Connections Through UI Design: The Power of Visual Storytelling',
-    image:
-      'https://cdn.prod.website-files.com/62c5589fc4bbccac9fe40ae7/674d69a9841c56f04db2d4c6_78548ceb7b2ec76ac1961856110e28ce.gif',
-    link: '#',
-  },
-  {
-    id: 5,
-    category: 'CASE STUDY',
-    date: '23.5.2025',
-    title: '5 Ways No-Code Tools Impact UI/UX Design Services',
-    image:
-      'https://cdn.prod.website-files.com/62c5589fc4bbccac9fe40ae7/6746f4365970e63597e2a856_b5434468a9f8a1fac71b1cf8d5502320.gif',
-    link: '#',
-  },
-  {
-    id: 6,
-    category: 'CASE STUDY',
-    date: '23.5.2025',
-    title: '5 Ways Micro-Animations Enhance User Experience',
-    image:
-      'https://cdn.prod.website-files.com/62c5589fc4bbccac9fe40ae7/674006049a83abfcacc8f548_77a2719a5f9ade27941c879ae3c7bca9.gif',
-    link: '#',
-  },
-  // Add more articles and categories like CASE STUDY, UX 101, etc.
-];
+import CategoryFilter from './sections/CategoryFilter';
 
-const tabs = ['ALL', 'CASE STUDY', 'UX 101', 'PROCESS'];
+import LatestArticles from './sections/LatestArticles';
+import CaseStudiesPreview from './sections/CaseStudiesPreview';
+import PracticalGuides from './sections/PracticalGuides';
+
+import Contact from '../../Componets/Animations/Contact';
+import { BlogPageData } from '../../data/BlogPageData';
+import Newsletter from '../../Componets/shared/Newsletter';
+import FinalCTA from '../../Componets/shared/FinalCTA';
+import FeaturedArticle from '../../Componets/shared/FeaturedArticle';
+
 function Blog() {
-  const [activeTab, setActiveTab] = useState('ALL');
+  const [activeCategory, setActiveCategory] = useState('all');
 
   const filteredArticles =
-    activeTab === 'ALL' ? articles : articles.filter(article => article.category === activeTab);
-
-  useEffect(() => {
-    const lenis = new Lenis();
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
-  }); // ← no dependency array, no cleanup
+    activeCategory === 'all'
+      ? BlogPageData.latestArticles
+      : BlogPageData.latestArticles.filter(
+          article => article.category.toLowerCase().replace(/\//g, '-').replace(/\s+/g, '-') === activeCategory
+        );
 
   return (
     <div>
       <Helmet>
-        {/* Basic Meta */}
-        <title>WebForges Blog - Insights on UX, Design & Web Development</title>
-        <meta
-          name="description"
-          content="Stay updated with the latest trends in UX design, web development, no-code tools, and case studies from WebForges team."
-        />
-        <meta
-          name="keywords"
-          content="web development blog, UX design articles, case studies, no-code tools, frontend development, web design tips"
-        />
+        <title>{BlogPageData.page.seo.title}</title>
+        <meta name="description" content={BlogPageData.page.seo.description} />
+        <meta name="keywords" content={BlogPageData.page.seo.keywords.join(', ')} />
         <meta name="robots" content="index, follow" />
         <meta name="author" content="WebForges" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="canonical" href="https://webforges.site/blog" />
+        <link rel="canonical" href={`https://webforges.site${BlogPageData.page.slug}`} />
 
-        {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
-        <meta
-          property="og:title"
-          content="WebForges Blog - Insights on UX, Design & Web Development"
-        />
-        <meta
-          property="og:description"
-          content="Stay updated with the latest trends in UX design, web development, no-code tools, and case studies from WebForges team."
-        />
+        <meta property="og:title" content={BlogPageData.page.seo.title} />
+        <meta property="og:description" content={BlogPageData.page.seo.description} />
         <meta property="og:image" content="https://webforges.site/logo.png" />
-        <meta property="og:url" content="https://webforges.site/blog" />
+        <meta property="og:url" content={`https://webforges.site${BlogPageData.page.slug}`} />
         <meta property="og:site_name" content="WebForges" />
 
-        {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="WebForges Blog - Insights on UX, Design & Web Development"
-        />
-        <meta
-          name="twitter:description"
-          content="Stay updated with the latest trends in UX design, web development, no-code tools, and case studies from WebForges team."
-        />
+        <meta name="twitter:title" content={BlogPageData.page.seo.title} />
+        <meta name="twitter:description" content={BlogPageData.page.seo.description} />
         <meta name="twitter:image" content="https://webforges.site/logo.png" />
-        <meta name="twitter:site" content="@WebForges" />
-        <meta name="twitter:creator" content="@WebForges" />
       </Helmet>
+
+      {/* Hero */}
       <PageHero
-        eyebrow="Blog"
-        headline="Ideas for building better digital experiences."
-        description="Practical insights on web development, UI/UX, SEO, automation, and growing your business online."
+        eyebrow={BlogPageData.hero.eyebrow}
+        headline={BlogPageData.hero.title}
+        description={BlogPageData.hero.description}
         height="h-[60vh]"
-        cta={{ label: 'Explore articles '}}
+        cta={{ label: BlogPageData.hero.primaryCta.label, to: BlogPageData.hero.primaryCta.href }}
+      />
+  <section className="w-4/5 m-auto pb-16">
+       <FeaturedArticle item={BlogPageData.featuredArticle} />
+      </section>
+      <div className="w-4/5 m-auto">
+        {/* Categories */}
+        <CategoryFilter
+          categories={BlogPageData.categories}
+          activeCategory={activeCategory}
+          onChange={setActiveCategory}
+        />
+      </div>
+
+      {/* Featured article */}
+
+
+      {/* Latest articles (6) */}
+      <LatestArticles
+        articles={filteredArticles}
+        emptyState={BlogPageData.emptyState}
+        onResetFilter={() => setActiveCategory('all')}
       />
 
-<FeaturedArticle items={featuredArticles} />
+      {/* Case studies */}
+      <CaseStudiesPreview data={BlogPageData.caseStudies} />
 
+      {/* Practical guides */}
+      <PracticalGuides data={BlogPageData.guides} />
 
+      {/* Newsletter */}
+      <Newsletter data={BlogPageData.newsletter} />
 
+      {/* Final CTA */}
+      <FinalCTA data={BlogPageData.cta} />
 
-      <BlogTextAnimation />
-     
-      <div className="w-4/5 m-auto     ">
-        <p className=" text-lg sm:text-2xl md:text-3xl lg:text-4xl">
-          {' '}
-          <Word paragraph={paragraph} />
-        </p>
-        <section className="py-20 ">
-          <div className="max-w-7xl mx-auto px-6 text-center">
-            {/* Team Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-              {teamMembers.map((member, i) => (
-                <div
-                  key={i}
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.3 }}
-                  className=" backdrop-blur-sm
-                         rounded-2xl p-6 shadow-lg flex flex-col items-center
-                         "
-                >
-                  {/* Profile Image */}
-                  <div className="w-32 h-32 rounded-full overflow-hidden shadow-md mb-4">
-                    <img
-                      src={member.image}
-                      alt={member.name}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-
-                  {/* Info */}
-                  <h3 className="text-xl  text-white">{member.name}</h3>
-                  <p className="text-gray-400 text-sm mb-4">{member.role}</p>
-
-                  {/* Socials */}
-                  <div className="flex gap-4">
-                    <a
-                      href={member.socials.linkedin}
-                      className="text-blue-400 hover:text-blue-500 transition"
-                    >
-                      <i className="fab fa-linkedin text-xl"></i>
-                    </a>
-                    <a
-                      href={member.socials.github}
-                      className="text-gray-300 hover:text-white transition"
-                    >
-                      <i className="fab fa-github text-xl"></i>
-                    </a>
-                    <a
-                      href={member.socials.twitter}
-                      className="text-sky-400 hover:text-sky-500 transition"
-                    >
-                      <i className="fab fa-twitter text-xl"></i>
-                    </a>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      </div>
       <Contact />
     </div>
   );

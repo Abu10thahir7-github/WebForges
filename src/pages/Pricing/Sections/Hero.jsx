@@ -9,9 +9,9 @@ const TAGS = ['Websites', 'E-Commerce', 'Web Applications', 'Digital Systems', '
 
 export default function Hero() {
   return (
-    <header className="relative overflow-hidden bg-white    ">
+    <header className="relative overflow-hidden h-[50vh] bg-white    ">
       <div
-        className="pointer-events-none absolute -right-40 -top-60  h-[560px] w-[560px] rounded-full opacity-90 blur-2xl sm:-right-20 sm:h-[640px] sm:w-[640px]"
+        className="pointer-events-none absolute -right-40 -top-80  h-[560px] w-[560px] rounded-full opacity-90 blur-2xl sm:-right-20 sm:h-[640px] sm:w-[640px]"
         style={{
           background: 'conic-gradient(from 210deg at 50% 50%, #f6bc17, #0a0a0a, #ffffff, #f6bc17)',
         }}

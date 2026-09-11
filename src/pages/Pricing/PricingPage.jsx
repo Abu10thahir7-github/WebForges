@@ -5,21 +5,41 @@ import { fadeIn } from '../../data/variants';
 import Hero from './Sections/Hero';
 import Pricing from './Sections/price';
 import Faq from '../../Componets/UI/FAQ';
-import { Pricingfaqs } from '../../data/datas';
+import { Pricingfaqs, whyWebForgesData } from '../../data/datas';
 import CustomQuote from './Sections/CustomQuote';
+import ApproachSection from '../../Componets/UI/ApproachSection';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
 }
 
 export default function PricingPage() {
-  const getWhatsAppLink = tier => {
-    const phoneNumber = '918921966289';
-    const message = encodeURIComponent(
-      `Hello! I'm interested in the ${tier.name} plan (${tier.priceMonthly}). Can you provide more details?`,
-    );
-    return `https://wa.me/${phoneNumber}?text=${message}`;
-  };
+  const points = [
+    {
+      title: 'Discovery',
+      desc: 'We learn your business, goals, and audience.',
+
+      bg: 'bg-white',
+    },
+    {
+      title: 'Strategy',
+      desc: 'We map out the structure and user journey.',
+
+      bg: 'bg-white',
+    },
+    {
+      title: 'Design & Build',
+      desc: 'We design and develop the full experience.',
+
+      bg: 'bg-white',
+    },
+    {
+      title: 'Launch & Support',
+      desc: 'We ship it and stay on for ongoing support.',
+
+      bg: 'bg-white',
+    },
+  ];
 
   return (
     <div className="    ">
@@ -71,6 +91,8 @@ export default function PricingPage() {
 
       <Pricing />
       <CustomQuote />
+      <ApproachSection  {...whyWebForgesData} />
+    
       <Faq faqs={Pricingfaqs} />
     </div>
   );

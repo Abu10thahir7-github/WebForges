@@ -14,7 +14,7 @@ const Home = lazy(() => import('./pages/Home/Home'));
 const ServicesPage = lazy(() => import('./pages/Services/ServicesPage'));
 const ProjectPage = lazy(() => import('./pages/Project/ProjectPage'));
 const Pricing = lazy(() => import('./pages/Pricing/PricingPage'));
-const Blog = lazy(() => import('./pages/Blog'));
+const Blog = lazy(() => import('./pages/Blog/Blog'));
 const AboutUs = lazy(() => import('./pages/AboutUs/AboutUs'));
 
 const ContactPage = lazy(() => import('./pages/ContactPage'));
@@ -22,6 +22,7 @@ const ArticlesPage = lazy(() => import('./pages/ArticlesPage'));
 const ArticleDetailPage = lazy(() => import('./pages/ArticleDetailPage'));
 const ServiceDetails = lazy(() => import('./pages/Services/ServiceDetails/ServiceDetails'));
 import ProjectDetailPage from './pages/Project/ProjectDetailPage';
+import FloatingWhatsApp from './Componets/shared/FloatingWhatsApp';
 // const NotFound = lazy(() => import('./Componets/Pages/NotFound'));
 
 // ── Admin: separate chunk, never bundled with public routes, never indexed ──
@@ -110,6 +111,7 @@ const App = () => {
       </Suspense>
 
       <Footer />
+      <FloatingWhatsApp />
     </>
   );
 };

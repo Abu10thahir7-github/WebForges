@@ -19,7 +19,7 @@ import Button from './Button.jsx';
 function FaqItem({ item, isOpen, onToggle, index, accentColor }) {
   return (
     <motion.div
-     
+
       className="border-b border-gray-200"
     >
       <button
@@ -88,7 +88,8 @@ function Faq({
   kicker = 'FAQ',
   heading = (
     <>
-      Got <span className="font-serif italic font-normal">questions?</span> We've got answers
+      Got <span className="font-serif italic font-normal">questions? <br/>
+      </span> We've got answers
     </>
   ),
   description = 'Everything you need to know about working with WebForges — from pricing to timelines to support.',

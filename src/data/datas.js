@@ -236,3 +236,47 @@ export const qualitative = [
     desc: 'Simplified navigation and clearer content hierarchy.',
   },
 ];
+
+
+export const whyWebForgesData = {
+  eyebrow: 'Why WebForges',
+  headingLines: [
+    'More than just a website.',
+  ],
+  background: 'bg-white',
+  columns: 3,
+  points: [
+    {
+      title: 'Built around your goals',
+      desc: 'Every project is designed around your business, audience, and objectives.',
+
+      bg: 'bg-[#F6F5F3]',
+    },
+    {
+      title: 'Clear communication',
+      desc: 'Stay informed throughout the project with straightforward communication.',
+
+      bg: 'bg-[#F6F5F3]',
+    },
+    {
+      title: 'Designed to grow',
+      desc: 'We build flexible digital experiences that can evolve with your business.',
+
+      bg: 'bg-[#F6F5F3]',
+    },
+  ],
+};
+
+
+// src/data/featuredArticles.js
+export const featuredArticles = [
+  {
+    eyebrow: 'Featured',
+    category: 'Web Development',
+    title: 'How to Build a Website That Actually Grows Your Business',
+    excerpt:
+      "A website isn't just a digital brochure — it's a growth tool. Here's how to think about structure, content, and conversion from day one.",
+    image: '/images/blog/grow-your-business.jpg',
+    link: '/articles/how-to-build-a-website-that-grows-your-business',
+  },
+];

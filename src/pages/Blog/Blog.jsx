@@ -1,17 +1,20 @@
 import React, { useState } from 'react';
 
 import { Helmet } from 'react-helmet-async';
-import { fadeIn } from '../data/variants';
-import BlogTextAnimation from '../Componets/Animations/BlogText';
-import Word from '../Componets/Animations/TextFillAnimation/Word';
-import Card from '../Componets/Animations/CardAnimation';
-import abu from '../assets/images/team/abu.jpg';
-import sulaiman from '../assets/images/team/sulai.jpg';
+import { fadeIn } from '../../data/variants';
+import BlogTextAnimation from '../../Componets/Animations/BlogText';
+import Word from '../../Componets/Animations/TextFillAnimation/Word';
+import Card from '../../Componets/Animations/CardAnimation';
+import abu from '../../assets/images/team/abu.jpg';
+import sulaiman from '../../assets/images/team/sulai.jpg';
 
 import { useScroll } from 'framer-motion';
 import { useEffect, useRef } from 'react';
 import Lenis from '@studio-freight/lenis';
-import Contact from '../Componets/Animations/Contact';
+import Contact from '../../Componets/Animations/Contact';
+import PageHero from '../../Componets/shared/PageHero';
+import FeaturedArticle from './sections/FeaturedArticle';
+import { featuredArticles } from '../../data/datas';
 export const projects = [
   {
     title: '',
@@ -174,92 +177,26 @@ function Blog() {
         <meta name="twitter:site" content="@WebForges" />
         <meta name="twitter:creator" content="@WebForges" />
       </Helmet>
-      <div class="bg-animation absolute">
-        <div class="noise-bg"></div>
-        <div class="blob-cont">
-          <div class="orange"></div>
-          <div class="peach"></div>
+      <PageHero
+        eyebrow="Blog"
+        headline="Ideas for building better digital experiences."
+        description="Practical insights on web development, UI/UX, SEO, automation, and growing your business online."
+        height="h-[60vh]"
+        cta={{ label: 'Explore articles '}}
+      />
 
-          <div class="yellow"></div>
-          <div class="red "></div>
-          <div class="yellow"></div>
-          <div class="orange"></div>
-        </div>
-      </div>
+<FeaturedArticle items={featuredArticles} />
 
-      <div className="w-4/5 m-auto h-[90vh] flex flex-col justify-center sm:justify-end sm:items-start items-center gap-10">
-        <div className="hero_text">
-          <p className=" z-10 text-desgin font-medium   heading-style-h3 text-2xl sm:text-3xl md:text-3xl lg:text-3xl xl:text-7xl text-white">
-            Blog
-          </p>
-        </div>
-      </div>
-      <div className="h-[20vh]"></div>
-      <div className="w-4/5  m-auto blog  ">
-        <div className="bg-black text-white p-4">
-          {/* Tabs */}
-          <div className="bg-black text-white  ">
-            <div className="grid grid-cols-2    text-right">
-              {tabs.map(tab => (
-                <button
-                  key={tab}
-                  onClick={() => setActiveTab(tab)}
-                  className={`uppercase tracking-wide text-base sm:text-lg md:text-xl lg:text-2xl xl:text-4xl    p-7 transition-colors duration-200 ${
-                    activeTab === tab
-                      ? 'text-yellow-500 border-b-[1.5px] border-yellow-500'
-                      : 'text-gray-400 border-b border-white'
-                  }`}
-                >
-                  {tab}
-                </button>
-              ))}
-            </div>
-          </div>
 
-          {/* Articles */}
-          <div className="md:mt-40 ">
-            {filteredArticles.length > 0 ? (
-              filteredArticles.map(article => (
-                <div
-                  key={article.id}
-                  className="mb-10 border-t pt-10    border-gray-600 p-0 md:p-20   flex-col  md:flex-row gap-4"
-                >
-                  <p className="text-sm text-gray-400 mb-2">{article.date}</p>
-                  <img
-                    src={article.image}
-                    alt={article.title}
-                    className=" object-cover  "
-                    loading="lazy"
-                  />
-                  <div>
-                    <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-4xl py-5  ">
-                      {article.title}
-                    </h2>
-                    <a
-                      href={article.link}
-                      className="inline-block mt-3 px-4 py-1 border border-white rounded-full text-sm hover:bg-white hover:text-black transition"
-                    >
-                      Read More →
-                    </a>
-                  </div>
-                </div>
-              ))
-            ) : (
-              <div className="text-gray-500 italic">No articles under "{activeTab}" yet.</div>
-            )}
-          </div>
-        </div>
-      </div>
-      <div></div>
-      <div className="md:h-[20vh]"></div>
+
+
       <BlogTextAnimation />
-      <div className="md:h-[30vh]"></div>
+     
       <div className="w-4/5 m-auto     ">
         <p className=" text-lg sm:text-2xl md:text-3xl lg:text-4xl">
           {' '}
           <Word paragraph={paragraph} />
         </p>
-
         <section className="py-20 ">
           <div className="max-w-7xl mx-auto px-6 text-center">
             {/* Team Cards */}

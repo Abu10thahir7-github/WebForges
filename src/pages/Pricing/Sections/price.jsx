@@ -44,47 +44,43 @@ export default function Pricing() {
           </div>
         </div>
 
-        {/* Tabs */}
-        <div className="grid grid-cols-1 lg:grid-cols-3">
-          {Plans.map(plan => (
-            <div
-              key={plan.name}
-              className={`flex items-center justify-between  gap-2 border-b px-6 py-3.5 text-sm font-medium ${
-                plan.active
-                  ? 'border-[#f6bc17] bg-white text-[#f6bc17]'
-                  : 'border-slate-200 bg-slate-50 text-slate-500 lg:border-r lg:border-b-slate-200'
-              }`}
-            >
-              {' '}
-              <div className="flex items-center gap-2">
-                <Globe size={14} className={plan.active ? 'text-[#f6bc17]' : 'text-slate-400'} />
-
-                {plan.name}
-              </div>
-              {plan.tag && (
-                <span className="  w-fit rounded-full bg-[#f6bc17]/20 px-3 py-1 text-xs font-semibold text-black">
-                  {plan.tag}
-                </span>
-              )}
-            </div>
-          ))}
-        </div>
-
         {/* Panels */}
         <div className="grid grid-cols-1 divide-y divide-slate-200 lg:grid-cols-3 lg:divide-y-0 lg:divide-x">
           {Plans.map(plan => (
             <div
               key={plan.name}
-              className={`flex flex-col p-4 lg:p-6 ${plan.active ? 'bg-yellow-50/40' : 'bg-white'}`}
+              className={`flex flex-col ${plan.active ? 'bg-yellow-50/40' : 'bg-white'}`}
             >
-              <span className="mb-2 text-sm text-slate-500">{plan.category}</span>
+              <div
+                key={plan.name}
+                className={`flex items-center justify-between  gap-2 border-b px-6 py-3.5 text-sm font-medium ${
+                  plan.active
+                    ? 'border-[#f6bc17] bg-white text-[#f6bc17]'
+                    : 'border-slate-200 bg-slate-50 text-slate-500 lg:border-r lg:border-b-slate-200'
+                }`}
+              >
+                {' '}
+                <div className="flex items-center gap-2">
+                  <Globe size={14} className={plan.active ? 'text-[#f6bc17]' : 'text-slate-400'} />
 
-              <div className="mb-2 font-mono text-3xl font-semibold tracking-tight text-slate-900">
+                  {plan.name}
+                </div>
+                {plan.tag && (
+                  <span className="  w-fit rounded-full bg-[#f6bc17]/20 px-3 py-1 text-xs font-semibold text-black">
+                    {plan.tag}
+                  </span>
+                )}
+              </div>
+
+
+              <span className="mb-2 px-4 pt-4 text-sm text-slate-500">{plan.category}</span>
+
+              <div className="mb-2 px-4  font-mono text-3xl font-semibold tracking-tight text-slate-900">
                 {plan.price}
               </div>
-              <p className="mb-2 text-sm leading-relaxed text-slate-500">{plan.audience}</p>
+              <p className="mb-2 text-sm px-4  leading-relaxed text-slate-500">{plan.audience}</p>
 
-              <ul className="mb-8 flex-1 space-y-2.5 border-t border-slate-200 pt-5">
+              <ul className="mb-8 px-4  flex-1 space-y-2.5 border-t border-slate-200 pt-5">
                 {plan.features.map(f => (
                   <li key={f} className="flex items-start gap-2.5 text-sm text-gray-700">
                     <Check size={16} strokeWidth={2.5} className="mt-0.5 shrink-0 text-[#f6bc17]" />
@@ -99,8 +95,8 @@ export default function Pricing() {
                 rel="noopener noreferrer"
                 className={
                   plan.active
-                    ? 'inline-flex items-center justify-center rounded-lg bg-[#f6bc17] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#f6bc17]/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2  gap-2 focus-visible:outline-[#f6bc17]'
-                    : 'inline-flex items-center justify-center rounded-lg border border-slate-900 px-5 py-3 text-sm font-semibold text-slate-900 transition-colors hover:bg-slate-900 hover:text-white focus-visible:outline focus-visible:outline-1 focus-visible:outline-offset-1 focus-visible:outline-slate-700 gap-2'
+                    ? 'inline-flex items-center justify-center rounded-lg bg-[#f6bc17] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#f6bc17]/80 focus-visible:outline focus-visible:outline-2 m-4 focus-visible:outline-offset-2  gap-2 focus-visible:outline-[#f6bc17]'
+                    : 'inline-flex items-center justify-center rounded-lg border border-slate-900 px-5 py-3 text-sm font-semibold text-slate-900 transition-colors hover:bg-slate-900 hover:text-white focus-visible:outline focus-visible:outline-1 m-4 focus-visible:outline-offset-1 focus-visible:outline-slate-700  gap-2'
                 }
               >
                 <MessageCircle size={17} strokeWidth={2.25} />

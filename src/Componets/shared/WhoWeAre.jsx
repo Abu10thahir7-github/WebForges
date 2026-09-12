@@ -59,7 +59,7 @@ export default function WhoWeAre({ image = '/images/about/team-working.jpg' }) {
             />
           </div>
 
-          <p className="text-lg leading-relaxed text-gray-700">
+          <p className=" text-base leading-relaxed text-gray-500">
             WebForges is a web development and digital experience agency helping businesses turn
             ideas into professional, effective online experiences.
           </p>

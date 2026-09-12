@@ -89,7 +89,10 @@ function Blog() {
       <Newsletter data={BlogPageData.newsletter} />
 
       {/* Final CTA */}
-      <FinalCTA data={BlogPageData.cta} />
+      <FinalCTA
+        data={BlogPageData.cta}
+        bgImage="https://res.cloudinary.com/dcrf52w3g/image/upload/v1789278551/uiCollage_spkanm.png"
+      />
 
       <Contact />
     </div>

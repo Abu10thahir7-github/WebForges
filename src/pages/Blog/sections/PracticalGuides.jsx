@@ -2,11 +2,13 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { fadeIn } from '../../../data/variants';
 import SectionHeading from '../../../Componets/shared/SectionHeading';
+import SectionTitle from '../../../Componets/shared/SectionTitle';
 
 export default function PracticalGuides({ data }) {
   return (
     <section className="md:w-4/5 p-3 m-auto border-t border-gray-200 py-7">
-      <SectionHeading eyebrow={data.eyebrow} title={data.title} description={data.description} />
+      <SectionTitle eyebrow={data.eyebrow} lineOne={data.title} />
+      <p className="mt-2 text-base text-gray-500">{data.description}</p>
 
       <div className="mt-10 grid grid-cols-1 gap-2 md:gap-5 sm:grid-cols-2">
         {data.items.map((item, index) => (

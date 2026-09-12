@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { fadeIn } from '../../../data/variants';
 import SectionLabel from '../../../Componets/UI/SectionLabel';
+import SectionTitle from '../../../Componets/shared/SectionTitle';
 
 const tabs = ['Desktop UI', 'Mobile UI', 'Components', 'Typography', 'Color System', 'Interaction'];
 
@@ -12,18 +13,20 @@ export default function DesignShowcase({ intro, images = {} }) {
   return (
     <section className="w-4/5 m-auto border-t border-gray-200 py-16">
       {/* Intro */}
-        <SectionLabel text=" Design" />
+      <SectionTitle
+        eyebrow="Design"
+        lineOne="Designed for clarity,"
 
-        <h2 className="text-2xl mt-2 font-bold text-gray-900 sm:text-3xl">Designed for clarity</h2>
-        <p className="mt-4 text-base leading-relaxed text-gray-500">{intro}</p>
+      />
 
+
+      <p className="my-2 text-base leading-relaxed text-gray-500">{intro}</p>
 
       {/* Tabs */}
       <div
-
         role="tablist"
         aria-label="Design showcase categories"
-        className="mb-10 flex gap-3 overflow-x-auto pb-2"
+        className="mb-5 flex gap-3 overflow-x-auto pb-2"
       >
         {tabs.map(tab => (
           <button
@@ -49,7 +52,6 @@ export default function DesignShowcase({ intro, images = {} }) {
           {activeImages.map((src, index) => (
             <div
               key={src}
-
               className="overflow-hidden rounded-2xl border border-gray-200 bg-gray-50"
             >
               <img

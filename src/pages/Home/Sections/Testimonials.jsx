@@ -127,7 +127,7 @@ function Testimonials() {
   };
 
   return (
-    <section className="md:w-4/5 p-3 m-auto py-16 md:py-20" aria-labelledby="testimonials-heading">
+    <section className="md:w-4/5 p-3 m-auto py-7" aria-labelledby="testimonials-heading">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
         <div>
 <SectionTitle

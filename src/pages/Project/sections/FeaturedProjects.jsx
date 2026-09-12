@@ -14,6 +14,7 @@ const categories = [
 // TODO: replace every `img` below with a real screenshot of the live site.
 import { projectDetails } from '../../../data/projectDetailsData';
 import SectionLabel from '../../../Componets/UI/SectionLabel';
+import SectionTitle from '../../../Componets/shared/SectionTitle';
 const projects = projectDetails;
 // Defined outside the parent so it's a stable component type across renders
 
@@ -25,12 +26,16 @@ export default function FeaturedProjects() {
 
   return (
     <section className="md:w-4/5 my-5 px-3 m-auto">
-      <SectionLabel text="Our work" className="" />
-      <h2 className=" my-4 text-start text-3xl font-semibold leading-tight text-gray-900 sm:text-4xl">
-        Featured <span className="font-serif italic font-normal">projects</span>
-      </h2>
 
-      <div className="flex flex-col gap-10 lg:flex-row lg:items-start">
+
+      <SectionTitle
+        eyebrow="Our work"
+        lineOne="Featured"
+        accentWord="projects"
+       breakLine = {false}
+      />
+
+      <div className="flex mt-5 flex-col gap-10 lg:flex-row lg:items-start">
         {/* Filters — left, sticky */}
         <div
           role="tablist"
@@ -48,7 +53,7 @@ export default function FeaturedProjects() {
                 role="tab"
                 aria-selected={activeCategory === cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`flex shrink-0 items-center justify-between gap-3 rounded-full px-5 py-2.5 text-sm font-medium uppercase tracking-wide transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f6bc17] lg:w-full lg:justify-start lg:rounded-xl ${
+                className={`flex shrink-0 items-center justify-between gap-3 rounded-full px-5 py-2.5 text-sm font-medium uppercase tracking-wide transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2  text-start focus-visible:outline-[#f6bc17] lg:w-full lg:justify-start lg:rounded-xl ${
                   activeCategory === cat
                     ? 'bg-[#f6bc17] text-black'
                     : 'border border-gray-200 text-gray-500 hover:border-gray-300 hover:text-gray-900 lg:border-transparent lg:bg-gray-50'

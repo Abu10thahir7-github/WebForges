@@ -209,6 +209,7 @@ function Home() {
         <Services />
 
         <Projects />
+        
         <Testimonials />
         <Faq  faqs={HomeFaqs} />
 

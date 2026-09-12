@@ -2,12 +2,16 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { fadeIn } from '../../../data/variants';
 import SectionHeading from '../../../Componets/shared/SectionHeading';
+import SectionTitle from '../../../Componets/shared/SectionTitle';
 
 export default function CaseStudiesPreview({ data }) {
   return (
     <section className="md:w-4/5 p-3 m-auto border-t border-gray-200 py-7">
       <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
-        <SectionHeading eyebrow={data.eyebrow} title={data.title} description={data.description} />
+        <div>
+          <SectionTitle eyebrow={data.eyebrow} lineOne={data.title} />
+          <p className="mt-2 text-base text-gray-500">{data.description}</p>
+        </div>
         <Link
           to={data.cta.href}
           className="shrink-0 rounded-full border border-gray-300 px-5 py-2.5 text-sm font-medium text-gray-900 transition hover:border-gray-900"

@@ -1,4 +1,5 @@
- 
+import SectionLabel from "../UI/SectionLabel";
+
 {
   /* <SectionTitle
   eyebrow="Our Work"
@@ -39,27 +40,8 @@ export default function SectionTitle({
 
   return (
     <div className={wrapperAlign}>
-      <p
-
-        className="flex items-center gap-3 text-lg font-medium uppercase  "
-      >
-        <span className='text-[#f6bc17]'>
-          <svg
-            width="11"
-            height="13"
-            viewBox="0 0 11 13"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true"
-          >
-            <path d="M11 6.5L0.499999 12.5622L0.5 0.437822L11 6.5Z" fill="currentColor"></path>
-          </svg>
-        </span>
-        <p className='text-xs font-semibold uppercase tracking-[0.2em] text-gray-500'>
-           {eyebrow}
-        </p>
-
-      </p>
+       
+      <SectionLabel text={eyebrow} />
 
          <h2
 

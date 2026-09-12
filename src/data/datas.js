@@ -121,8 +121,8 @@ export const ComparisonRows = [
   { label: 'Support', values: ['1 week', '1 month', '3 months'] },
 ];
 
-
-export const HomeFaqs = [
+export const
+HomeFaqs = [
   {
     q: 'What services does WebForges offer?',
     a: 'We build business websites, e-commerce stores, landing pages, web portals, and custom web applications — along with SEO, branding, and business automation to help you work smarter, not just look good online.',
@@ -156,6 +156,56 @@ export const HomeFaqs = [
     a: "Just reach out through our Contact page or WhatsApp. We'll discuss your goals, recommend the right solution, and share a timeline and quote — no pressure, no obligation.",
   },
 ];
+export const AboutFaqs = [
+  {
+    "q": "How does a project start?",
+    "a": "We start with a quick conversation to understand your business, goals, audience, and requirements. Then we recommend the right approach, scope, and next steps."
+  },
+  {
+    "q": "How long does a website take?",
+    "a": "Most projects take around 1–4 weeks, depending on the number of pages, features, content, and feedback cycles."
+  },
+  {
+    "q": "Can you redesign an existing website?",
+    "a": "Yes. We can redesign your existing website to improve its visual quality, usability, mobile experience, structure, and overall customer journey."
+  },
+  {
+    "q": "Do you provide ongoing support?",
+    "a": "Yes. We provide support after launch and can continue helping with updates, improvements, maintenance, and future requirements."
+  },
+  {
+    "q": "Can you build custom features?",
+    "a": "Yes. We can create custom functionality based on your business needs, including unique workflows, dashboards, booking systems, e-commerce features, and other requirements."
+  },
+  {
+    "q": "Do you work with businesses outside Kerala?",
+    "a": "Yes. We work with businesses across India and beyond. Projects can be handled remotely through online meetings and communication."
+  },
+  {
+    "q": "Can you help if I don't have a clear idea?",
+    "a": "Absolutely. We can help turn your idea into a clear plan by understanding your goals and suggesting the right structure and user experience."
+  },
+  {
+    "q": "Do you provide website content?",
+    "a": "We can help with content structure, messaging, and page copy. If you already have content, we can organize it appropriately for the website."
+  },
+  {
+    "q": "Can you build a website for a new business?",
+    "a": "Yes. We work with startups, small businesses, and growing brands to create a professional online presence from the ground up."
+  },
+  {
+    "q": "What happens after the website is launched?",
+    "a": "We make sure everything is working properly and provide the necessary handover and support. You can also continue with us for future improvements and updates."
+  },
+  {
+    "q": "Can I request changes during the project?",
+    "a": "Yes. Feedback is part of the process. We review requested changes together and keep the project aligned with your goals and agreed scope."
+  },
+  {
+    "q": "How much does a website cost?",
+    "a": "The cost depends on the type of website, number of pages, features, and level of customization. We offer clear packages and can also provide a custom quote for specific requirements."
+  }
+]
 export const Pricingfaqs = [
   {
     q: 'What’s included in the website price?',
@@ -226,23 +276,23 @@ export const qualitative = [
   {
     title: 'A scalable foundation',
     desc: 'Built with a maintainable architecture ready for future features.',
+   bg: 'bg-yellow-50',
   },
   {
     title: 'Responsive experience',
     desc: 'Designed for desktop, tablet and mobile users.',
+  bg: 'bg-[#FCF2D9]',
   },
   {
     title: 'Improved user experience',
     desc: 'Simplified navigation and clearer content hierarchy.',
+   bg: 'bg-emerald-50',
   },
 ];
 
-
 export const whyWebForgesData = {
   eyebrow: 'Why WebForges',
-  headingLines: [
-    'More than just a website.',
-  ],
+  headingLines: ['More than just a website.'],
   background: 'bg-white',
   columns: 3,
   points: [
@@ -250,23 +300,22 @@ export const whyWebForgesData = {
       title: 'Built around your goals',
       desc: 'Every project is designed around your business, audience, and objectives.',
 
-      bg: 'bg-[#F6F5F3]',
+      bg: 'bg-emerald-50',
     },
     {
       title: 'Clear communication',
       desc: 'Stay informed throughout the project with straightforward communication.',
 
-      bg: 'bg-[#F6F5F3]',
+      bg: 'bg-yellow-50',
     },
     {
       title: 'Designed to grow',
       desc: 'We build flexible digital experiences that can evolve with your business.',
 
-      bg: 'bg-[#F6F5F3]',
+      bg: 'bg-[#E9E7FB]',
     },
   ],
 };
-
 
 // src/data/featuredArticles.js
 export const featuredArticles = [
@@ -276,7 +325,8 @@ export const featuredArticles = [
     title: 'How to Build a Website That Actually Grows Your Business',
     excerpt:
       "A website isn't just a digital brochure — it's a growth tool. Here's how to think about structure, content, and conversion from day one.",
-    image: 'https://res.cloudinary.com/dcrf52w3g/image/upload/v1789120351/featured-article_pschgw.webp',
+    image:
+      'https://res.cloudinary.com/dcrf52w3g/image/upload/v1789120351/featured-article_pschgw.webp',
     link: '/articles/how-to-build-a-website-that-grows-your-business',
   },
 ];

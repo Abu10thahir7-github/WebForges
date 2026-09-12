@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { fadeIn } from '../../../data/variants';
 import SectionHeading from '../../../Componets/shared/SectionHeading';
+import SectionTitle from '../../../Componets/shared/SectionTitle';
 
 function ArticleCard({ article, index }) {
   return (
@@ -40,7 +41,7 @@ function ArticleCard({ article, index }) {
 export default function LatestArticles({ articles, emptyState, onResetFilter }) {
   return (
     <section id="latest" className="md:w-4/5 m-auto pb-7 px-3   ">
-      <SectionHeading eyebrow="Latest" title="Recent articles" />
+      <SectionTitle eyebrow="Latest" lineOne="Recent articles" />
 
       {articles.length > 0 ? (
         <div className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import SectionLabel from './SectionLabel'; // adjust path to wherever this actually lives
+import SectionTitle from '../shared/SectionTitle';
 
 /**
  * Reusable "eyebrow + heading + icon/number card grid" section.
@@ -26,17 +27,14 @@ export default function ApproachSection({
     <section className={`${background} px-4 py-4 sm:py-10`}>
       <div className="mx-auto max-w-6xl">
         {/* Eyebrow */}
-        <SectionLabel text={eyebrow} />
+        <SectionTitle
+          eyebrow={eyebrow}
+          lineOne={headingLines}
 
-        {/* Heading */}
-        <h2 className="mt-2  text-3xl font-semibold leading-tight text-gray-900 sm:text-4xl">
-          {headingLines.map((line, i) => (
-            <span key={i}>
-              {line}
-              {i < headingLines.length - 1 && <br />}
-            </span>
-          ))}
-        </h2>
+          />
+
+
+     
 
         {/* Cards */}
         <div className={`mt-7 grid grid-cols-1 gap-5 sm:grid-cols-2 ${colClass}`}>

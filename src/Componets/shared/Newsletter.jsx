@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { fadeIn } from '../../data/variants';
 import SectionLabel from '../UI/SectionLabel';
+import SectionTitle from './SectionTitle';
 
 
 export default function Newsletter({ data }) {
@@ -18,21 +19,18 @@ export default function Newsletter({ data }) {
 
   return (
     <section className="md:w-4/5 m-auto border-t border-gray-200 py-7">
-      <motion.div
-        variants={fadeIn('up', 0.1)}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
-        className="flex flex-col items-center gap-4 rounded-3xl bg-gray-50 px-6 py-14 text-center sm:px-14"
+      <div
+
+        className="flex flex-col   gap-4 rounded-3xl bg-gray-50 px-6 py-14   sm:px-14"
       >
-        <SectionLabel text={data.eyebrow} />
-        <h2 className="max-w-lg text-2xl font-bold text-gray-900 sm:text-3xl">{data.title}</h2>
-        <p className="max-w-md text-sm text-gray-500">{data.description}</p>
+        <SectionTitle eyebrow={data.eyebrow} lineOne={data.title}       />
+
+        <p className="  text-sm text-gray-500">{data.description}</p>
 
         {submitted ? (
           <p className="mt-4 text-sm font-medium text-gray-900">{data.successMessage}</p>
         ) : (
-          <form onSubmit={handleSubmit} className="mt-4 flex w-full max-w-md flex-col gap-3 sm:flex-row">
+          <form onSubmit={handleSubmit} className="mt-4 flex w-full   flex-col gap-3 sm:flex-row">
             <input
               type={data.input.type}
               name={data.input.name}
@@ -50,7 +48,7 @@ export default function Newsletter({ data }) {
             </button>
           </form>
         )}
-      </motion.div>
+      </div>
     </section>
   );
 }

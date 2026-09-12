@@ -14,6 +14,7 @@ import { BlogPageData } from '../../data/BlogPageData';
 import Newsletter from '../../Componets/shared/Newsletter';
 import FinalCTA from '../../Componets/shared/FinalCTA';
 import FeaturedArticle from '../../Componets/shared/FeaturedArticle';
+import PerspeTranstions from '../../Componets/Animations/perspectiveSectionTransition/PerspeTranstions';
 
 function Blog() {
   const [activeCategory, setActiveCategory] = useState('all');
@@ -62,13 +63,12 @@ function Blog() {
         <FeaturedArticle item={BlogPageData.featuredArticle} />
       </section>
 
-        {/* Categories */}
-        <CategoryFilter
-          categories={BlogPageData.categories}
-          activeCategory={activeCategory}
-          onChange={setActiveCategory}
-        />
-
+      {/* Categories */}
+      <CategoryFilter
+        categories={BlogPageData.categories}
+        activeCategory={activeCategory}
+        onChange={setActiveCategory}
+      />
 
       {/* Featured article */}
 

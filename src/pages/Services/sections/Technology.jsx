@@ -3,6 +3,7 @@ import React from 'react';
 import bg from '../../../assets/images/backgrounds/tools-section image.webp';
 import Marquee from '../../../Componets/Animations/Marquee';
 import SectionLabel from '../../../Componets/UI/SectionLabel';
+import SectionTitle from '../../../Componets/shared/SectionTitle';
 const STACK = [
   'Next.js',
   'React',
@@ -36,13 +37,14 @@ export default function Technology() {
       />
       <div className="mx-auto max-w-6xl">
         {/* eyebrow */}
-         
-        <SectionLabel text="Technology" />
+        <SectionTitle
+          eyebrow="Technology"
+          lineOne="Modern tools"
+          accentWord="Practical"
+          lineTwoRest="solutions."
+        />
 
-        <h2 className="mt-3 text-3xl font-medium leading-tight text-gray-900 sm:text-4xl">
-          Modern tools.<span className="font-serif italic font-normal">Practical</span> <br />
-          solutions.
-        </h2>
+  
 
         <p className="mx-auto mt-5 text-base text-gray-600 sm:text-lg">
           We choose technology based on what your project actually needs — not simply what's
@@ -56,7 +58,7 @@ export default function Technology() {
         <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-24 bg-gradient-to-l from-white to-transparent sm:w-40" />
 
         <div className="overflow-hidden py-2">
-           <Marquee items={STACK} direction="right" speed={20} pauseOnHover={false} />
+          <Marquee items={STACK} direction="right" speed={20} pauseOnHover={false} />
         </div>
       </div>
     </section>

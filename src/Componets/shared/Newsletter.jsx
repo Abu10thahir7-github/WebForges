@@ -17,7 +17,7 @@ export default function Newsletter({ data }) {
   };
 
   return (
-    <section className="w-4/5 m-auto border-t border-gray-200 py-16">
+    <section className="md:w-4/5 m-auto border-t border-gray-200 py-7">
       <motion.div
         variants={fadeIn('up', 0.1)}
         initial="hidden"

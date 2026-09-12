@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import bg from '../../../assets/images/backgrounds/why-webforges.png';
 import Marquee from '../../../Componets/Animations/Marquee.jsx';
 import { STACK } from '../../../data/datas.js';
+import SectionTitle from '../../../Componets/shared/SectionTitle.jsx';
 
 const stats = [
   { value: '15+', label: 'Projects' },
@@ -111,31 +112,15 @@ function WhyWebForges() {
   return (
     <section className="relative bg-white pt-6 md:pt-10">
       <div className="md:w-4/5 px-3 m-auto">
-        {/* eyebrow label */}
-        <p className="text-lg flex items-center gap-3 uppercase text-[#f6bc17] font-medium">
-          <svg
-            width="11"
-            height="13"
-            viewBox="0 0 11 13"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true"
-          >
-            <path d="M11 6.5L0.499999 12.5622L0.5 0.437822L11 6.5Z" fill="currentColor"></path>
-          </svg>
-          Why WebForges
-        </p>
-        {/* main heading */}
-        {/* main heading */}
+        <SectionTitle
+          eyebrow="Why WebForges"
+          lineOne="Built with modern technology,"
+          accentWord="delivered"
+          lineTwoRest="with purpose"
+        />
         <div className="flex flex-col md:flex-row justify-between">
           <div>
             <div className="flex justify-between flex-col     ">
-              <motion.h2 className=" mt-4 text-start text-3xl font-semibold leading-tight text-gray-900 sm:text-4xl">
-                Built with modern technology,
-                <br />
-                <span className="font-serif italic font-normal">delivered</span> with purpose
-              </motion.h2>
-
               {/* subtext */}
               <p p className="mt-5 text-gray-500 max-w-xl text-sm sm:text-base">
                 Modern websites, applications and automation systems <br /> built around real

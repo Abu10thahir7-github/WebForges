@@ -10,6 +10,7 @@ import talktowermockup from '../../../assets/projects/talktowermockup.svg';
 import { fadeIn } from '../../../data/variants';
 import Footer from '../../../app/layout/Footer';
 import Button from '../../../Componets/UI/Button';
+import SectionTitle from '../../../Componets/shared/SectionTitle';
 
 const projects = [
   {
@@ -93,19 +94,13 @@ function Projects() {
         aria-labelledby="projects-heading"
       >
         <div className="flex sm:w-full md:w-1/2">
-          <p className="text-lg flex items-center gap-3 uppercase text-[#e0a500] font-medium">
-            <svg
-              width="11"
-              height="13"
-              viewBox="0 0 11 13"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
-            >
-              <path d="M11 6.5L0.499999 12.5622L0.5 0.437822L11 6.5Z" fill="currentColor"></path>
-            </svg>
-            Our projects
-          </p>
+          <SectionTitle
+            eyebrow="  Our projects"
+            lineOne=""
+            accentWord="Projects,"
+            lineTwoRest=" DELIVERED."
+          />
+
         </div>
         <div className="sm:w-full md:w-1/2">
           <h2
@@ -119,16 +114,8 @@ function Projects() {
         </div>
       </div>
 
-
-
       <div className=" md:w-4/5 px-3 mx-auto mt-7 pb-10">
-        {/* Section header, matching the hero's eyebrow + serif/bold pairing */}
-        <div className="mb-10">
-          <h2 className="mt-4 text-3xl sm:text-4xl leading-tight text-[#0B0F19]">
-            <span className="   font-serif   italic text-gray-700  ">Projects,</span>{' '}
-            <span className="font-extrabold">DELIVERED.</span>
-          </h2>
-        </div>
+
 
         {/* Responsive grid: 1 col mobile, 2 col tablet+, capped card width */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-10">

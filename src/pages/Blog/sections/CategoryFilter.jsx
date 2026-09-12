@@ -3,7 +3,7 @@ export default function CategoryFilter({ categories, activeCategory, onChange })
     <div
       role="tablist"
       aria-label="Article categories"
-      className="flex flex-wrap gap-3 py-8"
+      className="flex flex-wrap justify-center gap-1 py-4 md:gap-3 md:py-8"
     >
       {categories.map(cat => (
         <button

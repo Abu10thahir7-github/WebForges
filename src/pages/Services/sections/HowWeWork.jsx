@@ -1,6 +1,7 @@
 // src/Componets/Pages/HowWeWork.jsx
 import React from 'react';
 import SectionLabel from '../../../Componets/UI/SectionLabel';
+import SectionTitle from '../../../Componets/shared/SectionTitle';
 
 const STEPS = [
   {
@@ -46,14 +47,13 @@ export default function HowWeWork() {
     <section className="bg-[#F6F5F3] px-4 py-7 sm:py-10">
       <div className="mx-auto max-w-6xl">
         {/* eyebrow */}
-
-        <SectionLabel text=" Our Process" />
-
-        <h2 className=" mt-6   text-3xl font-semibold leading-tight text-gray-900 sm:text-4xl">
-          From idea to launch, <span className="font-serif italic font-normal">without the</span>{' '} <br/>
-          complexity.
-        </h2>
-
+<SectionTitle
+  eyebrow="Our Process"
+  lineOne="From idea to launch,"
+  accentWord="without the"
+  lineTwoRest="complexity."
+/>
+       
         {/* cards */}
         <div className="mt-7 grid grid-cols-2 gap-2 sm:grid-cols-2 lg:grid-cols-3">
           {STEPS.map((step, i) => (

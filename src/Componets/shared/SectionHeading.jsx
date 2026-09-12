@@ -13,7 +13,7 @@ export default function SectionHeading({ eyebrow, title, description, align = 'l
         initial="hidden"
         whileInView="show"
         viewport={{ once: true }}
-        className="mt-3 text-2xl font-bold text-gray-900 sm:text-3xl md:text-4xl"
+        className=" mt-2 text-start text-3xl font-semibold leading-tight text-gray-900 sm:text-4xl"
       >
         {title}
       </motion.h2>

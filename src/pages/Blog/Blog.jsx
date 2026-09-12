@@ -3,7 +3,6 @@ import { Helmet } from 'react-helmet-async';
 
 import PageHero from '../../Componets/shared/PageHero';
 
-
 import CategoryFilter from './sections/CategoryFilter';
 
 import LatestArticles from './sections/LatestArticles';
@@ -23,7 +22,9 @@ function Blog() {
     activeCategory === 'all'
       ? BlogPageData.latestArticles
       : BlogPageData.latestArticles.filter(
-          article => article.category.toLowerCase().replace(/\//g, '-').replace(/\s+/g, '-') === activeCategory
+          article =>
+            article.category.toLowerCase().replace(/\//g, '-').replace(/\s+/g, '-') ===
+            activeCategory,
         );
 
   return (
@@ -57,20 +58,19 @@ function Blog() {
         height="h-[60vh]"
         cta={{ label: BlogPageData.hero.primaryCta.label, to: BlogPageData.hero.primaryCta.href }}
       />
-  <section className="w-4/5 m-auto pb-16">
-       <FeaturedArticle item={BlogPageData.featuredArticle} />
+      <section className="   ">
+        <FeaturedArticle item={BlogPageData.featuredArticle} />
       </section>
-      <div className="w-4/5 m-auto">
+
         {/* Categories */}
         <CategoryFilter
           categories={BlogPageData.categories}
           activeCategory={activeCategory}
           onChange={setActiveCategory}
         />
-      </div>
+
 
       {/* Featured article */}
-
 
       {/* Latest articles (6) */}
       <LatestArticles

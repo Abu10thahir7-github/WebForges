@@ -96,7 +96,9 @@ export const BlogPageData = {
         "Business",
         "Web Design",
         "Conversion"
-      ]
+      ],
+      "bg": "bg-white"
+
     },
     {
       "id": "website-mistakes-small-business",
@@ -111,7 +113,8 @@ export const BlogPageData = {
       "tags": [
         "Web Design",
         "Business"
-      ]
+      ],
+      "bg": "bg-[#fff8e7]"
     },
     {
       "id": "business-website-cost",
@@ -126,7 +129,8 @@ export const BlogPageData = {
       "tags": [
         "Business",
         "Website Planning"
-      ]
+      ],
+      "bg": "bg-[#f0f0ff]"
     },
     {
       "id": "website-vs-landing-page",
@@ -141,7 +145,8 @@ export const BlogPageData = {
       "tags": [
         "Business",
         "Landing Pages"
-      ]
+      ],
+      "bg": "bg-[#fff8e7]"
     },
     {
       "id": "professional-website",
@@ -157,7 +162,8 @@ export const BlogPageData = {
         "Web Design",
         "Branding",
         "Trust"
-      ]
+      ],
+      "bg": "bg-violet-50"
     },
     {
       "id": "easy-to-use-website",
@@ -172,7 +178,8 @@ export const BlogPageData = {
       "tags": [
         "UX/UI",
         "User Experience"
-      ]
+      ],
+      "bg": "bg-emerald-50"
     }
   ],
   "caseStudies": {
@@ -185,7 +192,7 @@ export const BlogPageData = {
         "title": "Trendzio",
         "category": "E-Commerce",
         "description": "A modern shopping experience designed around product discovery, clarity, and effortless browsing.",
-        "image": "/images/projects/trendzio.webp",
+        "image": "https://res.cloudinary.com/dcrf52w3g/image/upload/v1787915672/ChatGPT_Image_Aug_21_2026_10_03_26_AM_lfne9l.png",
         "href": "/projects/trendzio"
       },
       {
@@ -193,16 +200,16 @@ export const BlogPageData = {
         "title": "Flyocean Travel & Tourism",
         "category": "Travel / Business",
         "description": "A destination-first website designed to present travel experiences clearly and encourage enquiries.",
-        "image": "/images/projects/flyocean.webp",
+        "image": "https://res.cloudinary.com/dcrf52w3g/image/upload/v1787916002/ChatGPT_Image_Aug_13_2026_04_16_27_PM_gfd6nu.png",
         "href": "/projects/flyocean"
       },
       {
-        "id": "velonto",
-        "title": "Velonto",
-        "category": "Food Delivery",
-        "description": "A convenient food ordering experience focused on discovery, menus, and a simple customer journey.",
-        "image": "/images/projects/velonto.webp",
-        "href": "/projects/velonto"
+        "id": "talktower",
+        "title": "Talktower",
+        "category": "Education / Learning Platform",
+        "description": "A convenient learning experience focused on discovery, courses, and a simple student journey.",
+        "image": "https://res.cloudinary.com/dcrf52w3g/image/upload/v1787916008/ChatGPT_Image_Aug_13_2026_04_55_08_PM_p9givb.png",
+        "href": "/projects/talktower"
       }
     ],
     "cta": {
@@ -222,7 +229,9 @@ export const BlogPageData = {
         "category": "Guide",
         "readTime": "10 min read",
         "image": "/images/blog/website-planning-checklist.webp",
-        "href": "/blog/website-planning-checklist"
+        "href": "/blog/website-planning-checklist",
+        "bg": "bg-amber-50"
+
       },
       {
         "id": "ecommerce-launch-checklist",
@@ -231,7 +240,8 @@ export const BlogPageData = {
         "category": "Guide",
         "readTime": "9 min read",
         "image": "/images/blog/ecommerce-launch-checklist.webp",
-        "href": "/blog/ecommerce-launch-checklist"
+        "href": "/blog/ecommerce-launch-checklist",
+        "bg": "bg-violet-50"
       },
       {
         "id": "website-redesign-checklist",
@@ -240,7 +250,8 @@ export const BlogPageData = {
         "category": "Guide",
         "readTime": "8 min read",
         "image": "/images/blog/website-redesign-checklist.webp",
-        "href": "/blog/website-redesign-checklist"
+        "href": "/blog/website-redesign-checklist",
+        "bg": "bg-emerald-50"
       },
       {
         "id": "website-content-checklist",
@@ -249,7 +260,8 @@ export const BlogPageData = {
         "category": "Guide",
         "readTime": "7 min read",
         "image": "/images/blog/website-content-checklist.webp",
-        "href": "/blog/website-content-checklist"
+        "href": "/blog/website-content-checklist",
+        "bg": "bg-gray-50"
       }
     ]
   },

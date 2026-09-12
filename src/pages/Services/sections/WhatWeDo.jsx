@@ -1,8 +1,9 @@
 // src/Componets/Pages/WhatWeDo.jsx
 import React from 'react';
 
- import bg from '../../../assets/images/backgrounds/what-we-do-image.webp';
+import bg from '../../../assets/images/backgrounds/what-we-do-image.webp';
 import SectionLabel from '../../../Componets/UI/SectionLabel';
+import SectionTitle from '../../../Componets/shared/SectionTitle';
 const SERVICES = [
   {
     title: 'Web Development',
@@ -104,30 +105,27 @@ export default function WhatWeDo() {
   return (
     <section className="relative bg-white px-4 py-7 sm:py-10">
       <div className="mx-auto max-w-6xl">
-        {/* eyebrow */}
+        <div className="flex flex-col md:flex-row justify-between">
+          <div className="mt-6 flex flex-col   gap-8    ">
+            <SectionTitle
+              eyebrow="What We Do"
+              lineOne="Everything you need to build and"
+              accentWord="grow"
+              lineTwoRest="online."
+            />
 
-        <SectionLabel text="What We Do" />
-
-        {/* H2 + supporting text */}
-
-        <div className='flex flex-col md:flex-row'>
-        <div className="mt-6 flex flex-col   gap-8    ">
-          <h2 className="    text-3xl font-semibold leading-tight text-gray-900 sm:text-4xl">
-            Everything you need to build and{' '}
-            <span className="font-serif italic font-normal">grow</span> online.
-          </h2>
-
-          <p className="max-w-md text-base leading-relaxed text-gray-500">
-            We combine strategy, design, development, and automation to create digital experiences
-            that are useful for your customers and valuable for your business.
-          </p>
+            <p className="max-w-md text-base leading-relaxed text-gray-500">
+              We combine strategy, design, development, and automation to create digital experiences
+              that are useful for your customers and valuable for your business.
+            </p>
+          </div>
+          <img
+            src={bg}
+            alt=""
+            aria-hidden="true"
+            className="  sm:w-[25%] md:right-0 md:w-[38%] lg:w-[35%]  "
+          />
         </div>
-         <img
-        src={bg}
-        alt=""
-        aria-hidden="true"
-        className="  sm:w-[25%] md:right-0 md:w-[38%] lg:w-[35%]  "
-      /></div>
       </div>
     </section>
   );

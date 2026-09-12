@@ -5,7 +5,7 @@ import SectionHeading from '../../../Componets/shared/SectionHeading';
 
 export default function CaseStudiesPreview({ data }) {
   return (
-    <section className="w-4/5 m-auto border-t border-gray-200 py-16">
+    <section className="md:w-4/5 p-3 m-auto border-t border-gray-200 py-7">
       <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
         <SectionHeading eyebrow={data.eyebrow} title={data.title} description={data.description} />
         <Link
@@ -16,7 +16,7 @@ export default function CaseStudiesPreview({ data }) {
         </Link>
       </div>
 
-      <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-3">
+      <div className="mt-10 grid grid-cols-1 gap-3 sm:grid-cols-3">
         {data.items.map((item, index) => (
           <motion.div
             key={item.id}
@@ -38,11 +38,11 @@ export default function CaseStudiesPreview({ data }) {
                 />
               </div>
               <div className="flex flex-col gap-1 p-5">
-                <p className="text-xs font-medium uppercase tracking-wide text-gray-400">
+                <p className="text-xs  font-medium uppercase tracking-wide text-gray-400">
                   {item.category}
                 </p>
-                <h3 className="text-lg font-bold text-gray-900">{item.title}</h3>
-                <p className="text-sm leading-relaxed text-gray-500">{item.description}</p>
+                <h3 className="text-base font-medium text-gray-900">{item.title}</h3>
+                <p className="  text-sm leading-relaxed text-gray-500">{item.description}</p>
               </div>
             </Link>
           </motion.div>

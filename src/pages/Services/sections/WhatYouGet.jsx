@@ -3,6 +3,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { fadeIn } from '../../../data/variants';
 import SectionLabel from '../../../Componets/UI/SectionLabel';
+import SectionTitle from '../../../Componets/shared/SectionTitle';
 
 const POINTS = [
   {
@@ -73,14 +74,15 @@ export default function WhatYouGet() {
       <div className="mx-auto max-w-6xl">
         {/* eyebrow */}
 
+        <SectionTitle
+          eyebrow="Our Approach"
+          lineOne="More than a website."
+          accentWord="A digital system"
+          lineTwoRest="built
+          around your business."
+        />
 
-        <SectionLabel text="Our Approach" />
-
-        <h2 className=" mt-3  text-3xl font-medium leading-tight text-gray-900 sm:text-4xl">
-          More than a website. <br />
-          <span className="font-serif italic font-normal">A digital system</span> <br /> built
-          around your business.
-        </h2>
+      
 
         {/* cards */}
         <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">

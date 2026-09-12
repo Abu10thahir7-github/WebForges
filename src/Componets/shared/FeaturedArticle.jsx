@@ -44,9 +44,9 @@ export default function FeaturedArticle({ item }) {
       to={slug}
       className="group block"
     >
-      <div className="grid grid-cols-1 items-center gap-10 rounded-3xl border border-gray-200 bg-white p-4 shadow-sm transition-shadow duration-300 hover:shadow-xl sm:p-6 lg:grid-cols-2 lg:gap-0 lg:p-0">
+      <div className="grid grid-cols-1 items-center  border border-gray-200 bg-white p-2 shadow-sm transition-shadow duration-300 hover:shadow-xl sm:p-6 lg:grid-cols-2 lg:gap-0 lg:p-0">
         <div className="overflow-hidden rounded-2xl lg:rounded-none lg:first:rounded-l-3xl lg:last:rounded-r-3xl">
-          <div className="aspect-[16/10] w-full overflow-hidden lg:aspect-auto lg:h-full lg:min-h-[420px]">
+          <div className="aspect-[16/10] w-full overflow-hidden lg:aspect-auto lg:h-full lg:min-h-[380px]">
             <img
               src={image}
               alt={title}
@@ -56,7 +56,7 @@ export default function FeaturedArticle({ item }) {
           </div>
         </div>
 
-        <div className="flex flex-col gap-4 p-6 sm:p-10 lg:p-14">
+        <div className="flex flex-col gap-4 p-3 sm:p-10 lg:p-14">
           <div className="flex flex-wrap items-center gap-3">
             <span className="rounded-full bg-[#f6bc17] px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wide text-black">
               {eyebrow}
@@ -74,11 +74,11 @@ export default function FeaturedArticle({ item }) {
             )}
           </div>
 
-          <h2 className="text-2xl font-bold leading-tight text-gray-900 sm:text-3xl md:text-4xl">
+          <h2 className="text-2xl font-semibold leading-tight text-gray-900 sm:text-3xl  ">
             {title}
           </h2>
 
-          <p className="text-base leading-relaxed text-gray-500">{excerpt}</p>
+          <p className="mt-2 text-sm leading-relaxed text-gray-500">{excerpt}</p>
 
           <span className="mt-2 inline-flex w-fit items-center gap-2 text-sm font-semibold text-gray-900">
             {ctaLabel}

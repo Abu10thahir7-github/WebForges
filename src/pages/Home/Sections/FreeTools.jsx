@@ -12,6 +12,7 @@ import {
 } from 'lucide-react';
 
 import { fadeIn } from '../../../data/variants';
+import SectionTitle from '../../../Componets/shared/SectionTitle';
 
 /**
  * "Free Tools" — minimal project showcase
@@ -51,19 +52,13 @@ export default function FreeToolsSection() {
     >
       <div className=" ">
         <div className="flex flex-col md:flex-row justify-between">
-          <p className="text-lg flex items-center gap-3 uppercase text-[#f6bc17] font-medium">
-            <svg
-              width="11"
-              height="13"
-              viewBox="0 0 11 13"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
-            >
-              <path d="M11 6.5L0.499999 12.5622L0.5 0.437822L11 6.5Z" fill="currentColor"></path>
-            </svg>
-            Our Free Tools
-          </p>
+          <SectionTitle
+            eyebrow="Our Free Tools"
+            lineOne=" FreeTooly "
+            accentWord=" "
+            lineTwoRest=" "
+          />
+
 
           <p className="mt-4 max-w-lg text-neutral-600">
             A web app I'm building with 37+ browser-based utilities — image, PDF, audio and

@@ -4,13 +4,13 @@ import { fadeIn } from '../../data/variants';
 
 export default function FinalCTA({ data }) {
   return (
-    <section className="w-4/5 m-auto pb-24">
+    <section className="md:w-4/5 m-auto pb-14">
       <motion.div
         variants={fadeIn('up', 0.1)}
         initial="hidden"
         whileInView="show"
         viewport={{ once: true }}
-        className="flex flex-col items-center gap-6 rounded-3xl bg-gray-900 px-8 py-16 text-center"
+        className="flex flex-col items-center gap-6 md:rounded-3xl bg-gray-900 px-8 py-7 text-center"
       >
         <span className="rounded-full bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-[#f6bc17]">
           {data.eyebrow}

@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { fadeIn } from '../../../data/variants.js';
-import SectionLabel from '../../../Componets/UI/SectionLabel.jsx';
+import SectionTitle from '../../../Componets/shared/SectionTitle.jsx';
 
 const testimonials = [
   {
@@ -130,18 +130,14 @@ function Testimonials() {
     <section className="md:w-4/5 p-3 m-auto py-16 md:py-20" aria-labelledby="testimonials-heading">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
         <div>
-          <SectionLabel text="Testimonials" />
-          <motion.h2
-            id="testimonials-heading"
-            variants={fadeIn('up', 0.2)}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            className="heading-style-h3 mt-4 max-w-lg text-2xl sm:text-3xl md:text-4xl text-gray-900"
-          >
-            Trusted by <span className="font-serif italic font-normal">businesses</span> across
-            Kerala
-          </motion.h2>
+<SectionTitle
+  eyebrow="Testimonials"
+  lineOne="Trusted by"
+  accentWord="businesses"
+  lineTwoRest="across
+            Kerala"
+/>
+
         </div>
 
         {/* nav arrows, desktop */}

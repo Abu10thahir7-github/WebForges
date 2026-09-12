@@ -13,7 +13,7 @@ function ArticleCard({ article, index }) {
     >
       <Link
         to={article.slug}
-        className="group flex flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white transition-shadow duration-300 hover:shadow-lg"
+        className={`group ${article.bg} flex flex-col overflow-hidden rounded-2xl border border-gray-200   transition-shadow duration-300 hover:shadow-lg`}
       >
         <div className="aspect-[16/10] w-full overflow-hidden bg-gray-100">
           <img
@@ -23,13 +23,13 @@ function ArticleCard({ article, index }) {
             className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
         </div>
-        <div className="flex flex-1 flex-col gap-2 p-5">
+        <div className="flex flex-1 flex-col gap-2 p-3 md:p-5">
           <div className="flex items-center gap-2 text-xs font-medium uppercase tracking-wide text-gray-400">
             <span>{article.category}</span>
             <span>·</span>
             <span>{article.readTime}</span>
           </div>
-          <h3 className="text-lg font-bold leading-snug text-gray-900">{article.title}</h3>
+          <h3 className="text-base font-medium text-gray-900">{article.title}</h3>
           <p className="text-sm leading-relaxed text-gray-500">{article.excerpt}</p>
         </div>
       </Link>
@@ -39,11 +39,11 @@ function ArticleCard({ article, index }) {
 
 export default function LatestArticles({ articles, emptyState, onResetFilter }) {
   return (
-    <section id="latest" className="w-4/5 m-auto border-t border-gray-200 py-16">
+    <section id="latest" className="md:w-4/5 m-auto pb-7 px-3   ">
       <SectionHeading eyebrow="Latest" title="Recent articles" />
 
       {articles.length > 0 ? (
-        <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {articles.map((article, index) => (
             <ArticleCard key={article.id} article={article} index={index} />
           ))}

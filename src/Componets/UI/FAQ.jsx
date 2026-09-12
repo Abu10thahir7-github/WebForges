@@ -4,13 +4,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { fadeIn } from '../../data/variants.js';
 import { buildFAQPageSchema } from '../seo/structuredData.js';
 import Button from './Button.jsx';
+import SectionTitle from '../shared/SectionTitle.jsx';
 
 /* ---------------------------------------------------------
    Default content — used when no props are passed, so
    existing call sites (`<Faq />`) keep working unchanged.
 --------------------------------------------------------- */
-
-
 
 /* ---------------------------------------------------------
    Single accordion row
@@ -18,10 +17,7 @@ import Button from './Button.jsx';
 
 function FaqItem({ item, isOpen, onToggle, index, accentColor }) {
   return (
-    <motion.div
-
-      className="border-b border-gray-200"
-    >
+    <motion.div className="border-b border-gray-200">
       <button
         type="button"
         onClick={onToggle}
@@ -84,12 +80,15 @@ function FaqItem({ item, isOpen, onToggle, index, accentColor }) {
 --------------------------------------------------------- */
 
 function Faq({
-  faqs ,
+  faqs,
   kicker = 'FAQ',
   heading = (
     <>
-      Got <span className="font-serif italic font-normal">questions? <br/>
-      </span> We've got answers
+      Got{' '}
+      <span className="font-serif italic font-normal">
+        questions? <br />
+      </span>{' '}
+      We've got answers
     </>
   ),
   description = 'Everything you need to know about working with WebForges — from pricing to timelines to support.',
@@ -112,38 +111,15 @@ function Faq({
       <div className="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)]">
         {/* left: heading column, sticky on desktop */}
         <div className="lg:sticky lg:top-28 lg:self-start">
-          <p
+          <SectionTitle
+            eyebrow="FAQ"
+            lineOne="Got"
+            accentWord="questions?"
+            lineTwoRest="We've got answers"
+          breakLine = {false}
+          />
 
-            className="flex items-center gap-3 text-lg font-medium uppercase"
-            style={{ color: accentColor }}
-          >
-            <svg
-              width="11"
-              height="13"
-              viewBox="0 0 11 13"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
-            >
-              <path d="M11 6.5L0.499999 12.5622L0.5 0.437822L11 6.5Z" fill="currentColor"></path>
-            </svg>
-            {kicker}
-          </p>
-
-          <h2
-            id="faq-heading"
-
-            className="heading-style-h3 mt-4 max-w-md text-2xl sm:text-3xl md:text-4xl text-gray-900"
-          >
-            {heading}
-          </h2>
-
-          <p
-
-            className="mt-4 max-w-sm text-sm text-gray-500"
-          >
-            {description}
-          </p>
+          <p className="my-4 max-w-sm text-sm text-gray-500">{description}</p>
 
           {whatsappLink && (
             <Button href={whatsappLink} variant="primary">
@@ -171,4 +147,3 @@ function Faq({
 }
 
 export default Faq;
-

@@ -10,6 +10,7 @@ const NAV_LINKS = [
   { name: 'Pricing', href: '/pricing' },
   { name: 'Blog', href: '/blog' },
   { name: 'About', href: '/about' },
+  { name: 'contact', href: '/contact' },
 ];
 
 export default function Navbar() {
@@ -56,9 +57,7 @@ export default function Navbar() {
     <>
       <motion.header
         className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-          scrolled
-            ? 'bg-white/95 shadow-sm   '
-            : 'bg-transparent'
+          scrolled ? 'bg-white/95 shadow-sm   ' : 'bg-transparent'
         }`}
       >
         <div className="relative flex items-center justify-between px-5 py-4 sm:px-10 sm:py-5">

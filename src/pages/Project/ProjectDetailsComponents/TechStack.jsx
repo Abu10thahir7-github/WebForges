@@ -1,9 +1,12 @@
+import SectionLabel from "../../../Componets/UI/SectionLabel";
+
 export default function TechStack({ stack }) {
   return (
-    <section className="w-4/5 m-auto border-t border-gray-200 py-16">
-      <h2 className="mb-8 text-2xl font-bold text-gray-900 sm:text-3xl">Technology</h2>
+    <section className="md:w-4/5 px-3 m-auto border-t border-gray-200 py-7">
 
-      <div className="flex flex-wrap gap-3">
+      <SectionLabel text="Technology stack" className="!text-sm" />
+
+      <div className="flex flex-wrap mt-3 gap-3">
         {stack.map(tech => (
           <span
             key={tech}

@@ -3,6 +3,7 @@ import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { fadeIn } from '../../data/variants';
 import Button from '../../Componets/UI/Button';
+import FooterCredit from '../../Componets/shared/FooterCredit';
 
 const ACCENT = '#f6bc16';
 
@@ -149,17 +150,10 @@ function Footer() {
         </div>
       </div>
 
-      <p className="text-center text-xs font-thin text-slate-400 pb-8">
-        © {new Date().getFullYear()} All rights reserved | Created by{' '}
-        <a
-          href="https://abu-thahir.vercel.app/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="underline hover:text-yellow-300 transition-colors"
-        >
-          WebForges
-        </a>
-      </p>
+      <div className="flex justify-center">
+            <FooterCredit />
+      </div>
+
        </div>
     </footer>
   );

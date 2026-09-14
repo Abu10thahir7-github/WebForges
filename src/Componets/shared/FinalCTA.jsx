@@ -10,7 +10,7 @@ export default function FinalCTA({ data, bgImage }) {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true }}
-        className="relative flex flex-col items-center gap-6 overflow-hidden bg-gray-900 px-8 py-7 text-center  "
+        className="relative flex flex-col items-center gap-6 overflow-hidden bg-gray-900 p-2 md:p-8 text-center  "
       >
         {/* Background image */}
         {bgImage && (
@@ -23,7 +23,7 @@ export default function FinalCTA({ data, bgImage }) {
               className="h-full w-full object-cover"
             />
             {/* Dark overlay so text stays readable over the image */}
-            <div className="absolute inset-0 bg-gray-900/85" />
+            <div className="absolute inset-0 bg-black/75" />
           </div>
         )}
 

@@ -1,6 +1,16 @@
+import SectionLabel from "../../../Componets/UI/SectionLabel";
+
 function FeatureCard({ feature, index }) {
+    const cardColors = [
+    "bg-emerald-50",
+    "bg-blue-50",
+    "bg-yellow-50",
+    "bg-purple-50",
+  ];
   return (
-    <div className="rounded-2xl border border-gray-200 bg-gray-50 p-6">
+    <div c  className={`rounded-2xl border border-gray-200 p-3 ${
+        cardColors[index % cardColors.length]
+      }`}>
       <h3 className="text-base font-semibold text-gray-900">{feature.title}</h3>
       <p className="mt-2 text-sm leading-relaxed text-gray-500">{feature.desc}</p>
     </div>
@@ -9,10 +19,11 @@ function FeatureCard({ feature, index }) {
 
 export default function KeyFeatures({ features }) {
   return (
-    <section className="w-4/5 m-auto border-t border-gray-200 py-16">
-      <h2 className="mb-10 text-2xl font-bold text-gray-900 sm:text-3xl">Key features</h2>
+    <section className="md:w-4/5 px-3 m-auto border-t border-gray-200 py-5">
 
-      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      <SectionLabel text="Key features" className="!text-sm" />
+
+      <div className="grid mt-2 grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {features.map((feature, index) => (
           <FeatureCard key={feature.title} feature={feature} index={index} />
         ))}

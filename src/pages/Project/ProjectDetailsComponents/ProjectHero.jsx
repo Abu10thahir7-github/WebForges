@@ -1,7 +1,7 @@
 export default function ProjectHero({ project }) {
   return (
     <header className="relative overflow-hidden bg-white pb-16 pt-32 sm:pt-40">
-      <div className="w-4/5 m-auto  flex">
+      <div className="md:w-4/5 m-auto p-3 flex flex-col md:flex-row gap-6 md:gap-10">
         <div className="flex flex-col items-start gap-6">
           {/* Eyebrow */}
           <span className="rounded-full bg-gray-900 px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-white">

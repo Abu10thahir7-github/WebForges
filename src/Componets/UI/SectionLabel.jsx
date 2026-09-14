@@ -14,7 +14,7 @@ const SectionLabel = ({ text, className = '' }) => {
         />
       </svg>
 
-      <span className="text-xs font-semibold uppercase tracking-[0.2em] text-gray-500">
+      <span className={`text-xs ${className} font-semibold uppercase tracking-[0.2em] text-gray-500`}>
         {text}
       </span>
     </div>

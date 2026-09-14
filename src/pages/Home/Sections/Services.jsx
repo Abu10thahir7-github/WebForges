@@ -65,7 +65,7 @@ function Services() {
             Pick a starting point below, or tell us where you're stuck and we'll point you to the
             right one.
           </p>
-          <Button to="/service" size="md" variant="primary">
+          <Button to="/services" size="md" variant="primary">
             See all services
           </Button>
         </div>

@@ -1,8 +1,8 @@
 export default function NarrativeSection({ eyebrow, heading, body, reversed = false }) {
   return (
-    <section className="w-4/5 m-auto border-t border-gray-200 py-16">
+    <section className="md:w-4/5 m-auto border-t border-gray-200 py-6 px-3 ">
       <div
-        className={`grid grid-cols-1 gap-8 lg:grid-cols-[1fr_1fr] ${
+        className={`grid grid-cols-1 gap-2 lg:grid-cols-[1fr_1fr] ${
           reversed
             ? 'lg:[&>*:first-child]:order-2 lg:text-right lg:[&>*:first-child]:text-left'
             : ''
